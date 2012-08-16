@@ -100,3 +100,14 @@ Also, boot errors due to conflict with GPIO driver:
 /etc/init.d/rc: /etc/rc5.d/S60rascal-gpio.sh: line 5: can't create /sys/class/gpio/gpio100/direction: nonexistent directory
 /etc/init.d/rc: /etc/rc5.d/S60rascal-gpio.sh: line 5: can't create /sys/class/gpio/gpio101/direction: nonexistent directory
 ```
+
+New files that exist with the new kernel
+
+/dev/spidev1.0
+/dev/spidev1.1
+/dev/spidev1.2
+/sys/devices/platform/atmel_spi.1
+/sys/class/spidev/
+/sys/class/spidev/spidev1.0
+/sys/class/spidev/spidev1.1
+/sys/class/spidev/spidev1.2
