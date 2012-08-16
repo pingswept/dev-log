@@ -19,7 +19,7 @@ wpa_supplicant -B -c/etc/wpa_supplicant.conf -iwlan0 # This step fails
 udhcpc -i wlan0
 ```
 
-This results in failed authentication:
+Starting wpa_supplicant results in failed authentication with the following error:
 ```bash
 ioctl[SIOCSIWAP]: Operation not permitted
 ```
