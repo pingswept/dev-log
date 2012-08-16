@@ -103,6 +103,7 @@ Also, boot errors due to conflict with GPIO driver:
 
 New files that exist with the new kernel
 
+```bash
 /dev/spidev1.0
 /dev/spidev1.1
 /dev/spidev1.2
@@ -111,3 +112,4 @@ New files that exist with the new kernel
 /sys/class/spidev/spidev1.0
 /sys/class/spidev/spidev1.1
 /sys/class/spidev/spidev1.2
+```
