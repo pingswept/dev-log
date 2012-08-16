@@ -1,17 +1,11 @@
-## Dev log ##
+### Building Realtek driver for Edimax wireless adapter ###
 
-Let's test this thing.
+* Prepare kernel build as in http://rascalmicro.com/docs/build-guide.html
+* Copy driver source to linux-2.6/drivers/net/wireless/rtl8192cu
+* Enable driver with make menuconfig, Device Drivers > Network device support > Realtek 8192C USB Wifi (NEW)
 
-```python
-[root@rascal14:/var/www/public/static/images]: python
-Python 2.6.6 (r266:84292, Jun 18 2012, 19:18:49) 
-[GCC 4.3.3] on linux2
-Type "help", "copyright", "credits" or "license" for more information.
->>> import cv
->>> im = cv.LoadImageM('rascal.png', 1)
->>> dst = cv.CreateImage(cv.GetSize(im), cv.IPL_DEPTH_16S, 3)
->>> laplace = cv.Laplace(im, dst)
->>> cv.SaveImage('rascal-laplace.png', dst)
+```bash
+make menuconfig
+make ARCH=arm modules
 ```
 
-More text.
