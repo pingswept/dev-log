@@ -1,0 +1,8 @@
+### Testing SPI ###
+
+Sends data out MOSI and pulses clock at ~15 MHz, but chip select stays low. (Checked SS0, SS1, SS2, SS3.)
+
+```bash
+echo "Aaron Burr" > /dev/spidev1.0
+```
+
