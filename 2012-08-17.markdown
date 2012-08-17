@@ -16,7 +16,7 @@ Tried to change driver to slower max speed. Seemed to compile fine.
 .max_speed_hz   = 15 * 1000 * 10,
 ```
 
-But, error when driver was loaded.
+But, error in dmesg when driver was loaded.
 
 ```bash
 atmel_spi atmel_spi.1: Atmel SPI Controller at 0xfffcc000 (irq 13)
