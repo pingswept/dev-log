@@ -24,3 +24,5 @@ atmel_spi atmel_spi.1: can't setup spi1.0, status -22
 atmel_spi atmel_spi.1: can't setup spi1.1, status -22
 atmel_spi atmel_spi.1: can't setup spi1.2, status -22
 ```
+
+Also, could be problem with 5 V Arduino not registering 3.3 V signals.
