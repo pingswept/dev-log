@@ -1,0 +1,9 @@
+### Changing SPI speed ###
+
+Master clock is 132 MHZ; CPU is 396 MHZ (3x MCK); crystal is 18.432 MHZ (MCK/7.16?).
+
+SPI clock is MCK divided by 8 bit value stored in the SCBR field, which is part of the SPI_CSR0-SPI_CSR3 registers.
+
+132/9 = 14.67 MHz, appears to be what is produced by 15 * 1000 * 1000 in driver code.
+
+Minimum speed is 132/255 = 518 kHz.
