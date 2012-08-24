@@ -58,3 +58,8 @@ Reading maximum speed
 >>> print speed[0]
 528000
 ```
+
+This is the result of setting the max speed to 528 kbps in arch/arm/mach-at91/board-rascal.c
+```c
+.max_speed_hz   = 528 * 1000
+```
