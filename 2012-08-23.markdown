@@ -47,3 +47,14 @@ _IOC(_IOC_READ, 0x6B, 4, sizeof(__u32))
 ((2 << 30) | (0x6B << 8) | (0x04 << 0) | (0x04 << 16))
 0x80046B04
 ```
+
+Reading maximum speed
+
+```python
+>>> import array, fcntl
+>>> speed = array.array('i', [0])
+>>> fcntl.ioctl(f, 0x80046B04, speed)
+0
+>>> print speed[0]
+528000
+```
