@@ -3,3 +3,29 @@
 Need a page about the Javascript/jQuery side of making the Rascal work. Then link to that page from http://rascalmicro.com/docs/basic-tutorial-python-on-the-rascal.html
 
 But first, make a wrapper for $.post called rascal.send because $.post scares people who are new to jQuery.
+
+### Back to SPI speed stuff ###
+
+```c
+#define SPI_IOC_RD_MAX_SPEED_HZ         _IOR(SPI_IOC_MAGIC, 4, __u32)
+#define SPI_IOC_WR_MAX_SPEED_HZ         _IOW(SPI_IOC_MAGIC, 4, __u32)
+
+#define _IOR(type,nr,size)      _IOC(_IOC_READ,(type),(nr),sizeof(size))
+
+#define _IOC(dir,type,nr,size) \
+         (((dir)  << _IOC_DIRSHIFT) | \
+          ((type) << _IOC_TYPESHIFT) | \
+          ((nr)   << _IOC_NRSHIFT) | \
+          ((size) << _IOC_SIZESHIFT))
+```
+
+
+SPI_IOC_MAGIC is defined as 'k', which is 0x6B or 107.
+
+SPI_IOC_RD_MAX_SPEED_HZ
+_IOR(SPI_IOC_MAGIC, 4, __u32)
+_IOR(0x6B, 4 __32)
+_IOC(_IOC_READ, 0x6B, 4, sizeof(__u32))
+(((dir)  << _IOC_DIRSHIFT) | ((type) << _IOC_TYPESHIFT) | ((nr)   << _IOC_NRSHIFT) | ((size) << _IOC_SIZESHIFT))
+(((_IOC_READ)  << _IOC_DIRSHIFT) | ((0x6B) << _IOC_TYPESHIFT) | ((4)   << _IOC_NRSHIFT) | ((size) << _IOC_SIZESHIFT))
+
