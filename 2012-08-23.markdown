@@ -63,3 +63,18 @@ This is the result of setting the max speed to 528 kbps in arch/arm/mach-at91/bo
 ```c
 .max_speed_hz   = 528 * 1000
 ```
+
+Get/set code
+```python
+def spiGetSpeed(channel='0'):
+    import array, fcntl
+    with open('/dev/spidev1.' + str(channel), 'w') as f:
+        speed = array.array('i', [0])
+        fcntl.ioctl(f, 0x80046B04, speed)
+        return speed[0]
+
+def spiSetSpeed(speed, channel='0'):
+    import array, fcntl
+    with open('/dev/spidev1.' + str(channel), 'w') as f:
+        return fcntl.ioctl(f, 0x40046B04, array.array('i', [int(speed)]))
+```
