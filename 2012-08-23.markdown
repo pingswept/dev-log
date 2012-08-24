@@ -26,6 +26,8 @@ From include/asm-generic/ioctl.h
 #define _IOC_NRBITS     8
 #define _IOC_TYPEBITS   8
 #define _IOC_SIZEBITS   14 // This can be overridden, but appears not to be for ARM arch
+#define _IOC_READ       2U // U means unsigned int
+#define _IOC_WRITE      1U // U means unsigned int
 #define _IOC_NRSHIFT    0
 #define _IOC_TYPESHIFT  (_IOC_NRSHIFT+_IOC_NRBITS)      // 8 for ARM
 #define _IOC_SIZESHIFT  (_IOC_TYPESHIFT+_IOC_TYPEBITS)  // 16 for ARM
@@ -40,4 +42,8 @@ _IOR(0x6B, 4 __32)
 _IOC(_IOC_READ, 0x6B, 4, sizeof(__u32))
 (((dir)  << _IOC_DIRSHIFT) | ((type) << _IOC_TYPESHIFT) | ((nr)   << _IOC_NRSHIFT) | ((size) << _IOC_SIZESHIFT))
 (((_IOC_READ)  << _IOC_DIRSHIFT) | ((0x6B) << _IOC_TYPESHIFT) | ((4)   << _IOC_NRSHIFT) | ((32) << _IOC_SIZESHIFT))
+((2 << 30) | (0x6B << 8) | (4 << 0) | (32 << 16))
+
+0x 00 00 00 00
+0x 80 20 6B 04
 ```
