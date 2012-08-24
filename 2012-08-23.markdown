@@ -19,13 +19,25 @@ But first, make a wrapper for $.post called rascal.send because $.post scares pe
           ((size) << _IOC_SIZESHIFT))
 ```
 
-
 SPI_IOC_MAGIC is defined as 'k', which is 0x6B or 107.
 
+From include/asm-generic/ioctl.h
+```c
+#define _IOC_NRBITS     8
+#define _IOC_TYPEBITS   8
+#define _IOC_SIZEBITS   14 // This can be overridden, but appears not to be for ARM arch
+#define _IOC_NRSHIFT    0
+#define _IOC_TYPESHIFT  (_IOC_NRSHIFT+_IOC_NRBITS)      // 8 for ARM
+#define _IOC_SIZESHIFT  (_IOC_TYPESHIFT+_IOC_TYPEBITS)  // 16 for ARM
+#define _IOC_DIRSHIFT   (_IOC_SIZESHIFT+_IOC_SIZEBITS)  // 30 for ARM
+```
+
+
+```c
 SPI_IOC_RD_MAX_SPEED_HZ
 _IOR(SPI_IOC_MAGIC, 4, __u32)
 _IOR(0x6B, 4 __32)
 _IOC(_IOC_READ, 0x6B, 4, sizeof(__u32))
 (((dir)  << _IOC_DIRSHIFT) | ((type) << _IOC_TYPESHIFT) | ((nr)   << _IOC_NRSHIFT) | ((size) << _IOC_SIZESHIFT))
-(((_IOC_READ)  << _IOC_DIRSHIFT) | ((0x6B) << _IOC_TYPESHIFT) | ((4)   << _IOC_NRSHIFT) | ((size) << _IOC_SIZESHIFT))
-
+(((_IOC_READ)  << _IOC_DIRSHIFT) | ((0x6B) << _IOC_TYPESHIFT) | ((4)   << _IOC_NRSHIFT) | ((32) << _IOC_SIZESHIFT))
+```
