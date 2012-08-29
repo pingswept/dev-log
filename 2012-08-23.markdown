@@ -1,0 +1,80 @@
+### Tutorial ideas ###
+
+Need a page about the Javascript/jQuery side of making the Rascal work. Then link to that page from http://rascalmicro.com/docs/basic-tutorial-python-on-the-rascal.html
+
+But first, make a wrapper for $.post called rascal.send because $.post scares people who are new to jQuery.
+
+### Back to SPI speed stuff ###
+
+```c
+#define SPI_IOC_RD_MAX_SPEED_HZ         _IOR(SPI_IOC_MAGIC, 4, __u32)
+#define SPI_IOC_WR_MAX_SPEED_HZ         _IOW(SPI_IOC_MAGIC, 4, __u32)
+
+#define _IOR(type,nr,size)      _IOC(_IOC_READ,(type),(nr),sizeof(size))
+
+#define _IOC(dir,type,nr,size) \
+         (((dir)  << _IOC_DIRSHIFT) | \
+          ((type) << _IOC_TYPESHIFT) | \
+          ((nr)   << _IOC_NRSHIFT) | \
+          ((size) << _IOC_SIZESHIFT))
+```
+
+SPI_IOC_MAGIC is defined as 'k', which is 0x6B or 107.
+
+From include/asm-generic/ioctl.h
+```c
+#define _IOC_NRBITS     8
+#define _IOC_TYPEBITS   8
+#define _IOC_SIZEBITS   14 // This can be overridden, but appears not to be for ARM arch
+#define _IOC_READ       2U // U means unsigned int
+#define _IOC_WRITE      1U // U means unsigned int
+#define _IOC_NRSHIFT    0
+#define _IOC_TYPESHIFT  (_IOC_NRSHIFT+_IOC_NRBITS)      // 8 for ARM
+#define _IOC_SIZESHIFT  (_IOC_TYPESHIFT+_IOC_TYPEBITS)  // 16 for ARM
+#define _IOC_DIRSHIFT   (_IOC_SIZESHIFT+_IOC_SIZEBITS)  // 30 for ARM
+```
+
+
+```c
+SPI_IOC_RD_MAX_SPEED_HZ
+_IOR(SPI_IOC_MAGIC, 4, __u32)
+_IOR(0x6B, 4 __u32)
+_IOR(type,nr,size)      _IOC(_IOC_READ,(type),(nr),sizeof(size))
+_IOC(_IOC_READ, 0x6B, 4, sizeof(__u32))
+(((dir)  << _IOC_DIRSHIFT) | ((type) << _IOC_TYPESHIFT) | ((nr)   << _IOC_NRSHIFT) | ((size) << _IOC_SIZESHIFT))
+(((_IOC_READ)  << _IOC_DIRSHIFT) | ((0x6B) << _IOC_TYPESHIFT) | ((4)   << _IOC_NRSHIFT) | ((4) << _IOC_SIZESHIFT))
+((2 << 30) | (0x6B << 8) | (4 << 0) | (4 << 16))
+((2 << 30) | (0x6B << 8) | (0x04 << 0) | (0x04 << 16))
+0x80046B04
+```
+
+Reading maximum speed
+
+```python
+>>> import array, fcntl
+>>> speed = array.array('i', [0])
+>>> fcntl.ioctl(f, 0x80046B04, speed)
+0
+>>> print speed[0]
+528000
+```
+
+This is the result of setting the max speed to 528 kbps in arch/arm/mach-at91/board-rascal.c
+```c
+.max_speed_hz   = 528 * 1000
+```
+
+Get/set code
+```python
+def spiGetSpeed(channel='0'):
+    import array, fcntl
+    with open('/dev/spidev1.' + str(channel), 'w') as f:
+        speed = array.array('i', [0])
+        fcntl.ioctl(f, 0x80046B04, speed)
+        return speed[0]
+
+def spiSetSpeed(speed, channel='0'):
+    import array, fcntl
+    with open('/dev/spidev1.' + str(channel), 'w') as f:
+        return fcntl.ioctl(f, 0x40046B04, array.array('i', [int(speed)]))
+```
