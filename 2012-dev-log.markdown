@@ -21,7 +21,13 @@ done
 
 ### Building LAPACK ###
 
-Need to set ARCH to arm-angstrom-linux-gnueabi-ar and ranlib to arm-angstrom-linux-gnueabi-ranlib?
+Need to set ARCH to arm-angstrom-linux-gnueabi-ar and ranlib to arm-angstrom-linux-gnueabi-ranlib in make.inc.
+
+```makefile
+ARCH     = arm-angstrom-linux-gnueabi-ar
+ARCHFLAGS= cr
+RANLIB   = arm-angstrom-linux-gnueabi-ranlib
+```
 
 ```sh
 tar xzvf lapack-3.4.1.tgz
