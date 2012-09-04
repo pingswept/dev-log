@@ -24,8 +24,9 @@ done
 Need to set ARCH to arm-angstrom-linux-gnueabi-ar and ranlib to arm-angstrom-linux-gnueabi-ranlib in make.inc.
 
 ```makefile
+OPTS     = -shared -O2 -fPIC
+NOOPT    = -O0 -fPIC
 ARCH     = arm-angstrom-linux-gnueabi-ar
-ARCHFLAGS= cr
 RANLIB   = arm-angstrom-linux-gnueabi-ranlib
 ```
 
