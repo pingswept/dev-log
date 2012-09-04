@@ -43,3 +43,12 @@ gfortran  -shared -O2 -fPIC -c sgbsvx.f -o sgbsvx.o
 gfortran  -shared -O2 -fPIC -c sgbtf2.f -o sgbtf2.o
 gfortran  -shared -O2 -fPIC -c sgbtrf.f -o sgbtrf.o
 ```
+
+### Building Scipy ###
+
+```sh
+tar xzvf scipy-0.11.0rc2.tar.gz
+export BLAS=/home/root/libblas.so
+export LAPACK=/home/root/liblapack.a
+python setup.py build
+```
