@@ -18,3 +18,21 @@ do
     echo out > /sys/class/gpio/gpio$pin/direction
 done
 ```
+
+### Building LAPACK ###
+
+Need to set ARCH to arm-angstrom-linux-gnueabi-ar and ranlib to arm-angstrom-linux-gnueabi-ranlib?
+
+```sh
+tar xzvf lapack-3.4.1.tgz
+cd lapack-3.4.1/SRC
+make
+gfortran  -shared -O2 -fPIC -c sgbbrd.f -o sgbbrd.o
+gfortran  -shared -O2 -fPIC -c sgbcon.f -o sgbcon.o
+gfortran  -shared -O2 -fPIC -c sgbequ.f -o sgbequ.o
+gfortran  -shared -O2 -fPIC -c sgbrfs.f -o sgbrfs.o
+gfortran  -shared -O2 -fPIC -c sgbsv.f -o sgbsv.o
+gfortran  -shared -O2 -fPIC -c sgbsvx.f -o sgbsvx.o
+gfortran  -shared -O2 -fPIC -c sgbtf2.f -o sgbtf2.o
+gfortran  -shared -O2 -fPIC -c sgbtrf.f -o sgbtrf.o
+```
