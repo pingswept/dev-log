@@ -182,9 +182,36 @@ Problem appears to be missing iostream and algorithm headers. See http://members
 
 Hell, let's just comment out the interpolate subpackage too.
 
-### Scipy recipe ###
+### At least sort of built Scipy 0.8.0 natively on the Rascal! ###
 
-Need Numpy 1.4+, but Numpy 1.3.0 is installed on Ubuntu 10.04 LTS, and for some reason, the host library is used by OE.
+Had to skip *interpolate*, *sparse* and *special* packages by commenting out lines in scipy-0.8.0/scipy/setup.py.
+
+Took around 10 hours in all.
+
+Once the problem subpackages were commented out, the procedure was pretty simple.
+```sh
+tar xzvf scipy-0.8.0.tar.gz
+cd scipy-0.8.0
+export BLAS=/home/root/libblas.so
+export LAPACK=/home/root/liblapack.a
+python setup.py build
+python setup.py install
+```
+Of course, I still don't know how much of it actually works, but at least it starts up OK.
+
+```python
+Python 2.6.6 (r266:84292, Jun 18 2012, 19:18:49) 
+[GCC 4.3.3] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import scipy as sp
+>>> sp.pi
+3.1415926535897931
+```
+
+
+### Openembedded Scipy recipe ###
+
+Need Numpy 1.4+, but Numpy 1.3.0 is installed on Ubuntu 10.04 LTS, and for some reason, the host library is used (via a symbolic link) by OE.
 
 Not actually useful:
 ```sh
