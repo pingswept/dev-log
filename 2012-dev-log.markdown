@@ -212,6 +212,11 @@ interpolate: scipy/interpolate/src/interpolate.h uses iostream and algorithm hea
 sparse: scipy/sparse/sparsetools/csr.h uses lots of C++ headers that aren't found
 special: scipy/special/specfun/specfun.f takes too much memory to compile
 
+Maybe the C++ headers are in here?
+```sh
+opkg install libstdc++-dev
+```
+
 ### Openembedded Scipy recipe ###
 
 Need Numpy 1.4+, but Numpy 1.3.0 is installed on Ubuntu 10.04 LTS, and for some reason, the host library is used (via a symbolic link) by OE.
