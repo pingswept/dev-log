@@ -153,3 +153,27 @@ Killed process 738 (f951) total-vm:50344kB, anon-rss:40956kB, file-rss:24kB
 f951 is the Fortran compiler (the parser/assembly-generator front-end) that is part of Gfortran, which is part of GCC.
 
 Tried commenting out config.add_subpackage line for *special* subpackage in scipy/setup.py. Seems to have at least made compiler work on something else.
+
+```sh
+scipy/interpolate/src/interpolate.h: In function 'void loginterp(T*, T*, int, T*, T*, int)':
+scipy/interpolate/src/interpolate.h:56: error: 'lower_bound' is not a member of 'std'
+scipy/interpolate/src/interpolate.h: In function 'int block_average_above(T*, T*, int, T*, T*, int)':
+scipy/interpolate/src/interpolate.h:102: error: 'lower_bound' is not a member of 'std'
+scipy/interpolate/src/interpolate.h: In function 'int window_average(T*, T*, int, T*, T*, int, T)':
+scipy/interpolate/src/interpolate.h:145: error: 'lower_bound' is not a member of 'std'
+scipy/interpolate/src/interpolate.h:153: error: 'lower_bound' is not a member of 'std'
+...
+In file included from scipy/interpolate/src/_interpolate.cpp:4:
+scipy/interpolate/src/interpolate.h:3:20: error: iostream: No such file or directory
+scipy/interpolate/src/interpolate.h:4:21: error: algorithm: No such file or directory
+In file included from scipy/interpolate/src/_interpolate.cpp:4:
+scipy/interpolate/src/interpolate.h: In function 'void linear(T*, T*, int, T*, T*, int)':
+scipy/interpolate/src/interpolate.h:20: error: 'lower_bound' is not a member of 'std'
+scipy/interpolate/src/interpolate.h: In function 'void loginterp(T*, T*, int, T*, T*, int)':
+scipy/interpolate/src/interpolate.h:56: error: 'lower_bound' is not a member of 'std'
+scipy/interpolate/src/interpolate.h: In function 'int block_average_above(T*, T*, int, T*, T*, int)':
+scipy/interpolate/src/interpolate.h:102: error: 'lower_bound' is not a member of 'std'
+scipy/interpolate/src/interpolate.h: In function 'int window_average(T*, T*, int, T*, T*, int, T)':
+scipy/interpolate/src/interpolate.h:145: error: 'lower_bound' is not a member of 'std'
+scipy/interpolate/src/interpolate.h:153: error: 'lower_bound' is not a member of 'std'
+```
