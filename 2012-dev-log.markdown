@@ -64,3 +64,7 @@ ln -s arm-angstrom-linux-gnueabi-ar ar
 ls -l ar
 lrwxrwxrwx    1 root     root           29 Sep  5 00:45 ar -> arm-angstrom-linux-gnueabi-ar
 ```
+
+```sh
+scipy/spatial/qhull/src/mem.h:23:32: error: numpy/ndarraytypes.h: No such file or directory
+```
