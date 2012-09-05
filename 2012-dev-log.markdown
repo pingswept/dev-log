@@ -51,4 +51,8 @@ tar xzvf scipy-0.11.0rc2.tar.gz
 export BLAS=/home/root/libblas.so
 export LAPACK=/home/root/liblapack.a
 python setup.py build
+...
+error: Command "ar -cr build/temp.linux-armv5tejl-2.6/libdfftpack.a..." failed with exit status 1
 ```
+
+Error was because Busybox's version of ar doesn't support -cr flags. Need to use arm-angstrom-linux-gnueabi-ar instead.
