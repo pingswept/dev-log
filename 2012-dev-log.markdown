@@ -196,3 +196,20 @@ Try installing 1.4.1 from source.
 sudo apt-get remove python-numpy
 sudo apt-get install python-dev
 ```
+
+Strangely, building Numpy was easy.
+
+```sh
+python setup.py build
+sudo python setup.py install
+```
+
+```sh
+ubuntu@domU-12-31-39-0B-31-94:~$ python
+Python 2.6.5 (r265:79063, Apr 16 2010, 13:09:56) 
+[GCC 4.4.3] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import numpy as np
+>>> np.__version__
+'1.4.1'
+```
