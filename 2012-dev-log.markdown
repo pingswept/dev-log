@@ -186,4 +186,13 @@ Hell, let's just comment out the interpolate subpackage too.
 
 Need Numpy 1.4+, but Numpy 1.3.0 is installed on Ubuntu 10.04 LTS, and for some reason, the host library is used by OE.
 
+Not actually useful:
+```sh
 sudo apt-get install python-pip
+```
+
+Try installing 1.4.1 from source.
+```sh
+sudo apt-get remove python-numpy
+sudo apt-get install python-dev
+```
