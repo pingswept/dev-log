@@ -56,3 +56,11 @@ error: Command "ar -cr build/temp.linux-armv5tejl-2.6/libdfftpack.a..." failed w
 ```
 
 Error was because Busybox's version of ar doesn't support -cr flags. Need to use arm-angstrom-linux-gnueabi-ar instead.
+
+```sh
+cd /usr/bin
+mv ar busybox-ar
+ln -s arm-angstrom-linux-gnueabi-ar ar
+ls -l ar
+lrwxrwxrwx    1 root     root           29 Sep  5 00:45 ar -> arm-angstrom-linux-gnueabi-ar
+```
