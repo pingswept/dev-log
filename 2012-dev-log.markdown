@@ -256,3 +256,9 @@ Fix link
 cd ~/openembedded-rascal/tmp/sysroots/i686-linux/usr/lib/python2.6
 sudo ln -s /usr/local/lib/python2.6/dist-packages/numpy numpy
 ```
+
+### Summary of Scipy progress, 2012-09-05 ###
+
+* Got native compilation working on Rascal except for two subpackages (sparse and special), which take too much memory
+* Scipy recipe starts to compile but then: scipy/special/c_misc/gammaincinv.c:1:20: error: Python.h: No such file or directory
+* Also, BLAS and LAPACK are faked with empty files, but those libraries have been compiled on the Rascal.
