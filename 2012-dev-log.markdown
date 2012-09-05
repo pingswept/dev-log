@@ -177,3 +177,7 @@ scipy/interpolate/src/interpolate.h: In function 'int window_average(T*, T*, int
 scipy/interpolate/src/interpolate.h:145: error: 'lower_bound' is not a member of 'std'
 scipy/interpolate/src/interpolate.h:153: error: 'lower_bound' is not a member of 'std'
 ```
+
+Problem appears to be missing iostream and algorithm headers. See http://members.gamedev.net/sicrane/articles/iostream.html
+
+Hell, let's just comment out the interpolate subpackage too.
