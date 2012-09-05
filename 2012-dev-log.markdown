@@ -213,3 +213,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> np.__version__
 '1.4.1'
 ```
+
+Fix link
+```sh
+cd ~/openembedded-rascal/tmp/sysroots/i686-linux/usr/lib/python2.6
+sudo ln -s /usr/local/lib/python2.6/dist-packages/numpy numpy
+```
