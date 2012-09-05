@@ -151,3 +151,5 @@ Killed process 738 (f951) total-vm:50344kB, anon-rss:40956kB, file-rss:24kB
 ```
 
 f951 is the Fortran compiler (the parser/assembly-generator front-end) that is part of Gfortran, which is part of GCC.
+
+Tried commenting out config.add_subpackage line for *special* subpackage in scipy/setup.py. Seems to have at least made compiler work on something else.
