@@ -208,14 +208,16 @@ Type "help", "copyright", "credits" or "license" for more information.
 3.1415926535897931
 ```
 Problems with various subpackages:
-interpolate: scipy/interpolate/src/interpolate.h uses iostream and algorithm header files, which can't be found
-sparse: scipy/sparse/sparsetools/csr.h uses lots of C++ headers that aren't found
-special: scipy/special/specfun/specfun.f takes too much memory to compile
+* interpolate: scipy/interpolate/src/interpolate.h uses iostream and algorithm header files, which can't be found
+* sparse: scipy/sparse/sparsetools/csr.h uses lots of C++ headers that aren't found
+* special: scipy/special/specfun/specfun.f takes too much memory to compile
 
 Maybe the C++ headers are in here?
 ```sh
 opkg install libstdc++-dev
 ```
+After the subpackages are uncommented, this fixes *interpolate* and maybe *sparse*, but *sparse* then takes too much memory, like *special*.
+
 
 ### Openembedded Scipy recipe ###
 
