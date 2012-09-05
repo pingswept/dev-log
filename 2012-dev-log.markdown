@@ -207,7 +207,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> sp.pi
 3.1415926535897931
 ```
-
+Problems with various subpackages:
+interpolate: scipy/interpolate/src/interpolate.h uses iostream and algorithm header files, which can't be found
+sparse: scipy/sparse/sparsetools/csr.h uses lots of C++ headers that aren't found
+special: scipy/special/specfun/specfun.f takes too much memory to compile
 
 ### Openembedded Scipy recipe ###
 
