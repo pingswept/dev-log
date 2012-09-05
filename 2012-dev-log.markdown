@@ -72,3 +72,16 @@ scipy/spatial/qhull/src/mem.h:23:32: error: numpy/ndarraytypes.h: No such file o
 ```
 
 Using Numpy 1.4.1 on Rascal, but this file doesn't appear until 1.5.0. Downgraded Scipy to 0.8.0, and it's now building correctly. Also tested 0.10.1 and 0.9.0, but both needed missing header file.
+
+Problem building Scipy 0.8.0
+
+```sh
+scipy/special/specfun/specfun.f: In function 'cva2':
+scipy/special/specfun/specfun.f:1627: warning: 'iflag' may be used uninitialized in this function
+scipy/special/specfun/specfun.f: In function 'cjylv':
+scipy/special/specfun/specfun.f:1432: warning: 'IMAGPART_EXPR <cfj>' may be used uninitialized in this function
+scipy/special/specfun/specfun.f:1432: warning: 'REALPART_EXPR <cfj>' may be used uninitialized in this function
+scipy/special/specfun/specfun.f:1437: warning: 'IMAGPART_EXPR <cfy>' may be used uninitialized in this function
+scipy/special/specfun/specfun.f:1437: warning: 'REALPART_EXPR <cfy>' may be used uninitialized in this function
+gfortran: Internal error: Killed (program f951)
+```
