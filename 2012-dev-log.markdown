@@ -181,3 +181,9 @@ scipy/interpolate/src/interpolate.h:153: error: 'lower_bound' is not a member of
 Problem appears to be missing iostream and algorithm headers. See http://members.gamedev.net/sicrane/articles/iostream.html
 
 Hell, let's just comment out the interpolate subpackage too.
+
+### Scipy recipe ###
+
+Need Numpy 1.4+, but Numpy 1.3.0 is installed on Ubuntu 10.04 LTS, and for some reason, the host library is used by OE.
+
+sudo apt-get install python-pip
