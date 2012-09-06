@@ -341,3 +341,8 @@ opkg install bzip2
 [root@rascal14:~/ATLAS]: cd rascal-atlas/
 [root@rascal14:~/ATLAS/rascal-atlas]: ../configure --shared
 ```
+
+Building Scipy 0.8.0 crashes with error: Python.h: No such file or directory
+```sh
+ln -s arm-angstrom-linux-gnueabi armv5te-angstrom-linux-gnueabi
+```
