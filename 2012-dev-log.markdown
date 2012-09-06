@@ -344,5 +344,5 @@ opkg install bzip2
 
 Building Scipy 0.8.0 crashes with error: Python.h: No such file or directory
 ```sh
-ln -s arm-angstrom-linux-gnueabi armv5te-angstrom-linux-gnueabi
+ln -s armv5te-angstrom-linux-gnueabi arm-angstrom-linux-gnueabi
 ```
