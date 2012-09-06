@@ -335,3 +335,9 @@ make: *** [build] Error 2
 ```sh
 opkg install bzip2
 ```
+
+```sh
+[root@rascal14:~/ATLAS]: mkdir rascal-atlas
+[root@rascal14:~/ATLAS]: cd rascal-atlas/
+[root@rascal14:~/ATLAS/rascal-atlas]: ../configure --shared
+```
