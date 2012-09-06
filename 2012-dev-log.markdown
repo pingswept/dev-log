@@ -331,3 +331,7 @@ make[1]: *** [build] Error 255
 make[1]: Leaving directory `/home/root/ATLAS/rascal-atlas'
 make: *** [build] Error 2
 ```
+
+```sh
+opkg install bzip2
+```
