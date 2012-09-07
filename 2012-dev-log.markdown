@@ -362,3 +362,10 @@ Building Scipy 0.8.0 crashes with error: Python.h: No such file or directory
 ```sh
 ln -s armv5te-angstrom-linux-gnueabi arm-angstrom-linux-gnueabi
 ```
+
+### A/D converter shield ###
+
+Candidate converters
+
+AD1974: 4 ch, 24 bit, SPI, $9. Intended for audio. Max input range of 1.9 V. Maybe not a good choice.
+AD7657: 6 ch, 14 bit, SPI, $19. Series: AD7656,7,8. Next gen product is AD7606,7,8. 20% more $, but full system.
