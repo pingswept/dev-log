@@ -218,6 +218,22 @@ opkg install libstdc++-dev
 ```
 After the subpackages are uncommented, this fixes *interpolate* and maybe *sparse*, but *sparse* then takes too much memory, like *special*.
 
+Error with sparse subpackage
+```sh
+building 'scipy.sparse.sparsetools._csr' extension
+compiling C++ sources
+C compiler: arm-angstrom-linux-gnueabi-g++ -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -fPIC
+
+compile options: '-I/usr/lib/python2.6/site-packages/numpy/core/include -I/usr/include/python2.6 -c'
+arm-angstrom-linux-gnueabi-g++: scipy/sparse/sparsetools/csr_wrap.cxx
+arm-angstrom-linux-gnueabi-g++: Internal error: Killed (program cc1plus)
+Please submit a full bug report.
+See <http://gcc.gnu.org/bugs.html> for instructions.
+arm-angstrom-linux-gnueabi-g++: Internal error: Killed (program cc1plus)
+Please submit a full bug report.
+See <http://gcc.gnu.org/bugs.html> for instructions.
+error: Command "arm-angstrom-linux-gnueabi-g++ -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -fPIC -I/usr/lib/python2.6/site-packages/numpy/core/include -I/usr/include/python2.6 -c scipy/sparse/sparsetools/csr_wrap.cxx -o build/temp.linux-armv5tejl-2.6/scipy/sparse/sparsetools/csr_wrap.o" failed with exit status 1
+```
 
 ### Openembedded Scipy recipe ###
 
