@@ -306,6 +306,15 @@ sudo ln -s /usr/local/lib/python2.6/dist-packages/numpy numpy
 * Scipy recipe starts to compile but then: scipy/special/c_misc/gammaincinv.c:1:20: error: Python.h: No such file or directory
 * Also, BLAS and LAPACK are faked with empty files, but those libraries have been compiled on the Rascal.
 
+Building Scipy 0.8.0 crashes with error: Python.h: No such file or directory
+```sh
+ln -s armv5te-angstrom-linux-gnueabi arm-angstrom-linux-gnueabi
+```
+### Scipy build, overall strategy ###
+
+Native build: won't build specfun.f (395 kB, largest .f file in Scipy), or csr_wrap.cxx. 
+Cross-compile: uses host's cc and ld instead of cross-tools, which results in "Relocations in generic ELF" when trying to link fftpack.
+
 ### Building ATLAS ###
 
 ```sh
@@ -384,15 +393,6 @@ opkg install bzip2
 [root@rascal14:~/ATLAS]: cd rascal-atlas/
 [root@rascal14:~/ATLAS/rascal-atlas]: ../configure --shared
 ```
-
-Building Scipy 0.8.0 crashes with error: Python.h: No such file or directory
-```sh
-ln -s armv5te-angstrom-linux-gnueabi arm-angstrom-linux-gnueabi
-```
-### Scipy build, overall strategy ###
-
-Native build: won't build specfun.f (395 kB, largest .f file in Scipy), or csr_wrap.cxx. 
-Cross-compile: uses host's cc and ld instead of cross-tools, which results in "Relocations in generic ELF" when trying to link fftpack.
 
 ### A/D converter shield ###
 
