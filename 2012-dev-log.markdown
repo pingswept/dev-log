@@ -234,6 +234,33 @@ Please submit a full bug report.
 See <http://gcc.gnu.org/bugs.html> for instructions.
 error: Command "arm-angstrom-linux-gnueabi-g++ -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -fPIC -I/usr/lib/python2.6/site-packages/numpy/core/include -I/usr/include/python2.6 -c scipy/sparse/sparsetools/csr_wrap.cxx -o build/temp.linux-armv5tejl-2.6/scipy/sparse/sparsetools/csr_wrap.o" failed with exit status 1
 ```
+### Trying to fix native Rascal build of Scipy ###
+
+Still can't get sparse and special subpackages to build.
+
+Attempting to run garbage collection more often, as suggested here: http://hostingfu.com/article/compiling-with-gcc-on-low-memory-vps
+```sh
+CFLAGS="$CFLAGS --param ggc-min-expand=0 --param ggc-min-heapsize=8192" python setup.py build
+```
+
+```sh
+building 'scipy.sparse.sparsetools._csr' extension
+compiling C++ sources
+C compiler: arm-angstrom-linux-gnueabi-g++ -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -DNDEBUG -g -O3 -Wall --param ggc-min-expand=0 --param ggc-min-heapsize=8192 -fPIC
+
+compile options: '-I/usr/lib/python2.6/site-packages/numpy/core/include -I/usr/include/python2.6 -c'
+arm-angstrom-linux-gnueabi-g++: scipy/sparse/sparsetools/csr_wrap.cxx
+arm-angstrom-linux-gnueabi-g++: Internal error: Killed (program cc1plus)
+Please submit a full bug report.
+See <http://gcc.gnu.org/bugs.html> for instructions.
+arm-angstrom-linux-gnueabi-g++: Internal error: Killed (program cc1plus)
+Please submit a full bug report.
+See <http://gcc.gnu.org/bugs.html> for instructions.
+error: Command "arm-angstrom-linux-gnueabi-g++ -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -DNDEBUG -g -O3 -Wall --param ggc-min-expand=0 --param ggc-min-heapsize=8192 -fPIC -I/usr/lib/python2.6/site-packages/numpy/core/include -I/usr/include/python2.6 -c scipy/sparse/sparsetools/csr_wrap.cxx -o build/temp.linux-armv5tejl-2.6/scipy/sparse/sparsetools/csr_wrap.o" failed with exit status 1
+```
+Also tried overriding -O3 with -O0, as http://stackoverflow.com/questions/6928110/how-may-i-override-the-compiler-gcc-flags-that-setup-py-uses-by-default
+
+It does appear that the last setting on the command line is what takes effect, but the results are always the same, i.e. cc1plus still gets killed.
 
 ### Openembedded Scipy recipe ###
 
@@ -362,6 +389,10 @@ Building Scipy 0.8.0 crashes with error: Python.h: No such file or directory
 ```sh
 ln -s armv5te-angstrom-linux-gnueabi arm-angstrom-linux-gnueabi
 ```
+### Scipy build, overall strategy ###
+
+Native build: won't build specfun.f (395 kB, largest .f file in Scipy), or csr_wrap.cxx. 
+Cross-compile: uses host's cc and ld instead of cross-tools, which results in "Relocations in generic ELF" when trying to link fftpack.
 
 ### A/D converter shield ###
 
