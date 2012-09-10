@@ -403,3 +403,11 @@ AD7657: 6 ch, 14 bit, SPI, $19. Series: AD7656,7,8. Next gen product is AD7606,7
 AD7607: 8 ch, 14 bit, SPI, $15.29 in qty 100. (Appears to be pin-compatible with AD7606 (16 bit, $18.72) and AD7608 (18 bit, $26.43).)
 
 AD760x uses 64-pin LQFP package, 0.50 mm pitch.
+
+*Screw terminals*
+
+0.100" pitch
+Phoenix Contact 1725711, 8 pos, Combicon MPT, $4.11 in qty 100 277-1279-ND
+TE Connectivity 282834-8, 8 pos, Buchanan, $3.65 in qty. 100 A98338-ND
+
+3.5 mm pitch
