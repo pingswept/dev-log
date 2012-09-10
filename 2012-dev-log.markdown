@@ -407,7 +407,10 @@ AD760x uses 64-pin LQFP package, 0.50 mm pitch.
 *Screw terminals*
 
 0.100" pitch
-Phoenix Contact 1725711, 8 pos, Combicon MPT, $4.11 in qty 100 277-1279-ND
-TE Connectivity 282834-8, 8 pos, Buchanan, $3.65 in qty. 100 A98338-ND
+Phoenix Contact 1725711, 8 pos, Combicon MPT, $4.11 in qty 100, 277-1279-ND, green
+TE Connectivity 282834-8, 8 pos, Buchanan, $3.65 in qty. 100, A98338-ND, green
+Onshore Technology OSTVN08A150, 8 pos, $1.27 in qty. 100, ED10566-ND, green
 
 3.5 mm pitch
+Phoenix Contact 1985250, 8 pos, Combicon PTSA, $0.73 in qty. 100, 277-1628-ND, green (funny footprint)
+Onshore Technology OSTTE080104, 8 pos, $0.86 in qty. 100, ED2746-ND, black
