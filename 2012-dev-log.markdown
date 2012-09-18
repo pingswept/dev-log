@@ -414,3 +414,16 @@ AD760x uses 64-pin LQFP package, 0.50 mm pitch.
 3.5 mm pitch
 * Phoenix Contact 1985250, 8 pos, Combicon PTSA, $0.73 in qty. 100, 277-1628-ND, green (funny footprint)
 * Onshore Technology OSTTE080104, 8 pos, $0.86 in qty. 100, ED2746-ND, black
+
+### Adding swap file ###
+
+```sh
+[root@rascal14:~]: dd if=/dev/zero of=/home/root/swap bs=1M count=100        
+100+0 records in
+100+0 records out
+[root@rascal14:~]: chmod 0600 swap
+[root@rascal14:~]: mkswap swap
+Setting up swapspace version 1, size = 102396 KiB
+no label, UUID=4b17557d-afce-4e73-aea7-5a124e92355b
+[root@rascal14:~]: swapon swap
+```
