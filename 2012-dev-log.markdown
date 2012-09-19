@@ -432,3 +432,11 @@ Useful refs:
 
 * http://www.linuxquestions.org/questions/linux-general-1/2-6-3-swapon-function-not-implemented-155442/
 * http://askubuntu.com/questions/126018/adding-a-new-swap-file-how-to-edit-fstab-to-enable-swap-after-reboot/126049#126049
+
+### More Scipy cross-compilation ###
+
+What I think the command line should look like, based on Numpy:
+
+```sh
+arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -fPIC
+```
