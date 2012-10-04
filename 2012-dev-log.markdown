@@ -809,3 +809,24 @@ Please submit a full bug report.
 See <http://gcc.gnu.org/bugs.html> for instructions.
 error: Command "arm-angstrom-linux-gnueabi-g++ -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -fPIC -D__STDC_FORMAT_MACROS=1 -I/usr/lib/python2.6/site-packages/numpy/core/include -I/usr/include/python2.6 -c scipy/sparse/sparsetools/csc_wrap.cxx -o build/temp.linux-armv5tejl-2.6/scipy/sparse/sparsetools/csc_wrap.o" failed with exit status 1
 ```
+
+# Testing Edimax driver #
+
+  [root@rascal14:/var/www]: lsusb   
+  Bus 001 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+  Bus 001 Device 002: ID 7392:7811  
+  [root@rascal14:/var/www]: insmod 8192cu.ko
+  insmod: cannot insert '8192cu.ko': unknown symbol in module, or unknown parameter
+  [root@rascal14:/var/www]: insmod 8192cu   
+  insmod: cannot insert '8192cu': unknown symbol in module, or unknown parameter
+  [root@rascal14:/var/www]: modprobe 8192cu
+  [root@rascal14:/var/www]: lsmod
+  Module                  Size  Used by    Not tainted
+  zd1211rw               41875  0 
+  v4l2_int_device         1974  0 
+  v4l2_common             6297  0 
+  uvcvideo               55337  0 
+  videodev               60777  2 v4l2_common,uvcvideo
+  v4l1_compat            13060  2 uvcvideo,videodev
+  8192cu                523932  0
+
