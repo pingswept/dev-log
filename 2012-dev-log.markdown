@@ -837,7 +837,7 @@ For native build, these are the commands that are executed. This creates a worki
     gcc -g -O2 -Wall -DVER=\"1.4c\" -DSSH_PATH=\"/usr/bin/ssh\"   -c -o autossh.o autossh.c
     gcc  -o autossh autossh.o -lnsl
 
-Here's what the Makefile.in looks like after transformation via configure into Makefile:
+Here's what the start of Makefile.in looks like after transformation via configure into Makefile:
 
     # $Id: Makefile.in,v 1.5 2011/10/12 20:29:22 harding Exp $
     #
@@ -865,3 +865,4 @@ Here's what the Makefile.in looks like after transformation via configure into M
     LD=     @LD@
     LDFLAGS=
     LIBS=       -lnsl
+    <snip>
