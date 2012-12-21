@@ -1126,3 +1126,7 @@ deleting files/beriberi/
     [root@rascal14:~]: lsusb
     Bus 001 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
     Bus 001 Device 003: ID 1ffb:0089
+
+### uWSGI on Linode ###
+
+uwsgi --master --http 0.0.0.0:8080 --plugin python --file /var/www/ip-app.py --callable app
