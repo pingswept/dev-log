@@ -1,2 +1,2 @@
-sudo apt-get install nodejs
-npm install express
+    sudo apt-get install nodejs npm
+    npm install express
