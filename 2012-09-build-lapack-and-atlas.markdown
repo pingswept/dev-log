@@ -120,26 +120,6 @@ Useful refs:
 * http://www.linuxquestions.org/questions/linux-general-1/2-6-3-swapon-function-not-implemented-155442/
 * http://askubuntu.com/questions/126018/adding-a-new-swap-file-how-to-edit-fstab-to-enable-swap-after-reboot/126049#126049
 
-# Testing Edimax driver #
-
-  [root@rascal14:/var/www]: lsusb   
-  Bus 001 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-  Bus 001 Device 002: ID 7392:7811  
-  [root@rascal14:/var/www]: insmod 8192cu.ko
-  insmod: cannot insert '8192cu.ko': unknown symbol in module, or unknown parameter
-  [root@rascal14:/var/www]: insmod 8192cu   
-  insmod: cannot insert '8192cu': unknown symbol in module, or unknown parameter
-  [root@rascal14:/var/www]: modprobe 8192cu
-  [root@rascal14:/var/www]: lsmod
-  Module                  Size  Used by    Not tainted
-  zd1211rw               41875  0 
-  v4l2_int_device         1974  0 
-  v4l2_common             6297  0 
-  uvcvideo               55337  0 
-  videodev               60777  2 v4l2_common,uvcvideo
-  v4l1_compat            13060  2 uvcvideo,videodev
-  8192cu                523932  0
-
 # Building Autossh with OpenEmbedded #
 
 For native build, these are the commands that are executed. This creates a working executable.
