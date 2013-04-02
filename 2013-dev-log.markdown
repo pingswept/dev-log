@@ -17,3 +17,9 @@ Install Node.JS to run Gatekeeper.
     node server.js
 
 Add client ID and secret from OAuth app registration to gatekeeper/config.json.
+
+### Making Wiegand protocol Linux kernel driver work with the Rascal ###
+
+Forked Mark Jason Anderson's repo on Github, patched to change kernel directory, switch to pins that the Rascal connects to Arduino headers.
+
+Forked repo: https://github.com/rascalmicro/wiegand-linux
