@@ -1,3 +1,34 @@
+### Testing SPI ###
+
+Sends data out MOSI and pulses clock at ~15 MHz, but chip select stays low. Expect SS0 on PB3, AKA M16. (Checked SS0, SS1, SS2, SS3.)
+
+```bash
+echo "Aaron Burr" > /dev/spidev1.0
+```
+
+Testing with an Arduino SPI slave using code from http://www.gammon.com.au/forum/?id=10892
+
+With the slave code modified to send each character out the serial port immediately, rather than waiting for a newline character, it almost works. Characters are returned, but they're not the right ones. Probably the Rascal max speed of ~15 MHz is too fast for the Arduino. The Arduino can only transmit at 4 MHz. Receive speed might be even slower.
+
+Tried to change driver to slower max speed. Seemed to compile fine.
+
+```bash
+.max_speed_hz   = 15 * 1000 * 10,
+```
+
+But, error in dmesg when driver was loaded.
+
+```bash
+atmel_spi atmel_spi.1: Atmel SPI Controller at 0xfffcc000 (irq 13)
+atmel_spi atmel_spi.1: can't setup spi1.0, status -22
+atmel_spi atmel_spi.1: can't setup spi1.1, status -22
+atmel_spi atmel_spi.1: can't setup spi1.2, status -22
+```
+
+Also, could be problem with 5 V Arduino not registering 3.3 V signals.
+
+(Later discovered it worked fine, but the chip select started way early and ended way late, so it appeared to be eternally low at first glance.)
+
 ### Changing SPI speed ###
 
 Master clock is 132 MHZ; CPU is 396 MHZ (3x MCK); crystal is 18.432 MHZ (MCK/7.16?).
