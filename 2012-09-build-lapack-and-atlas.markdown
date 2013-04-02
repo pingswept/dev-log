@@ -103,14 +103,6 @@ opkg install bzip2
 [root@rascal14:~/ATLAS/rascal-atlas]: ../configure --shared
 ```
 
-### Files that need to be reuploaded to rm.com/files ###
-
-deleting files/beriberi/nginx
-deleting files/beriberi/modules
-deleting files/beriberi/beriberi-binary-bundle-rc2-tar.gz
-deleting files/beriberi/autossh_1.4c-r0.6_armv5te.ipk
-deleting files/beriberi/
-
 ### uWSGI on Linode ###
 
 uwsgi --master --http 0.0.0.0:8080 --plugin python --file /var/www/ip-app.py --callable app
