@@ -102,7 +102,3 @@ opkg install bzip2
 [root@rascal14:~/ATLAS]: cd rascal-atlas/
 [root@rascal14:~/ATLAS/rascal-atlas]: ../configure --shared
 ```
-
-### uWSGI on Linode ###
-
-uwsgi --master --http 0.0.0.0:8080 --plugin python --file /var/www/ip-app.py --callable app
