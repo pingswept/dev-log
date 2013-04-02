@@ -80,36 +80,3 @@ Successfully replaced leftover ctrl_iface socket '/var/run/wpa_supplicant/wlan0'
 Added interface wlan0
 Daemonize..
 ```
-
-### Testing SPI hardware, spidev driver ###
-
-* Recompiled kernel from 4ffb8311bfb54e44c992b959b3849960fc663feb (had some extra wifi drivers enabled)
-
-Appeared in dmesg:
-
-```bash
-atmel_spi atmel_spi.1: Atmel SPI Controller at 0xfffcc000 (irq 13)
-```
-
-Also, boot errors due to conflict with GPIO driver:
-
-```bash
-/etc/init.d/rc: /etc/rc5.d/S60rascal-gpio.sh: line 5: can't create /sys/class/gpio/gpio55/direction: nonexistent directory
-/etc/init.d/rc: /etc/rc5.d/S60rascal-gpio.sh: line 5: can't create /sys/class/gpio/gpio56/direction: nonexistent directory
-/etc/init.d/rc: /etc/rc5.d/S60rascal-gpio.sh: line 5: can't create /sys/class/gpio/gpio67/direction: nonexistent directory
-/etc/init.d/rc: /etc/rc5.d/S60rascal-gpio.sh: line 5: can't create /sys/class/gpio/gpio100/direction: nonexistent directory
-/etc/init.d/rc: /etc/rc5.d/S60rascal-gpio.sh: line 5: can't create /sys/class/gpio/gpio101/direction: nonexistent directory
-```
-
-New files that exist with the new kernel
-
-```bash
-/dev/spidev1.0
-/dev/spidev1.1
-/dev/spidev1.2
-/sys/devices/platform/atmel_spi.1
-/sys/class/spidev/
-/sys/class/spidev/spidev1.0
-/sys/class/spidev/spidev1.1
-/sys/class/spidev/spidev1.2
-```
