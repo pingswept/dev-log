@@ -1,4 +1,3 @@
-
     usb 1-1: new full speed USB device using at91_ohci and address 2
     usb 1-1: USB disconnect, address 2
     usb 1-1: new full speed USB device using at91_ohci and address 3
@@ -250,3 +249,12 @@
     [root@rascal14:~]: lsusb
     Bus 001 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
     Bus 001 Device 003: ID 1ffb:0089
+
+### Controlling Micro Maestro servo controller from serial port ###
+
+    from pytronics import *
+    serialWrite(chr(0x84) + chr(0x01) + chr(0x70) + chr(0x3E))
+    # 0x84 means set target
+    # 0x01 means servo 1
+    # 0x70 0x3E corresponds to 1500 us = 6000 quarter-us
+    # If you take the rightmost 7 bits of 0x70 and 0x3E and concatenate them, you get 6000, LSB first.
