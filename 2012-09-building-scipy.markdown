@@ -268,3 +268,380 @@ ln -s armv5te-angstrom-linux-gnueabi arm-angstrom-linux-gnueabi
 
 Native build: won't build specfun.f (395 kB, largest .f file in Scipy), or csr_wrap.cxx. 
 Cross-compile: uses host's cc and ld instead of cross-tools, which results in "Relocations in generic ELF" when trying to link fftpack.
+
+### More Scipy cross-compilation ###
+
+What I think the command line should look like, based on Numpy:
+
+```sh
+arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -fPIC
+```
+
+When building Scipy natively on the Rascal with 500 MB of swap space, this is what happens:
+
+```sh
+[root@rascal14:~/scipy-0.10.1]: python setup.py build
+Running from scipy source directory.
+blas_opt_info:
+blas_mkl_info:
+  libraries mkl,vml,guide not found in /usr/lib
+  NOT AVAILABLE
+
+atlas_blas_threads_info:
+Setting PTATLAS=ATLAS
+  libraries ptf77blas,ptcblas,atlas not found in /usr/lib
+  NOT AVAILABLE
+
+atlas_blas_info:
+  libraries f77blas,cblas,atlas not found in /usr/lib
+  NOT AVAILABLE
+
+/usr/lib/python2.6/site-packages/numpy/distutils/system_info.py:1425: UserWarning: 
+    Atlas (http://math-atlas.sourceforge.net/) libraries not found.
+    Directories to search for the libraries can be specified in the
+    numpy/distutils/site.cfg file (section [atlas]) or by setting
+    the ATLAS environment variable.
+  warnings.warn(AtlasNotFoundError.__doc__)
+blas_info:
+Replacing _lib_names[0]=='blas' with 'blas'
+Replacing _lib_names[0]=='blas' with 'blas'
+  FOUND:
+    libraries = ['blas']
+    library_dirs = ['/home/root']
+    language = f77
+
+  FOUND:
+    libraries = ['blas']
+    library_dirs = ['/home/root']
+    define_macros = [('NO_ATLAS_INFO', 1)]
+    language = f77
+
+non-existing path in 'scipy/io': 'docs'
+lapack_opt_info:
+lapack_mkl_info:
+mkl_info:
+  libraries mkl,vml,guide not found in /usr/lib
+  NOT AVAILABLE
+
+  NOT AVAILABLE
+
+atlas_threads_info:
+Setting PTATLAS=ATLAS
+  libraries ptf77blas,ptcblas,atlas not found in /usr/lib
+  libraries lapack_atlas not found in /usr/lib
+numpy.distutils.system_info.atlas_threads_info
+  NOT AVAILABLE
+
+atlas_info:
+  libraries f77blas,cblas,atlas not found in /usr/lib
+  libraries lapack_atlas not found in /usr/lib
+numpy.distutils.system_info.atlas_info
+  NOT AVAILABLE
+
+/usr/lib/python2.6/site-packages/numpy/distutils/system_info.py:1340: UserWarning: 
+    Atlas (http://math-atlas.sourceforge.net/) libraries not found.
+    Directories to search for the libraries can be specified in the
+    numpy/distutils/site.cfg file (section [atlas]) or by setting
+    the ATLAS environment variable.
+  warnings.warn(AtlasNotFoundError.__doc__)
+lapack_info:
+Replacing _lib_names[0]=='lapack' with 'lapack'
+Replacing _lib_names[0]=='lapack' with 'lapack'
+  FOUND:
+    libraries = ['lapack']
+    library_dirs = ['/home/root']
+    language = f77
+
+  FOUND:
+    libraries = ['lapack', 'blas']
+    library_dirs = ['/home/root']
+    define_macros = [('NO_ATLAS_INFO', 1)]
+    language = f77
+
+umfpack_info:
+  libraries umfpack not found in /usr/lib
+/usr/lib/python2.6/site-packages/numpy/distutils/system_info.py:470: UserWarning: 
+    UMFPACK sparse solver (http://www.cise.ufl.edu/research/sparse/umfpack/)
+    not found. Directories to search for the libraries can be specified in the
+    numpy/distutils/site.cfg file (section [umfpack]) or by setting
+    the UMFPACK environment variable.
+  warnings.warn(self.notfounderror.__doc__)
+  NOT AVAILABLE
+
+running build
+running config_cc
+unifing config_cc, config, build_clib, build_ext, build commands --compiler options
+running config_fc
+unifing config_fc, config, build_clib, build_ext, build commands --fcompiler options
+running build_src
+build_src
+building py_modules sources
+building library "dfftpack" sources
+building library "fftpack" sources
+building library "linpack_lite" sources
+building library "mach" sources
+building library "quadpack" sources
+building library "odepack" sources
+building library "dop" sources
+building library "fitpack" sources
+building library "odrpack" sources
+building library "minpack" sources
+building library "rootfind" sources
+building library "superlu_src" sources
+building library "arpack_scipy" sources
+building library "qhull" sources
+building library "sc_c_misc" sources
+building library "sc_cephes" sources
+building library "sc_mach" sources
+building library "sc_toms" sources
+building library "sc_amos" sources
+building library "sc_cdf" sources
+building library "sc_specfun" sources
+building library "statlib" sources
+building extension "scipy.cluster._vq" sources
+building extension "scipy.cluster._hierarchy_wrap" sources
+building extension "scipy.fftpack._fftpack" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.fftpack.convolve" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.integrate._quadpack" sources
+building extension "scipy.integrate._odepack" sources
+building extension "scipy.integrate.vode" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.integrate._dop" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.interpolate.interpnd" sources
+building extension "scipy.interpolate._fitpack" sources
+building extension "scipy.interpolate.dfitpack" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+  adding 'build/src.linux-armv5tejl-2.6/scipy/interpolate/src/dfitpack-f2pywrappers.f' to sources.
+building extension "scipy.interpolate._interpolate" sources
+building extension "scipy.io.matlab.streams" sources
+building extension "scipy.io.matlab.mio_utils" sources
+building extension "scipy.io.matlab.mio5_utils" sources
+building extension "scipy.lib.blas.fblas" sources
+f2py options: ['skip:', ':']
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+  adding 'build/src.linux-armv5tejl-2.6/build/src.linux-armv5tejl-2.6/scipy/lib/blas/fblas-f2pywrappers.f' to sources.
+building extension "scipy.lib.blas.cblas" sources
+  adding 'build/src.linux-armv5tejl-2.6/scipy/lib/blas/cblas.pyf' to sources.
+f2py options: ['skip:', ':']
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.lib.lapack.flapack" sources
+f2py options: ['skip:', ':']
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.lib.lapack.clapack" sources
+  adding 'build/src.linux-armv5tejl-2.6/scipy/lib/lapack/clapack.pyf' to sources.
+f2py options: ['skip:', ':']
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.lib.lapack.calc_lwork" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.lib.lapack.atlas_version" sources
+building extension "scipy.linalg.fblas" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+  adding 'build/src.linux-armv5tejl-2.6/build/src.linux-armv5tejl-2.6/scipy/linalg/fblas-f2pywrappers.f' to sources.
+building extension "scipy.linalg.cblas" sources
+  adding 'build/src.linux-armv5tejl-2.6/scipy/linalg/cblas.pyf' to sources.
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.linalg.flapack" sources
+  adding 'build/src.linux-armv5tejl-2.6/scipy/linalg/flapack.pyf' to sources.
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+  adding 'build/src.linux-armv5tejl-2.6/build/src.linux-armv5tejl-2.6/scipy/linalg/flapack-f2pywrappers.f' to sources.
+building extension "scipy.linalg.clapack" sources
+  adding 'build/src.linux-armv5tejl-2.6/scipy/linalg/clapack.pyf' to sources.
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.linalg._flinalg" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.linalg.calc_lwork" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.linalg.atlas_version" sources
+building extension "scipy.odr.__odrpack" sources
+building extension "scipy.optimize._minpack" sources
+building extension "scipy.optimize._zeros" sources
+building extension "scipy.optimize._lbfgsb" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.optimize.moduleTNC" sources
+building extension "scipy.optimize._cobyla" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.optimize.minpack2" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.optimize._slsqp" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.optimize._nnls" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.signal.sigtools" sources
+building extension "scipy.signal.spectral" sources
+building extension "scipy.signal.spline" sources
+building extension "scipy.sparse.linalg.isolve._iterative" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.sparse.linalg.dsolve._superlu" sources
+building extension "scipy.sparse.linalg.dsolve.umfpack.__umfpack" sources
+building extension "scipy.sparse.linalg.eigen.arpack._arpack" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+  adding 'build/src.linux-armv5tejl-2.6/build/src.linux-armv5tejl-2.6/scipy/sparse/linalg/eigen/arpack/_arpack-f2pywrappers.f' to sources.
+building extension "scipy.sparse.sparsetools._csr" sources
+building extension "scipy.sparse.sparsetools._csc" sources
+building extension "scipy.sparse.sparsetools._coo" sources
+building extension "scipy.sparse.sparsetools._bsr" sources
+building extension "scipy.sparse.sparsetools._dia" sources
+building extension "scipy.sparse.sparsetools._csgraph" sources
+building extension "scipy.spatial.qhull" sources
+building extension "scipy.spatial.ckdtree" sources
+building extension "scipy.spatial._distance_wrap" sources
+building extension "scipy.special._cephes" sources
+building extension "scipy.special.specfun" sources
+f2py options: ['--no-wrap-functions']
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.special.orthogonal_eval" sources
+building extension "scipy.special.lambertw" sources
+building extension "scipy.special._logit" sources
+building extension "scipy.stats.statlib" sources
+f2py options: ['--no-wrap-functions']
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.stats.vonmises_cython" sources
+building extension "scipy.stats.futil" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+building extension "scipy.stats.mvn" sources
+f2py options: []
+  adding 'build/src.linux-armv5tejl-2.6/fortranobject.c' to sources.
+  adding 'build/src.linux-armv5tejl-2.6' to include_dirs.
+  adding 'build/src.linux-armv5tejl-2.6/scipy/stats/mvn-f2pywrappers.f' to sources.
+building extension "scipy.ndimage._nd_image" sources
+building data_files sources
+build_src: building npy-pkg config files
+running build_py
+copying scipy/setup.py -> build/lib.linux-armv5tejl-2.6/scipy
+copying scipy/version.py -> build/lib.linux-armv5tejl-2.6/scipy
+copying build/src.linux-armv5tejl-2.6/scipy/__config__.py -> build/lib.linux-armv5tejl-2.6/scipy
+running build_clib
+customize UnixCCompiler
+customize UnixCCompiler using build_clib
+customize GnuFCompiler
+Could not locate executable g77
+Could not locate executable f77
+customize IntelFCompiler
+Could not locate executable ifort
+Could not locate executable ifc
+customize LaheyFCompiler
+Could not locate executable lf95
+customize PGroupFCompiler
+Could not locate executable pgfortran
+customize AbsoftFCompiler
+Could not locate executable f90
+customize NAGFCompiler
+Found executable /usr/bin/f95
+customize VastFCompiler
+customize CompaqFCompiler
+Could not locate executable fort
+customize IntelItaniumFCompiler
+Could not locate executable efort
+Could not locate executable efc
+customize IntelEM64TFCompiler
+customize Gnu95FCompiler
+Found executable /usr/bin/gfortran
+customize Gnu95FCompiler
+customize Gnu95FCompiler using build_clib
+running build_ext
+customize UnixCCompiler
+customize UnixCCompiler using build_ext
+extending extension 'scipy.sparse.linalg.dsolve._superlu' defined_macros with [('USE_VENDOR_BLAS', 1)]
+customize UnixCCompiler
+customize UnixCCompiler using build_ext
+customize GnuFCompiler
+customize IntelFCompiler
+customize LaheyFCompiler
+customize PGroupFCompiler
+customize AbsoftFCompiler
+customize NAGFCompiler
+customize VastFCompiler
+customize CompaqFCompiler
+customize IntelItaniumFCompiler
+customize IntelEM64TFCompiler
+customize Gnu95FCompiler
+customize Gnu95FCompiler
+customize Gnu95FCompiler using build_ext
+building 'scipy.sparse.sparsetools._csr' extension
+compiling C++ sources
+C compiler: arm-angstrom-linux-gnueabi-g++ -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -fPIC
+
+compile options: '-D__STDC_FORMAT_MACROS=1 -I/usr/lib/python2.6/site-packages/numpy/core/include -I/usr/include/python2.6 -c'
+arm-angstrom-linux-gnueabi-g++: scipy/sparse/sparsetools/csr_wrap.cxx
+In file included from scipy/sparse/sparsetools/py3k.h:23,
+                 from scipy/sparse/sparsetools/csr_wrap.cxx:2835:
+/usr/lib/python2.6/site-packages/numpy/core/include/numpy/npy_3kcompat.h: In function 'PyObject* npy_PyFile_OpenFile(PyObject*, char*)':
+/usr/lib/python2.6/site-packages/numpy/core/include/numpy/npy_3kcompat.h:258: warning: deprecated conversion from string constant to 'char*'
+/usr/lib/python2.6/site-packages/numpy/core/include/numpy/npy_3kcompat.h: At global scope:
+/usr/lib/python2.6/site-packages/numpy/core/include/numpy/npy_3kcompat.h:391: warning: 'void simple_capsule_dtor(void*)' defined but not used
+arm-angstrom-linux-gnueabi-g++ -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -shared build/temp.linux-armv5tejl-2.6/scipy/sparse/sparsetools/csr_wrap.o -L/usr/lib -Lbuild/temp.linux-armv5tejl-2.6 -lpython2.6 -o build/lib.linux-armv5tejl-2.6/scipy/sparse/sparsetools/_csr.so
+building 'scipy.sparse.sparsetools._csc' extension
+compiling C++ sources
+C compiler: arm-angstrom-linux-gnueabi-g++ -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -fPIC
+
+compile options: '-D__STDC_FORMAT_MACROS=1 -I/usr/lib/python2.6/site-packages/numpy/core/include -I/usr/include/python2.6 -c'
+arm-angstrom-linux-gnueabi-g++: scipy/sparse/sparsetools/csc_wrap.cxx
+In file included from scipy/sparse/sparsetools/py3k.h:23,
+                 from scipy/sparse/sparsetools/csc_wrap.cxx:2821:
+/usr/lib/python2.6/site-packages/numpy/core/include/numpy/npy_3kcompat.h: In function 'PyObject* npy_PyFile_OpenFile(PyObject*, char*)':
+/usr/lib/python2.6/site-packages/numpy/core/include/numpy/npy_3kcompat.h:258: warning: deprecated conversion from string constant to 'char*'
+/usr/lib/python2.6/site-packages/numpy/core/include/numpy/npy_3kcompat.h: At global scope:
+/usr/lib/python2.6/site-packages/numpy/core/include/numpy/npy_3kcompat.h:391: warning: 'void simple_capsule_dtor(void*)' defined but not used
+arm-angstrom-linux-gnueabi-g++: Internal error: Segmentation fault (program as)
+Please submit a full bug report.
+See <http://gcc.gnu.org/bugs.html> for instructions.
+In file included from scipy/sparse/sparsetools/py3k.h:23,
+                 from scipy/sparse/sparsetools/csc_wrap.cxx:2821:
+/usr/lib/python2.6/site-packages/numpy/core/include/numpy/npy_3kcompat.h: In function 'PyObject* npy_PyFile_OpenFile(PyObject*, char*)':
+/usr/lib/python2.6/site-packages/numpy/core/include/numpy/npy_3kcompat.h:258: warning: deprecated conversion from string constant to 'char*'
+/usr/lib/python2.6/site-packages/numpy/core/include/numpy/npy_3kcompat.h: At global scope:
+/usr/lib/python2.6/site-packages/numpy/core/include/numpy/npy_3kcompat.h:391: warning: 'void simple_capsule_dtor(void*)' defined but not used
+arm-angstrom-linux-gnueabi-g++: Internal error: Segmentation fault (program as)
+Please submit a full bug report.
+See <http://gcc.gnu.org/bugs.html> for instructions.
+error: Command "arm-angstrom-linux-gnueabi-g++ -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -fPIC -D__STDC_FORMAT_MACROS=1 -I/usr/lib/python2.6/site-packages/numpy/core/include -I/usr/include/python2.6 -c scipy/sparse/sparsetools/csc_wrap.cxx -o build/temp.linux-armv5tejl-2.6/scipy/sparse/sparsetools/csc_wrap.o" failed with exit status 1
+```
