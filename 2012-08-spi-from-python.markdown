@@ -1,9 +1,3 @@
-### Tutorial ideas ###
-
-Need a page about the Javascript/jQuery side of making the Rascal work. Then link to that page from http://rascalmicro.com/docs/basic-tutorial-python-on-the-rascal.html
-
-But first, make a wrapper for $.post called rascal.send because $.post scares people who are new to jQuery.
-
 ### Back to SPI speed stuff ###
 
 ```c
