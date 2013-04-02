@@ -23,3 +23,10 @@ Add client ID and secret from OAuth app registration to gatekeeper/config.json.
 Forked Mark Jason Anderson's repo on Github, patched to change kernel directory, switch to pins that the Rascal connects to Arduino headers.
 
 Forked repo: https://github.com/rascalmicro/wiegand-linux
+
+Pinout is now:
+    DATA0:     pin 2 (PB7)
+    DATA1:     pin 3 (PB6)
+    green LED: pin 4 (PB9)
+    unknown:   pin 5 (PB8)
+    ground:    GND
