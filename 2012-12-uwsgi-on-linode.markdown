@@ -32,4 +32,7 @@ Also need to change authentication scheme. Ubuntu Linux stores password hashes i
     chown -R www-data:www-data drafts
     git clone git@github.com:rascalmicro/rascal-www.git rascalmicro.com
 
-    wget https://github.com/EnigmaCurry/blogofile/archive/0.7.1.tar.gz
+    wget https://github.com/EnigmaCurry/blogofile/archive/0.7.tar.gz
+    tar xzvf 0.7.tar.gz
+    cd blogofile-0.7
+    python setup.py install
