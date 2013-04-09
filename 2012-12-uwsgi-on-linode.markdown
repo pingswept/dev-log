@@ -34,5 +34,5 @@ Also need to change authentication scheme. Ubuntu Linux stores password hashes i
 
     git clone git@github.com:EnigmaCurry/blogofile.git
     cd blogofile
-    git checkout 9f6a94cfebe0cbd49b23
+    git checkout 9f6a94cfebe0cbd49b23 # This rev of Blogofile works. 0.7 and 0.7.1 don't for my setup.
     python setup.py install --record files.txt
