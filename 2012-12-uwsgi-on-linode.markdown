@@ -16,3 +16,4 @@ Put this in /etc/uwsgi/apps-available and symlink to it from /etc/uwsgi/apps-ena
     uid = www-data
     gid = www-data
 
+Also need to change authentication scheme. Ubuntu Linux stores password hashes in /etc/shadow. Not sure how the hashes are generated.
