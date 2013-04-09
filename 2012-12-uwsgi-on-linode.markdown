@@ -1,5 +1,9 @@
 ### Running control freak with uWSGI on Linode ###
 
+Install some packages
+
+    sudo apt-get install uwsgi uwsgi-plugin-http uwsgi-plugin-python
+
 Put this in /etc/uwsgi/apps-available and symlink to it from /etc/uwsgi/apps-enabled
 
     [uwsgi]
@@ -11,3 +15,4 @@ Put this in /etc/uwsgi/apps-available and symlink to it from /etc/uwsgi/apps-ena
     catch-exceptions = True
     uid = www-data
     gid = www-data
+
