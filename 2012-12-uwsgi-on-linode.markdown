@@ -26,13 +26,13 @@ Move editor directory up a level so that it is the root dir (check against the f
 
 Also need to change authentication scheme. Ubuntu Linux stores password hashes in /etc/shadow. Not sure how the hashes are generated.
 
-### Setting up Blogofile and draft sites ###
+### Setting up draft sites and Blogofile ###
 
     mkdir /var/drafts
     chown -R www-data:www-data drafts
     git clone git@github.com:rascalmicro/rascal-www.git rascalmicro.com
 
-    wget https://github.com/EnigmaCurry/blogofile/archive/0.7.tar.gz
-    tar xzvf 0.7.tar.gz
-    cd blogofile-0.7
-    python setup.py install
+    git clone git@github.com:EnigmaCurry/blogofile.git
+    cd blogofile
+    git checkout 9f6a94cfebe0cbd49b23
+    python setup.py install --record files.txt
