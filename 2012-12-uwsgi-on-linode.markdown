@@ -4,7 +4,7 @@ Install some packages
 
     sudo apt-get install uwsgi uwsgi-plugin-http uwsgi-plugin-python
 
-Put this in /etc/uwsgi/apps-available/control-freak.ini and symlink to it from /etc/uwsgi/apps-enabled
+Put this in /etc/uwsgi/apps-available/red.ini and symlink to it from /etc/uwsgi/apps-enabled
 
     [uwsgi]
     http = 0.0.0.0:3031
@@ -18,11 +18,11 @@ Put this in /etc/uwsgi/apps-available/control-freak.ini and symlink to it from /
 
 Clone Control Freak git repo.
 
-    git clone git@github.com:rascalmicro/control-freak.git
+    git clone git@github.com:rascalmicro/red.git
     git submodule init
     git submodule update # pulls in CodeMirror editor repo
 
-Move editor directory up a level so that it is the root dir (check against the file path listed in control-freak.ini.
+Move editor directory up a level so that it is the root dir (check against the file path listed in red.ini.
 
 Also need to change authentication scheme. Ubuntu Linux stores password hashes in /etc/shadow. Not sure how the hashes are generated.
 
