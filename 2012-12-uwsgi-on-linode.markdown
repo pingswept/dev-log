@@ -16,7 +16,7 @@ Put this in /etc/uwsgi/apps-available/red.ini and symlink to it from /etc/uwsgi/
     uid = www-data
     gid = www-data
 
-Clone Control Freak git repo.
+Clone Red git repo.
 
     git clone git@github.com:rascalmicro/red.git
     git submodule init
