@@ -3,6 +3,7 @@
 Install some packages
 
     sudo apt-get install uwsgi uwsgi-plugin-http uwsgi-plugin-python
+    sudo pip install sh
 
 Put this in /etc/uwsgi/apps-available/red.ini and symlink to it from /etc/uwsgi/apps-enabled
 
