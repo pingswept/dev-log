@@ -1,4 +1,4 @@
-### Running control freak with uWSGI on Linode ###
+### Running Red with uWSGI on Linode ###
 
 Install some packages
 
