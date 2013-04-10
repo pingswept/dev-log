@@ -10,7 +10,7 @@ Put this in /etc/uwsgi/apps-available/control-freak.ini and symlink to it from /
     http = 0.0.0.0:3031
     master = true
     plugin = python
-    file = /var/www/editor/__init__.py
+    file = /var/www/red/__init__.py
     callable = editor
     catch-exceptions = True
     uid = www-data
