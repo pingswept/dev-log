@@ -12,9 +12,9 @@ To enable interrupts there are two steps:
 
 After completing the above steps, put something like this in server.py:
 
-@pin_rising(70)
-def on_pin70_rising(v):
-        print "Saw a rising edge on pin 70, toggling pin 11 in response"
-        pytronics.toggle(11)
+        @pin_rising(70)
+        def on_pin70_rising(v):
+                print "Saw a rising edge on pin 70, toggling pin 11 in response"
+                pytronics.toggle(11)
 
 The function on_pin70_rising() should now run whenever gpio 70 (pin #3 in the Arduino numbering scheme) is pulled high.  There is another possible decorator called @pin_falling that can be used in an analogous way to see the falling edge.
