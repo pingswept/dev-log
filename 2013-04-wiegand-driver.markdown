@@ -57,3 +57,56 @@ To make the kernel load on boot, the binary should be moved to /lib/modules/2.6.
      * print_dependents_warning: Force removal of this package and its dependents
      * print_dependents_warning: with --force-removal-of-dependent-packages.
     [root@rascal14:~]: opkg remove --force-depends libgcc-dev
+    Removing package libgcc-dev from root...
+    [root@rascal14:~]: opkg install udev-dev
+    Installing udev-dev (151-r25.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/udev-dev_151-r25.6_armv5te.ipk.
+    libattr-dev: unsatisfied recommendation for virtual-locale-fr-dev
+    libattr-dev: unsatisfied recommendation for virtual-locale-de-dev
+    libattr-dev: unsatisfied recommendation for virtual-locale-es-dev
+    libattr-dev: unsatisfied recommendation for virtual-locale-gl-dev
+    libattr-dev: unsatisfied recommendation for virtual-locale-nl-dev
+    libattr-dev: unsatisfied recommendation for virtual-locale-pl-dev
+    libattr-dev: unsatisfied recommendation for virtual-locale-sv-dev
+    libattr-dev: unsatisfied recommendation for virtual-locale-cs-dev
+    libacl-dev: unsatisfied recommendation for virtual-locale-fr-dev
+    libacl-dev: unsatisfied recommendation for virtual-locale-de-dev
+    libacl-dev: unsatisfied recommendation for virtual-locale-es-dev
+    libacl-dev: unsatisfied recommendation for virtual-locale-gl-dev
+    libacl-dev: unsatisfied recommendation for virtual-locale-pl-dev
+    libacl-dev: unsatisfied recommendation for virtual-locale-sv-dev
+    udev-dev: unsatisfied recommendation for libudev-dev
+    udev-dev: unsatisfied recommendation for gobject-2.0-dev
+    udev-dev: unsatisfied recommendation for gthread-2.0-dev
+    udev-dev: unsatisfied recommendation for module-init-tools-depmod-dev
+    udev-dev: unsatisfied recommendation for udev-utils-dev
+    udev-dev: unsatisfied recommendation for libgudev-dev
+    Installing usbutils-dev (0.86-r1.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/usbutils-dev_0.86-r1.6_armv5te.ipk.
+    Installing libacl-dev (2.2.49-r5.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libacl-dev_2.2.49-r5.6_armv5te.ipk.
+    Installing libattr-dev (2.4.44-r4.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libattr-dev_2.4.44-r4.6_armv5te.ipk.
+    Installing update-rc.d-dev (0.7-r2.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/all/update-rc.d-dev_0.7-r2.6_all.ipk.
+    Configuring update-rc.d-dev.
+    Configuring usbutils-dev.
+    Configuring libattr-dev.
+    Configuring libacl-dev.
+    Configuring udev-dev.
+
+But then we get a GCC error:
+
+    [root@rascal14:~]: gcc -Wall -g -o udev_example udev_example.c -ludev
+    /usr/lib/gcc/arm-angstrom-linux-gnueabi/4.3.3/../../../../arm-angstrom-linux-gnueabi/bin/ld: cannot find -lgcc_s
+    collect2: ld returned 1 exit status
+
+Strangely, this can be fixed by reinstalling libgcc-dev.
+
+    [root@rascal14:~]: opkg install libgcc-dev
+    Installing libgcc-dev (4.3.3-r23.1.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libgcc-dev_4.3.3-r23.1.6_armv5te.ipk.
+    Configuring libgcc-dev.
+    [root@rascal14:~]: gcc -Wall -g -o udev_example udev_example.c -ludev
+
+Compilation then succeeds and the example (from http://www.signal11.us/oss/udev/ ) runs.
