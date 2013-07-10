@@ -4,6 +4,6 @@ speaker-test -t sine -f440
 
 /usr/share/sounds/alsa/Noise.wav works.
 
-Noise.wav: mono, 48000 Hz, 32-bit float
+Noise.wav: mono, sample rate 48000 Hz, sample format 32-bit float
 
-calm.wav: mono, 11025 Hz, 32-bit float
+calm.wav: mono, sample rate 11025 Hz, sample format 32-bit float
