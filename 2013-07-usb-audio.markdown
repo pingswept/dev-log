@@ -22,6 +22,7 @@ BUT:
 aplay -t wav asshole.wav 
 aplay: test_wavefile:876: can't play WAVE-file format 0x0055 which is not PCM or FLOAT encoded
 
+opkg install alsa-utils # figure this package might be useful
 
 ### Background ###
 
