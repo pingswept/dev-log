@@ -788,3 +788,26 @@ Crackles and pops might be solved by ffmpeg?
     Installing gst-ffmpeg (0.10.11-r1.6) to root...
     Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-ffmpeg_0.10.11-r1.6_armv5te.ipk.
     Configuring gst-ffmpeg.
+
+Installing madplay
+
+    opkg install madplay 
+    Installing madplay (0.15.2b-r0.5) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/madplay_0.15.2b-r0.5_armv5te.ipk.
+    Installing libesd0 (1:0.2.36-r3.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libesd0_0.2.36-r3.6_armv5te.ipk.
+    Installing libaudiofile0 (0.2.6-r8.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libaudiofile0_0.2.6-r8.6_armv5te.ipk.
+    Configuring libaudiofile0.
+    Configuring libesd0.
+    Configuring madplay.
+
+Installing sox
+
+    opkg install sox
+    Installing sox (13.0.0-r0.5) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/sox_13.0.0-r0.5_armv5te.ipk.
+    Installing libsamplerate0 (0.1.7-r2.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libsamplerate0_0.1.7-r2.6_armv5te.ipk.
+    Configuring libsamplerate0.
+    Configuring sox.
