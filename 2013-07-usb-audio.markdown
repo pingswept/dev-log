@@ -811,3 +811,17 @@ Installing sox
     Downloading http://rascalmicro.com/packages/beta/armv5te/base/libsamplerate0_0.1.7-r2.6_armv5te.ipk.
     Configuring libsamplerate0.
     Configuring sox.
+
+### Some ALSA details ###
+
+    ls /dev/snd
+    controlC0  pcmC0D0c   pcmC0D0p   timer
+
+pcmC0D0c means pcm device, card 0, device 0 for capture.
+pcmC0D0p means pcm device, card 0, device 0 for playback.
+
+### Fixing crackling in aplay ###
+
+You can increase the buffer size that aplay uses using the --buffer-time option. The number represents the buffer time measured in microseconds, so 100000 means 0.1 seconds.
+
+    aplay --buffer-time=100000 st-48000.wav
