@@ -372,3 +372,17 @@ Problem installing gst-plugins-good-meta due to gconf-dbus wanting to install an
      * check_data_file_clashes: Package gconf-dbus wants to install file /usr/bin/gconftool-2
     	But that file is already provided by package  * gconf
      * opkg_install_cmd: Cannot install package gst-plugins-good-meta.
+
+But mp3 decoding still doesn't seem to work right.
+
+    gst-launch filesrc location=calm.mp3 ! decodebin ! audioconvert ! alsasink
+    (gst-plugin-scanner:2417): GStreamer-WARNING **: Failed to load plugin '/usr/lib/gstreamer-0.10/libgstsouphttpsrc.so': libgnome-keyring.so.0: cannot open shared object file: No such file or directory
+    Setting pipeline to PAUSED ...
+    Pipeline is PREROLLING ...
+    ERROR: from element /GstPipeline:pipeline0/GstFileSrc:filesrc0: Internal data flow error.
+    Additional debug info:
+    gstbasesrc.c(2574): gst_base_src_loop (): /GstPipeline:pipeline0/GstFileSrc:filesrc0:
+    streaming task paused, reason not-linked (-1)
+    ERROR: pipeline doesn't want to preroll.
+    Setting pipeline to NULL ...
+    Freeing pipeline ...
