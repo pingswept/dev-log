@@ -32,3 +32,57 @@ ALSA replaced OSS in 2.6 kernel around 2004.
 
 Pulseaudio is a newer system that can coexist with OSS and ALSA. It's now the most common system in Ubuntu, Fedora, etc.
 
+### Gstreamer ###
+
+    opkg install gstreamer
+    Package gstreamer (0.10.32-r0.6) installed in root is up to date.
+
+    opkg install python-gst
+    Installing python-gst (0.10.17-r0.5) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/python/python-gst_0.10.17-r0.5_armv5te.ipk.
+    Installing libgstpbutils-0.10-0 (0.10.32-r11.1.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libgstpbutils-0.10-0_0.10.32-r11.1.6_armv5te.ipk.
+    Installing libgstinterfaces-0.10-0 (0.10.32-r11.1.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libgstinterfaces-0.10-0_0.10.32-r11.1.6_armv5te.ipk.
+    Installing libgstaudio-0.10-0 (0.10.32-r11.1.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libgstaudio-0.10-0_0.10.32-r11.1.6_armv5te.ipk.
+    Installing libgsttag-0.10-0 (0.10.32-r11.1.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libgsttag-0.10-0_0.10.32-r11.1.6_armv5te.ipk.
+    Configuring libgstpbutils-0.10-0.
+    Configuring libgstinterfaces-0.10-0.
+    Configuring libgstaudio-0.10-0.
+    Configuring libgsttag-0.10-0.
+    Configuring python-gst.
+
+Gst-inspect
+
+    gst-inspect --version
+    gst-inspect-0.10 version 0.10.32
+    GStreamer 0.10.32
+    Unknown package origin
+    [root@rascal14$:~]: gst-inspect-0.10 --version
+    gst-inspect-0.10 version 0.10.32
+    GStreamer 0.10.32
+    Unknown package origin
+    
+    gst-inspect
+    coreindexers:  memindex: A index that stores entries in memory
+    coreindexers:  fileindex: A index that stores entries in file
+    coreelements:  capsfilter: CapsFilter
+    coreelements:  fakesrc: Fake Source
+    coreelements:  fakesink: Fake Sink
+    coreelements:  fdsrc: Filedescriptor Source
+    coreelements:  fdsink: Filedescriptor Sink
+    coreelements:  filesrc: File Source
+    coreelements:  identity: Identity
+    coreelements:  input-selector: Input selector
+    coreelements:  output-selector: Output selector
+    coreelements:  queue: Queue
+    coreelements:  queue2: Queue 2
+    coreelements:  filesink: File Sink
+    coreelements:  tee: Tee pipe fitting
+    coreelements:  typefind: TypeFind
+    coreelements:  multiqueue: MultiQueue
+    coreelements:  valve: Valve element
+    staticelements:  bin: Generic bin
+    staticelements:  pipeline: Pipeline object
