@@ -86,3 +86,53 @@ Gst-inspect
     coreelements:  valve: Valve element
     staticelements:  bin: Generic bin
     staticelements:  pipeline: Pipeline object
+    
+    opkg list-installed | grep gst
+    gstreamer - 0.10.32-r0.6
+    libgstapp-0.10-0 - 0.10.32-r11.1.6
+    libgstaudio-0.10-0 - 0.10.32-r11.1.6
+    libgstinterfaces-0.10-0 - 0.10.32-r11.1.6
+    libgstpbutils-0.10-0 - 0.10.32-r11.1.6
+    libgsttag-0.10-0 - 0.10.32-r11.1.6
+    libgstvideo-0.10-0 - 0.10.32-r11.1.6
+    python-gst - 0.10.17-r0.5
+    
+Note: tried installing gst-plugins-base. Appears to contain no files.
+
+    opkg install gst-plugins-base
+    Installing gst-plugins-base (0.10.32-r11.1.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugins-base_0.10.32-r11.1.6_armv5te.ipk.
+    Configuring gst-plugins-base.
+    [root@rascal14$:~]: opkg files gst-plugins-base
+    Package gst-plugins-base (0.10.32-r11.1.6) is installed on root and has the following files:
+
+Gst-plugins-good has two files.
+
+    opkg install gst-plugins-good
+    Installing gst-plugins-good (0.10.28-r11.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugins-good_0.10.28-r11.0.6_armv5te.ipk.
+    Configuring gst-plugins-good.
+    [root@rascal14$:~]: opkg files gst-plugins-good  
+    Package gst-plugins-good (0.10.28-r11.0.6) is installed on root and has the following files:
+    /usr/share/gstreamer-0.10/presets/GstIirEqualizer3Bands.prs
+    /usr/share/gstreamer-0.10/presets/GstIirEqualizer10Bands.prs
+
+
+Gst-plugins-bad has no files.
+
+    opkg install gst-plugins-bad
+    Installing gst-plugins-bad (0.10.21-r11.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugins-bad_0.10.21-r11.0.6_armv5te.ipk.
+    Configuring gst-plugins-bad.
+    [root@rascal14$:~]: opkg files gst-plugins-bad  
+    Package gst-plugins-bad (0.10.21-r11.0.6) is installed on root and has the following files:
+
+Gst-plugins-ugly has 1 file.
+
+    opkg install gst-plugins-ugly
+    Installing gst-plugins-ugly (0.10.16-r11.1.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugins-ugly_0.10.16-r11.1.6_armv5te.ipk.
+    Configuring gst-plugins-ugly.
+    [root@rascal14$:~]: opkg files gst-plugins-ugly  
+    Package gst-plugins-ugly (0.10.16-r11.1.6) is installed on root and has the following files:
+    /usr/share/gstreamer-0.10/presets/GstX264Enc.prs
