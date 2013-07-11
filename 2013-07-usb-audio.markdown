@@ -288,3 +288,87 @@ Ah, the key appears to be to install the gst-plugins-XXX-meta package.
     Configuring gst-plugin-videotestsrc.
     Configuring gst-plugin-tcp.
     Configuring gst-plugins-base-meta.
+
+Problem installing gst-plugins-good-meta due to gconf-dbus wanting to install an existing conf file.
+
+    opkg install gst-plugins-good-meta
+    Installing gst-plugins-good-meta (0.10.28-r11.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugins-good-meta_0.10.28-r11.0.6_armv5te.ipk.
+    Installing gst-plugins-good-apps (0.10.28-r11.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugins-good-apps_0.10.28-r11.0.6_armv5te.ipk.
+    Installing gst-plugin-rtp (0.10.28-r11.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugin-rtp_0.10.28-r11.0.6_armv5te.ipk.
+    Installing gst-plugin-rtpmanager (0.10.28-r11.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugin-rtpmanager_0.10.28-r11.0.6_armv5te.ipk.
+    Installing gst-plugin-id3demux (0.10.28-r11.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugin-id3demux_0.10.28-r11.0.6_armv5te.ipk.
+    Installing gst-plugin-multipart (0.10.28-r11.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugin-multipart_0.10.28-r11.0.6_armv5te.ipk.
+    Installing gst-plugin-efence (0.10.28-r11.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugin-efence_0.10.28-r11.0.6_armv5te.ipk.
+    Installing gst-plugin-interleave (0.10.28-r11.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugin-interleave_0.10.28-r11.0.6_armv5te.ipk.
+    Installing gst-plugin-multifile (0.10.28-r11.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugin-multifile_0.10.28-r11.0.6_armv5te.ipk.
+    Installing gst-plugin-souphttpsrc (0.10.28-r11.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugin-souphttpsrc_0.10.28-r11.0.6_armv5te.ipk.
+    Installing libsoup-gnome-2.4-1 (2.32.2-r0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libsoup-gnome-2.4-1_2.32.2-r0.6_armv5te.ipk.
+    Installing libsoup-2.4-1 (2.32.2-r0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libsoup-2.4-1_2.32.2-r0.6_armv5te.ipk.
+    Installing gconf (2.28.0-r2.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/gconf_2.28.0-r2.6_armv5te.ipk.
+    Installing dbus-x11 (1.2.24-r20.1.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/dbus-x11_1.2.24-r20.1.6_armv5te.ipk.
+    Installing orbit2 (2.14.17-r0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/orbit2_2.14.17-r0.6_armv5te.ipk.
+    Installing libidl-2-0 (0.8.13-r0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libidl-2-0_0.8.13-r0.6_armv5te.ipk.
+    Installing libdbus-glib-1-2 (0.86-r2.1.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libdbus-glib-1-2_0.86-r2.1.6_armv5te.ipk.
+    Installing policykit (0.96-r3.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/policykit_0.96-r3.6_armv5te.ipk.
+    Installing eggdbus (0.6-r0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/eggdbus_0.6-r0.6_armv5te.ipk.
+    Installing libproxy (0.2.3-r1.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libproxy_0.2.3-r1.6_armv5te.ipk.
+    Installing libxmu6 (1:1.1.0-r9.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libxmu6_1.1.0-r9.0.6_armv5te.ipk.
+    Installing libxt6 (1:1.0.9-r9.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libxt6_1.0.9-r9.0.6_armv5te.ipk.
+    Installing gconf-dbus (2.16.0+svnr641-r0.5) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/gconf-dbus_2.16.0+svnr641-r0.5_armv5te.ipk.
+    Configuring dbus-x11.
+    Configuring libidl-2-0.
+    Configuring orbit2.
+    Configuring libdbus-glib-1-2.
+    Configuring eggdbus.
+    Configuring policykit.
+    Reloading system message bus config: done.
+    Configuring gconf.
+    Configuring libxt6.
+    Configuring gst-plugin-multifile.
+    Configuring gst-plugin-interleave.
+    Configuring gst-plugin-rtp.
+    Configuring libxmu6.
+    Configuring libproxy.
+    Configuring gst-plugin-efence.
+    Configuring gst-plugin-id3demux.
+    Configuring libsoup-2.4-1.
+    Configuring gst-plugins-good-apps.
+    Configuring libsoup-gnome-2.4-1.
+    Configuring gst-plugin-souphttpsrc.
+    Configuring gst-plugin-multipart.
+    Configuring gst-plugin-rtpmanager.
+    Collected errors:
+     * check_data_file_clashes: Package gconf-dbus wants to install file /etc/gconf/2/path
+        But that file is already provided by package  * gconf
+     * check_data_file_clashes: Package gconf-dbus wants to install file /usr/libexec/gconfd-2
+    	But that file is already provided by package  * gconf
+     * check_data_file_clashes: Package gconf-dbus wants to install file /usr/lib/libgconf-2.so.4
+    	But that file is already provided by package  * gconf
+     * check_data_file_clashes: Package gconf-dbus wants to install file /usr/bin/gconf-merge-tree
+    	But that file is already provided by package  * gconf
+     * check_data_file_clashes: Package gconf-dbus wants to install file /usr/bin/gconftool-2
+    	But that file is already provided by package  * gconf
+     * opkg_install_cmd: Cannot install package gst-plugins-good-meta.
