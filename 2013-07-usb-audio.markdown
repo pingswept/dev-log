@@ -774,3 +774,17 @@ Now, gst-plugins-bad-meta
     Configuring gst-plugin-sdpelem.
     Configuring gst-plugin-subenc.
     Configuring gst-plugins-bad-meta.
+
+Somehow still don't have WAV parsing
+
+    opkg install gst-plugin-wavparse
+    Installing gst-plugin-wavparse (0.10.28-r11.0.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-plugin-wavparse_0.10.28-r11.0.6_armv5te.ipk.
+    Configuring gst-plugin-wavparse.
+
+Crackles and pops might be solved by ffmpeg?
+
+    opkg install gst-ffmpeg
+    Installing gst-ffmpeg (0.10.11-r1.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/gstreamer/gst-ffmpeg_0.10.11-r1.6_armv5te.ipk.
+    Configuring gst-ffmpeg.
