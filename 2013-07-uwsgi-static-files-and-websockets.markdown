@@ -4,6 +4,16 @@ uwsgi --https :8443,foobar.crt,foobar.key --http-raw-body --gevent 100 --module 
 
 uwsgi --http 0.0.0.0:5000 --static-map /favicon.ico=/var/www/public/static/images/led.gif --ini public.ini
 
+### Summary of the situation ###
+
+uWSGI runs the websockets demo, but the demo doesn't actually work without gevent 1.x or newer.
+
+To build gevent 1.x, we need Cython.
+
+I successfully backported a recipe for Cython 0.15.1 to the Rascal OE tree, built a Cython package, and tried to build gevent 1.0rc2.
+
+Here is where my troubles began:
+
     [root@rascal14$:/var/www/gevent-1.0rc2]: python setup.py install
     running install
     running bdist_egg
@@ -35,3 +45,5 @@ uwsgi --http 0.0.0.0:5000 --static-map /favicon.ico=/var/www/public/static/image
             raise AssertionError('%r failed with code %s' % (command, result))
     AssertionError: 'cython -o gevent.core.c gevent/core.pyx' failed with code -1
     make: *** [gevent/gevent.core.c] Error 1
+
+
