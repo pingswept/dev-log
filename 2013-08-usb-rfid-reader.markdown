@@ -29,3 +29,18 @@ Appears in /proc/bus/input/devices
     B: KEY=e080ffdf 1cfffff ffffffff fffffffe
     B: MSC=10
     B: LED=1f
+
+Reading from /dev/input/event1
+
+    cat /dev/input/event1
+    '-      RC?
+    '-      R??
+    -    R??
+              #-	R?
+                      -	R?
+                              -	R%,#-	R<,-	RD,-	RmK%-	R?K	-	R?K-	R?j%-	R?j	-	R?j-	R?'-	R-?
+                                                                                                                                       -	R6?-	R[?'-	Ru?
+                                                                                                                                                               -	R|?-	R?? -	R??-	R??-	R?? -	R
+                                             ?-	R?-	RC$-	R-	Ri-	R?&$-	R?-	R?&.	R?'.	R?
+                                                                                                                      .	R?.	R?"'.	R?"
+                                                                                                                                               .	R#.	R4B.	RPB.	RZB.	Rpa.	R?a.	R?a.	RĀ.	R߀.	R?.	R?.	R0?.	R7?.	RU?".	Rp?.	Rz?.	R??".	R??.	R??.	R??(.	R?.	R?.	R:(.	RQ.	RX
