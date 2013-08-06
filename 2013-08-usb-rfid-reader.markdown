@@ -44,3 +44,14 @@ Reading from /dev/input/event1
                                              ?-	R?-	RC$-	R-	Ri-	R?&$-	R?-	R?&.	R?'.	R?
                                                                                                                       .	R?.	R?"'.	R?"
                                                                                                                                                .	R#.	R4B.	RPB.	RZB.	Rpa.	R?a.	R?a.	RĀ.	R߀.	R?.	R?.	R0?.	R7?.	RU?".	Rp?.	Rz?.	R??".	R??.	R??.	R??(.	R?.	R?.	R:(.	RQ.	RX
+The gibberish is event information that could be read with the Python evdev library. See http://stackoverflow.com/a/5060754
+
+But there is an easier way.
+
+    >>> import sys
+    >>> sys.stdin = open('/dev/tty0', 'r')
+    >>> test = raw_input()
+    0680370125
+    >>> test
+    '0680370125'
+
