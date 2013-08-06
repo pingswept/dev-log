@@ -55,3 +55,16 @@ But there is an easier way.
     >>> test
     '0680370125'
 
+### This works ###
+
+Saved this as rfid-test.py, made executable with chmod a+x. Tried unplugging and replugging reader while script is running and while script is stopped; still works.
+
+    #!/usr/bin/env python
+    
+    import sys
+    
+    while(1):
+    
+        sys.stdin = open('/dev/tty0', 'r')
+        rfid_data = raw_input()
+        print "Read code from RFID reader: {0}".format(rfid_data)
