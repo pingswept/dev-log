@@ -68,3 +68,16 @@ Saved this as rfid-test.py, made executable with chmod a+x. Tried unplugging and
         sys.stdin = open('/dev/tty0', 'r')
         rfid_data = raw_input()
         print "Read code from RFID reader: {0}".format(rfid_data)
+
+Triggering sound via RFID card:
+
+    #!/usr/bin/env python
+    
+    import sys
+    import subprocess as subp
+    
+    while(1):
+        sys.stdin = open('/dev/tty0', 'r')
+        rfid_data = raw_input()
+        print "Read code from RFID reader: {0}".format(rfid_data)
+        subp.Popen('aplay --buffer-time=100000 /home/root/calm-16-bit-pcm.wav', shell=True)
