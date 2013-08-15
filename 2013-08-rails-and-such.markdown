@@ -31,5 +31,6 @@ Seems better to use `rbenv`
     echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.profile
 
 If using `zsh`
+
     echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
 
