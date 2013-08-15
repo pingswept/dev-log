@@ -50,3 +50,7 @@ Create a new app
 Error:
 
     /var/lib/gems/1.8/gems/execjs-1.4.0/lib/execjs/runtimes.rb:51:in `autodetect': Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs for a list of available runtimes. (ExecJS::RuntimeUnavailable)
+
+Install `therubyracer`
+
+    sudo gem install therubyracer
