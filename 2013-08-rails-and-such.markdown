@@ -30,4 +30,6 @@ Seems better to use `rbenv`
 
     echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
     echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+    
+    exec $SHELL -l
 
