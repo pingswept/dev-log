@@ -33,3 +33,6 @@ Seems better to use `rbenv`
     
     exec $SHELL -l
 
+    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    
+    rbenv install 1.9.2.3-p392
