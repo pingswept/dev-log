@@ -4,3 +4,8 @@
     
     sudo apt-get install rubygems
     
+Check gem version
+
+    gem -v
+    
+    1.8.15        
