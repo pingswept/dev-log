@@ -58,3 +58,16 @@ Install `therubyracer`
 Add to crap/Gemfile:
 
     gem "therubyracer", :require => 'v8'
+    
+Works!
+
+    rails server
+    => Booting WEBrick
+    => Rails 3.2.12 application starting in development on http://0.0.0.0:3000
+    => Call with -d to detach
+    => Ctrl-C to shutdown server
+    [2013-08-15 19:47:58] INFO  WEBrick 1.3.1
+    [2013-08-15 19:47:58] INFO  ruby 1.8.7 (2011-06-30) [i686-linux]
+    [2013-08-15 19:48:03] INFO  WEBrick::HTTPServer#start: pid=963 port=3000
+    
+
