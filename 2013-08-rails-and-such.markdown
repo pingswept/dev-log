@@ -35,4 +35,4 @@ Seems better to use `rbenv`
 
     git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
     
-    rbenv install 1.9.2.3-p392
+    rbenv install 1.9.3-p392
