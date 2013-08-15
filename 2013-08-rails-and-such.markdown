@@ -28,9 +28,6 @@ Seems better to use `rbenv`
 
     git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 
-    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.profile
-
-If using `zsh`
-
     echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+    echo 'eval "$(rbenv init -)"' >> ~/.zshrc
 
