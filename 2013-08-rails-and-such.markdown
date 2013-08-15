@@ -40,3 +40,9 @@ Seems better to use `rbenv`
 Then install `rails`
 
     sudo gem install rails -v 3.2.12
+
+Create a new app
+
+    rails new crap
+    cd crap
+    rails server
