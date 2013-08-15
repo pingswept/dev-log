@@ -54,3 +54,7 @@ Error:
 Install `therubyracer`
 
     sudo gem install therubyracer
+
+Add to crap/Gemfile:
+
+    gem "therubyracer", :require => 'v8'
