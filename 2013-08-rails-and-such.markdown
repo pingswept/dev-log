@@ -101,3 +101,8 @@ Bundle install goes further, but still dies.
     An error occurred while installing factory_girl (4.1.0), and Bundler cannot
     continue.
     Make sure that `gem install factory_girl -v '4.1.0'` succeeds before bundling.
+
+Problem is that rbenv doesn't know about bundle. Need a bundle shim.
+
+    git clone -- git://github.com/carsomyr/rbenv-bundler.git ~/.rbenv/plugins/bundler
+    touch /home/brandon/.rbenv/plugins/bundler/share/rbenv/bundler/manifest.txt
