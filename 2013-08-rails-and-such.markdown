@@ -106,3 +106,6 @@ Problem is that rbenv doesn't know about bundle. Need a bundle shim.
 
     git clone -- git://github.com/carsomyr/rbenv-bundler.git ~/.rbenv/plugins/bundler
     touch /home/brandon/.rbenv/plugins/bundler/share/rbenv/bundler/manifest.txt
+    rbenv rehash
+    
+    Could not load the bundler gem for Ruby version 1.9.3-p392.
