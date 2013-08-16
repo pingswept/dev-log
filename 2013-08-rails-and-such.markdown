@@ -87,9 +87,17 @@ Installs a bunch of gems, but dies in the middle.
     checking for libxml/parser.h... yes
     checking for libxslt/xslt.h... no
     -----
-    libxslt is missing.  please visit http://nokogiri.org/tutorials/installing_nokogiri.html for help with installing dependencies.
+    libxslt is missing.  please visit http://nokogiri.org/tutorials/installing_nokogiri.html for help
 
 Nokogiri requires libxslt for installation.
 
     sudo apt-get install libxslt-dev libxml2-dev
     sudo gem install nokogiri -v '1.5.6'
+
+Bundle install goes further, but still dies.
+
+    Installing factory_girl (4.1.0) 
+    Gem::InstallError: factory_girl requires Ruby version >= 1.9.2.
+    An error occurred while installing factory_girl (4.1.0), and Bundler cannot
+    continue.
+    Make sure that `gem install factory_girl -v '4.1.0'` succeeds before bundling.
