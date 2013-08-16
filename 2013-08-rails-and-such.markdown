@@ -69,5 +69,27 @@ Works!
     [2013-08-15 19:47:58] INFO  WEBrick 1.3.1
     [2013-08-15 19:47:58] INFO  ruby 1.8.7 (2011-06-30) [i686-linux]
     [2013-08-15 19:48:03] INFO  WEBrick::HTTPServer#start: pid=963 port=3000
-    
 
+### Trying to get the real site up ###
+
+    rails server
+    Could not find i18n-0.6.1 in any of the sources
+    Run `bundle install` to install missing gems.
+
+    sudo bundle install
+
+Installs a bunch of gems, but dies in the middle.
+
+    Installing nokogiri (1.5.6) 
+    Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+    
+            /usr/bin/ruby1.8 extconf.rb 
+    checking for libxml/parser.h... yes
+    checking for libxslt/xslt.h... no
+    -----
+    libxslt is missing.  please visit http://nokogiri.org/tutorials/installing_nokogiri.html for help with installing dependencies.
+
+Nokogiri requires libxslt for installation.
+
+    sudo apt-get install libxslt-dev libxml2-dev
+    sudo gem install nokogiri -v '1.5.6'
