@@ -250,3 +250,12 @@ Add to Apache config file
     LoadModule passenger_module /home/brandon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/passenger-4.0.13/buildout/apache2/mod_passenger.so
     PassengerRoot /home/brandon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/passenger-4.0.13
     PassengerDefaultRuby /home/brandon/.rbenv/versions/1.9.3-p392/bin/ruby
+
+Point DocumentRoot in Apache config to Rails public folder and disable MultiViews
+
+    DocumentRoot /home/brandon/rascal-repos/pikauserprofiles/public
+    Options -MultiViews
+
+Precompile Rails assets
+
+    RAILS_ENV=production rake assets:precompile
