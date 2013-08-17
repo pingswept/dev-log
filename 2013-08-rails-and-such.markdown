@@ -231,3 +231,6 @@ Then, bundle install
     * GraphViz::Node#each_attribut is deprecated, use GraphViz::Node#each_attribute
       %
 
+Dump the database
+
+mysqldump -u root -p pikaen_rails > pikaen-railsdb-dump-2013-08-16.sql
