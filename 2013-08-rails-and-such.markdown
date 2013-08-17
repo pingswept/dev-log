@@ -237,3 +237,9 @@ Dump the database
     mysql -u root -p
     create database pikaen_rails;
     mysql -u root -p pikaen_rails < pikaen-railsdb-dump-2013-08-16.sql
+
+Get Apache to serve Rails
+
+    gem install passenger
+    rbenv rehash
+    passenger-install-apache2-module
