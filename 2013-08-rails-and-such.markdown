@@ -233,4 +233,7 @@ Then, bundle install
 
 Dump the database
 
-mysqldump -u root -p pikaen_rails > pikaen-railsdb-dump-2013-08-16.sql
+    mysqldump -u root -p pikaen_rails > pikaen-railsdb-dump-2013-08-16.sql
+    mysql -u root -p
+    create database pikaen_rails;
+    mysql -u root -p pikaen_rails < pikaen-railsdb-dump-2013-08-16.sql
