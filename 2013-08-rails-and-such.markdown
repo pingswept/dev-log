@@ -240,6 +240,7 @@ Dump the database
 
 Get Apache to serve Rails
 
+    sudo apt-get install libcurl4-openssl-dev # for passenger
     gem install passenger
     rbenv rehash
     passenger-install-apache2-module
