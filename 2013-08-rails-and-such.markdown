@@ -244,3 +244,9 @@ Get Apache to serve Rails
     gem install passenger
     rbenv rehash
     passenger-install-apache2-module
+
+Add to Apache config file
+
+    LoadModule passenger_module /home/brandon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/passenger-4.0.13/buildout/apache2/mod_passenger.so
+    PassengerRoot /home/brandon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/passenger-4.0.13
+    PassengerDefaultRuby /home/brandon/.rbenv/versions/1.9.3-p392/bin/ruby
