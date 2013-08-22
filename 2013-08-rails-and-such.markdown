@@ -41,11 +41,13 @@ Seems better to use `rbenv`
 
     rbenv global 1.9.3-p392
 
+Install MySQL (for OS X: http://dev.mysql.com/downloads/mysql/5.1.html#macosx-dmg)
+
 Then install `rails`
 
     gem install rails -v 3.2.12
     rbenv rehash
-    bundle install
+    bundle install # will fail if MySQL is not installed
 
 Create a new app
 
