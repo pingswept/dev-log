@@ -43,6 +43,20 @@ Seems better to use `rbenv`
 
 Install MySQL (for OS X: http://dev.mysql.com/downloads/mysql/5.1.html#macosx-dmg)
 
+Install both the main package and the MySQLStartupItem.pkg.
+
+Add a root password.
+
+    USE mysql;
+    UPDATE user set password=PASSWORD("this-is-the-password") WHERE User='root';
+    FLUSH PRIVILEGES;
+
+Delete anonymous accounts.
+
+    SELECT host, user, password FROM user;
+    DROP USER ''@'localhost';
+    DROP USER ''@'fosco.tyler';
+
 Then install `rails`
 
     gem install rails -v 3.2.12
