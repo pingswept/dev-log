@@ -37,6 +37,10 @@ Seems better to use `rbenv`
     
     rbenv install 1.9.3-p392 # this version number was wrong in Adam's docs
 
+    rbenv rehash
+
+    rbenv global 1.9.3-p392
+
 Then install `rails`
 
     sudo gem install rails -v 3.2.12
