@@ -57,6 +57,12 @@ Delete anonymous accounts.
     DROP USER ''@'localhost';
     DROP USER ''@'fosco.tyler';
 
+Add pikaen_rails user.
+
+    CREATE USER 'pikaen_rails'@'localhost' IDENTIFIED BY 'stick-the-password-here';
+    GRANT ALL PRIVILEGES ON pikaen_rails.* TO 'pikaen_rails'@'localhost';
+    FLUSH PRIVILEGES;
+
 Then install `rails`
 
     gem install rails -v 3.2.12
