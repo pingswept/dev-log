@@ -43,7 +43,9 @@ Seems better to use `rbenv`
 
 Then install `rails`
 
-    sudo gem install rails -v 3.2.12
+    gem install rails -v 3.2.12
+    rbenv rehash
+    bundle install
 
 Create a new app
 
