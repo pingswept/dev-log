@@ -36,3 +36,10 @@ Running the configure file results in:
     configure: error: cannot find install-sh, install.sh, or shtool in "." "./.." "./../.."
 
 This seems relevant: http://stackoverflow.com/questions/11226523/autoconf-not-generating-makefile
+
+Seems like I might need `automake`
+
+    opkg install automake
+    Installing automake (1.11.1-r3.1.6) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/automake_1.11.1-r3.1.6_armv5te.ipk.
+    Configuring automake.
