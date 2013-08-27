@@ -30,3 +30,9 @@ Use `autoconf` to process `configure.ac`
     configure.ac:375: error: possibly undefined macro: AM_PATH_ESD
 
 Strangely, it still creates a configure file that appears like it might work.
+
+Running the configure file results in:
+
+    configure: error: cannot find install-sh, install.sh, or shtool in "." "./.." "./../.."
+
+This seems relevant: http://stackoverflow.com/questions/11226523/autoconf-not-generating-makefile
