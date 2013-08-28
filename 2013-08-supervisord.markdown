@@ -38,3 +38,7 @@ Depends on `meld3` (should be built by OE, but isn't)
         removing /tmp/tmpgN4cXW.py
     Successfully installed meld3
     Cleaning up...
+
+Successful invocation
+
+    supervisord -c /etc/supervisord.conf
