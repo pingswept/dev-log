@@ -42,3 +42,5 @@ Depends on `meld3` (should be built by OE, but isn't)
 Successful invocation
 
     supervisord -c /etc/supervisord.conf
+
+Trying https://raw.github.com/juanmb/oe-recipes/master/supervisord/files/supervisord.init as a startup script.
