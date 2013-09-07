@@ -287,3 +287,9 @@ Point DocumentRoot in Apache config to Rails public folder and disable MultiView
 Precompile Rails assets
 
     RAILS_ENV=production rake assets:precompile
+
+### Summary of Bootstrap dropdown failure on Apache ###
+
+When `config.assets.debug = true` in `config/environments/development.rb`, JS files are compiled into application JS *and* included individually. This screws up the toggling of the dropdown menu because the click listener is added to the button twice. The problem goes away if we switch from `RailsEnv development` to `RailsEnv production` in `/etc/apache2/sites-enabled/000-default`, but then we have to precompile assets (`RAILS_ENV=production rake assets:precompile`) when we change JS files, or Apache will keep serving the last compiled version, which doesn't have our changes.
+
+It's not clear how we could have the single files that `config.assets.debug = true` provides while not also loading application.js, breaking the dropdown toggle, but that's not important to solve now, since the dropdown is already done.
