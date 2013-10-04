@@ -352,3 +352,30 @@ Then successfully built gevent-1.0b4, as seen from the spew below.
     Installed /usr/local/lib/python2.7/dist-packages/greenlet-0.4.1-py2.7-linux-i686.egg
     Finished processing dependencies for gevent==1.0dev
 
+### Tried installing Cython 0.19.1 on a Rascal with pip ###
+
+    pip install cython
+    Downloading/unpacking cython
+      Downloading Cython-0.19.1.tar.gz (1.4Mb): 1.4Mb downloaded
+      Running setup.py egg_info for package cython
+    Command python setup.py egg_info failed with error code -9 in /home/root/build/cython
+    Storing complete log in /home/root/.pip/pip.log
+
+In pip.log:
+
+    Command python setup.py egg_info failed with error code -9 in /home/root/build/cython
+
+    Exception information:
+    Traceback (most recent call last):
+      File "/usr/lib/python2.6/site-packages/pip/basecommand.py", line 104, in main
+        status = self.run(options, args)
+      File "/usr/lib/python2.6/site-packages/pip/commands/install.py", line 245, in run
+        requirement_set.prepare_files(finder, force_root_egg_info=self.bundle, bundle=self.bundle)
+      File "/usr/lib/python2.6/site-packages/pip/req.py", line 1009, in prepare_files
+        req_to_install.run_egg_info()
+      File "/usr/lib/python2.6/site-packages/pip/req.py", line 225, in run_egg_info
+        command_desc='python setup.py egg_info')
+      File "/usr/lib/python2.6/site-packages/pip/__init__.py", line 256, in call_subprocess
+        % (command_desc, proc.returncode, cwd))
+    InstallationError: Command python setup.py egg_info failed with error code -9 in /home/root/build/cython
+
