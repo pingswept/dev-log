@@ -48,6 +48,11 @@ Here is where my troubles began:
 
 ### Tried building on Ubuntu 12.04 desktop machine ###
 
+sudo pip installed Cython-0.19.1.
+
+Then successfully built gevent-1.0b4, as seen from the spew below.
+
+
     ➜  ~  cd gevent-1.0b4 
     ➜  gevent-1.0b4  python setup.py install
     running install
