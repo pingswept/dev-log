@@ -54,35 +54,6 @@ Then successfully built gevent-1.0b4, as seen from the spew below.
 
 
     ➜  ~  cd gevent-1.0b4 
-    ➜  gevent-1.0b4  python setup.py install
-    running install
-    Checking .pth file support in /usr/local/lib/python2.7/dist-packages/
-    error: can't create or remove files in install directory
-    
-    The following error occurred while trying to add or remove files in the
-    installation directory:
-    
-        [Errno 13] Permission denied: '/usr/local/lib/python2.7/dist-packages/test-easy-install-32586.pth'
-    
-    The installation directory you specified (via --install-dir, --prefix, or
-    the distutils default setting) was:
-    
-        /usr/local/lib/python2.7/dist-packages/
-    
-    Perhaps your account does not have write access to this directory?  If the
-    installation directory is a system-owned directory, you may need to sign in
-    as the administrator or "root" account.  If you do not have administrative
-    access to this machine, you may wish to choose a different installation
-    directory, preferably one that is listed in your PYTHONPATH environment
-    variable.
-    
-    For information on other options, you may wish to consult the
-    documentation at:
-    
-      http://packages.python.org/distribute/easy_install.html
-    
-    Please make the appropriate changes for your system and try again.
-    
     ➜  gevent-1.0b4  sudo python setup.py install
     running install
     Checking .pth file support in /usr/local/lib/python2.7/dist-packages/
