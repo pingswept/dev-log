@@ -431,3 +431,23 @@ Built Cython 0.19.1 on Amazon EC2 instance.
     Configuring python-cython.
     [root@rascal14:~]: cython --version  
     Cython version 0.19.1
+
+### Tried building gevent with Cython ###
+
+Missing libevent?
+
+    [root@rascal14:~]: pip install gevent
+    Downloading/unpacking gevent
+      Downloading gevent-0.13.8.tar.gz (300Kb): 300Kb downloaded
+      Running setup.py egg_info for package gevent
+    Downloading/unpacking greenlet (from gevent)
+      Downloading greenlet-0.4.1.zip (75Kb): 75Kb downloaded
+      Running setup.py egg_info for package greenlet
+    Installing collected packages: gevent, greenlet
+      Running setup.py install for gevent
+        building 'gevent.core' extension
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.6 -c gevent/core.c -o build/temp.linux-armv5tejl-2.6/gevent/core.o
+        In file included from gevent/core.c:253:
+        gevent/libevent.h:9:19: error: event.h: No such file or directory
+
+Followed by lots more spew
