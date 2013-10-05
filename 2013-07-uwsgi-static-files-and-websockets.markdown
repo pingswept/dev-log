@@ -407,3 +407,17 @@ And finally:
     /home/root/build/cython/Cython/Compiler/Code.c:58308: warning: dereferencing type-punned pointer will break strict-aliasing rules
     cc1: out of memory allocating 5419940 bytes after a total of 32534528 bytes
     error: command 'arm-angstrom-linux-gnueabi-gcc' failed with exit status 1
+
+A second attempt with the same swap settings seems to start with where it died, Cython.Compiler.Code, so maybe we can compile this in a few attempts. Stopped Rascal webserver to free up some more RAM.
+
+    [root@rascal14:~]: pip install cython
+    Downloading/unpacking cython
+      Running setup.py egg_info for package cython
+        warning: no files found matching '*.pyx' under directory 'Cython/Debugger/Tests'
+        warning: no files found matching '*.pxd' under directory 'Cython/Debugger/Tests'
+        warning: no files found matching '*.h' under directory 'Cython/Debugger/Tests'
+        warning: no files found matching '*.pxd' under directory 'Cython/Utility'
+    Installing collected packages: cython
+      Running setup.py install for cython
+        building 'Cython.Compiler.Code' extension
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.6 -c /home/root/build/cython/Cython/Compiler/Code.c -o build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Compiler/Code.o
