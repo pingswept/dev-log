@@ -497,3 +497,48 @@ Meanwhile, was able to install greenlet, a gevent dependency.
 Turns out that evhttp.h didn't appear until libevent 1.2, so 1.1a won't fly.
 
 Fortunately, previously built libevent 1.4.14b on EC2 machine and forgot about it for a while.
+
+    [root@rascal14:~]: opkg --force-depends remove libevent-1.1a1
+    Removing package libevent-1.1a1 from root...
+    [root@rascal14:~]: opkg --force-depends remove libevent-1.1a-dev
+    Removing package libevent-1.1a-dev from root...
+    [root@rascal14:~]: opkg install libevent_1.4.14b-stable-r1.6_armv5te.ipk 
+    Installing libevent (1.4.14b-stable-r1.6) to root...
+    Configuring libevent.
+    [root@rascal14:~]: opkg install libevent-dev_1.4.14b-stable-r1.6_armv5te.ipk 
+    Installing libevent-dev (1.4.14b-stable-r1.6) to root...
+    Configuring libevent-dev.
+    [root@rascal14:~]: pip install gevent
+    Downloading/unpacking gevent
+      Running setup.py egg_info for package gevent
+    Requirement already satisfied (use --upgrade to upgrade): greenlet in /usr/lib/python2.6/site-packages (from gevent)
+    Installing collected packages: gevent
+      Running setup.py install for gevent
+        building 'gevent.core' extension
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.6 -c gevent/core.c -o build/temp.linux-armv5tejl-2.6/gevent/core.o
+        gevent/core.c: In function '__pyx_pf_6gevent_4core_17http_request_base_22remove_input_header':
+        gevent/core.c:12657: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        gevent/core.c:12657: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        gevent/core.c: In function '__pyx_pf_6gevent_4core_17http_request_base_24remove_output_header':
+        gevent/core.c:12754: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        gevent/core.c:12754: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        gevent/core.c: In function '__pyx_f_6gevent_4core__http_cb_handler':
+        gevent/core.c:16937: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        gevent/core.c:16937: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        gevent/core.c: In function 'initcore':
+        gevent/core.c:22135: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        gevent/core.c:22135: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        gevent/core.c:22148: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        gevent/core.c:22148: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        gevent/core.c:22174: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        gevent/core.c:22174: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        gevent/core.c:22234: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        gevent/core.c:22234: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -shared build/temp.linux-armv5tejl-2.6/gevent/core.o -L/usr/lib -levent -lpython2.6 -o build/lib.linux-armv5tejl-2.6/gevent/core.so
+        Linking /home/root/build/gevent/build/lib.linux-armv5tejl-2.6/gevent/core.so to /home/root/build/gevent/gevent/core.so
+        /usr/bin/python /tmp/tmpOgWa5_.py
+        removing /tmp/tmpOgWa5_.py
+    Successfully installed gevent
+    Cleaning up...
+
+And victory!
