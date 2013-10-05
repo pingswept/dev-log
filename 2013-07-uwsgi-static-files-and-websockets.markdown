@@ -350,3 +350,52 @@ In pip.log:
         % (command_desc, proc.returncode, cwd))
     InstallationError: Command python setup.py egg_info failed with error code -9 in /home/root/build/cython
 
+### Appears that error code -9 means we're running out of memory? ###
+
+Or at least turning on swap helps.
+
+    [root@rascal14:~]: dd if=/dev/zero of=/home/root/swap bs=1M count=100
+    100+0 records in
+    100+0 records out
+    [root@rascal14:~]: chmod 0600 swap
+    [root@rascal14:~]: mkswap swap
+    Setting up swapspace version 1, size = 104853504 bytes
+    [root@rascal14:~]: swapon swap
+    [root@rascal14:~]: pip install cython
+    Downloading/unpacking cython
+    Running setup.py egg_info for package cython
+        Compiling module Cython.Compiler.Parsing ...
+        Compiling module Cython.Compiler.Visitor ...
+        Compiling module Cython.Compiler.FlowControl ...
+        Compiling module Cython.Compiler.Code ...
+        Compiling module Cython.Runtime.refnanny ...
+        warning: no files found matching '*.pyx' under directory 'Cython/Debugger/Tests'
+        warning: no files found matching '*.pxd' under directory 'Cython/Debugger/Tests'
+        warning: no files found matching '*.h' under directory 'Cython/Debugger/Tests'
+        warning: no files found matching '*.pxd' under directory 'Cython/Utility'
+    Installing collected packages: cython
+      Running setup.py install for cython
+        building 'Cython.Plex.Scanners' extension
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.6 -c /home/root/build/cython/Cython/Plex/Scanners.c -o build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Plex/Scanners.o
+        /home/root/build/cython/Cython/Plex/Scanners.c: In function '__pyx_pf_6Cython_4Plex_8Scanners_7Scanner_5trace___get__':
+        /home/root/build/cython/Cython/Plex/Scanners.c:5246: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        /home/root/build/cython/Cython/Plex/Scanners.c:5246: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -shared build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Plex/Scanners.o -L/usr/lib -lpython2.6 -o build/lib.linux-armv5tejl-2.6/Cython/Plex/Scanners.so
+        building 'Cython.Plex.Actions' extension
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.6 -c /home/root/build/cython/Cython/Plex/Actions.c -o build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Plex/Actions.o
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -shared build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Plex/Actions.o -L/usr/lib -lpython2.6 -o build/lib.linux-armv5tejl-2.6/Cython/Plex/Actions.so
+        building 'Cython.Compiler.Lexicon' extension
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.6 -c /home/root/build/cython/Cython/Compiler/Lexicon.c -o build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Compiler/Lexicon.o
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -shared build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Compiler/Lexicon.o -L/usr/lib -lpython2.6 -o build/lib.linux-armv5tejl-2.6/Cython/Compiler/Lexicon.so
+        building 'Cython.Compiler.Scanning' extension
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.6 -c /home/root/build/cython/Cython/Compiler/Scanning.c -o build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Compiler/Scanning.o
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -shared build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Compiler/Scanning.o -L/usr/lib -lpython2.6 -o build/lib.linux-armv5tejl-2.6/Cython/Compiler/Scanning.so
+        building 'Cython.Compiler.Parsing' extension
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.6 -c /home/root/build/cython/Cython/Compiler/Parsing.c -o build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Compiler/Parsing.o
+        /home/root/build/cython/Cython/Compiler/Parsing.c: In function 'initParsing':
+        /home/root/build/cython/Cython/Compiler/Parsing.c:54874: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        /home/root/build/cython/Cython/Compiler/Parsing.c:54874: warning: dereferencing type-punned pointer will break strict-aliasing rules
+
+Appears to hang here.
+
+(Many other type-punned pointer warnings omitted.)
