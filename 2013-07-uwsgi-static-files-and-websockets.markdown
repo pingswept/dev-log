@@ -470,4 +470,27 @@ Install libevent and dev pkg to get headers.
     Downloading http://rascalmicro.com/packages/beta/armv5te/base/libevent-1.1a-dev_1.1a-r0.5_armv5te.ipk.
     Configuring libevent-1.1a-dev.
 
-Still missing evhttp.h
+*Still missing evhttp.h*
+
+Meanwhile, was able to install greenlet, a gevent dependency.
+
+    [root@rascal14:~]: pip install greenlet
+    Downloading/unpacking greenlet
+      Running setup.py egg_info for package greenlet
+    Installing collected packages: greenlet
+      Running setup.py install for greenlet
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -fno-tree-dominator-opts -I/usr/include/python2.6 -c /tmp/tmp6c9u4K/simple.c -o /tmp/tmp6c9u4K/tmp/tmp6c9u4K/simple.o
+        /tmp/tmp6c9u4K/simple.c:1: warning: function declaration isn't a prototype
+        building 'greenlet' extension
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -fno-tree-dominator-opts -I/usr/include/python2.6 -c greenlet.c -o build/temp.linux-armv5tejl-2.6/greenlet.o
+        greenlet.c: In function 'initgreenlet':
+        greenlet.c:1661: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        greenlet.c: In function 'g_switch':
+        greenlet.c:543: warning: 'err' may be used uninitialized in this function
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -shared build/temp.linux-armv5tejl-2.6/greenlet.o -L/usr/lib -lpython2.6 -o build/lib.linux-armv5tejl-2.6/greenlet.so
+        Linking /home/root/build/greenlet/build/lib.linux-armv5tejl-2.6/greenlet.so to /home/root/build/greenlet/greenlet.so
+        /usr/bin/python /tmp/tmpGpo9D2.py
+        removing /tmp/tmpGpo9D2.py
+    Successfully installed greenlet
+    Cleaning up...
+
