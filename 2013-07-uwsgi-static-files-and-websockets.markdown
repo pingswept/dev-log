@@ -450,4 +450,17 @@ Missing libevent?
         In file included from gevent/core.c:253:
         gevent/libevent.h:9:19: error: event.h: No such file or directory
 
-Followed by lots more spew
+Followed by lots more spew.
+
+Install libevent.
+
+    [root@rascal14:~]: opkg install libevent
+    Unknown package 'libevent'.
+    Collected errors:
+     * opkg_install_cmd: Cannot install package libevent.
+    [root@rascal14:~]: opkg install libevent-1.1a1
+    Installing libevent-1.1a1 (1.1a-r0.5) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libevent-1.1a1_1.1a-r0.5_armv5te.ipk.
+    Configuring libevent-1.1a1.
+
+
