@@ -542,3 +542,5 @@ Fortunately, previously built libevent 1.4.14b on EC2 machine and forgot about i
     Cleaning up...
 
 And victory!
+
+But actually, it looks like maybe Cython wasn't actually needed. When we tried to build Gevent from source, it used Cython by default, but it doesn't look like `pip install gevent` used Cython.
