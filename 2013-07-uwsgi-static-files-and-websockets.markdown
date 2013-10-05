@@ -452,7 +452,7 @@ Missing libevent?
 
 Followed by lots more spew.
 
-Install libevent.
+Install libevent and dev pkg to get headers.
 
     [root@rascal14:~]: opkg install libevent
     Unknown package 'libevent'.
@@ -462,5 +462,9 @@ Install libevent.
     Installing libevent-1.1a1 (1.1a-r0.5) to root...
     Downloading http://rascalmicro.com/packages/beta/armv5te/base/libevent-1.1a1_1.1a-r0.5_armv5te.ipk.
     Configuring libevent-1.1a1.
+    [root@rascal14:~]: opkg install libevent-1.1a-dev 
+    Installing libevent-1.1a-dev (1.1a-r0.5) to root...
+    Downloading http://rascalmicro.com/packages/beta/armv5te/base/libevent-1.1a-dev_1.1a-r0.5_armv5te.ipk.
+    Configuring libevent-1.1a-dev.
 
 
