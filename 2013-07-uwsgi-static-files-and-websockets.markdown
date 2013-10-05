@@ -401,3 +401,9 @@ Or at least turning on swap helps.
 
 
 (Many other type-punned pointer warnings omitted.)
+
+And finally:
+
+    /home/root/build/cython/Cython/Compiler/Code.c:58308: warning: dereferencing type-punned pointer will break strict-aliasing rules
+    cc1: out of memory allocating 5419940 bytes after a total of 32534528 bytes
+    error: command 'arm-angstrom-linux-gnueabi-gcc' failed with exit status 1
