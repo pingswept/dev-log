@@ -392,10 +392,12 @@ Or at least turning on swap helps.
         arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -shared build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Compiler/Scanning.o -L/usr/lib -lpython2.6 -o build/lib.linux-armv5tejl-2.6/Cython/Compiler/Scanning.so
         building 'Cython.Compiler.Parsing' extension
         arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.6 -c /home/root/build/cython/Cython/Compiler/Parsing.c -o build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Compiler/Parsing.o
-        /home/root/build/cython/Cython/Compiler/Parsing.c: In function 'initParsing':
-        /home/root/build/cython/Cython/Compiler/Parsing.c:54874: warning: dereferencing type-punned pointer will break strict-aliasing rules
-        /home/root/build/cython/Cython/Compiler/Parsing.c:54874: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -shared build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Compiler/Parsing.o -L/usr/lib -lpython2.6 -o build/lib.linux-armv5tejl-2.6/Cython/Compiler/Parsing.so
+        building 'Cython.Compiler.Visitor' extension
+        arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.6 -c /home/root/build/cython/Cython/Compiler/Visitor.c -o build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Compiler/Visitor.o
+        /home/root/build/cython/Cython/Compiler/Visitor.c: In function '__pyx_pf_6Cython_8Compiler_7Visitor_2tree_contains':
+        /home/root/build/cython/Cython/Compiler/Visitor.c:12162: warning: dereferencing type-punned pointer will break strict-aliasing rules
+        /home/root/build/cython/Cython/Compiler/Visitor.c:12162: warning: dereferencing type-punned pointer will break strict-aliasing rules
 
-Appears to hang here.
 
 (Many other type-punned pointer warnings omitted.)
