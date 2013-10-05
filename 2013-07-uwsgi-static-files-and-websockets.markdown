@@ -544,3 +544,103 @@ Fortunately, previously built libevent 1.4.14b on EC2 machine and forgot about i
 And victory!
 
 But actually, it looks like maybe Cython wasn't actually needed. When we tried to build Gevent from source, it used Cython by default, but it doesn't look like `pip install gevent` used Cython.
+
+### On to websockets ###
+
+    pip install gevent-websocket
+    Downloading/unpacking gevent-websocket
+      Downloading gevent-websocket-0.3.6.tar.gz
+      Running setup.py egg_info for package gevent-websocket
+    Requirement already satisfied (use --upgrade to upgrade): gevent in /usr/lib/python2.6/site-packages (from gevent-websocket)
+    Requirement already satisfied (use --upgrade to upgrade): greenlet in /usr/lib/python2.6/site-packages (from gevent-websocket)
+    Installing collected packages: gevent-websocket
+      Running setup.py install for gevent-websocket
+        /usr/bin/python /tmp/tmpdOXiXK.py
+        removing /tmp/tmpdOXiXK.py
+    Successfully installed gevent-websocket
+    Cleaning up...
+    [root@rascal14:/etc/uwsgi]: pip install Flask-Sockets
+    Downloading/unpacking Flask-Sockets
+      Downloading Flask-Sockets-0.1.tar.gz
+      Running setup.py egg_info for package Flask-Sockets
+    Requirement already satisfied (use --upgrade to upgrade): Flask in /usr/lib/python2.6/site-packages (from Flask-Sockets)
+    Requirement already satisfied (use --upgrade to upgrade): gevent in /usr/lib/python2.6/site-packages (from Flask-Sockets)
+    Requirement already satisfied (use --upgrade to upgrade): gevent-websocket in /usr/lib/python2.6/site-packages (from Flask-Sockets)
+    Requirement already satisfied (use --upgrade to upgrade): Werkzeug>=0.7 in /usr/lib/python2.6/site-packages (from Flask->Flask-Sockets)
+    Requirement already satisfied (use --upgrade to upgrade): Jinja2>=2.4 in /usr/lib/python2.6/site-packages (from Flask->Flask-Sockets)
+    Requirement already satisfied (use --upgrade to upgrade): greenlet in /usr/lib/python2.6/site-packages (from gevent->Flask-Sockets)
+    Installing collected packages: Flask-Sockets
+      Running setup.py install for Flask-Sockets
+        /usr/bin/python /tmp/tmpRwUMbL.py
+        removing /tmp/tmpRwUMbL.py
+    Successfully installed Flask-Sockets
+    Cleaning up...
+    [root@rascal14:/etc/uwsgi]: gunicorn -k flask_sockets.worker hello:app
+    -sh: gunicorn: not found
+    [root@rascal14:/etc/uwsgi]: pip install gunicorn
+    Downloading/unpacking gunicorn
+      Downloading gunicorn-18.0.tar.gz (366Kb): 366Kb downloaded
+      Running setup.py egg_info for package gunicorn
+        warning: no previously-included files matching '*.pyc' found under directory 'docs'
+        warning: no previously-included files matching '*.pyo' found under directory 'docs'
+        warning: no previously-included files matching '*.pyc' found under directory 'tests'
+        warning: no previously-included files matching '*.pyo' found under directory 'tests'
+        warning: no previously-included files matching '*.pyc' found under directory 'examples'
+        warning: no previously-included files matching '*.pyo' found under directory 'examples'
+    Installing collected packages: gunicorn
+      Running setup.py install for gunicorn
+        warning: no previously-included files matching '*.pyc' found under directory 'docs'
+        warning: no previously-included files matching '*.pyo' found under directory 'docs'
+        warning: no previously-included files matching '*.pyc' found under directory 'tests'
+        warning: no previously-included files matching '*.pyo' found under directory 'tests'
+        warning: no previously-included files matching '*.pyc' found under directory 'examples'
+        warning: no previously-included files matching '*.pyo' found under directory 'examples'
+        /usr/bin/python /tmp/tmpU1LWbr.py
+        removing /tmp/tmpU1LWbr.py
+        Installing gunicorn_paster script to /usr/bin
+        Installing gunicorn script to /usr/bin
+        Installing gunicorn_django script to /usr/bin
+    Successfully installed gunicorn
+    Cleaning up...
+    [root@rascal14:/etc/uwsgi]: gunicorn -k flask_sockets.worker hello:app
+    2013-10-05 05:55:29 [15400] [INFO] Starting gunicorn 18.0
+    2013-10-05 05:55:29 [15400] [INFO] Listening at: http://127.0.0.1:8000 (15400)
+    2013-10-05 05:55:29 [15400] [INFO] Using worker: flask_sockets.worker
+    2013-10-05 05:55:29 [15405] [INFO] Booting worker with pid: 15405
+    2013-10-05 05:55:29 [15405] [ERROR] Exception in worker process:
+    Traceback (most recent call last):
+      File "/usr/lib/python2.6/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+        worker.init_process()
+      File "/usr/lib/python2.6/site-packages/gunicorn/workers/ggevent.py", line 165, in init_process
+        super(GeventWorker, self).init_process()
+      File "/usr/lib/python2.6/site-packages/gunicorn/workers/base.py", line 106, in init_process
+        self.wsgi = self.app.wsgi()
+      File "/usr/lib/python2.6/site-packages/gunicorn/app/base.py", line 114, in wsgi
+        self.callable = self.load()
+      File "/usr/lib/python2.6/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+        return self.load_wsgiapp()
+      File "/usr/lib/python2.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+        return util.import_app(self.app_uri)
+      File "/usr/lib/python2.6/site-packages/gunicorn/util.py", line 354, in import_app
+        __import__(module)
+    ImportError: No module named hello
+    Traceback (most recent call last):
+      File "/usr/lib/python2.6/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+        worker.init_process()
+      File "/usr/lib/python2.6/site-packages/gunicorn/workers/ggevent.py", line 165, in init_process
+        super(GeventWorker, self).init_process()
+      File "/usr/lib/python2.6/site-packages/gunicorn/workers/base.py", line 106, in init_process
+        self.wsgi = self.app.wsgi()
+      File "/usr/lib/python2.6/site-packages/gunicorn/app/base.py", line 114, in wsgi
+        self.callable = self.load()
+      File "/usr/lib/python2.6/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+        return self.load_wsgiapp()
+      File "/usr/lib/python2.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+        return util.import_app(self.app_uri)
+      File "/usr/lib/python2.6/site-packages/gunicorn/util.py", line 354, in import_app
+        __import__(module)
+    ImportError: No module named hello
+    2013-10-05 05:55:29 [15405] [INFO] Worker exiting (pid: 15405)
+    2013-10-05 05:55:31 [15400] [INFO] Shutting down: Master
+    2013-10-05 05:55:31 [15400] [INFO] Reason: Worker failed to boot.
+
