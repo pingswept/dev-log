@@ -494,3 +494,6 @@ Meanwhile, was able to install greenlet, a gevent dependency.
     Successfully installed greenlet
     Cleaning up...
 
+Turns out that evhttp.h didn't appear until libevent 1.2, so 1.1a won't fly.
+
+Fortunately, previously built libevent 1.4.14b on EC2 machine and forgot about it for a while.
