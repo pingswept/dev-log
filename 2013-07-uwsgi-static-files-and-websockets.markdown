@@ -449,6 +449,9 @@ Missing libevent?
         arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.6 -c gevent/core.c -o build/temp.linux-armv5tejl-2.6/gevent/core.o
         In file included from gevent/core.c:253:
         gevent/libevent.h:9:19: error: event.h: No such file or directory
+        gevent/libevent.h:38:20: error: evhttp.h: No such file or directory
+        gevent/libevent.h:39:19: error: evdns.h: No such file or directory
+
 
 Followed by lots more spew.
 
@@ -467,4 +470,4 @@ Install libevent and dev pkg to get headers.
     Downloading http://rascalmicro.com/packages/beta/armv5te/base/libevent-1.1a-dev_1.1a-r0.5_armv5te.ipk.
     Configuring libevent-1.1a-dev.
 
-
+Still missing evhttp.h
