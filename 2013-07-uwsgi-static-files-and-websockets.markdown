@@ -421,3 +421,13 @@ A second attempt with the same swap settings seems to start with where it died, 
       Running setup.py install for cython
         building 'Cython.Compiler.Code' extension
         arm-angstrom-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -mthumb-interwork -mno-thumb -fexpensive-optimizations -frename-registers -fomit-frame-pointer -O2 -ggdb2 -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.6 -c /home/root/build/cython/Cython/Compiler/Code.c -o build/temp.linux-armv5tejl-2.6/home/root/build/cython/Cython/Compiler/Code.o
+
+### Trying cross-compilation of Cython instead ###
+
+Built Cython 0.19.1 on Amazon EC2 instance.
+
+    [root@rascal14:~]: opkg install python-cython_0.19.1-r3.6_armv5te.ipk 
+    Installing python-cython (0.19.1-r3.6) to root...
+    Configuring python-cython.
+    [root@rascal14:~]: cython --version  
+    Cython version 0.19.1
