@@ -733,3 +733,17 @@ Built uWSGI 1.9.17.1 with SSL support for Ubuntu with just `sudo pip install uws
 But
 
     The method POST is not allowed for the requested URL.
+
+I suspect this has something to do with SSL.
+
+### Building uWSGI with Pip on the Rascal ###
+
+    [root@rascal14:~/flask-websockets-test-master]: opkg remove uwsgi
+    Removing package uwsgi from root...
+    [root@rascal14:~/flask-websockets-test-master]: pip install uwsgi
+
+Found in a bunch of spew:
+
+    core/socket.c:1973: error: implicit declaration of function 'accept4'
+
+I remember solving this problem previously. Will have to dig into other notes somewhere.
