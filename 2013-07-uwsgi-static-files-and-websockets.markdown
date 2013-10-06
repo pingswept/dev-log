@@ -644,3 +644,32 @@ But actually, it looks like maybe Cython wasn't actually needed. When we tried t
     2013-10-05 05:55:31 [15400] [INFO] Shutting down: Master
     2013-10-05 05:55:31 [15400] [INFO] Reason: Worker failed to boot.
 
+### Got Kawan!'s demo working with Gunicorn ###
+
+Zipfile from https://github.com/whichlight/flask-websockets-test
+
+    [root@rascal14:~]: unzip flask-websockets-test.zip 
+    Archive:  flask-websockets-test.zip
+       creating: flask-websockets-test-master/
+      inflating: flask-websockets-test-master/.gitignore
+      inflating: flask-websockets-test-master/readme.txt
+      inflating: flask-websockets-test-master/server.py
+       creating: flask-websockets-test-master/templates/
+      inflating: flask-websockets-test-master/templates/index.html
+    [root@rascal14:~]: cd flask-websockets-test-master/
+    [root@rascal14:~/flask-websockets-test-master]: gunicorn -b 0.0.0.0:8002 -k flask_sockets.worker server:app
+    2013-10-06 02:55:20 [16438] [INFO] Starting gunicorn 18.0
+    2013-10-06 02:55:20 [16438] [INFO] Listening at: http://0.0.0.0:8002 (16438)
+    2013-10-06 02:55:20 [16438] [INFO] Using worker: flask_sockets.worker
+    2013-10-06 02:55:20 [16443] [INFO] Booting worker with pid: 16443
+    2013-10-06 02:55:54 [16443] [INFO] 192.168.1.57 - - [2013-10-06 02:55:54] "GET / HTTP/1.1" 200 1302 0.458830
+    2013-10-06 02:55:55 [16443] [INFO] 192.168.1.57 - - [2013-10-06 02:55:55] "GET /favicon.ico HTTP/1.1" 404 347 0.550990
+
+
+### Switching from Gunicorn back to uWSGI ###
+
+    [root@rascal14:~]: opkg remove uwsgi                  
+    Removing package uwsgi from root...
+    [root@rascal14:~]: opkg install uwsgi_1.9.14-r0.6_armv5te.ipk 
+    Installing uwsgi (1.9.14-r0.6) to root...
+    Configuring uwsgi.
