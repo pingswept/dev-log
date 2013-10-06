@@ -723,3 +723,13 @@ Supposing one could build uWSGI with SSL support, here's how you generate a self
     Signature ok
     subject=/C=US/ST=Some-State/O=Internet Widgits Pty Ltd/emailAddress=brandon@rascalmicro.com
     Getting Private key
+
+### uWSGI on Ubuntu desktop ###
+
+Built uWSGI 1.9.17.1 with SSL support for Ubuntu with just `sudo pip install uwsgi`
+
+    uwsgi --https 0.0.0.0:8002,foobar.crt,foobar.key --http-websockets --module server --callable app
+
+But
+
+    The method POST is not allowed for the requested URL.
