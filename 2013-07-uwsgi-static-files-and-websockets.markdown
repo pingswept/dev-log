@@ -740,6 +740,17 @@ Ah, yes. From the console:
 
     [blocked] The page at https://127.0.0.1:8002/ ran insecure content from http://code.jquery.com/jquery-1.4.2.min.js.
 
+After adding an S so that jQuery is fetched via https, jQuery works.
+
+However, the socket is immediately closed after opening due to:
+
+    ws.onclose = function (){
+        console.log('socket closed');
+    }
+
+Not sure why ws.onclose is firing. Probably triggered by https://github.com/rascalmicro/flask-websockets-test/blob/master/server.py#L26
+
+
 ### Building uWSGI with Pip on the Rascal ###
 
     [root@rascal14:~/flask-websockets-test-master]: opkg remove uwsgi
