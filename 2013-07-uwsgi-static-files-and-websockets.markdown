@@ -736,6 +736,10 @@ But
 
 I suspect this has something to do with SSL.
 
+Ah, yes. From the console:
+
+    [blocked] The page at https://127.0.0.1:8002/ ran insecure content from http://code.jquery.com/jquery-1.4.2.min.js.
+
 ### Building uWSGI with Pip on the Rascal ###
 
     [root@rascal14:~/flask-websockets-test-master]: opkg remove uwsgi
