@@ -1,9 +1,3 @@
-uwsgi --http 0.0.0.0:5000 --ini public.ini
-
-uwsgi --https :8443,foobar.crt,foobar.key --http-raw-body --gevent 100 --module public --callable public
-
-uwsgi --http 0.0.0.0:5000 --static-map /favicon.ico=/var/www/public/static/images/led.gif --ini public.ini
-
 ### Summary of the situation ###
 
 uWSGI runs the websockets demo, but the demo doesn't actually work without gevent 1.x or newer.
@@ -696,3 +690,36 @@ uWSGI needs HTTPS support built in for websockets handshake to work.
       File "./websockets_echo.py", line 51, in application
         uwsgi.websocket_handshake(env['HTTP_SEC_WEBSOCKET_KEY'], env.get('HTTP_ORIGIN', ''))
     IOError: unable to complete websocket handshake
+
+### SSL cert ###
+
+Supposing one could build uWSGI with SSL support, here's how you generate a self-signed SSL certificate for testing. This was on my Ubuntu 12.04 desktop.
+
+    ➜  flask-websockets-test git:(master) ✗ openssl genrsa -out foobar.key 2048
+    Generating RSA private key, 2048 bit long modulus
+    ...........+++
+    ............................................+++
+    e is 65537 (0x10001)
+    ➜  flask-websockets-test git:(master) ✗ openssl req -new -key foobar.key -out foobar.csr
+    You are about to be asked to enter information that will be incorporated
+    into your certificate request.
+    What you are about to enter is what is called a Distinguished Name or a DN.
+    There are quite a few fields but you can leave some blank
+    For some fields there will be a default value,
+    If you enter '.', the field will be left blank.
+    -----
+    Country Name (2 letter code) [AU]:US
+    State or Province Name (full name) [Some-State]:
+    Locality Name (eg, city) []:
+    Organization Name (eg, company) [Internet Widgits Pty Ltd]:
+    Organizational Unit Name (eg, section) []:
+    Common Name (e.g. server FQDN or YOUR name) []:
+    Email Address []:
+    Please enter the following 'extra' attributes
+    to be sent with your certificate request
+    A challenge password []:
+    An optional company name []:
+    ➜  flask-websockets-test git:(master) ✗ openssl x509 -req -days 365 -in foobar.csr -signkey foobar.key -out foobar.crt
+    Signature ok
+    subject=/C=US/ST=Some-State/O=Internet Widgits Pty Ltd/emailAddress=brandon@rascalmicro.com
+    Getting Private key
