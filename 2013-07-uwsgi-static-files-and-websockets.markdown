@@ -673,3 +673,26 @@ Zipfile from https://github.com/whichlight/flask-websockets-test
     [root@rascal14:~]: opkg install uwsgi_1.9.14-r0.6_armv5te.ipk 
     Installing uwsgi (1.9.14-r0.6) to root...
     Configuring uwsgi.
+
+Tried just blindly running Kawan!'s demo with uWGSI
+
+    uwsgi --http 0.0.0.0:8002 --http-websockets --module server --callable  app
+
+    Traceback (most recent call last):
+      File "/usr/lib/python2.6/site-packages/flask/app.py", line 1701, in __call__
+        return self.wsgi_app(environ, start_response)
+      File "/usr/lib/python2.6/site-packages/flask_sockets.py", line 37, in __call__
+        environment = environ['wsgi.websocket']
+    KeyError: 'wsgi.websocket'
+
+Tried uWSGI websockets echo demo from https://github.com/unbit/uwsgi/blob/master/tests/websockets_echo.py
+
+uWSGI needs HTTPS support built in for websockets handshake to work.
+
+    uwsgi --http 0.0.0.0:8002 --http-websockets --module websockets_echo --callable application
+    
+    you need to build uWSGI with SSL support to use the websocket handshake api function !!!
+    Traceback (most recent call last):
+      File "./websockets_echo.py", line 51, in application
+        uwsgi.websocket_handshake(env['HTTP_SEC_WEBSOCKET_KEY'], env.get('HTTP_ORIGIN', ''))
+    IOError: unable to complete websocket handshake
