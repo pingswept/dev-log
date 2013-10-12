@@ -13,3 +13,4 @@ Install some dependencies
     sudo pip install pyzmq
     sudo pip install tornado
     ipython notebook
+    sudo apt-get install python-matplotlib
