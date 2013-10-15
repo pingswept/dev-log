@@ -19,4 +19,20 @@ Start over
     make
     sudo make install
     node --version
-    v0.10.20
+        v0.10.20
+    cd Ghost-0.3.2-11 
+    npm install --production
+    npm update
+    npm start
+
+Works!
+
+    npm start               
+    
+    > ghost@0.3.2-11 start /home/brandon/Ghost-0.3.2-11
+    > node index
+    
+    Ghost is running... 
+    Listening on 127.0.0.1:2368 
+    Url configured as: http://my-ghost-blog.com 
+    Ctrl+C to shut down
