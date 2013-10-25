@@ -10,3 +10,9 @@
 Add to BBLAYERS in conf/bblayers.conf:
 
     /home/ubuntu/poky/meta-atmel \
+
+Edit conf/local.conf:
+
+    MACHINE ??= "sama5d3xek" # was "qemux86"
+    [...]
+    PACKAGE_CLASSES ?= "package_ipk" # was "package_rpm"
