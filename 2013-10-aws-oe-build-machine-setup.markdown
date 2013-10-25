@@ -6,3 +6,7 @@
     git checkout dylan-9.0.1 -b rascal
     git clone http://github.com/linux4sam/meta-atmel
     source oe-init-build-env build-atmel
+
+Add to BBLAYERS in conf/bblayers.conf:
+
+    /home/ubuntu/poky/meta-atmel \
