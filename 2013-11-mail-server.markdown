@@ -6,3 +6,7 @@ ubuntu-saucy-13.10-amd64-server-20131015 (ami-ad184ac4)
     sudo -s
     chsh -s /bin/zsh ubuntu # change the shell to Zsh for the default user, ubuntu
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+    sudo apt-get install mysql-client mysql-server # here, we also set the MySQL root pw
+    sudo apt-get install postfix postfix-mysql
+
+
