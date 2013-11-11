@@ -69,4 +69,13 @@ Build fails.
       /home/ubuntu/poky/meta-angstrom/recipes-tweaks/connman/connman_1.19.bbappend
     ERROR: Command execution failed: Exited with 1
 
-Seems we also need to manually add dependencies, meta-openembedded and meta-systemd
+Seems we also need to manually add dependencies, meta-oe and meta-systemd, both of which are subfolders of the meta-openembedded repo.
+
+Clone the repo
+
+    git clone git://git.openembedded.org/meta-openembedded
+
+Add to bblayers.conf
+
+    /home/ubuntu/poky/meta-openembedded/meta-oe \
+    /home/ubuntu/poky/meta-openembedded/meta-systemd \
