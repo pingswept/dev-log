@@ -54,9 +54,10 @@ Appears to have worked!
 ### Adding Angstrom ###
 
 Clone repo into poky/meta-angstrom
+
     cd ~/poky
     git clone https://github.com/Angstrom-distribution/meta-angstrom.git
 
 Add to BBLAYERS in conf/bblayers.conf:
 
-  /home/ubuntu/poky/meta-angstrom \
+    /home/ubuntu/poky/meta-angstrom \
