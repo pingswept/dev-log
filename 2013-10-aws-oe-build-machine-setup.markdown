@@ -50,3 +50,13 @@ Appears to have worked!
     NOTE: validating kernel config, see log.do_kernel_configcheck for details
     WARNING: Failed to fetch URL http://www.angstrom-distribution.org/unstable/sources/tinylogin-1.4.tar.bz2, attempting MIRRORS if available
     NOTE: Tasks Summary: Attempted 1543 tasks of which 306 didn't need to be rerun and all succeeded.
+
+### Adding Angstrom ###
+
+Clone repo into poky/meta-angstrom
+    cd ~/poky
+    git clone https://github.com/Angstrom-distribution/meta-angstrom.git
+
+Add to BBLAYERS in conf/bblayers.conf:
+
+  /home/ubuntu/poky/meta-angstrom \
