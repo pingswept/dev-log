@@ -61,3 +61,12 @@ Clone repo into poky/meta-angstrom
 Add to BBLAYERS in conf/bblayers.conf:
 
     /home/ubuntu/poky/meta-angstrom \
+
+Build fails.
+
+    ERROR: No recipes available for:
+      /home/ubuntu/poky/meta-angstrom/recipes-core/systemd/systemd_206.bbappend
+      /home/ubuntu/poky/meta-angstrom/recipes-tweaks/connman/connman_1.19.bbappend
+    ERROR: Command execution failed: Exited with 1
+
+Seems we also need to manually add dependencies, meta-openembedded and meta-systemd
