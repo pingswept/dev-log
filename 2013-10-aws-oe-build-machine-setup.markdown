@@ -94,3 +94,13 @@ Add to bblayers.conf
     /home/ubuntu/poky/meta-openembedded/meta-oe \
     /home/ubuntu/poky/meta-openembedded/meta-systemd \
 
+Switch Angstrom to Yocto 1.4 "Dylan" release
+
+    git branch -r
+        origin/HEAD -> origin/master
+        origin/angstrom-v2012.05-yocto1.2
+        origin/angstrom-v2012.12-yocto1.3
+        origin/angstrom-v2013.06-yocto1.4
+        origin/angstrom-v2013.12-yocto1.5
+        origin/master
+    git checkout -b dylan origin/angstrom-v2013.06-yocto1.4
