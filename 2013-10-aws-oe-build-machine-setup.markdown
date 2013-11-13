@@ -104,3 +104,15 @@ Switch Angstrom to Yocto 1.4 "Dylan" release
         origin/angstrom-v2013.12-yocto1.5
         origin/master
     git checkout -b dylan origin/angstrom-v2013.06-yocto1.4
+
+Still fails
+
+    bitbake core-image-minimal
+    Loading cache: 100% |#########################################################################################################| ETA:  00:00:00Loaded 1662 entries from dependency cache.
+    NOTE: ['/home/ubuntu/poky/meta-angstrom/recipes-tweaks/gstreamer/gstreamer_0.10.36.bbappend'] to []
+    Parsing recipes: 100% |#######################################################################################################| Time: 00:00:03Parsing of 1298 .bb files complete (1275 cached, 23 parsed). 1660 targets, 55 skipped, 0 masked, 0 errors.
+    ERROR: No recipes available for:
+      /home/ubuntu/poky/meta-angstrom/recipes-tweaks/libgnome/libgnome_2.32.1.bbappend
+      /home/ubuntu/poky/meta-angstrom/recipes-core/systemd/systemd_206.bbappend
+      /home/ubuntu/poky/meta-angstrom/recipes-tweaks/connman/connman_1.17.bbappend
+    ERROR: Command execution failed: Exited with 1
