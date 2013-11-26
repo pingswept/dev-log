@@ -116,3 +116,22 @@ Still fails
       /home/ubuntu/poky/meta-angstrom/recipes-core/systemd/systemd_206.bbappend
       /home/ubuntu/poky/meta-angstrom/recipes-tweaks/connman/connman_1.17.bbappend
     ERROR: Command execution failed: Exited with 1
+
+Suspect the problem is that Angstrom and dependencies are expecting Dylan 9.0.2 release, but meta-atmel layer instructions led me to check out 9.0.1 release.
+
+    git checkout dylan-9.0.2 -b dylan-9.0.2
+    source oe-init-build-env build-atmel
+    bitbake core-image-minimal
+
+Hmm. Same problem persists.
+
+    Pseudo may be out of date, rebuilding pseudo before the main build
+    Parsing recipes: 100% |#################################################################################| Time: 00:01:52
+    Parsing of 1299 .bb files complete (0 cached, 1299 parsed). 1661 targets, 55 skipped, 0 masked, 0 errors.
+    ERROR: No recipes available for:
+      /home/ubuntu/poky/meta-angstrom/recipes-tweaks/libgnome/libgnome_2.32.1.bbappend
+      /home/ubuntu/poky/meta-angstrom/recipes-core/systemd/systemd_206.bbappend
+      /home/ubuntu/poky/meta-angstrom/recipes-tweaks/connman/connman_1.17.bbappend
+    ERROR: Command execution failed: Exited with 1
+
+    
