@@ -134,4 +134,11 @@ Hmm. Same problem persists.
       /home/ubuntu/poky/meta-angstrom/recipes-tweaks/connman/connman_1.17.bbappend
     ERROR: Command execution failed: Exited with 1
 
-    
+Asked on Angstrom list: https://www.mail-archive.com/angstrom-distro-devel@linuxtogo.org/msg06767.html
+
+Pull fixes connman problem
+
+Then:
+
+    mv systemd_206.bbappend systemd_199.bbappend
+    rm -rf meta-angstrom/recipes-tweaks/libgnome
