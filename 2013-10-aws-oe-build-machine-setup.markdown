@@ -142,3 +142,22 @@ Then:
 
     mv systemd_206.bbappend systemd_199.bbappend
     rm -rf meta-angstrom/recipes-tweaks/libgnome
+
+The result of this was:
+
+    ERROR: Fixup Perms: Unable to correct directory link, target already exists: /var/lock -> /var/volatile/lock
+    ERROR: Fixup Perms: Unable to correct directory link, target already exists: /var/log -> /var/volatile/log
+    ERROR: Fixup Perms: Unable to correct directory link, target already exists: /var/run -> /var/volatile/run
+    ERROR: Fixup Perms: Unable to correct directory link, target already exists: /var/tmp -> /var/volatile/tmp
+    WARNING: QA Issue: busybox: Files/directories were installed but not shipped
+      /lib/systemd/system/busybox-klogd.service
+      /lib/systemd/system/busybox-syslog.service
+    WARNING: QA Issue: util-linux: Files/directories were installed but not shipped
+      /lib/systemd
+      /lib/systemd/system
+      /lib/systemd/system/uuidd.service
+      /lib/systemd/system/uuidd.socket
+    NOTE: Tasks Summary: Attempted 1543 tasks of which 850 didn't need to be rerun and all succeeded.
+    
+    Summary: There were 2 WARNING messages shown.
+    Summary: There were 4 ERROR messages shown, returning a non-zero exit code.
