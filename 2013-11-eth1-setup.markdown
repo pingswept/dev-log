@@ -55,8 +55,12 @@ The contents of /etc/init.d/S02network
     
     exit $?
 
-To bring up eth1
+To bring up eth1 (unsuccessfully)
 
     /sbin/ifconfig eth1 hw ether 08:00:3e:26:0a:56
     /sbin/ifconfig eth1 192.168.10.99 netmask 255.255.255.0
     /sbin/ifconfig eth1 up
+    
+Fails with:
+
+    ifconfig: SIOCSIFHWADDR: No such device
