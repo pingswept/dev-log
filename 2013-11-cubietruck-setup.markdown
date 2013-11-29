@@ -172,3 +172,36 @@ Some info for reference.
     lcd                     3794  0 
     sunxi_gmac             30907  0 
     pwm_sunxi               9251  0 
+
+Adding SSH server
+
+    root@cubietruck:~# sudo apt-get update
+    Ign http://ports.ubuntu.com quantal InRelease
+    Ign http://ppa.launchpad.net quantal InRelease
+    Hit http://ports.ubuntu.com quantal Release.gpg
+    Get:1 http://ppa.launchpad.net quantal Release.gpg [316 B]
+    Hit http://ports.ubuntu.com quantal Release          
+    Get:2 http://ppa.launchpad.net quantal Release [11.9 kB]
+    Hit http://ports.ubuntu.com quantal/main Sources   
+    Get:3 http://ppa.launchpad.net quantal/main Sources [19.0 kB]
+    Hit http://ports.ubuntu.com quantal/universe Sources     
+    Hit http://ports.ubuntu.com quantal/main armhf Packages  
+    Hit http://ports.ubuntu.com quantal/universe armhf Packages           
+    Get:4 http://ppa.launchpad.net quantal/main armhf Packages [42.6 kB]
+    Hit http://ports.ubuntu.com quantal/main Translation-en   
+    Hit http://ports.ubuntu.com quantal/universe Translation-en
+    Ign http://ppa.launchpad.net quantal/main Translation-en  
+    Fetched 73.8 kB in 3s (23.2 kB/s)
+    Reading package lists... Done
+
+Ah, it's already installed. Just need a symbolic link in /etc/rc5.d
+
+    root@cubietruck:/etc/rc5.d# ln -s ../init.d/ssh S60ssh
+    root@cubietruck:/etc/rc5.d# ls -l
+    total 4
+    -rw-r--r-- 1 root root 677 Jul 21  2012 README
+    lrwxrwxrwx 1 root root  13 Nov 29 22:21 S60ssh -> ../init.d/ssh
+    lrwxrwxrwx 1 root root  14 Apr 22  2013 S75sudo -> ../init.d/sudo
+    lrwxrwxrwx 1 root root  18 Apr 22  2013 S99ondemand -> ../init.d/ondemand
+    lrwxrwxrwx 1 root root  18 Apr 22  2013 S99rc.local -> ../init.d/rc.local
+
