@@ -205,3 +205,7 @@ Ah, it's already installed. Just need a symbolic link in /etc/rc5.d
     lrwxrwxrwx 1 root root  18 Apr 22  2013 S99ondemand -> ../init.d/ondemand
     lrwxrwxrwx 1 root root  18 Apr 22  2013 S99rc.local -> ../init.d/rc.local
 
+Cubietruck default password with Lubuntu card 1.00 image: linaro/linaro
+
+    ssh linaro@192.168.1.112  
+    linaro@192.168.1.112's password: 
