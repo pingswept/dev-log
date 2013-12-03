@@ -57,10 +57,31 @@ Then, clone and do some more stuff.
     sudo npm install -g grunt-cli
     npm install
 
-Initialize grunt.
-
+Use grunt to build CSS and JS files
 
     grunt init
+    Running "shell:bourbon" (shell) task
+    
+    Running "update_submodules" task
+    
+    Running "sass:compress" (sass) task
+    File "./core/client/assets/css/screen.css" created.
+    
+    Running "handlebars:core" (handlebars) task
+    File "core/client/tpl/hbs-tpl.js" created.
+    
+    Running "concat:dev" (concat) task
+    File "core/built/scripts/vendor.js" created.
+    File "core/built/scripts/helpers.js" created.
+    File "core/built/scripts/templates.js" created.
+    File "core/built/scripts/models.js" created.
+    File "core/built/scripts/views.js" created.
+    
+    Running "concat:prod" (concat) task
+    File "core/built/scripts/ghost.js" created.
+    
+    Done, without errors.
+
 
 
 http://localhost:2368/ghost/
