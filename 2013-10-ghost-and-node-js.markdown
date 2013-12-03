@@ -36,3 +36,15 @@ Works!
     Listening on 127.0.0.1:2368 
     Url configured as: http://my-ghost-blog.com 
     Ctrl+C to shut down
+
+### Install from Github HEAD ###
+
+git clone git@github.com:TryGhost/Ghost.git ghost
+git submodule update --init
+sudo npm install -g grunt-cli
+npm install
+
+
+
+
+http://localhost:2368/ghost/
