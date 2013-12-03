@@ -39,10 +39,14 @@ Works!
 
 ### Install from Github HEAD ###
 
-git clone git@github.com:TryGhost/Ghost.git ghost
-git submodule update --init
-sudo npm install -g grunt-cli
-npm install
+First, install Bourbon gem.
+
+
+
+    git clone git@github.com:TryGhost/Ghost.git ghost
+    git submodule update --init
+    sudo npm install -g grunt-cli
+    npm install
 
 
 
