@@ -56,6 +56,10 @@ Then, clone and do some more stuff.
     git submodule update --init
     sudo npm install -g grunt-cli
     npm install
+
+Initialize grunt.
+
+
     grunt init
 
 
