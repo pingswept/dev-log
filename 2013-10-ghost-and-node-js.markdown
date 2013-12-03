@@ -41,14 +41,22 @@ Works!
 
 First, install Bourbon gem.
 
+    sudo gem install bourbon
+    [sudo] password for brandon: 
+    Fetching: bourbon-3.1.8.gem (100%)
+    Successfully installed bourbon-3.1.8
+    1 gem installed
+    Installing ri documentation for bourbon-3.1.8...
+    Installing RDoc documentation for bourbon-3.1.8...
 
+
+Then, clone and do some more stuff.
 
     git clone git@github.com:TryGhost/Ghost.git ghost
     git submodule update --init
     sudo npm install -g grunt-cli
     npm install
-
-
+    grunt init
 
 
 http://localhost:2368/ghost/
