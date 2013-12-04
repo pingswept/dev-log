@@ -95,6 +95,8 @@ Actually start ghost:
 
     npm start # from within ghost directory
 
+Need to open a port for web serving on EC2 instance before the site will be visible externally.
+
 http://localhost:2368/ghost/
 
 ### Install supervisor ###
