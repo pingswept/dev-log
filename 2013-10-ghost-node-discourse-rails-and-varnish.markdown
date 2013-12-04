@@ -59,7 +59,7 @@ Then, clone and do some more stuff.
 
 (Here, we're cloning from Github, which is stupid, but it's the only way to get the pages feature right now. In the future, should use Ghost 0.4.)
 
-    git clone git@github.com:TryGhost/Ghost.git ghost
+    git clone https://github.com/TryGhost/Ghost.git ghost-696cfe7018
     git submodule update --init
     sudo npm install -g grunt-cli
     npm install
