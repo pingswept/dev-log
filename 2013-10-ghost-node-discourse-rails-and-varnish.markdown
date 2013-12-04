@@ -1,21 +1,18 @@
 Installing on an Amazon EC2 t1.micro instance running Ubuntu Server 12.04.3 LTS - ami-a73264ce (64-bit)
 
-    sudo apt-get install npm
-    cd Ghost-0.3.2-11 
-    npm install --production
+### General EC2 Ubuntu fixups ###
 
+    sudo apt-get install git zsh
+    sudo -s
+    chsh -s /bin/zsh ubuntu # change the shell to Zsh for the default user, ubuntu
+    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
-Arrg. Need a newer version of Node.
+Also, copy vimrc and gitconfig from https://github.com/pingswept/linux-tool-configs
 
-    npm ERR! Unsupported
-    npm ERR! Not compatible with your version of node/npm: sqlite3@2.1.16
-    npm ERR! Required: {"node":">= 0.6.13 < 0.11.0"}
-    npm ERR! Actual:   {"npm":"1.1.4","node":"0.6.12"}
+### Install Node ###
 
-Start over
+For Ghost, need a newer version of Node: Required: {"node":">= 0.6.13 < 0.11.0"}
 
-    sudo apt-get remove npm
-    sudo apt-get autoremove
     cd node-v0.10.20
     ./configure
     make
@@ -27,19 +24,7 @@ Start over
     npm update
     npm start
 
-Works!
-
-    npm start               
-    
-    > ghost@0.3.2-11 start /home/brandon/Ghost-0.3.2-11
-    > node index
-    
-    Ghost is running... 
-    Listening on 127.0.0.1:2368 
-    Url configured as: http://my-ghost-blog.com 
-    Ctrl+C to shut down
-
-### Install from Github HEAD ###
+### Install from Ghost from Github HEAD ###
 
 First, install Bourbon gem.
 
@@ -50,7 +35,6 @@ First, install Bourbon gem.
     1 gem installed
     Installing ri documentation for bourbon-3.1.8...
     Installing RDoc documentation for bourbon-3.1.8...
-
 
 Then, clone and do some more stuff.
 
@@ -83,7 +67,5 @@ Use grunt to build CSS and JS files
     File "core/built/scripts/ghost.js" created.
     
     Done, without errors.
-
-
 
 http://localhost:2368/ghost/
