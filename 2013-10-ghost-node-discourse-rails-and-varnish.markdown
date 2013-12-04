@@ -40,6 +40,10 @@ First, we need the Bourbon gem, which requires rubygems. Since we'll want versio
     rbenv install 2.0.0-p353 # stable as of 2013-12-04
     rbenv rehash
     rbenv global 2.0.0-p353
+    which ruby
+        /home/ubuntu/.rbenv/shims/ruby
+    ruby -v
+        ruby 2.0.0p353 (2013-11-22 revision 43784) [x86_64-linux]
 
 First, install Bourbon gem.
 
