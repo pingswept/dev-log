@@ -12,8 +12,9 @@ Also, copy vimrc and gitconfig from https://github.com/pingswept/linux-tool-conf
 ### Install Node ###
 
 For Ghost, need a newer version of Node: Required: {"node":">= 0.6.13 < 0.11.0"}
-
-    cd node-v0.10.20
+    wget http://nodejs.org/dist/v0.10.22/node-v0.10.22.tar.gz
+    tar xzf node-v0.10.22.tar.gz
+    cd node-v0.10.22
     ./configure
     make
     sudo make install
