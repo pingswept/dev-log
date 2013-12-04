@@ -27,19 +27,18 @@ For Ghost, need a newer version of Node: Required: {"node":">= 0.6.13 < 0.11.0"}
 
 First, we need the Bourbon gem, which requires rubygems. Since we'll want versions of Ruby and Rails later, we'll install rbenv first.
 
+    sudo apt-get install libssl-dev # will need libssl headers to build OpenSSL gem
+
     git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
     
     echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
     echo 'eval "$(rbenv init -)"' >> ~/.zshrc
-    
     exec $SHELL -l
     
     git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
     
     rbenv install 2.0.0-p353 # stable as of 2013-12-04
-    
     rbenv rehash
-    
     rbenv global 2.0.0-p353
 
 First, install Bourbon gem.
