@@ -21,7 +21,10 @@ For Ghost, need a newer version of Node: Required: {"node":">= 0.6.13 < 0.11.0"}
     make
     sudo make install
     node --version
-        v0.10.20
+        v0.10.22
+
+### Install Ghost ###
+
     cd Ghost-0.3.2-11 
     npm install --production
     npm update
