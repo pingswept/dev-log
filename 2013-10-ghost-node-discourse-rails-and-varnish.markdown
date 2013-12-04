@@ -25,13 +25,6 @@ For Ghost, need a newer version of Node: Required: {"node":">= 0.6.13 < 0.11.0"}
 
 ### Install Ghost ###
 
-    cd Ghost-0.3.2-11 
-    npm install --production
-    npm update
-    npm start
-
-### Install from Ghost from Github HEAD ###
-
 First, install Bourbon gem.
 
     sudo gem install bourbon
@@ -43,6 +36,8 @@ First, install Bourbon gem.
     Installing RDoc documentation for bourbon-3.1.8...
 
 Then, clone and do some more stuff.
+
+(Here, we're cloning from Github, which is stupid, but it's the only way to get the pages feature right now. In the future, should use Ghost 0.4.)
 
     git clone git@github.com:TryGhost/Ghost.git ghost
     git submodule update --init
