@@ -86,3 +86,12 @@ Use grunt to build CSS and JS files
     Done, without errors.
 
 http://localhost:2368/ghost/
+
+### Install Varnish ###
+
+Varnish has a package repo for the Ubuntu LTS releases.
+
+    curl http://repo.varnish-cache.org/debian/GPG-key.txt | sudo apt-key add -
+    echo "deb http://repo.varnish-cache.org/ubuntu/ precise varnish-3.0" | sudo tee -a /etc/apt/sources.list
+    sudo apt-get update
+    sudo apt-get install varnish
