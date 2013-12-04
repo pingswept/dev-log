@@ -47,13 +47,13 @@ First, we need the Bourbon gem, which requires rubygems. Since we'll want versio
 
 First, install Bourbon gem.
 
-    sudo gem install bourbon
-    [sudo] password for brandon: 
+    gem install bourbon
+    Fetching: sass-3.2.12.gem (100%)
+    Successfully installed sass-3.2.12
+    Fetching: thor-0.18.1.gem (100%)
+    Successfully installed thor-0.18.1
     Fetching: bourbon-3.1.8.gem (100%)
     Successfully installed bourbon-3.1.8
-    1 gem installed
-    Installing ri documentation for bourbon-3.1.8...
-    Installing RDoc documentation for bourbon-3.1.8...
 
 Then, clone and do some more stuff.
 
