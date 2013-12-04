@@ -1,3 +1,5 @@
+Installing on an Amazon EC2 t1.micro instance running Ubuntu Server 12.04.3 LTS - ami-a73264ce (64-bit)
+
     sudo apt-get install npm
     cd Ghost-0.3.2-11 
     npm install --production
