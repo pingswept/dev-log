@@ -102,6 +102,8 @@ http://localhost:2368/ghost/
 ### Install supervisor ###
 
     sudo apt-get install supervisor
+    
+(still need to configure supervisor to start ghost)
 
 ### Install Varnish ###
 
@@ -111,3 +113,7 @@ Varnish has a package repo for the Ubuntu LTS releases.
     echo "deb http://repo.varnish-cache.org/ubuntu/ precise varnish-3.0" | sudo tee -a /etc/apt/sources.list
     sudo apt-get update
     sudo apt-get install varnish
+
+### Install Rails 4 ###
+
+### Install Discourse ###
