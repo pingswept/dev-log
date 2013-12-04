@@ -54,6 +54,8 @@ First, install Bourbon gem.
     Successfully installed thor-0.18.1
     Fetching: bourbon-3.1.8.gem (100%)
     Successfully installed bourbon-3.1.8
+    
+    rbenv rehash # so that shims get updated, so newly installed gems work
 
 Then, clone and do some more stuff.
 
