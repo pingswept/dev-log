@@ -91,7 +91,15 @@ Use grunt to build CSS and JS files
     
     Done, without errors.
 
+Actually start ghost:
+
+    npm start # from within ghost directory
+
 http://localhost:2368/ghost/
+
+### Install supervisor ###
+
+    sudo apt-get install supervisor
 
 ### Install Varnish ###
 
