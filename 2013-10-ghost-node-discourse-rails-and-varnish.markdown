@@ -119,6 +119,10 @@ Add Ghost conf file so that Supervisor runs Ghost on startup.
 
     sudo /etc/init.d/supervisor stop
     sudo /etc/init.d/supervisor start
+    
+Rather than starting and stopping Supervisorm probably better to do (seems to work, but needs more testing):
+
+    sudo supervisorctl reread
 
 ### Install Varnish ###
 
