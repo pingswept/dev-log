@@ -166,3 +166,8 @@ Postgres is needed for Discourse. The postrgresql-contrib package is needed for 
     sudo -u postgres psql dtest -c "create extension hstore; create extension pg_trgm"
 
 ### Install Discourse ###
+
+    wget https://github.com/discourse/discourse/archive/v0.9.7.6.tar.gz
+    tar xzf v0.9.7.6.tar.gz
+    cd discourse-0.9.7.6
+    
