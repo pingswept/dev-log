@@ -169,6 +169,7 @@ Postgres is needed for Discourse. The postrgresql-contrib package is needed for 
 
 ### Install Discourse ###
 
+    gem install bundler
     wget https://github.com/discourse/discourse/archive/v0.9.7.6.tar.gz
     tar xzf v0.9.7.6.tar.gz
     cd discourse-0.9.7.6
