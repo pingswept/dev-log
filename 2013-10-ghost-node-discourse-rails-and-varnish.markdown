@@ -102,8 +102,20 @@ http://localhost:2368/ghost/
 ### Install supervisor ###
 
     sudo apt-get install supervisor
-    
+
 (still need to configure supervisor to start ghost)
+
+    sudo vim /etc/supervisor/conf.d/ghost.conf
+
+    [program:ghost]
+    command = node /home/ubuntu/ghost-696cfe7018/index.js
+    directory = /home/ubuntu/ghost-696cfe7018
+    user = ghost
+    autostart = true
+    autorestart = true
+    stdout_logfile = /var/log/supervisor/ghost.log
+    stderr_logfile = /var/log/supervisor/ghost_err.log
+    environment = NODE_ENV="production"
 
 ### Install Varnish ###
 
