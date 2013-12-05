@@ -152,4 +152,14 @@ The current release of Ghost doesn't handle cookies properly, which means Varnis
 
 ### Install Rails 4 ###
 
+    gem install rails -v 4.0.1
+    rbenv rehash
+
+### Install Postgres ###
+
+Postgres is needed for Discourse. The postrgresql-contrib package is needed for the hstore extension that Discourse uses.
+
+    sudo apt-get install postgresql postgresql-contrib
+
+
 ### Install Discourse ###
