@@ -114,6 +114,15 @@ Varnish has a package repo for the Ubuntu LTS releases.
     sudo apt-get update
     sudo apt-get install varnish
 
+Update /etc/varnish/default.vcl
+
+    backend default {
+        .host = "127.0.0.1";
+        .port = "2368"; # for Ghost running on node.js
+    }
+
+The current release of Ghost doesn't handle cookies properly, which means Varnish breaks authentication, and CSS and JS are marked as not cacheable, which slows stuff down. This stuff will supposedly be fixed in 0.4, but here are some workarounds, at least for the cookies: http://we.je/using-varnish-not-nginx-to-run-ghost/
+
 ### Install Rails 4 ###
 
 ### Install Discourse ###
