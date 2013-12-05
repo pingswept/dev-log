@@ -160,7 +160,9 @@ The current release of Ghost doesn't handle cookies properly, which means Varnis
 Postgres is needed for Discourse. The postrgresql-contrib package is needed for the hstore extension that Discourse uses.
 
     sudo apt-get install postgresql postgresql-contrib
-    sudo -u postgres createuser ubuntu -s -P
-
+    sudo -u postgres createuser ubuntu -s -P # not sure this was necessary, maybe just needed to set password
+    sudo -u postgres createdb dtest
+    sudo -u postgres psql -c "grant all privileges on database dtest to ubuntu"
+    sudo -u postgres psql dtest -c "create extension hstore; create extension pg_trgm"
 
 ### Install Discourse ###
