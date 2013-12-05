@@ -110,12 +110,17 @@ http://localhost:2368/ghost/
     [program:ghost]
     command = node /home/ubuntu/ghost-696cfe7018/index.js
     directory = /home/ubuntu/ghost-696cfe7018
-    user = ghost
+    user = ubuntu
     autostart = true
     autorestart = true
     stdout_logfile = /var/log/supervisor/ghost.log
     stderr_logfile = /var/log/supervisor/ghost_err.log
-    environment = NODE_ENV="production"
+    #environment = NODE_ENV="production"
+
+    sudo /etc/init.d/supervisor stop
+    sudo /etc/init.d/supervisor start
+
+This works, but we're still not using NODE_ENV="production"
 
 ### Install Varnish ###
 
