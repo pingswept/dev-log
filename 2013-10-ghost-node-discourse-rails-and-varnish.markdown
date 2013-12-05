@@ -121,6 +121,14 @@ Update /etc/varnish/default.vcl
         .port = "2368"; # for Ghost running on node.js
     }
 
+Update /etc/defaults/varnish
+
+    DAEMON_OPTS="-a :80 \
+                 -T localhost:6082 \
+                 -f /etc/varnish/default.vcl \
+                 -S /etc/varnish/secret \                                                                     
+                 -s malloc,256m"
+
 The current release of Ghost doesn't handle cookies properly, which means Varnish breaks authentication, and CSS and JS are marked as not cacheable, which slows stuff down. This stuff will supposedly be fixed in 0.4, but here are some workarounds, at least for the cookies: http://we.je/using-varnish-not-nginx-to-run-ghost/
 
 ### Install Rails 4 ###
