@@ -173,4 +173,10 @@ Postgres is needed for Discourse. The postrgresql-contrib package is needed for 
     wget https://github.com/discourse/discourse/archive/v0.9.7.6.tar.gz
     tar xzf v0.9.7.6.tar.gz
     cd discourse-0.9.7.6
+    bundle install
     
+    OpenSSL::SSL::SSLError: SSL_connect returned=1 errno=0 state=SSLv3 read server hello A: wrong version number
+    An error occurred while installing listen (0.7.3), and Bundler cannot continue.
+    Make sure that `gem install listen -v '0.7.3'` succeeds before bundling.
+
+Hmmmm.
