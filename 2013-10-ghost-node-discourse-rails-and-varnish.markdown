@@ -45,6 +45,8 @@ First, we need the Bourbon gem, which requires rubygems. Since we'll want versio
     ruby -v
         ruby 2.0.0p353 (2013-11-22 revision 43784) [x86_64-linux]
 
+    echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+
 First, install Bourbon gem.
 
     gem install bourbon
