@@ -69,3 +69,5 @@ General Linux tools
     Changing shell for root.
     New shell [/bin/bash]: /bin/zsh
     Shell changed.
+
+    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
