@@ -97,6 +97,8 @@ Install other repos
     ➜  www  ls
     editor  public
 
+    mkdir /etc/uwsgi
+
 https://raw.github.com/rascalmicro/openembedded-rascal/rascal/recipes/uwsgi/files/editor.ini
 https://raw.github.com/rascalmicro/openembedded-rascal/rascal/recipes/uwsgi/files/public.ini
 
@@ -106,3 +108,41 @@ https://raw.github.com/rascalmicro/openembedded-rascal/rascal/recipes/uwsgi/file
     touch /var/log/uwsgi/editor.log 
 
     /usr/bin/uwsgi --emperor /etc/uwsgi --daemonize /var/log/uwsgi/emperor.log
+
+    pacman -S python-flask
+    resolving dependencies...
+    looking for inter-conflicts...
+    
+    Packages (7): python-3.3.3-1  python-itsdangerous-0.23-1  python-jinja-2.7.1-2
+                  python-markupsafe-0.18-2  python-setuptools-2.0.1-1  python-werkzeug-0.9.4-1
+                  python-flask-0.10.1-4
+    
+    Total Download Size:    12.52 MiB
+    Total Installed Size:   90.53 MiB
+    
+    :: Proceed with installation? [Y/n] y
+    :: Retrieving packages ...
+     python-3.3.3-1-armv7h           11.3 MiB   816K/s 00:14 [##############################] 100%
+     python-setuptools-2.0.1-1-any  312.8 KiB  1415K/s 00:00 [##############################] 100%
+     python-markupsafe-0.18-2-...    20.7 KiB   861K/s 00:00 [##############################] 100%
+     python-werkzeug-0.9.4-1-any    465.8 KiB  1640K/s 00:00 [##############################] 100%
+     python-jinja-2.7.1-2-any       260.3 KiB  1783K/s 00:00 [##############################] 100%
+     python-itsdangerous-0.23-...    16.9 KiB   393K/s 00:00 [##############################] 100%
+     python-flask-0.10.1-4-any      157.6 KiB  1394K/s 00:00 [##############################] 100%
+    (7/7) checking keys in keyring                           [##############################] 100%
+    (7/7) checking package integrity                         [##############################] 100%
+    (7/7) loading package files                              [##############################] 100%
+    (7/7) checking for file conflicts                        [##############################] 100%
+    (7/7) checking available disk space                      [##############################] 100%
+    (1/7) installing python                                  [##############################] 100%
+    Optional dependencies for python
+        tk: for tkinter
+        sqlite [installed]
+    (2/7) installing python-werkzeug                         [##############################] 100%
+    (3/7) installing python-setuptools                       [##############################] 100%
+    (4/7) installing python-markupsafe                       [##############################] 100%
+    (5/7) installing python-jinja                            [##############################] 100%
+    (6/7) installing python-itsdangerous                     [##############################] 100%
+    (7/7) installing python-flask                            [##############################] 100%
+    ➜  /etc  pacman -S python-flask-login
+    error: target not found: python-flask-login
