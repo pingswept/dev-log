@@ -146,3 +146,7 @@ https://raw.github.com/rascalmicro/openembedded-rascal/rascal/recipes/uwsgi/file
     (7/7) installing python-flask                            [##############################] 100%
     ➜  /etc  pacman -S python-flask-login
     error: target not found: python-flask-login
+
+Got stuck
+
+Installing Flask with Pacman makes Python 3.3.3 the default version. This makes server.py fail to load. (There may be other problems too.) Trying to run Python 2 works, but then Python can't find Flask.
