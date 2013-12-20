@@ -71,3 +71,28 @@ General Linux tools
     Shell changed.
 
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+Install other repos
+
+    ➜  ~  cd /var
+    ➜  /var  mkdir www
+    ➜  /var  cd www
+    ➜  www  ls
+    ➜  www  git clone https://github.com/rascalmicro/red.git editor
+    Cloning into 'editor'...
+    remote: Counting objects: 1378, done.
+    remote: Compressing objects: 100% (639/639), done.
+    remote: Total 1378 (delta 758), reused 1349 (delta 733)
+    Receiving objects: 100% (1378/1378), 956.00 KiB | 169.00 KiB/s, done.
+    Resolving deltas: 100% (758/758), done.
+    Checking connectivity... done.
+    ➜  www  git clone https://github.com/rascalmicro/demos.git public
+    Cloning into 'public'...
+    remote: Counting objects: 1218, done.
+    remote: Compressing objects: 100% (630/630), done.
+    remote: Total 1218 (delta 600), reused 1170 (delta 581)
+    Receiving objects: 100% (1218/1218), 2.11 MiB | 283.00 KiB/s, done.
+    Resolving deltas: 100% (600/600), done.
+    Checking connectivity... done.
+    ➜  www  ls
+    editor  public
