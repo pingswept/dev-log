@@ -58,3 +58,14 @@ Install Nginx
 
     systemctl enable nginx.service
         ln -s '/usr/lib/systemd/system/nginx.service' '/etc/systemd/system/multi-user.target.wants/nginx.service'
+
+General Linux tools
+
+    pacman -S vim
+    pacman -S git
+    pacman -S zsh
+
+    [root@archbone var]# chsh
+    Changing shell for root.
+    New shell [/bin/bash]: /bin/zsh
+    Shell changed.
