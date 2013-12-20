@@ -96,3 +96,6 @@ Install other repos
     Checking connectivity... done.
     ➜  www  ls
     editor  public
+
+https://raw.github.com/rascalmicro/openembedded-rascal/rascal/recipes/uwsgi/files/editor.ini
+https://raw.github.com/rascalmicro/openembedded-rascal/rascal/recipes/uwsgi/files/public.ini
