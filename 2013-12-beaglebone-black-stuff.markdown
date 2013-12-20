@@ -50,4 +50,11 @@ Upgrading.
     Total Installed Size:   66.94 MiB
     Net Upgrade Size:       0.41 MiB
 
-Hmmm. This appears to be upgrading to the 3.12 kernel.
+Hmmm. This appears to be upgrading to the 3.12 kernel. Well, it still boots properly.
+
+Install Nginx
+
+    pacman -S nginx
+
+    systemctl enable nginx.service
+        ln -s '/usr/lib/systemd/system/nginx.service' '/etc/systemd/system/multi-user.target.wants/nginx.service'
