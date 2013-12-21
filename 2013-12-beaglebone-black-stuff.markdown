@@ -152,3 +152,6 @@ Got stuck
 Installing Flask with Pacman makes Python 3.3.3 the default version. This makes server.py fail to load. (There may be other problems too.) Trying to run Python 2 works, but then Python can't find Flask.
 
     pip install pytronics bitstring webcolors
+    PYTHONPATH="${PYTHONPATH}:/var/www/public/:/var/www/editor/"
+    export PYTHONPATH
+
