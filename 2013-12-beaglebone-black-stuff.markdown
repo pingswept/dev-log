@@ -169,3 +169,57 @@ After plugging in Logitech webcam
     [  795.200707] usb_audio: Warning! Unlikely big volume range (=6144), cval->res is probably wrong.
     [  795.209723] usb_audio: [5] FU [Mic Capture Volume] ch = 1, val = 1536/7680/1
     [  795.231493] usbcore: registered new interface driver snd-usb-audio
+
+Attempting to capture a still image
+
+    mplayer -vo png -frames 1 tv://                      
+    MPlayer SVN-r36498-snapshot-4.7.2 (C) 2000-2013 MPlayer Team
+    206 audio & 433 video codecs
+    mplayer: could not connect to socket
+    mplayer: No such file or directory
+    Failed to open LIRC support. You will not be able to use your remote control.
+    
+    Playing tv://.
+    TV file format detected.
+    Selected driver: v4l2
+     name: Video 4 Linux 2 input
+     author: Martin Olschewski <olschewski@zpr.uni-koeln.de>
+     comment: first try, more to come ;-)
+    v4l2: your device driver does not support VIDIOC_G_STD ioctl, VIDIOC_G_PARM was used instead.
+    Selected device: UVC Camera (046d:0802)
+     Capabilities:  video capture  streaming
+     supported norms:
+     inputs: 0 = Camera 1;
+     Current input: 0
+     Current format: YUYV
+    tv.c: norm_from_string(pal): Bogus norm parameter, setting default.
+    v4l2: ioctl enum norm failed: Inappropriate ioctl for device
+    Error: Cannot set norm!
+    Selected input hasn't got a tuner!
+    v4l2: ioctl set mute failed: Invalid argument
+    v4l2: ioctl query control failed: Invalid argument
+    ==========================================================================
+    Opening video decoder: [raw] RAW Uncompressed Video
+    Could not find matching colorspace - retrying with -vf scale...
+    Opening video filter: [scale]
+    Movie-Aspect is undefined - no prescaling applied.
+    [swscaler @ 0x133c8c0] BICUBIC scaler, from yuyv422 to rgb24 using C
+    VO: [png] 640x480 => 640x480 RGB 24-bit 
+    [VO_PNG] Warning: compression level set to 0, compression disabled!
+    [VO_PNG] Info: Use -vo png:z=<n> to set compression level from 0 to 9.
+    [VO_PNG] Info: (0 = no compression, 1 = fastest, lowest - 9 best, slowest compression)
+    png: output directory: .
+    Selected video codec: [rawyuy2] vfm: raw (RAW YUY2)
+    ==========================================================================
+    Audio: no sound
+    Starting playback...
+    v4l2: select timeout
+    V:   0.0   1/  1 ??% ??% ??,?% 0 0 
+    
+    v4l2: select timeout
+    v4l2: ioctl set mute failed: Invalid argument
+    v4l2: 0 frames successfully processed, 1 frames dropped.
+    
+    Exiting... (End of file)
+
+Results in a PNG containing a green box
