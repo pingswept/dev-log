@@ -155,3 +155,17 @@ Installing Flask with Pacman makes Python 3.3.3 the default version. This makes 
     PYTHONPATH="${PYTHONPATH}:/var/www/public/:/var/www/editor/"
     export PYTHONPATH
 
+After plugging in Logitech webcam
+
+    [  793.397450] usb 2-1: new high-speed USB device number 2 using musb-hdrc
+    [  793.666910] usb 2-1: device v046d p0802 is not supported
+    [  793.672553] usb 2-1: New USB device found, idVendor=046d, idProduct=0802
+    [  793.679623] usb 2-1: New USB device strings: Mfr=0, Product=0, SerialNumber=2
+    [  793.687145] usb 2-1: SerialNumber: 47E46680
+    [  794.872944] uvcvideo: Found UVC 1.00 device <unnamed> (046d:0802)
+    [  794.921676] input: UVC Camera (046d:0802) as /devices/ocp.3/47400000.usb/47401c00.usb/musb-hdrc.1.auto/usb2/2-1/2-1:1.0/input/input0
+    [  794.937572] usbcore: registered new interface driver uvcvideo
+    [  794.943727] USB Video Class driver (1.1.1)
+    [  795.200707] usb_audio: Warning! Unlikely big volume range (=6144), cval->res is probably wrong.
+    [  795.209723] usb_audio: [5] FU [Mic Capture Volume] ch = 1, val = 1536/7680/1
+    [  795.231493] usbcore: registered new interface driver snd-usb-audio
