@@ -223,3 +223,13 @@ Attempting to capture a still image
     Exiting... (End of file)
 
 Results in a PNG containing a green box
+
+Install ffmpeg and fswebcam
+
+    pacman -Sy
+    pacman -S ffmpeg
+    pacman -S fswebcam
+
+This works!
+
+    fswebcam -r 640x480 --jpeg 85 -D 1 shot.jpg
