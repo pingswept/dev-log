@@ -107,6 +107,22 @@ https://raw.github.com/rascalmicro/openembedded-rascal/rascal/recipes/uwsgi/file
     touch /var/log/uwsgi/emperor.log
     touch /var/log/uwsgi/editor.log 
 
+Install uWSGI
+
+    pacman -S uwsgi
+    pacman -S uwsgi-plugin-python
+
+Add to public.ini and editor.ini: plugins = python
+
+If you don't install uwsgi-plugin-python, uWSGI will still start, but the module and callable options will be missing, so no app will be loaded. This will drive you insane. If you see this message, this is what is going on:
+
+    uwsgi: unrecognized option '--module'
+    getopt_long() error
+
+This is true on Arch Linux, but it's also true on at least some versions of Ubuntu, which also puts the Python uWSGI plugin in a separate package.
+
+OK, on to the next step.
+
     /usr/bin/uwsgi --emperor /etc/uwsgi --daemonize /var/log/uwsgi/emperor.log
 
     pacman -S python-flask
