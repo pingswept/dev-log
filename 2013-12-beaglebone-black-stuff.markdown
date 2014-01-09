@@ -382,4 +382,7 @@ Switch back to Josh's HD webcam. Note that absolute focus is in steps of 17.
     uvcdynctrl --set='Focus (absolute)' 68
 
 Now to improve the image quality a bit.
+
     pacman -S imagemagick
+    fswebcam -r 1280x720 --jpeg 95 --no-banner hd.jpg
+    convert hd.jpg -shave 20%x0% -colorspace Gray -level 25% -sharpen 0x1.0 bw.jpg
