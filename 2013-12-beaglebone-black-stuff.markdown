@@ -277,3 +277,47 @@ Then try to set autofocus.
       Gamma
       Power Line Frequency
       Sharpness
+
+Hmmm. No focus in the list. Sharpness?
+
+Different approach?
+
+    pacman -S v4l-utils
+    ➜  ~  v4l2-ctl --all
+    Driver Info (not using libv4l2):
+    	Driver name   : uvcvideo
+    	Card type     : IPEVO Point 2 View
+    	Bus info      : usb-musb-hdrc.1.auto-1
+    	Driver version: 3.12.5
+    	Capabilities  : 0x84000001
+    		Video Capture
+    		Streaming
+    		Device Capabilities
+    	Device Caps   : 0x04000001
+    		Video Capture
+    		Streaming
+    Priority: 2
+    Video input : 0 (Camera 1: ok)
+    Format Video Capture:
+    	Width/Height  : 1024/768
+    	Pixel Format  : 'MJPG'
+    	Field         : None
+    	Bytes per Line: 0
+    	Size Image    : 1572864
+    	Colorspace    : Unknown (00000000)
+    Crop Capability Video Capture:
+    	Bounds      : Left 0, Top 0, Width 1024, Height 768
+    	Default     : Left 0, Top 0, Width 1024, Height 768
+    	Pixel Aspect: 1/1
+    Streaming Parameters Video Capture:
+    	Capabilities     : timeperframe
+    	Frames per second: 15.000 (15/1)
+    	Read buffers     : 0
+    error 5 getting ctrl Brightness
+    error 5 getting ctrl Contrast
+                         saturation (int)    : min=0 max=31 step=1 default=16 value=16
+                                hue (int)    : min=-180 max=180 step=1 default=0 value=0
+    ➜  ~  v4l2-ctl -c focus_absolute=250
+    unknown control 'focus_absolute'
+    ➜  ~  v4l2-ctl -c focus_auto=0      
+    unknown control 'focus_auto'
