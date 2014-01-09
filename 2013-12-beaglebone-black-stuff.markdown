@@ -260,3 +260,4 @@ Install yaourt so we can access the AUR (Arch User Repo)
     cd yaourt
     makepkg --asroot
     pacman -U yaourt-1.3-1-any.pkg.tar.xz
+    yaourt libwebcam
