@@ -261,3 +261,15 @@ Install yaourt so we can access the AUR (Arch User Repo)
     makepkg --asroot
     pacman -U yaourt-1.3-1-any.pkg.tar.xz
     yaourt libwebcam
+
+Then try to set autofocus.
+
+    uvcdynctrl -c
+    Listing available controls for device video0:
+      Brightness
+      Contrast
+      Saturation
+      Hue
+      Gamma
+      Power Line Frequency
+      Sharpness
