@@ -422,12 +422,15 @@ Trying to talk to Tumblr
     Receiving objects: 100% (243/243), 47.49 KiB | 0 bytes/s, done.
     Resolving deltas: 100% (102/102), done.
     Checking connectivity... done.
-    ➜  ~  cd pytumblr 
-    ➜  pytumblr git:(master) ls
-    interactive_console.py  LICENSE  pytumblr  README.md  setup.cfg  setup.py  tests
-    ➜  pytumblr git:(master) python2 setup.py install
+    cd pytumblr 
+    python2 setup.py install
     Traceback (most recent call last):
       File "setup.py", line 3, in <module>
         from setuptools import setup
     ImportError: No module named setuptools
-    ➜  pytumblr git:(master) pacman -S python2-setuptools
+    pacman -S python2-setuptools
+    pacman -S python2-nose
+    python2 setup.py install
+
+Appears to have actually worked.
+    
