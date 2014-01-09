@@ -396,3 +396,21 @@ Can't install directly from git repo because setup.py won't execute under Python
 Instead, try Adafruit's fork.
 
     pip install Adafruit_BBIO
+
+Pip install fails probably because of Python 3 incompatibility.
+
+    File "/tmp/pip_build_root/Adafruit-BBIO/setup.py", line 7
+        print "py_compile module missing; installing to %spy_compile.py" %\
+                                                                       ^
+    SyntaxError: invalid syntax
+    Complete output from command python setup.py egg_info:
+    Traceback (most recent call last):
+    File "<string>", line 16, in <module>
+    File "/tmp/pip_build_root/Adafruit-BBIO/setup.py", line 7
+    print "py_compile module missing; installing to %spy_compile.py" %\
+                                                                   ^
+    SyntaxError: invalid syntax
+
+Trying to talk to Tumblr
+
+    pacman -S python-oauthlib
