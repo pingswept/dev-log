@@ -386,3 +386,13 @@ Now to improve the image quality a bit.
     pacman -S imagemagick
     fswebcam -r 1280x720 --jpeg 95 --no-banner hd.jpg
     convert hd.jpg -shave 20%x0% -colorspace Gray -level 25% -sharpen 0x1.0 bw.jpg
+
+Can install PyBBIO like this:
+
+    pacman -S pybbio
+
+Can't install directly from git repo because setup.py won't execute under Python3 and setuptools isn't found under Python2 in Arch. Didn't really dig into this much though.
+
+Instead, try Adafruit's fork.
+
+    pip install Adafruit_BBIO
