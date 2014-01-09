@@ -414,3 +414,20 @@ Pip install fails probably because of Python 3 incompatibility.
 Trying to talk to Tumblr
 
     pacman -S python-oauthlib
+
+    git clone https://github.com/tumblr/pytumblr.git
+    Cloning into 'pytumblr'...
+    remote: Reusing existing pack: 243, done.
+    remote: Total 243 (delta 0), reused 0 (delta 0)
+    Receiving objects: 100% (243/243), 47.49 KiB | 0 bytes/s, done.
+    Resolving deltas: 100% (102/102), done.
+    Checking connectivity... done.
+    ➜  ~  cd pytumblr 
+    ➜  pytumblr git:(master) ls
+    interactive_console.py  LICENSE  pytumblr  README.md  setup.cfg  setup.py  tests
+    ➜  pytumblr git:(master) python2 setup.py install
+    Traceback (most recent call last):
+      File "setup.py", line 3, in <module>
+        from setuptools import setup
+    ImportError: No module named setuptools
+    ➜  pytumblr git:(master) pacman -S python2-setuptools
