@@ -262,6 +262,10 @@ Install yaourt so we can access the AUR (Arch User Repo)
     pacman -U yaourt-1.3-1-any.pkg.tar.xz
     yaourt libwebcam
 
+Below appeared during libwebcam build. Hmmm.
+    
+    ** Your V4L2 does not have V4L2_CTRL_TYPE_STRING support. Compiling without raw control support.
+
 Then try to set autofocus.
 
     uvcdynctrl -c
