@@ -321,3 +321,8 @@ Different approach?
     unknown control 'focus_absolute'
     ➜  ~  v4l2-ctl -c focus_auto=0      
     unknown control 'focus_auto'
+
+Switch back to Josh's HD webcam. Note that absolute focus is in steps of 17.
+
+    uvcdynctrl --set='Focus, Auto' 0 
+    uvcdynctrl --set='Focus (absolute)' 68
