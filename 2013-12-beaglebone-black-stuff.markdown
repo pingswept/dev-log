@@ -12,7 +12,7 @@ Changed hostname in /etc/hostname from alarm to archbone
 
 Have to hold down S2 (pushbutton near SD card) to boot from SD card
 
-Install mplayer for webcam frame grabbing.
+Install mplayer for webcam frame grabbing. (Turned out not to be as useful as fswebcam.)
 
     pacman -S mplayer
     resolving dependencies...
@@ -249,3 +249,13 @@ Install ffmpeg and fswebcam
 This works!
 
     fswebcam -r 640x480 --jpeg 85 -D 1 shot.jpg
+
+Install yaourt so we can access the AUR (Arch User Repo)
+
+    pacman -S base-devel
+    pacman -S wget
+    pacman -S package-query
+    wget https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz
+    tar xzvf yaourt.tar.gz
+    cd yaourt
+    makepkg --asroot
