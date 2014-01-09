@@ -324,5 +324,59 @@ Different approach?
 
 Switch back to Josh's HD webcam. Note that absolute focus is in steps of 17.
 
+    v4l2-ctl --list-devices
+    HD Webcam C615 (usb-musb-hdrc.1.auto-1):
+    	/dev/video0
+    
+    v4l2-ctl --all                   
+    Driver Info (not using libv4l2):
+    	Driver name   : uvcvideo
+    	Card type     : HD Webcam C615
+    	Bus info      : usb-musb-hdrc.1.auto-1
+    	Driver version: 3.12.5
+    	Capabilities  : 0x84000001
+    		Video Capture
+    		Streaming
+    		Device Capabilities
+    	Device Caps   : 0x04000001
+    		Video Capture
+    		Streaming
+    Priority: 2
+    Video input : 0 (Camera 1: ok)
+    Format Video Capture:
+    	Width/Height  : 640/480
+    	Pixel Format  : 'YUYV'
+    	Field         : None
+    	Bytes per Line: 1280
+    	Size Image    : 614400
+    	Colorspace    : SRGB
+    Crop Capability Video Capture:
+    	Bounds      : Left 0, Top 0, Width 640, Height 480
+    	Default     : Left 0, Top 0, Width 640, Height 480
+    	Pixel Aspect: 1/1
+    Streaming Parameters Video Capture:
+    	Capabilities     : timeperframe
+    	Frames per second: 30.000 (30/1)
+    	Read buffers     : 0
+                         brightness (int)    : min=0 max=255 step=1 default=128 value=128
+                           contrast (int)    : min=0 max=255 step=1 default=32 value=32
+                         saturation (int)    : min=0 max=255 step=1 default=32 value=32
+     white_balance_temperature_auto (bool)   : default=1 value=1
+                               gain (int)    : min=0 max=255 step=1 default=64 value=64
+               power_line_frequency (menu)   : min=0 max=2 default=2 value=2
+          white_balance_temperature (int)    : min=2800 max=6500 step=1 default=4000 value=4000 flags=inactive
+                          sharpness (int)    : min=0 max=255 step=1 default=22 value=22
+             backlight_compensation (int)    : min=0 max=1 step=1 default=1 value=1
+                      exposure_auto (menu)   : min=0 max=3 default=3 value=3
+                  exposure_absolute (int)    : min=3 max=2047 step=1 default=166 value=166 flags=inactive
+             exposure_auto_priority (bool)   : default=0 value=1
+                       pan_absolute (int)    : min=-36000 max=36000 step=3600 default=0 value=0
+                      tilt_absolute (int)    : min=-36000 max=36000 step=3600 default=0 value=0
+                     focus_absolute (int)    : min=0 max=255 step=17 default=51 value=51 flags=inactive
+                         focus_auto (bool)   : default=1 value=1
+                      zoom_absolute (int)    : min=1 max=5 step=1 default=1 value=1
+                          led1_mode (menu)   : min=0 max=2 default=0 value=2
+                     led1_frequency (int)    : min=0 max=255 step=1 default=0 value=0
+
     uvcdynctrl --set='Focus, Auto' 0 
     uvcdynctrl --set='Focus (absolute)' 68
