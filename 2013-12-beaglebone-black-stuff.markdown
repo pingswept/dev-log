@@ -432,5 +432,19 @@ Trying to talk to Tumblr
     pacman -S python2-nose
     python2 setup.py install
 
-Appears to have actually worked.
-    
+Appears to have actually worked, but for Python 2, not 3.
+
+    python2
+    Python 2.7.6 (default, Nov 29 2013, 10:16:30) 
+    [GCC 4.7.2] on linux2
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> import pytumblr
+    >>> client = pytumblr.TumblrRestClient(
+    <key removed>
+    ... )
+    >>> client.info()
+    {u'user': {u'following': 19, u'blogs': [{u'updated': 1372698766, u'description': u"Dispatches from my mighty pencil. It's like a fax machine, but worse.", u'drafts': 0, u'title': u'Facts machine', u'url': u'http://rascalmicro.tumblr.com/', u'messages': 0, u'tweet': u'N', u'share_likes': True, u'posts': 1, u'primary': True, u'queue': 0, u'admin': True, u'followers': 0, u'ask': False, u'facebook': u'N', u'type': u'public', u'facebook_opengraph_enabled': u'N', u'name': u'rascalmicro'}], u'default_post_format': u'html', u'name': u'rascalmicro', u'likes': 0}}
+    >>> client.create_text(u'http://rascalmicro.tumblr.com/', body='Time to go home.')
+    {u'meta': {u'status': 404, u'msg': u'Not Found'}, u'response': []}
+    >>> client.create_text(u'rascalmicro.tumblr.com', body='Time to go home.')
+    {u'id': 72805906135L}
