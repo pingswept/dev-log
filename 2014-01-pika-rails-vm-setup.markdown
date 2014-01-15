@@ -156,6 +156,7 @@ On the production server:
 Copy the SQL file from production to development (might want to use tar for compression along the way).
 
 Then on the development server:
+
     mysql -u root -p
     create database pikaen_rails;
     mysql -u root -p pikaen_rails < pikaen-railsdb-dump-2013-08-16.sql
