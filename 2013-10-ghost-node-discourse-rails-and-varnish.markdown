@@ -6,6 +6,9 @@ Installing on an Amazon EC2 t1.micro instance running Ubuntu Server 12.04.3 LTS 
     sudo apt-get install build-essential git zsh
     sudo -s
     chsh -s /bin/zsh ubuntu # change the shell to Zsh for the default user, ubuntu
+
+Log out, then back in again.
+
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 Also, copy vimrc and gitconfig from https://github.com/pingswept/linux-tool-configs
