@@ -41,7 +41,7 @@ First, we need the Bourbon gem, which requires rubygems. Since we'll want versio
     
     git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
     
-    rbenv install 2.0.0-p353 # stable as of 2013-12-04
+    rbenv install 2.1.0-p353 # stable as of 2014-01-22
     rbenv rehash
     rbenv global 2.0.0-p353
     which ruby
