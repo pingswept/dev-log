@@ -10,8 +10,9 @@ Installing on an Amazon EC2 t1.micro instance running Ubuntu Server 12.04.3 LTS 
 Log out, then back in again.
 
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+    curl -o ~/.vimrc https://raw.github.com/pingswept/linux-tool-configs/master/vimrc
 
-Also, copy vimrc and gitconfig from https://github.com/pingswept/linux-tool-configs
+Also, copy gitconfig from https://github.com/pingswept/linux-tool-configs
 
 ### Install Node ###
 
