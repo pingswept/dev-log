@@ -18,14 +18,14 @@ Also, copy gitconfig from https://github.com/pingswept/linux-tool-configs
 
 For Ghost, need a newer version of Node: Required: {"node":">= 0.6.13 < 0.11.0"}
 
-    wget http://nodejs.org/dist/v0.10.22/node-v0.10.22.tar.gz
-    tar xzf node-v0.10.22.tar.gz
-    cd node-v0.10.22
+    wget http://nodejs.org/dist/v0.10.24/node-v0.10.24.tar.gz
+    tar xzf node-v0.10.24.tar.gz
+    cd node-v0.10.24
     ./configure
     make
     sudo make install
     node --version
-        v0.10.22
+        v0.10.24
 
 ### Install Ghost ###
 
