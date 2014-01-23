@@ -1,4 +1,4 @@
-Note: this was partially updated to use new releases of Node and Ruby, but then I realized that I'd rather use the stock Ubuntu distributions of Ruby if I'm not using Rails/Discourse, as I think is now the case. For updated Ghost build/install, see 
+Note: this was partially updated to use new releases of Node and Ruby, but then I realized that I'd rather use the stock Ubuntu distributions of Ruby if I'm not using Rails/Discourse, as I think is now the case. For updated Ghost build/install, see https://github.com/pingswept/dev-log/blob/master/2014-01-ghost-and-node-install.markdown for a newer guide for just Node and Ghost.
 
 Installing on an Amazon EC2 t1.micro instance running Ubuntu Server 12.04.3 LTS - ami-a73264ce (64-bit)
 
