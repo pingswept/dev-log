@@ -1,5 +1,3 @@
-Note: this was partially updated to use new releases of Node and Ruby, but then I realized that I'd rather use the stock Ubuntu distributions of Ruby if I'm not using Rails/Discourse, as I think is now the case. For updated Ghost build/install, see 
-
 Installing on an Amazon EC2 t1.micro instance running Ubuntu Server 12.04.3 LTS - ami-a73264ce (64-bit)
 
 ### General EC2 Ubuntu fixups ###
@@ -33,19 +31,19 @@ For Ghost, need a newer version of Node: Required: {"node":">= 0.6.13 < 0.11.0"}
 
 First, we need the Bourbon gem, which requires rubygems.
 
+    sudo apt-get install rubygems
     echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 
-First, install Bourbon gem.
+Then, install Bourbon gem.
 
-    gem install bourbon
-    Fetching: sass-3.2.12.gem (100%)
-    Successfully installed sass-3.2.12
+    sudo gem install bourbon
+    Fetching: sass-3.2.13.gem (100%)
     Fetching: thor-0.18.1.gem (100%)
-    Successfully installed thor-0.18.1
     Fetching: bourbon-3.1.8.gem (100%)
+    Successfully installed sass-3.2.13
+    Successfully installed thor-0.18.1
     Successfully installed bourbon-3.1.8
-    
-    rbenv rehash # so that shims get updated, so newly installed gems work
+    3 gems installed
 
 Then, clone and do some more stuff.
 
