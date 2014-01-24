@@ -50,6 +50,8 @@ Then, clone and do some more stuff.
 (Here, we're cloning from Github, which is stupid, but it's the only way to get the pages feature right now. In the future, should use Ghost 0.4.)
 
     wget https://codeload.github.com/TryGhost/Ghost/tar.gz/0.4.0
+    tar xzvf 0.4.0
+    
     sudo npm install -g grunt-cli
     npm install
 
