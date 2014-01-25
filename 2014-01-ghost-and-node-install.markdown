@@ -82,9 +82,18 @@ Use grunt to build CSS and JS files. Have to use --force because there is a grun
     Running "concat:prod" (concat) task
     File "core/built/scripts/ghost.js" created.
 
+Install theme
+
+    cd content/themes
+    wget https://github.com/TryGhost/Casper/archive/0.9.2.tar.gz
+    tar xzvf 0.9.2.tar.gz
+    rmdir casper
+    mv Casper-0.9.2 casper # theme names must be lowercase letters, numbers, or hyphens. No dots.
+    rm 0.9.2.tar.gz
+
 Actually start ghost:
 
-    npm start # from within ghost directory
+    sudo npm start # from within ghost directory, need sudo if on port 80?
 
 Need to open a port for web serving on EC2 instance before the site will be visible externally.
 
@@ -111,6 +120,6 @@ Add Ghost conf file so that Supervisor runs Ghost on startup.
     sudo /etc/init.d/supervisor stop
     sudo /etc/init.d/supervisor start
     
-Rather than starting and stopping Supervisorm probably better to do (seems to work, but needs more testing):
+Rather than starting and stopping Supervisor, probably better to do (seems to work, but needs more testing):
 
     sudo supervisorctl reread
