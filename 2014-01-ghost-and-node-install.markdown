@@ -126,7 +126,13 @@ Stick this in `sites-available/ghost`
 
 Activate site with symbolic link
 
-    sudo ln -s sites-available/ghost sites-enabled/ghost
+    sudo ln -s /etc/nginx/sites-available/ghost /etc/nginx/sites-enabled/ghost
+
+Double check the symbolic link
+
+    sudo vim /etc/nginx/sites-enabled/ghost
+
+Should see contents of `/etc/nginx/sites-available/ghost`
 
 ### Install supervisor ###
 
