@@ -91,13 +91,42 @@ Install theme
     mv Casper-0.9.2 casper # theme names must be lowercase letters, numbers, or hyphens. No dots.
     rm 0.9.2.tar.gz
 
-Actually start ghost:
+Test that Ghost works!
 
-    sudo npm start # from within ghost directory, need sudo if on port 80?
+    npm start # from within ghost directory
 
 Need to open a port for web serving on EC2 instance before the site will be visible externally.
 
 http://localhost:2368/ghost/
+
+### Install Nginx as a front end ###
+
+    sudo apt-get install nginx
+
+    cd /etc/nginx/
+    rm sites-enabled/default
+    vim sites-available/ghost
+
+Stick this in `sites-available/ghost`
+
+    server {
+        listen 0.0.0.0:80;
+        server_name *your-domain-name*;
+        access_log /var/log/nginx/*your-domain-name*.log;
+    
+        location / {
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header HOST $http_host;
+            proxy_set_header X-NginX-Proxy true;
+    
+            proxy_pass http://127.0.0.1:2368;
+            proxy_redirect off;
+        }
+    }
+
+Activate site with symbolic link
+
+    ln -s sites-available/ghost sites-enabled/ghost
 
 ### Install supervisor ###
 
