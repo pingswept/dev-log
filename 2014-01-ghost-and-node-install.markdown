@@ -104,8 +104,8 @@ http://localhost:2368/ghost/
     sudo apt-get install nginx
 
     cd /etc/nginx/
-    rm sites-enabled/default
-    vim sites-available/ghost
+    sudo rm sites-enabled/default
+    sudo vim sites-available/ghost
 
 Stick this in `sites-available/ghost`
 
@@ -126,7 +126,7 @@ Stick this in `sites-available/ghost`
 
 Activate site with symbolic link
 
-    ln -s sites-available/ghost sites-enabled/ghost
+    sudo ln -s sites-available/ghost sites-enabled/ghost
 
 ### Install supervisor ###
 
