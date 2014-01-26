@@ -3,7 +3,7 @@ Installing on an Amazon EC2 t1.micro instance running Ubuntu Server 12.04.3 LTS 
 ### General EC2 Ubuntu fixups ###
 
     sudo apt-get update
-    sudo apt-get install build-essential git zsh sqlite # sqlite is the command line tool
+    sudo apt-get install build-essential git zsh sqlite3 # sqlite3 is the command line tool
     sudo -s
     chsh -s /bin/zsh ubuntu # change the shell to Zsh for the default user, ubuntu
 
