@@ -2,6 +2,18 @@
 
 Docs: http://wiki.bitnami.com/Applications/BitNami_Discourse
 
+Update SMTP settings in apps/discourse/htdocs/config/environments/production.rb
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.mandrillapp.com",
+      :port                 => 587,
+      :domain               => 'rascalmicro.com',
+      :user_name            => 'mandrill-user-name',
+      :password             => 'stick the Mandrill API key here',
+      :authentication       => 'login',
+      :enable_starttls_auto => true  }
+
 Restart server after config changes
 
     sudo /opt/bitnami/ctlscript.sh restart
