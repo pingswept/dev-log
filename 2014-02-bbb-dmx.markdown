@@ -86,12 +86,12 @@ Install dtc (Device Tree Compiler) from Arch User Repo
 
 Then load PRUSS driver (from https://github.com/boxysean/beaglebone-DMX/issues/2#issuecomment-21139799, but file location modified to work on Arch Linux on BBB)
 
-    cd /boot/dtbs
+    cd /boot/dtbs (or /boot for Angstrom)
     cp am335x-boneblack.dtb am335x-boneblack.dtb_orig
     dtc -I dtb -O dts am335x-boneblack.dtb > am335x-boneblack.dts_orig
     
     The change to the dts file:
-    pruss@4a30000 {
+    pruss@4a30000 { # problem: this part doesn't show up in the Arch dts file
     ...
     status = "disabled";
     ...
@@ -104,10 +104,7 @@ Then load PRUSS driver (from https://github.com/boxysean/beaglebone-DMX/issues/2
     ...
     };
     
-    After any modifications have been made (maybe copy the file first so that you have a backup), it can be converted back into binary form using:
-    
-    dtc -I dts -O dtb am335x-boneblack.dts_pru > am335x-boneblack.dtb_pru
-    cp am335x-boneblack.dtb_pru am335x-boneblack.dtb
+    dtc -I dts -O dtb am335x-boneblack.dts_orig > am335x-boneblack.dtb
     
     Reboot, now no errors!
     
