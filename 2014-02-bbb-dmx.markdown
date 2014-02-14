@@ -14,6 +14,8 @@ Building Sean McIntyre's DMX library
     cd pasm/pasm_source
     chmod a+x linuxbuild # since zipball doesn't preserve permissions?
     ./linuxbuild # builds executable called pasm at beaglebone-DMX/pasm/pasm
+    cd ..
+    chmod a+x pasm # again with the permissions
 
 Can successfully execute
 
