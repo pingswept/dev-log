@@ -8,7 +8,9 @@ Useful links
 Building Sean McIntyre's DMX library
 
     # (First, log in to BBB via SSH.)
-    git clone https://github.com/rascalmicro/beaglebone-DMX
+    git clone https://github.com/rascalmicro/beaglebone-DMX # won't work on Angstrom because git < 1.7.10
+    # also, curl and wget won't fetch HTTPS
+    # had to download zipball to laptop, then scp to BBB
     cd pasm/pasm_source
     ./linuxbuild # builds executable called pasm at beaglebone-DMX/pasm/pasm
 
