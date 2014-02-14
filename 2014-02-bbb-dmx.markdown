@@ -79,3 +79,37 @@ Then build the PRUSS userspace kernel driver, DMX server, and DMX client.
     Writing Code Image of 85 word(s)
     
     rm lib/libprussdrvd.a lib/libprussdrv.a
+
+Then load PRUSS driver (from https://github.com/boxysean/beaglebone-DMX/issues/2#issuecomment-21139799)
+
+    cd /boot
+    cp am335x-boneblack.dtb am335x-boneblack.dtb_orig
+    dtc -I dtb -O dts am335x-boneblack.dtb > am335x-boneblack.dts_orig
+    
+    The change to the dts file:
+    pruss@4a30000 {
+    ...
+    status = "disabled";
+    ...
+    };
+    
+    To:
+    pruss@4a30000 {
+    ...
+    status = "okay";
+    ...
+    };
+    
+    After any modifications have been made (maybe copy the file first so that you have a backup), it can be converted back into binary form using:
+    
+    dtc -I dts -O dtb am335x-boneblack.dts_pru > am335x-boneblack.dtb_pru
+    cp am335x-boneblack.dtb_pru am335x-boneblack.dtb
+    
+    Reboot, now no errors!
+    
+    root@beaglebone:~/bbdmx/bin# ./dmx
+    INFO: Starting dmx example.
+    AM33XX
+    INFO: Initializing example.
+    INFO: Executing example.
+    File ./dmx.bin open passed
