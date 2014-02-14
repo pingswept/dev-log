@@ -85,6 +85,11 @@ Then build the PRUSS userspace kernel driver, DMX server, and DMX client.
     
     rm lib/libprussdrvd.a lib/libprussdrv.a
 
+On Angstrom, fix permissions.
+
+    cd bin
+    chmod a+x dmx
+
 Install dtc (Device Tree Compiler) from Arch User Repo
 
     yaourt dtc-git-patched # installs https://aur.archlinux.org/packages/dtc-git-patched/
