@@ -12,6 +12,7 @@ Building Sean McIntyre's DMX library
     # also, curl and wget won't fetch HTTPS
     # had to download zipball to laptop, then scp to BBB
     cd pasm/pasm_source
+    chmod a+x linuxbuild # since zipball doesn't preserve permissions?
     ./linuxbuild # builds executable called pasm at beaglebone-DMX/pasm/pasm
 
 Can successfully execute
