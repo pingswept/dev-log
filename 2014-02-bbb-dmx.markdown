@@ -80,6 +80,10 @@ Then build the PRUSS userspace kernel driver, DMX server, and DMX client.
     
     rm lib/libprussdrvd.a lib/libprussdrv.a
 
+Install dtc (Device Tree Compiler) from Arch User Repo
+
+    yaourt dtc-git-patched # installs https://aur.archlinux.org/packages/dtc-git-patched/
+
 Then load PRUSS driver (from https://github.com/boxysean/beaglebone-DMX/issues/2#issuecomment-21139799, but file location modified to work on Arch Linux on BBB)
 
     cd /boot/dtbs
