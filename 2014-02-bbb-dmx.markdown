@@ -80,9 +80,9 @@ Then build the PRUSS userspace kernel driver, DMX server, and DMX client.
     
     rm lib/libprussdrvd.a lib/libprussdrv.a
 
-Then load PRUSS driver (from https://github.com/boxysean/beaglebone-DMX/issues/2#issuecomment-21139799)
+Then load PRUSS driver (from https://github.com/boxysean/beaglebone-DMX/issues/2#issuecomment-21139799, but file location modified to work on Arch Linux on BBB)
 
-    cd /boot
+    cd /boot/dtbs
     cp am335x-boneblack.dtb am335x-boneblack.dtb_orig
     dtc -I dtb -O dts am335x-boneblack.dtb > am335x-boneblack.dts_orig
     
