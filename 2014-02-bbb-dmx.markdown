@@ -1,0 +1,27 @@
+
+
+    git clone https://github.com/rascalmicro/beaglebone-DMX
+    cd pasm/pasm_source
+    ./linuxbuild # builds executable called pasm at beaglebone-DMX/pasm/pasm
+
+Can successfully execute
+
+    ./pasm
+    
+    PRU Assembler Version 0.80
+    Copyright (C) 2005-2012 by Texas Instruments Inc.
+    
+    Usage: pasm [-bcmLldz] [-Dname=value] [-Cname] InFile [OutFileBase]
+    
+        b  - Create little endian binary output (*.bin)
+        c  - Create 'C array' binary output (*_bin.h)
+        m  - Create 'image' binary output (*.img)
+        L  - Create annotated source file style listing (*.txt)
+        l  - Create raw listing file (*.lst)
+        d  - Create pView debug file (*.dbg)
+        z  - Enable debug messages
+    
+        D  - Set equate 'name' to 1 using '-Dname', or to any
+             value using '-Dname=value'
+        C  - Name the C array in 'C array' binary output
+             to 'name' using '-Cname'
