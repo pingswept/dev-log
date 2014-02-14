@@ -7,6 +7,7 @@ Useful links
 
 Building Sean McIntyre's DMX library
 
+    # (First, log in to BBB via SSH.)
     git clone https://github.com/rascalmicro/beaglebone-DMX
     cd pasm/pasm_source
     ./linuxbuild # builds executable called pasm at beaglebone-DMX/pasm/pasm
@@ -32,3 +33,49 @@ Can successfully execute
              value using '-Dname=value'
         C  - Name the C array in 'C array' binary output
              to 'name' using '-Cname'
+
+Then build the PRUSS userspace kernel driver, DMX server, and DMX client. 
+
+    cd ..
+    make
+    make --directory=libprussdrv
+    make[1]: Entering directory '/root/beaglebone-DMX/libprussdrv'
+    gcc -I. -Wall -I../include   -c -g -O0 -D__DEBUG -o debug/prussdrv.o prussdrv.c
+    ar rc ../lib/libprussdrvd.a debug/prussdrv.o 
+    gcc -I. -Wall -I../include   -c -O3 -mtune=cortex-a8 -march=armv7-a -o release/prussdrv.o prussdrv.c
+    ar rc ../lib/libprussdrv.a release/prussdrv.o 
+    make[1]: Leaving directory '/root/beaglebone-DMX/libprussdrv'
+    make --directory=libprussdrv
+    make[1]: Entering directory '/root/beaglebone-DMX/libprussdrv'
+    make[1]: Nothing to be done for 'all'.
+    make[1]: Leaving directory '/root/beaglebone-DMX/libprussdrv'
+    gcc -Wall -Iinclude -D__DEBUG -O2 -mtune=cortex-a8 -march=armv7-a -c -o obj/dmx.o src/dmx.c 
+    src/dmx.c: In function ‘LOCAL_udp_listen’:
+    src/dmx.c:200:2: warning: passing argument 2 of ‘bind’ from incompatible pointer type [enabled by default]
+    In file included from /usr/include/netinet/in.h:24:0,
+                     from /usr/include/arpa/inet.h:22,
+                     from src/dmx.c:16:
+    /usr/include/sys/socket.h:124:12: note: expected ‘const struct sockaddr *’ but argument is of type ‘struct sockaddr_in *’
+    src/dmx.c:208:3: warning: passing argument 5 of ‘recvfrom’ from incompatible pointer type [enabled by default]
+    In file included from /usr/include/netinet/in.h:24:0,
+                     from /usr/include/arpa/inet.h:22,
+                     from src/dmx.c:16:
+    /usr/include/sys/socket.h:175:16: note: expected ‘struct sockaddr * __restrict__’ but argument is of type ‘struct sockaddr_in *’
+    src/dmx.c:208:3: warning: pointer targets in passing argument 6 of ‘recvfrom’ differ in signedness [-Wpointer-sign]
+    In file included from /usr/include/netinet/in.h:24:0,
+                     from /usr/include/arpa/inet.h:22,
+                     from src/dmx.c:16:
+    /usr/include/sys/socket.h:175:16: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+    gcc -Wall -Iinclude -D__DEBUG -O2 -mtune=cortex-a8 -march=armv7-a -o bin/dmx obj/dmx.o -Llib -lprussdrv -lpthread
+    pasm/pasm -b src/dmx.p bin/dmx
+    
+    
+    PRU Assembler Version 0.80
+    Copyright (C) 2005-2012 by Texas Instruments Inc.
+    
+    
+    Pass 2 : 0 Error(s), 0 Warning(s)
+    
+    Writing Code Image of 85 word(s)
+    
+    rm lib/libprussdrvd.a lib/libprussdrv.a
