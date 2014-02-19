@@ -168,4 +168,8 @@ Rather than starting and stopping Supervisor, probably better to do (seems to wo
     unzip -uo 0.4.1.zip -d . # unzip and overwrite
     npm install --production
     grunt init --force # build CSS and JS
-    sudo supervisorctl
+    grunt prod
+    
+Edit `/etc/supervisor/conf.d/ghost.conf` to use NODE_ENV production and update folder name to Ghost-0.4.1
+
+    sudo supervisorctl start ghost
