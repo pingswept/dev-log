@@ -158,3 +158,11 @@ Add Ghost conf file so that Supervisor runs Ghost on startup.
 Rather than starting and stopping Supervisor, probably better to do (seems to work, but needs more testing):
 
     sudo supervisorctl reread
+
+### Upgrade to Ghost 0.4.1 ###
+
+    sudo apt-get install unzip
+    wget https://github.com/TryGhost/Ghost/archive/0.4.1.zip
+    mv Ghost-0.4.0/core .
+    mv Ghost-0.4.0 Ghost-0.4.1 # rename in preparation for overwrite
+    unzip -uo 0.4.1.zip -d . # unzip and overwrite
