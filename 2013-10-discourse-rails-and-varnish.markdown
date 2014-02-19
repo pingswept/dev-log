@@ -18,6 +18,12 @@ Restart server after config changes
 
     sudo /opt/bitnami/ctlscript.sh restart
 
+Changing domain name
+
+    sudo /opt/bitnami/apps/discourse/updateip --machine_hostname projects.pingswept.org
+    sudo /opt/bitnami/ctlscript.sh restart
+    sudo /opt/bitnami/apps/discourse/scripts/rebakeposts.sh # regenerates posts with new domain used in refs
+
 ### Installing not using Bitnami ###
 
 Note: the rest of this was partially updated to use new releases of Node and Ruby, but then I realized that I'd rather use the stock Ubuntu distributions of Ruby if I'm not using Rails/Discourse, as I think is now the case. For updated Ghost build/install, see https://github.com/pingswept/dev-log/blob/master/2014-01-ghost-and-node-install.markdown for a newer guide for just Node and Ghost.
