@@ -166,3 +166,5 @@ Rather than starting and stopping Supervisor, probably better to do (seems to wo
     mv Ghost-0.4.0/core .
     mv Ghost-0.4.0 Ghost-0.4.1 # rename in preparation for overwrite
     unzip -uo 0.4.1.zip -d . # unzip and overwrite
+    npm install --production
+    sudo supervisorctl
