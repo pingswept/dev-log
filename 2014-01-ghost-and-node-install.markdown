@@ -173,3 +173,9 @@ Rather than starting and stopping Supervisor, probably better to do (seems to wo
 Edit `/etc/supervisor/conf.d/ghost.conf` to use NODE_ENV production and update folder name to Ghost-0.4.1
 
     sudo supervisorctl start ghost
+
+Coying created_at dates to publication date column
+
+    cd content/data
+    sqlite3 ghost-dev.db
+    update posts set published_at = created_at;
