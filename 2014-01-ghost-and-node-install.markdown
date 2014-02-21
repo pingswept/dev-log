@@ -144,9 +144,9 @@ Add Ghost conf file so that Supervisor runs Ghost on startup.
     sudo vim /etc/supervisor/conf.d/ghost.conf
 
     [program:ghost]
-    command = node /home/ubuntu/ghost-696cfe7018/index.js
-    directory = /home/ubuntu/ghost-696cfe7018
-    user = ubuntu
+    command = node /var/Ghost-0.4.1/index.js
+    directory = /var/Ghost-0.4.1
+    user = www-data
     autostart = true
     autorestart = true
     stdout_logfile = /var/log/supervisor/ghost.log
