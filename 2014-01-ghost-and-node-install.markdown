@@ -86,11 +86,7 @@ Use grunt to build CSS and JS files. Have to use --force because there is a grun
 Install theme
 
     cd content/themes
-    wget https://github.com/TryGhost/Casper/archive/0.9.2.tar.gz
-    tar xzvf 0.9.2.tar.gz
-    rmdir casper
-    mv Casper-0.9.2 casper # theme names must be lowercase letters, numbers, or hyphens. No dots.
-    rm 0.9.2.tar.gz
+    git clone git@github.com:rascalmicro/rascal-ghost-theme.git
 
 Test that Ghost works!
 
