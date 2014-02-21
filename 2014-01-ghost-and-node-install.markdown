@@ -51,8 +51,8 @@ Install Bundler gem.
 
 Download the Ghost tarball
 
-    wget https://codeload.github.com/TryGhost/Ghost/tar.gz/0.4.0
-    tar xzvf 0.4.0
+    wget https://github.com/TryGhost/Ghost/archive/0.4.1.tar.gz
+    tar xzvf 0.4.1.tar.gz
     
     sudo npm install -g grunt-cli
     npm install
