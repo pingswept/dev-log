@@ -92,6 +92,10 @@ Test that Ghost works!
 
     npm start # from within ghost directory
 
+Build the production files
+
+    grunt init prod --force
+
 Need to open a port for web serving on EC2 instance before the site will be visible externally.
 
 http://localhost:2368/ghost/
