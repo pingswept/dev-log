@@ -54,6 +54,7 @@ Download the Ghost tarball
     wget https://github.com/TryGhost/Ghost/archive/0.4.1.tar.gz
     tar xzvf 0.4.1.tar.gz
     
+    cd Ghost-0.4.1
     sudo npm install -g grunt-cli
     npm install
 
