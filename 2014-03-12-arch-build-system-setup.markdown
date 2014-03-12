@@ -1,11 +1,11 @@
 ### Overall plan ###
 
- # Install ABS
- # Sync ABS tree
- # Copy PKGBUILDs to directory
- # `makepkg` for all PKGBUILDS
- # Use repo-add to generate repo database
- # Upload repo database and .pkg.tar.xz files to repo server
+  # Install ABS
+  # Sync ABS tree
+  # Copy PKGBUILDs to directory
+  # `makepkg` for all PKGBUILDS
+  # Use repo-add to generate repo database
+  # Upload repo database and .pkg.tar.xz files to repo server
 
     ➜  ~  pacman -S abs
     resolving dependencies...
