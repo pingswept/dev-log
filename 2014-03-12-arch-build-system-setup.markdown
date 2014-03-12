@@ -7,6 +7,7 @@
 5. Use repo-add to generate repo database
 6. Upload repo database and .pkg.tar.xz files to repo server
 
+
     ➜  ~  pacman -S abs
     resolving dependencies...
     looking for inter-conflicts...
