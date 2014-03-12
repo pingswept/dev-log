@@ -135,6 +135,10 @@ Double check the symbolic link
 
 Should see contents of `/etc/nginx/sites-available/ghost`
 
+Add `nginx-extras` for fancy indexing module.
+
+    sudo apt-get install nginx-extras
+
 ### Install supervisor ###
 
     sudo apt-get install supervisor
