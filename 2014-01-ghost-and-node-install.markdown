@@ -135,9 +135,13 @@ Double check the symbolic link
 
 Should see contents of `/etc/nginx/sites-available/ghost`
 
+** nginx-extras doesn't contain the fancy index module for Ubuntu 12.04 **
+
 Add `nginx-extras` for fancy indexing module.
 
     sudo apt-get install nginx-extras
+
+** nginx-extras doesn't contain the fancy index module for Ubuntu 12.04 **
 
 ### Install supervisor ###
 
