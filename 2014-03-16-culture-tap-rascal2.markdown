@@ -51,6 +51,10 @@ Running `kiosk.py` under supervisor
     [program:kiosk]
     command=/root/kiosk.py
 
+    supervisorctl start kiosk
+
+(Doesn't actually work now because kiosk.py has syntax errors under Python 3.)
+
 ### Sound playback ###
 
 Previously used `aplay` to play WAVs through USB soundcard.
