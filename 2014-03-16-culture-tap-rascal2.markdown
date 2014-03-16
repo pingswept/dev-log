@@ -60,6 +60,6 @@ New approach: use `mpg123` to play MP3s through TLV320AIC3104-based audio cape.
 
 According to http://mpg123.org/, mpg123 1.19.0 improves ARM playback. Might be good.
 
-Cape rev 02 should be available very soon, according to: https://groups.google.com/d/topic/beagleboard/jBLsE5lXEmM/discussion
+Cape rev 02 should be available very soon (March 2014?), according to: https://groups.google.com/d/topic/beagleboard/jBLsE5lXEmM/discussion
 For 
 
