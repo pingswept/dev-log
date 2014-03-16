@@ -1,4 +1,4 @@
-Notes on boot times
+** Notes on boot times **
 
 Boot: around 10 seconds, but takes more like 30 seconds for Avahi broadcast so .local address resolves.
 Shutdown: around 15 seconds.
@@ -28,3 +28,19 @@ Enabling on boot under `systemd`
     ➜  ~  systemctl is-enabled supervisord
     enabled
 
+After reboot
+
+    ➜  ~  systemctl status supervisord    
+    supervisord.service - Process Monitoring and Control Daemon
+       Loaded: loaded (/usr/lib/systemd/system/supervisord.service; enabled)
+       Active: active (running) since Fri 1999-12-31 18:06:55 MST; 14 years 2 months ago
+      Process: 134 ExecStart=/usr/bin/supervisord (code=exited, status=0/SUCCESS)
+     Main PID: 154 (supervisord)
+       CGroup: /system.slice/supervisord.service
+               └─154 /usr/bin/python2 /usr/bin/supervisord
+    
+    Dec 31 18:06:55 archbone supervisord[134]: /usr/lib/python2.7/site-packages/supervisor/options.py:295: UserWarning:...
+    Dec 31 18:06:55 archbone supervisord[134]: 'Supervisord is running as root and it is searching '
+    Dec 31 18:06:55 archbone systemd[1]: Started Process Monitoring and Control Daemon.
+
+Looks like clock hadn't been synced by NTP when log was written. After restart of supervisord, but not hard reboot of board, active running time was accurate.
