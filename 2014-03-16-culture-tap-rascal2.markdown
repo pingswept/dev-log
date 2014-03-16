@@ -44,3 +44,22 @@ After reboot
     Dec 31 18:06:55 rascal2 systemd[1]: Started Process Monitoring and Control Daemon.
 
 Looks like clock hadn't been synced by NTP when log was written. After restart of supervisord, but not hard reboot of board, active running time was accurate.
+
+### Sound playback ###
+
+Previously used `aplay` to play WAVs through USB soundcard.
+
+New approach: use `mpg123` to play MP3s through TLV320AIC3104-based audio cape.
+
+    pacman -S mpg123
+    warning: mpg123-1.18.1-1 is up to date -- reinstalling
+    resolving dependencies...
+    looking for inter-conflicts...
+    
+    Packages (1): mpg123-1.18.1-1
+
+According to http://mpg123.org/, mpg123 1.19.0 improves ARM playback. Might be good.
+
+Cape rev 02 should be available very soon, according to: https://groups.google.com/d/topic/beagleboard/jBLsE5lXEmM/discussion
+For 
+
