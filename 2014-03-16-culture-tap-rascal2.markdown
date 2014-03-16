@@ -1,4 +1,4 @@
-** Notes on boot times **
+**Notes on boot times**
 
 Boot: around 10 seconds, but takes more like 30 seconds for Avahi broadcast so .local address resolves.
 Shutdown: around 15 seconds.
@@ -39,8 +39,8 @@ After reboot
        CGroup: /system.slice/supervisord.service
                └─154 /usr/bin/python2 /usr/bin/supervisord
     
-    Dec 31 18:06:55 archbone supervisord[134]: /usr/lib/python2.7/site-packages/supervisor/options.py:295: UserWarning:...
-    Dec 31 18:06:55 archbone supervisord[134]: 'Supervisord is running as root and it is searching '
-    Dec 31 18:06:55 archbone systemd[1]: Started Process Monitoring and Control Daemon.
+    Dec 31 18:06:55 rascal2 supervisord[134]: /usr/lib/python2.7/site-packages/supervisor/options.py:295: UserWarning:...
+    Dec 31 18:06:55 rascal2 supervisord[134]: 'Supervisord is running as root and it is searching '
+    Dec 31 18:06:55 rascal2 systemd[1]: Started Process Monitoring and Control Daemon.
 
 Looks like clock hadn't been synced by NTP when log was written. After restart of supervisord, but not hard reboot of board, active running time was accurate.
