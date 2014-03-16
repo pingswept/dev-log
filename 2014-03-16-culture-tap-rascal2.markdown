@@ -45,6 +45,12 @@ After reboot
 
 Looks like clock hadn't been synced by NTP when log was written. After restart of supervisord, but not hard reboot of board, active running time was accurate.
 
+Running `kiosk.py` under supervisor 
+
+    ➜  ~  cat /etc/supervisor.d/kiosk.ini 
+    [program:kiosk]
+    command=/root/kiosk.py
+
 ### Sound playback ###
 
 Previously used `aplay` to play WAVs through USB soundcard.
