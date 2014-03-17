@@ -1,6 +1,7 @@
 **Notes on boot times**
 
 Boot: around 10 seconds, but takes more like 30 seconds for Avahi broadcast so .local address resolves.
+
 Shutdown: around 15 seconds.
 
 ### Install supervisor ###
@@ -73,3 +74,18 @@ According to http://mpg123.org/, mpg123 1.19.0 improves ARM playback. Might be g
 Cape rev 02 should be available very soon (March 2014?), according to: https://groups.google.com/d/topic/beagleboard/jBLsE5lXEmM/discussion
 For 
 
+### USB RFID card reader ###
+
+    [ 3880.005376] musb-hdrc musb-hdrc.1.auto: VBUS_ERROR in a_wait_bcon (91, <VBusValid), retry #1, port1 00000100
+    [ 3880.545655] usb 2-1: new full-speed USB device number 2 using musb-hdrc
+    [ 3880.682049] usb 2-1: device v08ff p0009 is not supported
+    [ 3880.687673] usb 2-1: New USB device found, idVendor=08ff, idProduct=0009
+    [ 3880.694743] usb 2-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+    [ 3880.702265] usb 2-1: Product: USB RFID Reader
+    [ 3880.706869] usb 2-1: Manufacturer: 深圳市思远创智能设备有限公司
+    http://www.sycreader.com
+    [ 3880.718255] usb 2-1: SerialNumber: version 0106
+    [ 3880.734367] input: 深圳市思远创智能设备有限公司
+    http://www.sycreader.com USB RFID Reader as /devices/ocp.3/47400000.usb/47401c00.usb/musb-hdrc.1.auto/usb2/2-1/2-1:1.0/input/input0
+    [ 3880.755528] hid-generic 0003:08FF:0009.0001: input,hidraw0: USB HID v1.10 Keyboard [深圳市思远创智能设备有限公司
+    http://www.sycreader.com USB RFID Reader] on usb-musb-hdrc.1.auto-1/input0
