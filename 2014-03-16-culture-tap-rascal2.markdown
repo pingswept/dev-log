@@ -89,3 +89,14 @@ For
     http://www.sycreader.com USB RFID Reader as /devices/ocp.3/47400000.usb/47401c00.usb/musb-hdrc.1.auto/usb2/2-1/2-1:1.0/input/input0
     [ 3880.755528] hid-generic 0003:08FF:0009.0001: input,hidraw0: USB HID v1.10 Keyboard [深圳市思远创智能设备有限公司
     http://www.sycreader.com USB RFID Reader] on usb-musb-hdrc.1.auto-1/input0
+
+### Pulling files from Soundcloud ###
+
+    import requests
+    import simplejson as json
+    
+    r = requests.get('http://api.soundcloud.com/groups/81828/tracks.json?client_id=XXXXXXXXXXXXX')
+    tracks = json.loads(r.text)
+    for track in tracks:
+        if track['downloadable']:
+            print(track['download_url'])
