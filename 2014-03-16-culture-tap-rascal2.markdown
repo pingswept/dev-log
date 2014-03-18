@@ -99,6 +99,8 @@ For
     tracks = json.loads(r.text)
     for track in tracks:
         if track['downloadable']:
-            print(track['download_url'])
+            resp = requests.get(track['download_url'])
+            with open(track['id'] + '.wav', 'w') as f:
+                f.write(resp.content)
 
 `GET` of download URL returns 302 redirect. Have to follow redirect (`curl -L`, for example) to get file.
