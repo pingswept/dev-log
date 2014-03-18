@@ -100,3 +100,5 @@ For
     for track in tracks:
         if track['downloadable']:
             print(track['download_url'])
+
+`GET` of download URL returns 302 redirect. Have to follow redirect (`curl -L`, for example) to get file.
