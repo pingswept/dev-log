@@ -109,4 +109,14 @@ Successful boot with 3.1 MP camera cape, rev A2
     Last login: Sat Jan  1 00:00:26 UTC 2000 on ttyO0
     root@beaglebone:~# ls
     Desktop  this-is-the-sd-card-filesystem
-    root@beaglebone:~# 
+    root@beaglebone:~#
+
+Camera cape is loaded
+
+    root@beaglebone:~# cat /sys/devices/bone_capemgr.*/slots
+     0: 54:PF--- 
+     1: 55:PF--- 
+     2: 56:P---L BeagleBone 3.1MP CAMERA CAPE,00A2,Beagleboardtoys,BB-BONE-CAM3-01
+     3: 57:PF--- 
+     4: ff:P-O-- Bone-LT-eMMC-2G,00A0,Texas Instrument,BB-BONE-EMMC-2G
+     5: ff:P-O-L Bone-Black-HDMI,00A0,Texas Instrument,BB-BONELT-HDMI
