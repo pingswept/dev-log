@@ -1,5 +1,6 @@
 Using SD card with 2013-09-05 Angstrom image.
 Added to uEnv.txt via USB device filesystem
+
     capemgr.disable_partno=BB-BONE-EMMC-2G
 
 Successful boot with 3.1 MP camera cape, rev A2
