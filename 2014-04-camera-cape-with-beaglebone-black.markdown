@@ -120,3 +120,8 @@ Camera cape is loaded
      3: 57:PF--- 
      4: ff:P-O-- Bone-LT-eMMC-2G,00A0,Texas Instrument,BB-BONE-EMMC-2G
      5: ff:P-O-L Bone-Black-HDMI,00A0,Texas Instrument,BB-BONELT-HDMI
+
+Image cleaner from https://gist.github.com/lelandbatey/8677901
+
+    #!/bin/bash
+    convert $1 -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -channel RBG -level 60%,91%,0.1 $2
