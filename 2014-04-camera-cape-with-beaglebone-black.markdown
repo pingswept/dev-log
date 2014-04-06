@@ -133,3 +133,79 @@ In order to compile fswebcam, need GD library installed.
 Works, but reports
 
     gd-dev: unsatisfied recommendation for jpeg-dev
+
+This could be a problem, as fswebcam claims: "Its only requirements are that the GD library be installed with JPEG, PNG
+and FreeType support."
+
+### fswebcam build log ###
+
+(Had to make configure executable with chmod first.)
+
+    root@beaglebone:~/fswebcam# ./configure --prefix=/usr
+    checking for gcc... gcc
+    checking whether the C compiler works... yes
+    checking for C compiler default output file name... a.out
+    checking for suffix of executables... 
+    checking whether we are cross compiling... no
+    checking for suffix of object files... o
+    checking whether we are using the GNU C compiler... yes
+    checking whether gcc accepts -g... yes
+    checking for gcc option to accept ISO C89... none needed
+    checking how to run the C preprocessor... gcc -E
+    checking for grep that handles long lines and -e... /bin/grep
+    checking for egrep... /bin/grep -E
+    checking for ANSI C header files... yes
+    checking for sys/types.h... yes
+    checking for sys/stat.h... yes
+    checking for stdlib.h... yes
+    checking for string.h... yes
+    checking for memory.h... yes
+    checking for strings.h... yes
+    checking for inttypes.h... yes
+    checking for stdint.h... yes
+    checking for unistd.h... yes
+    checking for stdlib.h... (cached) yes
+    checking for unistd.h... (cached) yes
+    checking for sys/param.h... yes
+    checking for getpagesize... yes
+    checking for working mmap... yes
+    checking for gdImageCreateTrueColor in -lgd... yes
+    checking for gdImageStringFT in -lgd... yes
+    checking for gdImageJpeg in -lgd... yes
+    checking for gdImagePngEx in -lgd... yes
+    
+       Buffer type ........... 16 bit
+       PNG support ........... yes
+       JPEG support .......... yes
+       Freetype 2.x support .. yes
+       V4L1 support .......... yes
+       V4L2 support .......... yes
+    
+    configure: creating ./config.status
+    config.status: creating Makefile
+    config.status: creating config.h
+    root@beaglebone:~/fswebcam# make
+    gcc -g -O2 -DHAVE_CONFIG_H -c fswebcam.c -o fswebcam.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c log.c -o log.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c effects.c -o effects.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c parse.c -o parse.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c src.c -o src.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c src_test.c -o src_test.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c src_raw.c -o src_raw.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c src_file.c -o src_file.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c src_v4l1.c -o src_v4l1.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c src_v4l2.c -o src_v4l2.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c dec_rgb.c -o dec_rgb.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c dec_yuv.c -o dec_yuv.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c dec_grey.c -o dec_grey.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c dec_bayer.c -o dec_bayer.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c dec_jpeg.c -o dec_jpeg.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c dec_png.c -o dec_png.o
+    gcc -g -O2 -DHAVE_CONFIG_H -c dec_s561.c -o dec_s561.o
+    gcc -o fswebcam fswebcam.o log.o effects.o parse.o src.o src_test.o src_raw.o src_file.o src_v4l1.o src_v4l2.o dec_rgb.o dec_yuv.o dec_grey.o dec_bayer.o dec_jpeg.o dec_png.o dec_s561.o -lgd 
+    gzip -c --best fswebcam.1 > fswebcam.1.gz
+    root@beaglebone:~/fswebcam# make install
+    mkdir -p /usr/bin
+    mkdir -p /usr/share/man/man1
+    install -m 755 fswebcam /usr/bin
+    install -m 644 fswebcam.1.gz /usr/share/man/man1
