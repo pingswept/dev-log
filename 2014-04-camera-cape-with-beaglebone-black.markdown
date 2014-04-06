@@ -128,4 +128,4 @@ Image cleaner from https://gist.github.com/lelandbatey/8677901
 
 In order to compile fswebcam, need GD library installed.
 
-    opkg install gd
+    opkg install gd gd-dev
