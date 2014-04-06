@@ -209,3 +209,23 @@ and FreeType support."
     mkdir -p /usr/share/man/man1
     install -m 755 fswebcam /usr/bin
     install -m 644 fswebcam.1.gz /usr/share/man/man1
+
+### Testing fswebcam on Beaglebone Black ###
+
+Doesn't seem to work. Have to kill process from a separate shell.
+
+    root@beaglebone:~/fswebcam# fswebcam -r 640x480 --png 7 -D 1 shot.png
+    --- Opening /dev/video0...
+    Trying source module v4l2...
+    /dev/video0 opened.
+    Killed
+    root@beaglebone:~/fswebcam# fswebcam --list-inputs
+    --- Opening /dev/video0...
+    Trying source module v4l2...
+    /dev/video0 opened.
+    Killed
+    root@beaglebone:~/fswebcam# fswebcam -v --list-inputs
+    main,1619: gd has no fontconfig support
+    --- Opening /dev/video0...
+    Trying source module v4l2...
+    /dev/video0 opened.
