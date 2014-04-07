@@ -1,4 +1,5 @@
 Installing on an Amazon EC2 t1.micro instance running Ubuntu Server 12.04.3 LTS - ami-a73264ce (64-bit)
+Also tested on Linode 1024 using 64-bit Ubuntu 12.04 LTS
 
 ### General EC2 Ubuntu fixups ###
 
@@ -51,10 +52,11 @@ Install Bundler gem.
 
 Download the Ghost tarball
 
-    wget https://github.com/TryGhost/Ghost/archive/0.4.1.tar.gz
-    tar xzvf 0.4.1.tar.gz
+    wget https://github.com/TryGhost/Ghost/archive/0.4.2.tar.gz
+    tar xzvf 0.4.2.tar.gz
+    mv Ghost-0.4.2 /var/
     
-    cd Ghost-0.4.1
+    cd /var/Ghost-0.4.2
     sudo npm install -g grunt-cli
     npm install
 
@@ -152,8 +154,8 @@ Add Ghost conf file so that Supervisor runs Ghost on startup.
     sudo vim /etc/supervisor/conf.d/ghost.conf
 
     [program:ghost]
-    command = node /var/Ghost-0.4.1/index.js
-    directory = /var/Ghost-0.4.1
+    command = node /var/Ghost-0.4.2/index.js
+    directory = /var/Ghost-0.4.2
     user = www-data
     autostart = true
     autorestart = true
@@ -183,7 +185,7 @@ Edit `/etc/supervisor/conf.d/ghost.conf` to use NODE_ENV production and update f
 
     sudo supervisorctl start ghost
 
-Coying created_at dates to publication date column
+Copying created_at dates to publication date column
 
     cd content/data
     sqlite3 ghost-dev.db
