@@ -1,5 +1,6 @@
-Installing on an Amazon EC2 t1.micro instance running Ubuntu Server 12.04.3 LTS - ami-a73264ce (64-bit)
-Also tested on Linode 1024 using 64-bit Ubuntu 12.04 LTS
+Originally installed on an Amazon EC2 t1.micro instance running Ubuntu Server 12.04.3 LTS - ami-a73264ce (64-bit) with Ghost 0.4.0, then upgraded to 0.4.1
+
+Later tested on Linode 1024 using 64-bit Ubuntu 12.04 LTS with Ghost 0.4.2.
 
 ### General EC2 Ubuntu fixups ###
 
