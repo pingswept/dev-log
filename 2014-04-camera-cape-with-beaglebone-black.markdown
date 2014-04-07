@@ -229,3 +229,12 @@ Doesn't seem to work. Have to kill process from a separate shell.
     --- Opening /dev/video0...
     Trying source module v4l2...
     /dev/video0 opened.
+
+From dmesg
+
+    [169712.648768] cssp-camera 18000000.camera: close called (dev=video0), file df707e00
+    [169761.242286] cssp-camera 18000000.camera: close called (dev=video0), file df707a40
+    [169805.152734] cssp-camera 18000000.camera: close called (dev=video0), file df70ee40
+    [169852.470068] cssp-camera 18000000.camera: close called (dev=video0), file dc4bc780
+    [169906.628847] cssp-camera 18000000.camera: close called (dev=video0), file df707200
+    [170093.597036] cssp-camera 18000000.camera: close called (dev=video0), file dc4bcb40
