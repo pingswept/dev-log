@@ -88,6 +88,8 @@ Use grunt to build CSS and JS files. Have to use --force because there is a grun
 
 Install theme
 
+(If you want to be able to commit theme changes back to Github, generate SSH keys and add public key to Github account.)
+
     cd content/themes
     git clone git@github.com:rascalmicro/rascal-ghost-theme.git
 
