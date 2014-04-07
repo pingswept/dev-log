@@ -113,32 +113,17 @@ http://localhost:2368/ghost/
     sudo rm sites-enabled/default
     sudo vim sites-available/ghost
 
-Stick this in `sites-available/ghost`
-
-    server {
-        listen 0.0.0.0:80;
-        server_name *your-domain-name*;
-        access_log /var/log/nginx/*your-domain-name*.log;
-    
-        location / {
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header HOST $http_host;
-            proxy_set_header X-NginX-Proxy true;
-    
-            proxy_pass http://127.0.0.1:2368;
-            proxy_redirect off;
-        }
-    }
+Stick `nginx.conf` from https://gist.github.com/pingswept/9295878 in `sites-available/rascalmicro.com`
 
 Activate site with symbolic link
 
-    sudo ln -s /etc/nginx/sites-available/ghost /etc/nginx/sites-enabled/ghost
+    sudo ln -s /etc/nginx/sites-available/rascalmicro.com /etc/nginx/sites-enabled/rascalmicro.com
 
 Double check the symbolic link
 
-    sudo vim /etc/nginx/sites-enabled/ghost
+    sudo vim /etc/nginx/sites-enabled/rascalmicro.com
 
-Should see contents of `/etc/nginx/sites-available/ghost`
+Should see contents of `/etc/nginx/sites-available/rascalmicro.com`
 
 ** nginx-extras doesn't contain the fancy index module for Ubuntu 12.04 **
 
