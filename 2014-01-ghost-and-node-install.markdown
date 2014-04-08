@@ -5,6 +5,7 @@ Later tested on Linode 1024 using 64-bit Ubuntu 12.04 LTS with Ghost 0.4.2.
 ### Add a non-root user ###
 
     adduser bstafford
+    sudo usermod -a -G sudo bstafford # add to sudoers
 
 ### General EC2 Ubuntu fixups ###
 
