@@ -2,12 +2,16 @@ Originally installed on an Amazon EC2 t1.micro instance running Ubuntu Server 12
 
 Later tested on Linode 1024 using 64-bit Ubuntu 12.04 LTS with Ghost 0.4.2.
 
+### Add a non-root user ###
+
+    adduser bstafford
+
 ### General EC2 Ubuntu fixups ###
 
     sudo apt-get update
     sudo apt-get install build-essential git zsh sqlite3 # sqlite3 is the command line tool
     sudo -s
-    chsh -s /bin/zsh ubuntu # change the shell to Zsh for the default user, ubuntu
+    chsh -s /bin/zsh bstafford # or ubuntu, default Ubuntu user on EC2
 
 Log out, then back in again.
 
@@ -62,6 +66,8 @@ Download the Ghost tarball
     npm install
 
 Use grunt to build CSS and JS files. Have to use --force because there is a grunt task to init git submodules, but we downloaded the tarball rather than cloning the git repo.
+
+Be sure not to run this as root because bower fails in that case.
 
     grunt init --force
     
