@@ -60,7 +60,7 @@ Download the Ghost tarball
 
     wget https://github.com/TryGhost/Ghost/archive/0.4.2.tar.gz
     tar xzvf 0.4.2.tar.gz
-    mv Ghost-0.4.2 /var/
+    sudo mv Ghost-0.4.2 /var/
     
     cd /var/Ghost-0.4.2
     sudo npm install -g grunt-cli
