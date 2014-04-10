@@ -24,77 +24,36 @@ Changing domain name
     sudo /opt/bitnami/ctlscript.sh restart
     sudo /opt/bitnami/apps/discourse/scripts/rebakeposts.sh # regenerates posts with new domain used in refs
 
-### Installing not using Bitnami ###
+### Installing Discourse using Docker ###
 
-Note: the rest of this was partially updated to use new releases of Node and Ruby, but then I realized that I'd rather use the stock Ubuntu distributions of Ruby if I'm not using Rails/Discourse, as I think is now the case. For updated Ghost build/install, see https://github.com/pingswept/dev-log/blob/master/2014-01-ghost-and-node-install.markdown for a newer guide for just Node and Ghost.
+This is now the supported method for Ubuntu.
 
-Installing on an Amazon EC2 t1.micro instance running Ubuntu Server 12.04.3 LTS - ami-a73264ce (64-bit)
+Made a fresh Linode 1024 install of 64-bit Ubuntu 12.04 LTS
 
-### General EC2 Ubuntu fixups ###
+The [Docker install instructions][1] say you should upgrade to the 3.8 kernel like this:
 
+    sudo apt-get install linux-image-generic-lts-raring linux-headers-generic-lts-raring
+
+This command appeared to succeed, but upon rebooting, it appears that I'm running the 3.13 kernel:
+
+    uname -a
+    Linux li134-36 3.13.7-x86_64-linode38 #1 SMP Tue Mar 25 12:59:48 EDT 2014 x86_64 x86_64 x86_64 GNU/Linux
+
+Not sure if that matters or not.
+
+Then HTTPS transport
+
+    sudo apt-get install apt-transport-https
+
+Add Docker repo
+
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
+    sudo sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
     sudo apt-get update
-    sudo apt-get install build-essential git zsh
-    sudo -s
-    chsh -s /bin/zsh ubuntu # change the shell to Zsh for the default user, ubuntu
+    sudo apt-get install lxc-docker
 
-Log out, then back in again.
+Test that Docker works
 
-    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-    curl -o ~/.vimrc https://raw.github.com/pingswept/linux-tool-configs/master/vimrc
+    sudo docker run -i -t ubuntu /bin/bash
 
-Also, copy gitconfig from https://github.com/pingswept/linux-tool-configs
-
-### Install Varnish ###
-
-Varnish has a package repo for the Ubuntu LTS releases.
-
-    curl http://repo.varnish-cache.org/debian/GPG-key.txt | sudo apt-key add -
-    echo "deb http://repo.varnish-cache.org/ubuntu/ precise varnish-3.0" | sudo tee -a /etc/apt/sources.list
-    sudo apt-get update
-    sudo apt-get install varnish
-
-Update /etc/varnish/default.vcl
-
-    backend default {
-        .host = "127.0.0.1";
-        .port = "2368"; # for Ghost running on node.js
-    }
-
-Update /etc/defaults/varnish
-
-    DAEMON_OPTS="-a :80 \
-                 -T localhost:6082 \
-                 -f /etc/varnish/default.vcl \
-                 -S /etc/varnish/secret \                                                                     
-                 -s malloc,256m"
-
-The current release of Ghost doesn't handle cookies properly, which means Varnish breaks authentication, and CSS and JS are marked as not cacheable, which slows stuff down. This stuff will supposedly be fixed in 0.4, but here are some workarounds, at least for the cookies: http://we.je/using-varnish-not-nginx-to-run-ghost/
-
-### Install Rails 4 ###
-
-    gem install rails -v 4.0.1
-    rbenv rehash
-
-### Install Postgres ###
-
-Postgres is needed for Discourse. The postrgresql-contrib package is needed for the hstore extension that Discourse uses.
-
-    sudo apt-get install postgresql postgresql-contrib
-    sudo -u postgres createuser ubuntu -s -P # not sure this was necessary, maybe just needed to set password
-    sudo -u postgres createdb dtest
-    sudo -u postgres psql -c "grant all privileges on database dtest to ubuntu"
-    sudo -u postgres psql dtest -c "create extension hstore; create extension pg_trgm"
-
-### Install Discourse ###
-
-    gem install bundler
-    wget https://github.com/discourse/discourse/archive/v0.9.7.6.tar.gz
-    tar xzf v0.9.7.6.tar.gz
-    cd discourse-0.9.7.6
-    bundle install
-    
-    OpenSSL::SSL::SSLError: SSL_connect returned=1 errno=0 state=SSLv3 read server hello A: wrong version number
-    An error occurred while installing listen (0.7.3), and Bundler cannot continue.
-    Make sure that `gem install listen -v '0.7.3'` succeeds before bundling.
-
-Hmmmm.
+[1]: http://docs.docker.io/en/latest/installation/ubuntulinux/
