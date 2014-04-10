@@ -56,4 +56,12 @@ Test that Docker works
 
     sudo docker run -i -t ubuntu /bin/bash
 
+Make directory /var/docker and set its permissions.
+
+    sudo install -g docker -m 2775 -d /var/docker
+
+Add my account to the docker group.
+
+    sudo usermod -a -G docker bstafford
+
 [1]: http://docs.docker.io/en/latest/installation/ubuntulinux/
