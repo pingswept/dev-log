@@ -71,4 +71,17 @@ Add my account to the docker group.
 
     sudo usermod -a -G docker bstafford
 
+Then actually install Discourse
+
+    git clone https://github.com/discourse/discourse_docker.git /var/docker
+    cd /var/docker
+    cp samples/standalone.yml containers/app.yml
+
+Edit `containers/app.yml`
+
+Add the Mandrill credentials and set the hostname.
+
+    sudo ./launcher bootstrap app
+    sudo ./launcher start app
+
 [1]: http://docs.docker.io/en/latest/installation/ubuntulinux/
