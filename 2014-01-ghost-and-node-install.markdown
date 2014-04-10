@@ -2,24 +2,7 @@ Originally installed on an Amazon EC2 t1.micro instance running Ubuntu Server 12
 
 Later tested on Linode 1024 using 64-bit Ubuntu 12.04 LTS with Ghost 0.4.2.
 
-### Add a non-root user ###
-
-    adduser bstafford
-    sudo usermod -a -G sudo bstafford # add to sudoers
-
-### General EC2 Ubuntu fixups ###
-
-    sudo apt-get update
-    sudo apt-get install build-essential git zsh sqlite3 # sqlite3 is the command line tool
-    sudo -s
-    chsh -s /bin/zsh bstafford # or ubuntu, default Ubuntu user on EC2
-
-Log out, then back in again.
-
-    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-    curl -o ~/.vimrc https://raw.github.com/pingswept/linux-tool-configs/master/vimrc
-
-Also, copy gitconfig from https://github.com/pingswept/linux-tool-configs
+Do [general Ubuntu fixups][1].
 
 ### Install Node ###
 
@@ -185,3 +168,5 @@ Copying created_at dates to publication date column
     cd content/data
     sqlite3 ghost-dev.db
     update posts set published_at = created_at;
+
+[1]: https://github.com/pingswept/dev-log/blob/master/2014-04-ubuntu-fixups.markdown
