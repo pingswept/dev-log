@@ -41,6 +41,13 @@ This command appeared to succeed, but upon rebooting, it appears that I'm runnin
 
 Not sure if that matters or not.
 
+Ah, it does. Have to run stock Ubuntu kernel to get AUFS support. Follow instructions here: https://library.linode.com/custom-instances/pv-grub-howto#sph_ubuntu-12-04-precise
+
+Then, we get:
+
+    uname -a
+    Linux li134-36 3.8.0-38-generic #56~precise1-Ubuntu SMP Thu Mar 13 16:22:48 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+
 Then HTTPS transport
 
     sudo apt-get install apt-transport-https
