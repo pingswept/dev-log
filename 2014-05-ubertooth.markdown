@@ -44,4 +44,4 @@ On Ubuntu 12.04 LTS, following https://github.com/greatscottgadgets/ubertooth/wi
     make && make plugins
     sudo make suidinstall
     sudo make plugins-install
-    Add "pcapbtbb" to the "logtypes=..." line in kismet.conf
+    Add "pcapbtbb" to the "logtypes=..." line in /usr/local/etc/kismet.conf
