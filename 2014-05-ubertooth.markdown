@@ -1,4 +1,4 @@
-On Ubuntu 12.04 LTS
+On Ubuntu 12.04 LTS, following https://github.com/greatscottgadgets/ubertooth/wiki/Build-Guide
 
 ### Prerequisites ###
 
