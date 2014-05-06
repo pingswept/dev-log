@@ -45,3 +45,30 @@ On Ubuntu 12.04 LTS, following https://github.com/greatscottgadgets/ubertooth/wi
     sudo make suidinstall
     sudo make plugins-install
     Add "pcapbtbb" to the "logtypes=..." line in /usr/local/etc/kismet.conf
+
+These are the files installed as part of Ubertooth tools (from ~/ubertooth-2014-02-R2/host/build/install_manifest.txt)
+
+Verified that they are actually there.
+
+    /usr/local/lib/libubertooth.so.0.2
+    /usr/local/lib/libubertooth.so.0
+    /usr/local/lib/libubertooth.so
+    /usr/local/include/ubertooth.h
+    /usr/local/include/ubertooth_control.h
+    /usr/local/include/ubertooth_interface.h
+    /usr/local/bin/ubertooth-rx
+    /usr/local/bin/ubertooth-dump
+    /usr/local/bin/ubertooth-util
+    /usr/local/bin/ubertooth-btle
+    /usr/local/bin/ubertooth-follow
+    /usr/local/bin/ubertooth-scan
+    /usr/local/bin/ubertooth-debug
+    /usr/local/bin/ubertooth-specan-ui
+    /usr/local/bin/ubertooth-dfu
+
+It seems that nothing can find libubertooth.so.0.
+
+    ubertooth-rx
+    ubertooth-rx: error while loading shared libraries: libubertooth.so.0: cannot open shared object file: No such file or directory
+
+Similar problems from ubertooth scan and kismet.
