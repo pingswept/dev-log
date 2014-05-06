@@ -72,3 +72,11 @@ It seems that nothing can find libubertooth.so.0.
     ubertooth-rx: error while loading shared libraries: libubertooth.so.0: cannot open shared object file: No such file or directory
 
 Similar problems from ubertooth scan and kismet.
+
+Seem to be fixed by:
+
+    sudo ldconfig
+
+To run `ubertooth-specan-ui`, need PySide
+
+    sudo apt-get install python-pyside
