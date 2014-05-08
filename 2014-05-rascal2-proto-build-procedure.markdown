@@ -7,6 +7,12 @@
 
 ### Setting up the build host ###
 
+* Create PKGBUILDS for packages.
+* Set groups array in each PKGBUILD: `groups=('rascal-base')`
+* `makepkg` for all PKGBUILDS
+* Use repo-add to generate repo database: `repo-add /path/to/repo.db.tar.gz /path/to/*.pkg.tar.xz`
+* Upload repo database and .pkg.tar.xz files to repo server
+
 ### Setting up the target ###
 
 * Download `ArchLinuxARM-YYYY.MM-am33x-rootfs.tar.gz` from http://os.archlinuxarm.org/os/omap/
