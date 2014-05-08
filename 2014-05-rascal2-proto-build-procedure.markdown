@@ -31,3 +31,69 @@ Like this:
 (Change SigLevel to Required later.)
 
 * `pacman -S rascal-base`
+
+This will include (tentatively):
+* ack
+* blinkm
+* demos
+* gfortran
+* htop
+* i2c-tools
+* iotop
+* iperf 
+* ipython
+* libevent (for websockets?)
+* lsof
+* mtr
+* nano
+* ntpdate
+* openssh
+* openssh-sftp-server
+* pytronics
+* red
+* sysstat
+* usbutils
+* usb-gadget-mode?
+* uwsgi
+* wireless-tools
+
+Install a bunch of other packages (if needed?)
+
+From https://github.com/archlinuxarm/PKGBUILDs/tree/master
+
+* core/binutils
+* core/gcc
+* extra/ffmpeg
+* extra/imagemagick
+* extra/opencv
+* extra/python
+* extra/ruby
+ 
+From Arch Linux?
+* avahi
+* curl
+* git
+* logrotate
+* make
+* nginx
+* perl
+* vim
+
+        python-daemon \
+        python-dev \
+        python-flask \
+        python-flask-login \
+        python-gevent \
+        python-greenlet \
+        python-imaging \
+        python-jinja2 \
+        python-matplotlib \
+        python-misc \
+        python-modules \
+        python-numpy \
+        python-pip \
+        python-pyserial \
+        python-pytronics \
+        python-simplejson \
+        python-sqlalchemy \
+        python-werkzeug \
