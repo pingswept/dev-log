@@ -51,6 +51,12 @@ Download the root filesystem tarball and extract it (as root, not via sudo) to t
     tar xf ArchLinuxARM-am33x-latest.tar.gz -C /media/root
     umount /media/root
 
+Then, do a few things to make stuff work better.
+
+    pacman -S avahi nss-mdns
+    systemctl restart dbus
+    systemctl enable avahi-daemon.service
+
 ## Setting up the build host ##
 
 * Create PKGBUILDS for packages.
