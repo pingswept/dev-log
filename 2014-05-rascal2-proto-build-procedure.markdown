@@ -37,13 +37,8 @@ This will include (tentatively):
 * demos
 * pytronics
 * red
-*         python-daemon \
-        python-dev \
-        python-flask-login \
-        python-gevent \
-        python-imaging \
-
-
+* python-daemon (available in AUR?)
+* python-flask-login
 
 Install a bunch of other packages (if needed?)
 
@@ -66,10 +61,12 @@ From the community repo
 * community/iperf
 * community/ipython
 * community/python-flask
+* community/python2-gevent (need Python 3 port?)
 * community/python-greenlet
 * community/python-jinja2
 * community/python-markdown
 * community/python-matplotlib
+* community/python-pillow
 * community/python-pyserial
 * community/python-scipy
 * community/python-simplejson
