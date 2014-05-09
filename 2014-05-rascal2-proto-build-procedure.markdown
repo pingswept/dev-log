@@ -52,7 +52,8 @@ https://github.com/archlinuxarm/PKGBUILDs/tree/master
 * extra/python
 * extra/ruby
  
-### Already in the non-ARM Arch Linux repos ### (maybe already installed by default?)
+### Already in the non-ARM Arch Linux repos ###
+(maybe already installed by default?)
 
 ** From the community repo **
 * community/ack
