@@ -33,33 +33,15 @@ Like this:
 * `pacman -S rascal-base`
 
 This will include (tentatively):
-* ack
 * blinkm
 * demos
-* gfortran
-* htop
-* i2c-tools
-* iotop
-* iperf 
-* ipython
-* libevent (for websockets?)
-* lsof
-* mtr
-* nano
-* ntpdate
-* openssh
-* openssh-sftp-server
 * pytronics
 * red
-* sysstat
-* usbutils
-* usb-gadget-mode?
-* uwsgi
-* wireless-tools
+
 
 Install a bunch of other packages (if needed?)
 
-From https://github.com/archlinuxarm/PKGBUILDs/tree/master
+From the Arch Linux ARM tree: https://github.com/archlinuxarm/PKGBUILDs/tree/master
 
 * core/binutils
 * core/gcc
@@ -69,16 +51,34 @@ From https://github.com/archlinuxarm/PKGBUILDs/tree/master
 * extra/python
 * extra/ruby
  
-From Arch Linux?
+Already in the Arch Linux repos (maybe already installed by default?)
+* ack
 * avahi
 * curl
+* gcc-fortran
 * git
+* htop
+* i2c-tools
+* iotop
+* iperf 
+* ipython
+* libevent (for websockets?)
 * logrotate
+* lsof
 * make
+* mtr
+* nano
 * nginx
+* ntpdate
+* openssh
+* openssh-sftp-server
 * perl
 * vim
-
+* sysstat
+* usbutils
+* usb-gadget-mode?
+* uwsgi
+* wireless-tools
         python-daemon \
         python-dev \
         python-flask \
