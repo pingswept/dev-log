@@ -51,11 +51,25 @@ Download the root filesystem tarball and extract it (as root, not via sudo) to t
     tar xf ArchLinuxARM-am33x-latest.tar.gz -C /media/root
     umount /media/root
 
-Then, do a few things to make stuff work better.
+Then, connect via FTDI serial cable do a few things to make stuff work better.
+
+    screen /dev/tty.usbserial-A4013ENA 115200
+
+Log in with credentials `root`/`root`.
+
+Set root password.
+
+    passwd
+
+Install Avahi.
 
     pacman -S avahi nss-mdns
     systemctl restart dbus
     systemctl enable avahi-daemon.service
+
+Change the hostname.
+
+    nano /etc/hostname
 
 ## Setting up the build host ##
 
