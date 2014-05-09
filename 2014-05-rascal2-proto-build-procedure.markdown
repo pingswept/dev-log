@@ -37,6 +37,12 @@ This will include (tentatively):
 * demos
 * pytronics
 * red
+*         python-daemon \
+        python-dev \
+        python-flask-login \
+        python-gevent \
+        python-imaging \
+
 
 
 Install a bunch of other packages (if needed?)
@@ -52,57 +58,53 @@ From the Arch Linux ARM tree: https://github.com/archlinuxarm/PKGBUILDs/tree/mas
 * extra/ruby
  
 Already in the Arch Linux repos (maybe already installed by default?)
-* community/ack
-* community/iotop
 
+From the community repo
+* community/ack
+* community/i2c-tools
+* community/iotop
+* community/iperf
+* community/ipython
+* community/python-flask
+* community/python-greenlet
+* community/python-jinja2
+* community/python-markdown
+* community/python-matplotlib
+* community/python-pyserial
+* community/python-scipy
+* community/python-simplejson
+* community/python-sqlalchemy
+* community/python-werkzeug
+* community/sysstat
+* community/uwsgi
+* community/uwsgi-plugin-python (or python2?)
+
+From the core repo
 * core/curl
 * core/gcc-fortran
+* core/libevent (for websockets?)
 * core/logrotate
 * core/make
+* core/nano
 * core/openssh
+* core/perl
 * core/usbutils
 * core/wireless-tools
 
+From the extra repo
 * extra/avahi
 * extra/git
+* extra/gpsd
 * extra/htop
+* extra/lsof
+* extra/mtr
+* extra/nginx
+* extra/ntp
+* extra/python-numpy
+* extra/python-pip
 * extra/vim
 
-* i2c-tools
-* iperf 
-* ipython
-* libevent (for websockets?)
-* lsof
-* mtr
-* nano
-* nginx
-* ntpdate
-* perl
-* sysstat
+Unknown source, maybe part of an existing package?
+
+* openssh-sftp-server?
 * usb-gadget-mode?
-* uwsgi
-
-
-Unknown source?
-
-* openssh-sftp-server
-
-
-        python-daemon \
-        python-dev \
-        python-flask \
-        python-flask-login \
-        python-gevent \
-        python-greenlet \
-        python-imaging \
-        python-jinja2 \
-        python-matplotlib \
-        python-misc \
-        python-modules \
-        python-numpy \
-        python-pip \
-        python-pyserial \
-        python-pytronics \
-        python-simplejson \
-        python-sqlalchemy \
-        python-werkzeug \
