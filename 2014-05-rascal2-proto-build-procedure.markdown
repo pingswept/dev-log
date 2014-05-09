@@ -61,11 +61,19 @@ Set root password.
 
     passwd
 
+Update packages (will update to 3.8.13-22 kernel (or newer?))
+
+# ACTUALLY NO, THIS BREAKS THE DAMN KERNEL. ACCCCCH. #
+
+    pacman -Syu
+
 Install Avahi.
 
     pacman -S avahi nss-mdns
     systemctl restart dbus
     systemctl enable avahi-daemon.service
+
+Note that Avahi won't start successfully without upgrading to the newer kernel.
 
 Change the hostname.
 
