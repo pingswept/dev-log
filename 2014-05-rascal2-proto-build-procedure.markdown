@@ -37,12 +37,12 @@ This will include (tentatively):
 * demos
 * pytronics
 * red
-* python-daemon (available in AUR?)
-* python-flask-login
 
 Install a bunch of other packages (if needed?)
 
-From the Arch Linux ARM tree: https://github.com/archlinuxarm/PKGBUILDs/tree/master
+** From the Arch Linux ARM tree **
+
+https://github.com/archlinuxarm/PKGBUILDs/tree/master
 
 * core/binutils
 * core/gcc
@@ -52,9 +52,9 @@ From the Arch Linux ARM tree: https://github.com/archlinuxarm/PKGBUILDs/tree/mas
 * extra/python
 * extra/ruby
  
-Already in the Arch Linux repos (maybe already installed by default?)
+** Already in the non-ARM Arch Linux repos ** (maybe already installed by default?)
 
-From the community repo
+** From the community repo **
 * community/ack
 * community/i2c-tools
 * community/iotop
@@ -76,7 +76,7 @@ From the community repo
 * community/uwsgi
 * community/uwsgi-plugin-python (or python2?)
 
-From the core repo
+** From the core repo **
 * core/curl
 * core/gcc-fortran
 * core/libevent (for websockets?)
@@ -88,7 +88,7 @@ From the core repo
 * core/usbutils
 * core/wireless-tools
 
-From the extra repo
+** From the extra repo **
 * extra/avahi
 * extra/git
 * extra/gpsd
@@ -96,10 +96,16 @@ From the extra repo
 * extra/lsof
 * extra/mtr
 * extra/nginx
+* extra/nss-mdns
 * extra/ntp
 * extra/python-numpy
 * extra/python-pip
 * extra/vim
+* extra/zsh
+
+** From Arch User Repository **
+* python-daemon
+* python-flask-login
 
 Unknown source, maybe part of an existing package?
 
