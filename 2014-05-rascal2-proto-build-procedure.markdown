@@ -52,33 +52,42 @@ From the Arch Linux ARM tree: https://github.com/archlinuxarm/PKGBUILDs/tree/mas
 * extra/ruby
  
 Already in the Arch Linux repos (maybe already installed by default?)
-* ack
-* avahi
-* curl
-* gcc-fortran
-* git
-* htop
+* community/ack
+* community/iotop
+
+* core/curl
+* core/gcc-fortran
+* core/logrotate
+* core/make
+* core/openssh
+* core/usbutils
+* core/wireless-tools
+
+* extra/avahi
+* extra/git
+* extra/htop
+* extra/vim
+
 * i2c-tools
-* iotop
 * iperf 
 * ipython
 * libevent (for websockets?)
-* logrotate
 * lsof
-* make
 * mtr
 * nano
 * nginx
 * ntpdate
-* openssh
-* openssh-sftp-server
 * perl
-* vim
 * sysstat
-* usbutils
 * usb-gadget-mode?
 * uwsgi
-* wireless-tools
+
+
+Unknown source?
+
+* openssh-sftp-server
+
+
         python-daemon \
         python-dev \
         python-flask \
