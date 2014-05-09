@@ -5,6 +5,52 @@
 * On a target host, install Arch Linux ARM
 * On the same target host, use pacman to download and install the package group.
 
+## Subroutine: setting up Arch Linux on an SD card ##
+
+From http://archlinuxarm.org/platforms/armv7/ti/beaglebone-black
+
+Check in `dmesg` what device your SD card is. Unmount the card if it gets automounted.
+
+    fdisk /dev/sdc
+
+At the fdisk prompt, delete old partitions and create a new one:
+
+Type `o`. This will clear out any partitions on the drive.
+
+Type `p` to list partitions. There should be no partitions left.
+
+Now type `n`, then `p` for primary, `1` for the first partition on the drive, `enter` to accept the default first sector, then `+64M` to set the size to 64MB.
+
+Type `t` to change the partition type, then `e` to set it to W95 FAT16 (LBA).
+
+Type `a` to set the bootable flag on the first partition.
+
+Now type `n`, then `p` for primary, `2` for the second partition on the drive, and `enter` twice to select the default first and last sectors.
+
+Write and exit by typing `w`.
+
+That's the end of fdisk.
+
+Create the FAT16 filesystem: `mkfs.vfat -F 16 /dev/sdc1`
+
+Create the ext4 filesystem: `mkfs.ext4 /dev/sdc2`
+
+Download the BeagleBone bootloader tarball and extract the files onto the first partition of the SD card. These files contain the bootloaders needed to load the kernel. The file MLO needs to be the first file put onto the FAT partition, and extracting the tarball as-is should do this for you. If you have problems getting to U-Boot, re-format and place the files manually.
+
+    mkdir /media/boot
+    mount /dev/sdc1 /media/boot
+    tar xvf BeagleBone-bootloader.tar.gz -C /media/boot
+    umount /media/boot
+
+The tar line above will throw a bunch of errors about `Cannot change ownership to uid 1001, gid 1001`. This can be safely ignored; it just happens because the FAT16 filesystem doesn't have uid and gid settings, so you can't set them.
+    
+Download the root filesystem tarball and extract it (as root, not via sudo) to the ext3 partition on either the SD card or the USB drive. It is important to do this as root, as special files need to be created as part of the filesystem that can only be created by root.
+
+    mkdir /media/root
+    mount /dev/sdc2 /media/root
+    tar xf ArchLinuxARM-am33x-latest.tar.gz -C /media/root
+    umount /media/root
+
 ## Setting up the build host ##
 
 * Create PKGBUILDS for packages.
@@ -17,7 +63,7 @@
 
 * Download `ArchLinuxARM-YYYY.MM-am33x-rootfs.tar.gz` from http://os.archlinuxarm.org/os/omap/
 * Download `Beaglebone-bootloader.tar.gz` from the same directory.
-* Burn to SD card, as described on Installation tab here: http://archlinuxarm.org/platforms/armv7/ti/beaglebone-black
+* Burn to SD card, as described in subroutine above: "setting up Arch Linux on an SD card" 
 * Put card in target and boot, holding down S2 to force SD card boot.
 * Change hostname?
 * Add repo to `/etc/pacman.conf`
