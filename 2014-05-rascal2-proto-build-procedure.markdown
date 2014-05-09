@@ -1,11 +1,11 @@
-### Overall plan ###
+## Overall plan ##
 
 * Use one host to build a package group of Rascal-specific binary packages.
 * Upload those packages to http://rascalmicro.com/repos/rascal-base
 * On a target host, install Arch Linux ARM
 * On the same target host, use pacman to download and install the package group.
 
-### Setting up the build host ###
+## Setting up the build host ##
 
 * Create PKGBUILDS for packages.
 * Set groups array in each PKGBUILD: `groups=('rascal-base')`
@@ -13,7 +13,7 @@
 * Use repo-add to generate repo database: `repo-add /path/to/repo.db.tar.gz /path/to/*.pkg.tar.xz`
 * Upload repo database and .pkg.tar.xz files to repo server
 
-### Setting up the target ###
+## Setting up the target ##
 
 * Download `ArchLinuxARM-YYYY.MM-am33x-rootfs.tar.gz` from http://os.archlinuxarm.org/os/omap/
 * Download `Beaglebone-bootloader.tar.gz` from the same directory.
@@ -40,7 +40,7 @@ This will include (tentatively):
 
 Install a bunch of other packages (if needed?)
 
-** From the Arch Linux ARM tree **
+### From the Arch Linux ARM tree ###
 
 https://github.com/archlinuxarm/PKGBUILDs/tree/master
 
@@ -52,7 +52,7 @@ https://github.com/archlinuxarm/PKGBUILDs/tree/master
 * extra/python
 * extra/ruby
  
-** Already in the non-ARM Arch Linux repos ** (maybe already installed by default?)
+### Already in the non-ARM Arch Linux repos ### (maybe already installed by default?)
 
 ** From the community repo **
 * community/ack
