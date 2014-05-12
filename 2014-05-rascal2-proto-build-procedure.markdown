@@ -113,6 +113,8 @@ Update packages (will update to 3.8.13-22 kernel (or newer?))
 
 Note: the upgrade above failed on the first attempt. It seems that what happened was that the SD card timed out while trying to write the new kernel, which led to a kernel panic. On the second attempt, it worked. The only difference I could find was that I upgraded Avahi (as below) before doing the full system upgrade.
 
+Successfully rebooted with new kernel.
+
 Install Avahi.
 
     pacman -S avahi nss-mdns
