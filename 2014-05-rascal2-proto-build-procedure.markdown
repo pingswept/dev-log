@@ -67,6 +67,14 @@ Update packages (will update to 3.8.13-22 kernel (or newer?))
 
     pacman -Syu
 
+    Packages (9): device-mapper-2.02.106-2  gawk-4.1.1-1
+                  linux-am33x-legacy-3.8.13-22  linux-api-headers-3.14.1-1
+                  lvm2-2.02.106-2  man-pages-3.66-1  ntp-4.2.7.p441-1
+                  pacman-4.1.2-6  psmisc-22.21-2
+    Total Download Size:    25.68 MiB
+    Total Installed Size:   41.16 MiB
+    Net Upgrade Size:       2.60 MiB
+
 Install Avahi.
 
     pacman -S avahi nss-mdns
