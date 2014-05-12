@@ -63,17 +63,55 @@ Set root password.
 
 Update packages (will update to 3.8.13-22 kernel (or newer?))
 
-# ACTUALLY NO, THIS BREAKS THE DAMN KERNEL. ACCCCCH. #
-
-    pacman -Syu
-
+    [root@alarm ~]# pacman -Syu
+    :: Synchronizing package databases...
+     core                     194.0 KiB   980K/s 00:00 [######################] 100%
+     extra                      2.0 MiB  2.11M/s 00:01 [######################] 100%
+     community                  2.3 MiB  1816K/s 00:01 [######################] 100%
+     alarm                     58.0 KiB  3.33M/s 00:00 [######################] 100%
+     aur                       63.3 KiB  3.25M/s 00:00 [######################] 100%
+    :: Starting full system upgrade...
+    resolving dependencies...
+    looking for inter-conflicts...
+    
     Packages (9): device-mapper-2.02.106-2  gawk-4.1.1-1
                   linux-am33x-legacy-3.8.13-22  linux-api-headers-3.14.1-1
                   lvm2-2.02.106-2  man-pages-3.66-1  ntp-4.2.7.p441-1
                   pacman-4.1.2-6  psmisc-22.21-2
+    
     Total Download Size:    25.68 MiB
     Total Installed Size:   41.16 MiB
     Net Upgrade Size:       2.60 MiB
+    
+    :: Proceed with installation? [Y/n] Y
+    :: Retrieving packages ...
+     device-mapper-2.02....   162.3 KiB   854K/s 00:00 [######################] 100%
+     gawk-4.1.1-1-armv7h      865.3 KiB  2.07M/s 00:00 [######################] 100%
+     linux-am33x-legacy-...    15.9 MiB  2.21M/s 00:07 [######################] 100%
+     linux-api-headers-3...   701.6 KiB   833K/s 00:01 [######################] 100%
+     lvm2-2.02.106-2-armv7h   740.2 KiB   386K/s 00:02 [######################] 100%
+     man-pages-3.66-1-any       5.2 MiB  1014K/s 00:05 [######################] 100%
+     pacman-4.1.2-6-armv7h    561.4 KiB   428K/s 00:01 [######################] 100%
+     psmisc-22.21-2-armv7h     98.8 KiB   365K/s 00:00 [######################] 100%
+     ntp-4.2.7.p441-1-armv7h 1618.1 KiB   530K/s 00:03 [######################] 100%
+     (9/9) checking keys in keyring                     [######################] 100%
+     (9/9) checking package integrity                   [######################] 100%
+     (9/9) loading package files                        [######################] 100%
+     (9/9) checking for file conflicts                  [######################] 100%
+     (9/9) checking available disk space                [######################] 100%
+     (1/9) upgrading device-mapper                      [######################] 100%
+     (2/9) upgrading gawk                               [######################] 100%
+     (3/9) upgrading linux-am33x-legacy                 [######################] 100%
+     >>> Updating module dependencies. Please wait ...
+     (4/9) upgrading linux-api-headers                  [######################] 100%
+     (5/9) upgrading lvm2                               [######################] 100%
+     (6/9) upgrading man-pages                          [######################] 100%
+     (7/9) upgrading ntp                                [######################] 100%
+     (8/9) upgrading pacman                             [######################] 100%
+     (9/9) upgrading psmisc                             [######################] 100%
+     synchronizing filesystem...
+
+Note: the upgrade above failed on the first attempt. It seems that what happened was that the SD card timed out while trying to write the new kernel, which led to a kernel panic. On the second attempt, it worked. The only difference I could find was that I upgraded Avahi (as below) before doing the full system upgrade.
 
 Install Avahi.
 
