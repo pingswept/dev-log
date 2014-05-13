@@ -192,7 +192,7 @@ Packages with a weird mesagl dependency? Also one requires X11 stuff.
 * community/i2c-tools (ACCH! Depends on Python 2!)
 * community/iotop (ACCH! Depends on Python 2! But has been ported to Python 3.)
 * community/iperf
-* community/ipython
+* community/ipython (pulls in SQLite)
 * community/python-flask
 * community/python2-gevent (need Python 3 port?)
 * community/python-greenlet
