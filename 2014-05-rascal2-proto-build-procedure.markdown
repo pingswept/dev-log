@@ -206,8 +206,8 @@ Packages with a weird mesagl dependency? Also one requires X11 stuff.
 * community/python-sqlalchemy
 * community/python-werkzeug
 * community/sysstat
-* community/uwsgi
-* community/uwsgi-plugin-python (or python2?)
+* community/uwsgi (ACCH! need Python 2 (but successfully installed with pip))
+* community/uwsgi-plugin-python (or python2?)  (but successfully installed with pip as part of uwsgi)
 
 ** From the core repo **
 
@@ -281,8 +281,8 @@ MESA-libgl X11 dependency problem
 Python 2 deps
 * community/i2c-tools (ACCH! Depends on Python 2!)
 * community/iotop (ACCH! Depends on Python 2! But has been ported to Python 3.)
-* community/uwsgi
-* community/uwsgi-plugin-python (or python2?)
+* community/uwsgi (but successfully installed with pip)
+* community/uwsgi-plugin-python (or python2?) (but successfully installed with pip as part of uwsgi)
 * AUR/python2-daemon
 * extra/gpsd (depends on Python 2)
 
