@@ -190,7 +190,7 @@ Packages with a weird mesagl dependency? Also one requires X11 stuff.
 ** From the community repo **
 * community/ack
 * community/i2c-tools
-* community/iotop
+* community/iotop (ACCH! Depends on Python 2!)
 * community/iperf
 * community/ipython
 * community/python-flask
