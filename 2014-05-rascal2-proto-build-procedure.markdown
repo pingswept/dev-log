@@ -121,7 +121,15 @@ Install Avahi.
     systemctl restart dbus
     systemctl enable avahi-daemon.service
 
-Note that Avahi won't start successfully without upgrading to the newer kernel.
+Avahi won't start successfully
+
+Edit /etc/avahi/avahi-daemon.conf from:
+    #use-iff-running=no enable-dbus=yes disallow-other-stacks=no
+to:
+    #use-iff-running=no enable-dbus=yes                                             
+    disallow-other-stacks=yes
+
+Still fails on startup.
 
 Change the hostname.
 
