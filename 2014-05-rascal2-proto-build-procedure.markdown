@@ -267,3 +267,5 @@ Results in:
     Wrong Image Format for bootm command
     ERROR: can't get kernel image!
     U-Boot# 
+
+Put the SD card in USB adapter on Ubuntu laptop, and it mounted fine. Then rebooted, and whatever went wrong is now fixed. Hmmmmm.
