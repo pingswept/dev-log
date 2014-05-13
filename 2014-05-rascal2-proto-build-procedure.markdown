@@ -198,7 +198,7 @@ Packages with a weird mesagl dependency? Also one requires X11 stuff.
 * community/python-greenlet
 * community/python-jinja
 * community/python-markdown
-* community/python-matplotlib (Weird mesa-libgl choice that may pull in X11)
+* community/python-matplotlib (mesa-libgl will pull in X11)
 * community/python-pillow
 * community/python-pyserial
 * community/python-scipy
@@ -269,3 +269,22 @@ Results in:
     U-Boot# 
 
 Put the SD card in USB adapter on Ubuntu laptop, and it mounted fine. Then rebooted, and whatever went wrong is now fixed. Hmmmmm.
+
+### Summary of packages with installation difficulties ###
+
+MESA-libgl X11 dependency problem
+* ALA-extra/ffmpeg
+* ALA-extra/imagemagick
+* ALA-extra/opencv
+* community/python-matplotlib (mesa-libgl will pull in X11)
+
+Python 2 deps
+* community/i2c-tools (ACCH! Depends on Python 2!)
+* community/iotop (ACCH! Depends on Python 2! But has been ported to Python 3.)
+* community/uwsgi
+* community/uwsgi-plugin-python (or python2?)
+* AUR/python2-daemon
+* extra/gpsd (depends on Python 2)
+
+Need AUR
+* AUR/python-flask-login
