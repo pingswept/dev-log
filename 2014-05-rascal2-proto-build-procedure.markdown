@@ -208,15 +208,19 @@ https://github.com/archlinuxarm/PKGBUILDs/tree/master
 * community/uwsgi-plugin-python (or python2?)
 
 ** From the core repo **
+
+Already installed by default
 * core/curl
-* core/gcc-fortran
-* core/libevent (for websockets?)
 * core/logrotate
-* core/make
 * core/nano
 * core/openssh
 * core/perl
 * core/usbutils
+
+Need to be installed
+* core/gcc-fortran (part of gcc?)
+* core/make
+* core/libevent (for websockets?)
 * core/wireless-tools
 
 ** From the extra repo **
@@ -228,7 +232,7 @@ https://github.com/archlinuxarm/PKGBUILDs/tree/master
 * extra/mtr
 * extra/nginx
 * extra/nss-mdns
-* extra/ntp
+* extra/ntp (installed by pacman -Syu ?)
 * extra/python-numpy
 * extra/python-pip
 * extra/vim
