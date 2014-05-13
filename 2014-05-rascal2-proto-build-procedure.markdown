@@ -174,13 +174,15 @@ Install a bunch of other packages (if needed?)
 
 https://github.com/archlinuxarm/PKGBUILDs/tree/master
 
-* core/binutils
+* core/binutils (gcc depends on this)
 * core/gcc
+* extra/python
+* extra/ruby
+
+Packages with a weird mesagl dependency? Also one requires X11 stuff.
 * extra/ffmpeg
 * extra/imagemagick
 * extra/opencv
-* extra/python
-* extra/ruby
  
 ### Already in the non-ARM Arch Linux repos ###
 (maybe already installed by default?)
@@ -218,15 +220,15 @@ Already installed by default
 * core/usbutils
 
 Need to be installed
-* core/gcc-fortran (part of gcc?)
+* core/gcc-fortran
 * core/make
-* core/libevent (for websockets?)
-* core/wireless-tools
+* core/libevent (for websockets. Optional dep: "python2: to use event_rpcgen.py")
+* core/wireless_tools (note the underscore)
 
 ** From the extra repo **
 * extra/avahi
 * extra/git
-* extra/gpsd
+* extra/gpsd (ACCH! depends on Python 2)
 * extra/htop
 * extra/lsof
 * extra/mtr
@@ -239,10 +241,29 @@ Need to be installed
 * extra/zsh
 
 ** From Arch User Repository **
-* python-daemon
+* python2-daemon (need to figure out how to install existing Py3k port of Supervisor, then fix Rascal docs) 
 * python-flask-login
 
 Unknown source, maybe part of an existing package?
 
 * openssh-sftp-server?
 * usb-gadget-mode?
+
+### Problem while installing packages ###
+
+    synchronizing filesystem...
+    [ 6780.501496] INFO: task pacman:424 blocked for more than 60 seconds.
+    [ 6780.508121] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+    [ 6780.516520] Kernel panic - not syncing: hung_task: blocked tasks
+    [ 6780.522811] [<c00132d8>] (unwind_backtrace+0x0/0xe0) from [<c05f4070>] (panic+0x84/0x1d4)
+    [ 6780.531368] [<c05f4070>] (panic+0x84/0x1d4) from [<c0093058>] (watchdog+0x210/0x248)
+    [ 6780.539479] [<c0093058>] (watchdog+0x210/0x248) from [<c00599b0>] (kthread+0xa0/0xac)
+    [ 6780.547670] [<c00599b0>] (kthread+0xa0/0xac) from [<c000d6f8>] (ret_from_fork+0x14/0x3c)
+    [ 6780.556131] drm_kms_helper: panic occurred, switching back to text console
+
+Results in:
+
+    Booting from mmc ...
+    Wrong Image Format for bootm command
+    ERROR: can't get kernel image!
+    U-Boot# 
