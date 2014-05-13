@@ -196,9 +196,9 @@ Packages with a weird mesagl dependency? Also one requires X11 stuff.
 * community/python-flask
 * community/python2-gevent (need Python 3 port?)
 * community/python-greenlet
-* community/python-jinja2
+* community/python-jinja
 * community/python-markdown
-* community/python-matplotlib
+* community/python-matplotlib (Weird mesa-libgl choice that may pull in X11)
 * community/python-pillow
 * community/python-pyserial
 * community/python-scipy
