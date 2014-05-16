@@ -23,7 +23,7 @@ Now type `n`, then `p` for primary, `1` for the first partition on the drive, `e
 
 Type `t` to change the partition type, then `e` to set it to W95 FAT16 (LBA).
 
-Type `a` to set the bootable flag on the first partition.
+Type `a` to set the bootable flag, then `1` for the first partition.
 
 Now type `n`, then `p` for primary, `2` for the second partition on the drive, and `enter` twice to select the default first and last sectors.
 
