@@ -2,6 +2,8 @@ Download Debian file img.xz
 
 Unzip with Unarchiver (on OS X)
 
+Next bit from https://help.ubuntu.com/community/Installation/FromImgFiles
+
 `diskutil list` then insert SD card, then `diskutil list` to figure out SD card device name
 
 Assuming card is disk1:
@@ -14,4 +16,4 @@ Change passwd for debian, root accounts.
 
 Edit /etc/hostname
 
-apt-get install uwsgi
+    apt-get install uwsgi
