@@ -1,4 +1,4 @@
-Download Debian file img.xz
+Download Debian file img.xz from http://debian.beagleboard.org/images/BBB-eMMC-flasher-debian-7.5-2014-05-14-2gb.img.xz
 
 Unzip with Unarchiver (on OS X)
 
