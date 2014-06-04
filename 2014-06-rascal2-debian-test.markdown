@@ -21,3 +21,5 @@ Change passwd for debian, root accounts.
 Edit /etc/hostname
 
     apt-get install uwsgi
+    apt-get install uwsgi-plugin-python python-uwsgidecorators
+    apt-get install nginx
