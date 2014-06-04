@@ -23,3 +23,4 @@ Edit /etc/hostname
     apt-get install uwsgi
     apt-get install uwsgi-plugin-python python-uwsgidecorators
     apt-get install nginx
+    apt-get install python-flask
