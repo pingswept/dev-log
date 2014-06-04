@@ -12,6 +12,10 @@ Assuming card is disk1:
     sudo dd if=/path/to/downloaded.img of=/dev/rdisk1 bs=1m
     diskutil eject /dev/disk1
 
+`dd` takes ~5 min.
+
+On first boot, SD card will copy itself to eMMC, which unfortunately is only 2 GB. Takes 5-10 min.
+
 Change passwd for debian, root accounts.
 
 Edit /etc/hostname
