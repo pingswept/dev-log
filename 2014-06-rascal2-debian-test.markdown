@@ -37,7 +37,7 @@ Instead, build uWSGI from source
 
     apt-get install python-dev
     pip install uwsgi
-    pip install pytronics bitstring webcolors
+    pip install pytronics bitstring webcolors Flask-Login
 
     cd /var/www
 
@@ -47,4 +47,5 @@ Running on port 5000 without Nginx frontend
 
 With Nginx
 
-    /usr/local/bin/uwsgi --socket :5000 --wsgi-file public --callable public
+    /usr/local/bin/uwsgi --socket :5000 --wsgi-file /var/www/public --callable public
+    /usr/local/bin/uwsgi --socket :5001 --wsgi-file /var/www/editor --callable editor
