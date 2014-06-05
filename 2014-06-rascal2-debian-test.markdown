@@ -40,4 +40,4 @@ Instead, build uWSGI from source
     pip install pytronics bitstring webcolors
 
     cd /var/www
-    /usr/local/bin/uwsgi --socket=5000 --wsgi-file public
+    /usr/local/bin/uwsgi --http :5000 --wsgi-file public --callable public
