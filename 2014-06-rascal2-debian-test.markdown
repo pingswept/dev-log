@@ -40,4 +40,11 @@ Instead, build uWSGI from source
     pip install pytronics bitstring webcolors
 
     cd /var/www
+
+Running on port 5000 without Nginx frontend
+
     /usr/local/bin/uwsgi --http :5000 --wsgi-file public --callable public
+
+With Nginx
+
+    /usr/local/bin/uwsgi --socket :5000 --wsgi-file public --callable public
