@@ -37,3 +37,7 @@ Instead, build uWSGI from source
 
     apt-get install python-dev
     pip install uwsgi
+    pip install pytronics bitstring webcolors
+
+    cd /var/www
+    /usr/local/bin/uwsgi --socket=5000 --wsgi-file public
