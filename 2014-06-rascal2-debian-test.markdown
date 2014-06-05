@@ -20,8 +20,6 @@ Change passwd for debian, root accounts.
 
 Edit /etc/hostname
 
-    apt-get install uwsgi
-    apt-get install uwsgi-plugin-python python-uwsgidecorators
     apt-get install nginx
     apt-get install python-flask
 
@@ -29,3 +27,13 @@ Remove stuff
 
     apt-get remove apache2 apache2-mpm-worker apache2-utils apache2.2-bin apache2.2-common
     apt-get remove nodejs
+
+Could install uWSGI 1.2 from packages
+
+    apt-get install uwsgi
+    apt-get install uwsgi-plugin-python python-uwsgidecorators
+
+Instead, build uWSGI from source
+
+    apt-get install python-dev
+    pip install uwsgi
