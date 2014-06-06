@@ -80,5 +80,5 @@ All the uWSGI stuff at once
 
     /usr/local/bin/uwsgi --emperor /etc/uwsgi/apps-available
 
-Both editor and public work.
+Both editor and public work. Emperor logging not working.
 
