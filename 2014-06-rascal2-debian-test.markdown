@@ -76,6 +76,14 @@ Other tools
     Login Shell [/bin/bash]: /bin/zsh
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
+All the uWSGI stuff at once
 
+    /usr/local/bin/uwsgi --emperor /etc/uwsgi/apps-available
 
+Editor works, but lcd.html returns "internal server error". Need to get logfile working.
+
+From public.log:
+
+    failed to open python file public
+    unable to load app 0 (mountpoint='') (callable not found or import error)
 
