@@ -49,3 +49,21 @@ With Nginx
 
     /usr/local/bin/uwsgi --socket :5000 --wsgi-file /var/www/public --callable public
     /usr/local/bin/uwsgi --socket :5001 --wsgi-file /var/www/editor --callable editor
+
+Install Red and demos
+
+    cd /var/www
+    git clone https://github.com/rascalmicro/red.git editor
+    git clone https://github.com/rascalmicro/demos.git public
+    touch /var/log/uwsgi/public.log
+    touch /var/log/uwsgi/emperor.log
+    touch /var/log/uwsgi/editor.log 
+
+Install CodeMirror (also a git submodule, but needs an update?)
+
+    cd /var/www/editor/static
+    rm -rf codemirror
+    wget https://github.com/marijnh/CodeMirror/archive/4.2.0.tar.gz
+    tar xzvf 4.2.0.tar.gz
+    mv CodeMirror-4.2.0/ codemirror
+
