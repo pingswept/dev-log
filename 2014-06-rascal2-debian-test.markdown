@@ -67,3 +67,15 @@ Install CodeMirror (also a git submodule, but needs an update?)
     tar xzvf 4.2.0.tar.gz
     mv CodeMirror-4.2.0/ codemirror
 
+Other tools
+
+    apt-get install zsh
+    chsh
+    Changing the login shell for root
+    Enter the new value, or press ENTER for the default
+    Login Shell [/bin/bash]: /bin/zsh
+    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+
+
+
