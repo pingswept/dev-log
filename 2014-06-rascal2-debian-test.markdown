@@ -57,7 +57,9 @@ Install Red and demos
     git clone https://github.com/rascalmicro/demos.git public
     touch /var/log/uwsgi/public.log
     touch /var/log/uwsgi/emperor.log
-    touch /var/log/uwsgi/editor.log 
+    touch /var/log/uwsgi/editor.log
+    chown -R www-data /var/log/uwsgi
+    chgrp -R www-data /var/log/uwsgi
 
 Install CodeMirror (also a git submodule, but needs an update?)
 
@@ -76,9 +78,51 @@ Other tools
     Login Shell [/bin/bash]: /bin/zsh
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
-All the uWSGI stuff at once
+Set up uWSGI.
 
-    /usr/local/bin/uwsgi --emperor /etc/uwsgi/apps-available
+`/etc/uwsgi/emperor.ini`
 
-Both editor and public work. Emperor logging not working.
+    [uwsgi]
+    emperor = /etc/uwsgi/vassals
+    logto = /var/log/uwsgi/emperor.log
+    uid = www-data
+    gid = www-data
+
+`/etc/uwsgi/vassals/editor.ini`
+
+    [uwsgi]
+    socket = 127.0.0.1:5001
+    logto = /var/log/uwsgi/editor.log
+    processes = 1
+    env = PYTHONPATH=$PYTHONPATH:/var/www
+    wsgi-file = /var/www/editor
+    callable = editor
+
+`/etc/uwsgi/vassals/public.ini`
+
+    [uwsgi]
+    socket = 127.0.0.1:5000
+    logto = /var/log/uwsgi/public.log
+    processes = 1
+    env = PYTHONPATH=$PYTHONPATH:/var/www
+    wsgi-file = /var/www/public
+    callable = public
+    catch-exceptions = True
+
+Then set up Systemd startup script in `/etc/systemd/system/uwsgi.service`
+
+    [Unit]
+    Description=uWSGI Emperor
+    After=syslog.target
+    
+    [Service]
+    ExecStart=/usr/local/bin/uwsgi --ini /etc/uwsgi/emperor.ini
+    Restart=always
+    KillSignal=SIGQUIT
+    Type=notify
+    NotifyAccess=main
+    
+    [Install]
+    WantedBy=multi-user.target
+
 
