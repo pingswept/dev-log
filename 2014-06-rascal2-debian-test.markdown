@@ -125,4 +125,4 @@ Then set up Systemd startup script in `/etc/systemd/system/uwsgi.service`
     [Install]
     WantedBy=multi-user.target
 
-
+Enable uWSGI: `systemctl enable uwsgi.service`
