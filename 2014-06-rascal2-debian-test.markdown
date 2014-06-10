@@ -28,6 +28,15 @@ Remove stuff
     apt-get remove apache2 apache2-mpm-worker apache2-utils apache2.2-bin apache2.2-common
     apt-get remove nodejs
 
+Get nodejs remnants off port 80 with these commands from http://stackoverflow.com/questions/16554756/how-do-i-release-port-80-on-a-beaglebone-so-i-can-use-it
+
+    systemctl disable cloud9.service
+    systemctl disable gateone.service
+    systemctl disable gdm.service     # this disables the Gnome desktop which is maybe irrelevant here, but saves a ton of memory
+    systemctl disable bonescript.service
+    systemctl disable bonescript.socket
+    systemctl disable bonescript-autorun.service
+
 Could install uWSGI 1.2 from packages
 
     apt-get install uwsgi
@@ -126,3 +135,11 @@ Then set up Systemd startup script in `/etc/systemd/system/uwsgi.service`
     WantedBy=multi-user.target
 
 Enable uWSGI: `systemctl enable uwsgi.service`
+
+### Getting websockets working ###
+
+Install Gevent with pip to get version 1.0.1, as uWSGI needs 1.x or newer for websockets, I think.
+
+    pip install gevent
+    
+    
