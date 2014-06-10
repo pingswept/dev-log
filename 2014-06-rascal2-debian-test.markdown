@@ -37,6 +37,10 @@ Get nodejs remnants off port 80 with these commands from http://stackoverflow.co
     systemctl disable bonescript.socket
     systemctl disable bonescript-autorun.service
 
+Remove some more stuff
+
+    apt-get remove xscreensaver xscreensaver-data xserver-xorg-core xserver-common
+
 Could install uWSGI 1.2 from packages
 
     apt-get install uwsgi
