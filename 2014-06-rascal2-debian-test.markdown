@@ -148,4 +148,31 @@ Install Gevent with pip to get version 1.0.1, as uWSGI needs 1.x or newer for we
     pip install gevent-websocket
     pip install Flask-Sockets
 
-    
+### Hmmm ###
+
+    pip uninstall Flask-Sockets
+    Uninstalling Flask-Sockets:
+    Proceed (y/n)? Y
+      Successfully uninstalled Flask-Sockets
+
+Flask-uWSGI-WebSocket might be better.      
+      
+    pip install Flask-uWSGI-WebSocket
+    Downloading/unpacking Flask-uWSGI-WebSocket
+      Downloading Flask-uWSGI-WebSocket-0.2.5.tar.gz
+      Running setup.py egg_info for package Flask-uWSGI-WebSocket
+        
+        file flask_uwsgi_websocket.py (for module flask_uwsgi_websocket) not found
+    Requirement already satisfied (use --upgrade to upgrade): Flask in /usr/lib/python2.7/dist-packages (from Flask-uWSGI-WebSocket)
+    Requirement already satisfied (use --upgrade to upgrade): uwsgi in /usr/local/lib/python2.7/dist-packages (from Flask-uWSGI-WebSocket)
+    Requirement already satisfied (use --upgrade to upgrade): Werkzeug>=0.6.1 in /usr/lib/python2.7/dist-packages (from Flask->Flask-uWSGI-WebSocket)
+    Requirement already satisfied (use --upgrade to upgrade): Jinja2>=2.4 in /usr/lib/python2.7/dist-packages (from Flask->Flask-uWSGI-WebSocket)
+    Installing collected packages: Flask-uWSGI-WebSocket
+      Running setup.py install for Flask-uWSGI-WebSocket
+        file flask_uwsgi_websocket.py (for module flask_uwsgi_websocket) not found
+        
+        file flask_uwsgi_websocket.py (for module flask_uwsgi_websocket) not found
+        file flask_uwsgi_websocket.py (for module flask_uwsgi_websocket) not found
+        file flask_uwsgi_websocket.py (for module flask_uwsgi_websocket) not found
+    Successfully installed Flask-uWSGI-WebSocket
+    Cleaning up...
