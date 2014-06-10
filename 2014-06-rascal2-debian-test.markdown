@@ -138,8 +138,8 @@ Enable uWSGI: `systemctl enable uwsgi.service`
 
 ### Getting websockets working ###
 
-Install Gevent with pip to get version 1.0.1, as uWSGI needs 1.x or newer for websockets, I think.
+Install Gevent with pip to get version 1.0.1, as uWSGI needs 1.x or newer for websockets, I think. This also installs Greenlet.
 
     pip install gevent
-    
+
     
