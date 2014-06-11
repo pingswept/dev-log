@@ -183,3 +183,9 @@ Change `ws = new WebSocket('ws://127.0.0.1:5000/websocket');` to `ws = new WebSo
 
 Then start with `uwsgi --master --http :8080 --http-websockets --wsgi echo:app`
 
+For uWSGI chat example, need Redis and Python client for Redis
+
+    apt-get install redis-server
+    pip install redis
+
+
