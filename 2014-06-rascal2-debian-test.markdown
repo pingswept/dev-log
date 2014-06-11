@@ -176,3 +176,10 @@ Flask-uWSGI-WebSocket might be better.
         file flask_uwsgi_websocket.py (for module flask_uwsgi_websocket) not found
     Successfully installed Flask-uWSGI-WebSocket
     Cleaning up...
+
+Got it working by modifying one line of echo example slightly: https://github.com/zeekay/flask-uwsgi-websocket/blob/master/examples/echo/templates/index.html#L20
+
+Change `ws = new WebSocket('ws://127.0.0.1:5000/websocket');` to `ws = new WebSocket('ws://rascal2.local:8080/websocket');`
+
+Then start with `uwsgi --master --http :8080 --http-websockets --wsgi echo:app`
+
