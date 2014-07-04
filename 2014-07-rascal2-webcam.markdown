@@ -86,3 +86,17 @@ Try to focus
     	Read buffers     : 0
     Priority: 2
 
+Test script
+
+    #!/usr/bin/python
+    
+    import Adafruit_BBIO.GPIO as GPIO
+    
+    GPIO.setup("P8_14", GPIO.IN)
+    while(1):
+        GPIO.wait_for_edge("P8_14", GPIO.RISING)
+        print("Button smacked! Time to take a picture.")
+
+Install Python bindings for Tumblr
+
+    pip install pytumblr
