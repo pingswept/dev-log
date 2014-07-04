@@ -51,6 +51,7 @@ Install ffmpeg
     apt-get install ffmpeg
     apt-get install fswebcam
     apt-get install v4l-utils
+    apt-get install uvcdynctrl
 
 Capture a JPEG-- good, but blurry
 
