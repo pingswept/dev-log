@@ -55,3 +55,33 @@ Install ffmpeg
 Capture a JPEG-- good, but blurry
 
     fswebcam -r 1920x1080 --jpeg 85 -D 1 /var/www/public/static/images/shot.jpg
+
+Try to focus
+
+    v4l2-ctl --all
+    Driver Info (not using libv4l2):
+    	Driver name   : uvcvideo
+    	Card type     : HD Pro Webcam C920
+    	Bus info      : usb-musb-hdrc.1.auto-1
+    	Driver version: 3.8.13
+    	Capabilities  : 0x84000001
+    		Video Capture
+    		Streaming
+    Format Video Capture:
+    	Width/Height  : 1920/1080
+    	Pixel Format  : 'MJPG'
+    	Field         : None
+    	Bytes per Line: 0
+    	Size Image    : 4147200
+    	Colorspace    : SRGB
+    Crop Capability Video Capture:
+    	Bounds      : Left 0, Top 0, Width 1920, Height 1080
+    	Default     : Left 0, Top 0, Width 1920, Height 1080
+    	Pixel Aspect: 1/1
+    Video input : 0 (Camera 1: ok)
+    Streaming Parameters Video Capture:
+    	Capabilities     : timeperframe
+    	Frames per second: 30.000 (30/1)
+    	Read buffers     : 0
+    Priority: 2
+
