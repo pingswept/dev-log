@@ -49,3 +49,9 @@ From dmesg
 Install ffmpeg
 
     apt-get install ffmpeg
+    apt-get install fswebcam
+    apt-get install v4l-utils
+
+Capture a JPEG-- good, but blurry
+
+    fswebcam -r 1920x1080 --jpeg 85 -D 1 /var/www/public/static/images/shot.jpg
