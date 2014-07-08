@@ -37,9 +37,14 @@ Get nodejs remnants off port 80 with these commands from http://stackoverflow.co
     systemctl disable bonescript.socket
     systemctl disable bonescript-autorun.service
 
+List Debian packages by size
+
+    dpkg-query -W --showformat='${Installed-Size;10}\t${Package}\n' | sort -k1,1n
+
 Remove some more stuff
 
     apt-get remove xscreensaver xscreensaver-data xserver-xorg-core xserver-common
+    apt-get remove libgtk2.0-common # probably breaks OpenCV
 
 Could install uWSGI 1.2 from packages
 
