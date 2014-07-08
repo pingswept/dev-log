@@ -45,6 +45,8 @@ Remove some more stuff
 
     apt-get remove xscreensaver xscreensaver-data xserver-xorg-core xserver-common
     apt-get remove libgtk2.0-common # probably breaks OpenCV
+    apt-get remove libgtk-3-common # removes Gstreamer and Numpy
+    apt-get autoremove
 
 Could install uWSGI 1.2 from packages
 
