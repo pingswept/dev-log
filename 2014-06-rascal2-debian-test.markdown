@@ -20,13 +20,11 @@ Change passwd for debian, root accounts.
 
 Edit /etc/hostname
 
-    apt-get install nginx
-    apt-get install python-flask
+    apt-get install nginx python-flask
 
 Remove stuff
 
-    apt-get remove apache2 apache2-mpm-worker apache2-utils apache2.2-bin apache2.2-common
-    apt-get remove nodejs
+    apt-get remove apache2 apache2-mpm-worker apache2-utils apache2.2-bin apache2.2-common nodejs
 
 Get nodejs remnants off port 80 with these commands from http://stackoverflow.com/questions/16554756/how-do-i-release-port-80-on-a-beaglebone-so-i-can-use-it
 
