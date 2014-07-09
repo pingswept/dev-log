@@ -18,6 +18,9 @@ On first boot, SD card will copy itself to eMMC, which unfortunately is only 2 G
 
 Change passwd for debian, root accounts.
 
+    passwd
+    passwd debian
+
 Edit /etc/hostname
 
     apt-get install nginx python-flask
@@ -86,6 +89,10 @@ Install CodeMirror (also a git submodule, but needs an update?)
     wget https://github.com/marijnh/CodeMirror/archive/4.2.0.tar.gz
     tar xzvf 4.2.0.tar.gz
     mv CodeMirror-4.2.0/ codemirror
+
+Install Supervisor
+
+    apt-get install supervisor
 
 Other tools
 
