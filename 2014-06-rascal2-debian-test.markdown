@@ -24,6 +24,7 @@ Change passwd for debian, root accounts.
 Edit /etc/hostname
 
     apt-get install nginx python-flask
+    systemctl enable nginx.service
 
 Remove stuff
 
