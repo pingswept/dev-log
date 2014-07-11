@@ -95,6 +95,13 @@ Install Supervisor
 
     apt-get install supervisor
 
+Allow Supervisor to be controlled over XML-RPC by uWSGI
+
+In `/etc/supervisor/supervisor.conf`
+
+    chmod=0770                       ; socket file mode (default 0700)
+    chown=root:supervisor
+
 Other tools
 
     apt-get install zsh
