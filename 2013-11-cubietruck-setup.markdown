@@ -209,3 +209,6 @@ Cubietruck default password with Lubuntu card 1.00 image: linaro/linaro
 
     ssh linaro@192.168.1.112  
     linaro@192.168.1.112's password: 
+
+(6 months later) Tried to add SSD. The FTDI connection was flaky-- ~10% of characters were corrupted, and boot seemed to hang partway through. Hmmmm.
+
