@@ -1,4 +1,4 @@
-Installed Ubuntu 14.o4 to eMMC successfully.
+Installed Ubuntu 14.04 to eMMC successfully.
 
 Ethernet PHY appears to be flaky. On some boots, Ethernet fails, and appears in `dmesg`:
 
@@ -10,3 +10,15 @@ Ethernet PHY appears to be flaky. On some boots, Ethernet fails, and appears in 
 Power cycling suggested here: https://groups.google.com/d/msg/beagleboard/9mctrG26Mc8/4FjzQDdjrEIJ
 
 Cycled the power, and it seems to work now.
+
+Install Main-in-a-box.
+
+    sudo apt-get install vim
+    git clone ttps://github.com/joshdata/mailinabox
+    cd mailinabox
+
+Edit `setup/start.sh` to lower minimum memory threshold to 450 MB so we pass.
+
+    sudo setup/start.sh
+
+(Next time, edit reference to `setup/webmail.sh` out of `setup/start.sh` so Roundcube won't get installed.)
