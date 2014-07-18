@@ -11,9 +11,10 @@ Power cycling suggested here: https://groups.google.com/d/msg/beagleboard/9mctrG
 
 Cycled the power, and it seems to work now.
 
-Install Main-in-a-box.
+### Install Main-in-a-box. ###
 
     sudo apt-get install vim
+    sudo apt-get remove apache2
     git clone ttps://github.com/joshdata/mailinabox
     cd mailinabox
 
