@@ -11,7 +11,7 @@ Power cycling suggested here: https://groups.google.com/d/msg/beagleboard/9mctrG
 
 Cycled the power, and it seems to work now.
 
-### Install Main-in-a-box. ###
+### Install Mail-in-a-box. ###
 
     sudo apt-get install vim
     sudo apt-get remove apache2
@@ -23,3 +23,13 @@ Edit `setup/start.sh` to lower minimum memory threshold to 450 MB so we pass.
     sudo setup/start.sh
 
 (Next time, edit reference to `setup/webmail.sh` out of `setup/start.sh` so Roundcube won't get installed.)
+
+### Install Owncloud ###
+
+From directions here: http://software.opensuse.org/download/package?project=isv:ownCloud:community&package=owncloud
+
+    sudo sh -c "echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_14.04/ /' >> /etc/apt/sources.list.d/owncloud.list"
+    wget http://download.opensuse.org/repositories/isv:ownCloud:community/xUbuntu_14.04/Release.key
+    sudo apt-key add - < Release.key  
+    sudo apt-get update
+    sudo apt-get install owncloud
