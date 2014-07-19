@@ -1,5 +1,7 @@
 Set password for user `ubuntu`
+
 Leave root password locked; sudo from ubuntu account for root stuff.
+
 Change hostname in '/etc/hostname'
 
 Vim is useful.
