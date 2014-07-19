@@ -9,3 +9,6 @@ Vim is useful.
 Install Cozy from http://cozy.io/host/install.html
 
     sudo apt-get install python python-pip python-dev software-properties-common
+    sudo pip install fabric fabtools
+    wget https://raw.githubusercontent.com/cozy/cozy-setup/master/fabfile.py
+    fab -H ubuntu@192.168.1.149 install
