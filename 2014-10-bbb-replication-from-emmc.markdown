@@ -1,5 +1,7 @@
 Based on http://elinux.org/BeagleBone_Black_Extracting_eMMC_contents and http://stackoverflow.com/questions/17834561/duplicating-identical-beaglebone-black-setups
 
+### Prepare the card ###
+
 * Download zipball from https://s3.amazonaws.com/beagle/beagleboneblack-save-emmc.zip onto a Linux laptop (might also work on OS X).
 
 * Plug new or freshly-formatted-with-FAT32 SD card into laptop.
@@ -25,3 +27,9 @@ Check that card contents look like this:
     -rwxrwxrwx@ 1 brandon  staff      379308 Sep 25  2013 u-boot.img
     -rwxrwxrwx@ 1 brandon  staff         236 Sep 26  2013 uEnv.txt
     -rwxrwxrwx@ 1 brandon  staff    11748096 Sep 26  2013 uImage
+
+### Boot off of the card ###
+
+Put the card in the BBB and cycle the power while holding down S2. Wait 10 or 20 seconds for the autorun.sh o the card to start. LED 0 (furthest from Ethernet jack) should start single-blinking slowly.
+
+Wait 10 minutes or so. When the LED stops blinking, pull the power plug and then the card. The card should now contain a .img file of the eMMC contents.
