@@ -7,13 +7,15 @@ Based on http://elinux.org/BeagleBone_Black_Extracting_eMMC_contents and http://
 3. Unzip zipball to card: `unzip ./beagleboneblack-save-emmc.zip -d /path/to/sd/card`
 
 4. Make first (only) partition on card bootable using `fdisk`. (This part may not work on OS X, as `fdisk` appears to be different.) That would look like this.
-    
+
+
     fdisk /dev/sdc
     a
     1
     w
     
 5. Check that card contents look like this:
+
 
     -rwxrwxrwx@ 1 brandon  staff      100312 Sep 25  2013 MLO
     -rwxrwxrwx@ 1 brandon  staff       24884 Sep 26  2013 am335x-boneblack.dtb
