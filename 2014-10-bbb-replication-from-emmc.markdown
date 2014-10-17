@@ -1,12 +1,12 @@
 Based on http://elinux.org/BeagleBone_Black_Extracting_eMMC_contents and http://stackoverflow.com/questions/17834561/duplicating-identical-beaglebone-black-setups
 
-1. Download zipball from https://s3.amazonaws.com/beagle/beagleboneblack-save-emmc.zip onto a Linux laptop (might also work on OS X).
+* Download zipball from https://s3.amazonaws.com/beagle/beagleboneblack-save-emmc.zip onto a Linux laptop (might also work on OS X).
 
-2. Plug new or freshly-formatted-with-FAT32 SD card into laptop.
+* Plug new or freshly-formatted-with-FAT32 SD card into laptop.
 
-3. Unzip zipball to card: `unzip ./beagleboneblack-save-emmc.zip -d /path/to/sd/card`
+* Unzip zipball to card: `unzip ./beagleboneblack-save-emmc.zip -d /path/to/sd/card`
 
-4. Make first (only) partition on card bootable using `fdisk`. (This part may not work on OS X, as `fdisk` appears to be different.) That would look like this.
+* Make first (only) partition on card bootable using `fdisk`. (This part may not work on OS X, as `fdisk` appears to be different.) That would look like this.
 
 
     fdisk /dev/sdc
@@ -14,7 +14,7 @@ Based on http://elinux.org/BeagleBone_Black_Extracting_eMMC_contents and http://
     1
     w
     
-5. Check that card contents look like this:
+* Check that card contents look like this:
 
 
     -rwxrwxrwx@ 1 brandon  staff      100312 Sep 25  2013 MLO
