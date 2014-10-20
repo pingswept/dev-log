@@ -16,3 +16,11 @@ Log out, then back in again.
     curl -o ~/.vimrc https://raw.github.com/pingswept/linux-tool-configs/master/vimrc
 
 Also, copy gitconfig from https://github.com/pingswept/linux-tool-configs
+
+### Tweaking vim more ###
+
+(On OS X: `brew install vim --override-system-vi`)
+
+(Or perhaps `brew install macvim --override-system-vim`)
+
+Then https://github.com/kepbod/ivim
