@@ -19,8 +19,13 @@ Also, copy gitconfig from https://github.com/pingswept/linux-tool-configs
 
 ### Tweaking vim more ###
 
-(On OS X: `brew install vim --override-system-vi`)
+On OS X, install XCode, then:
 
-(Or perhaps `brew install macvim --override-system-vim`)
+    brew install macvim --override-system-vim
+    brew linkapps
+
+Restart terminal.
+
+    brew install ctags-exuberant
 
 Then https://github.com/kepbod/ivim
