@@ -32,3 +32,8 @@ Build fails on OS X
     avr-objcopy -j .text -j .data -O srec powercape.elf powercape.srec
     rm registers.o board.o eeprom.o twi_slave.o main.o
 
+### Examining setup on BBB ###
+
+Headers appear in /usr/lib/avr/include/avr
+
+
