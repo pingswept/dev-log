@@ -36,4 +36,10 @@ Build fails on OS X
 
 Headers appear in /usr/lib/avr/include/avr
 
+### Working setup on OS X ###
 
+Turns out that the latest commit in Github was a little screwy. Now branching off the commit that built on the BBB.
+
+    git checkout bbfcfedc73b6f0b3d5f7276751c8ea42ad1410ea
+
+Planning to fork the repo and branch there.
