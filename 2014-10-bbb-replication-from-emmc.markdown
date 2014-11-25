@@ -33,3 +33,9 @@ Check that card contents look like this:
 Put the card in the BBB and cycle the power while holding down S2. Wait 10 or 20 seconds for the autorun.sh o the card to start. LED 0 (furthest from Ethernet jack) should start single-blinking slowly.
 
 Wait 10 minutes or so. When the LED stops blinking, pull the power plug and then the card. The card should now contain a .img file of the eMMC contents.
+
+### Notes about BBB kernels ###
+
+ * "armv7" is for mainline omap3+ devices (BeagleBoard/PandaBoard)
+ * "bone" which is specifically for the BeagleBone
+ * "lpae" is Large Physical Address Extensions, only for Cortex A15
