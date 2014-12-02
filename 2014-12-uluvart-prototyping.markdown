@@ -19,3 +19,7 @@ Could probably just do:
     usermod -a -G dialout www-data
 
 Arduino code: https://gist.github.com/pingswept/19c994d4076932ce4375
+
+### Creating tunnel ###
+
+    autossh -i /root/.ssh/id_rsa -M 12300 -R *:12345:localhost:80 sms@rascalmicro.com -N
