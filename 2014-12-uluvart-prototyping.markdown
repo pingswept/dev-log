@@ -15,6 +15,7 @@ Probably more than is necessary.
     sudo chmod a+rw /dev/ttyACM0
 
 Could probably just do:
+
     usermod -a -G dialout www-data
 
 Arduino code: https://gist.github.com/pingswept/19c994d4076932ce4375
