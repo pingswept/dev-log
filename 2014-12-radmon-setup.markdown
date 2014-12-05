@@ -15,7 +15,7 @@ In `geopy-master`, run `python ./setup.py install`
     CREATE EXTENSION postgis;
     \i /usr/local/psql-update
     
-    CREATE ROLE radiation PASSWORD 'password-goes-here'; (Need to set permissions?)
+    CREATE ROLE radiation PASSWORD 'password-goes-here' login;
 
 ### Open files ###
 
