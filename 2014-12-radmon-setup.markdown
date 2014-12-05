@@ -10,7 +10,8 @@ In `geopy-master`, run `python ./setup.py install`
     mv /usr/local/psql-update
     chown postgres:postgres psql-update
 
-    sudo -u postgres psql
+    sudo -u postgres createdb radiation
+    sudo -u postgres psql radiation
     CREATE EXTENSION postgis;
     \i /usr/local/psql-update
     
