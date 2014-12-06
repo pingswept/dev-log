@@ -21,3 +21,7 @@ In `geopy-master`, run `python ./setup.py install`
 
     root@rascal-green:~# lsof | wc -l
     1682
+
+### Memory leak ###
+
+headlessMonitor.py is leaking at ~50 MB/hour. At a sample time of 2 seconds (1800 samples/hour), that's around 28kB per sample.
