@@ -2,6 +2,10 @@ Add `#!/usr/bin/python` to `headlessMonitor.py`
 
 `chmod a+x headlessMonitor.py`
 
+    apt-get install libftdi-dev
+    git clone https://github.com/rascalmicro/emorpho-cpython.git
+    git checkout -b linux origin/linux
+
 In `emorpho-cpython-linux`, run `python ./setup.py install`
 In `geopy-master`, run `python ./setup.py install`
 
