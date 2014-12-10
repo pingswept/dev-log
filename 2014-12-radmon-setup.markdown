@@ -21,13 +21,15 @@ Based on http://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS20Debian70src
     cd postgis-2.0.6
     ./configure --without-raster
 
-Stuck here.
-
     make
     sudo make install
     sudo ldconfig
     sudo make comments-install
 
+    sudo ln -sf /usr/share/postgresql-common/pg_wrapper /usr/local/bin/shp2pgsql
+    sudo ln -sf /usr/share/postgresql-common/pg_wrapper /usr/local/bin/pgsql2shp
+    sudo ln -sf /usr/share/postgresql-common/pg_wrapper /usr/local/bin/raster2pgsql
+    # not sure this last one is needed with raster extension disabled in ./configure
 
     mv /usr/local/psql-update
     chown postgres:postgres psql-update
