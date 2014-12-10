@@ -41,6 +41,10 @@ Based on http://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS20Debian70src
     
     CREATE ROLE radiation PASSWORD 'password-goes-here' login;
 
+Seems like PostGIS was built and installed successfully, but `ERROR:  type "geometry" does not exist`
+
+# Should try dropping and recreating DB #
+
 ### Open files ###
 
     root@rascal-green:~# lsof | wc -l
