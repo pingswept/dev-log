@@ -11,13 +11,15 @@ In `geopy-master`, run `python ./setup.py install`
 
 ### Load database schema ###
 
-Need to build PostGIS 2.x because 
+Need to build PostGIS 2.x because Debian 7 (Wheezy) only supports up to 1.5, but Debian 8 (Jessie) has a newer kernel that may not work with the radiation sensor (or at least 3.14.19-ti-r30 didn't work).
+
+Based on http://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS20Debian70src
 
     apt-get install postgresql-server-dev-9.1 libxml2-dev libproj-dev libjson0-dev libgeos-dev xsltproc docbook-xsl docbook-mathml
     wget http://download.osgeo.org/postgis/source/postgis-2.0.6.tar.gz
     tar xfz postgis-2.0.6.tar.gz
     cd postgis-2.0.6
-    ./configure
+    ./configure --without-raster
 
 Stuck here.
 
