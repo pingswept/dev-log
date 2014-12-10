@@ -11,6 +11,22 @@ In `geopy-master`, run `python ./setup.py install`
 
 ### Load database schema ###
 
+Need to build PostGIS 2.x because 
+
+    apt-get install postgresql-server-dev-9.1 libxml2-dev libproj-dev libjson0-dev libgeos-dev xsltproc docbook-xsl docbook-mathml
+    wget http://download.osgeo.org/postgis/source/postgis-2.0.6.tar.gz
+    tar xfz postgis-2.0.6.tar.gz
+    cd postgis-2.0.6
+    ./configure
+
+Stuck here.
+
+    make
+    sudo make install
+    sudo ldconfig
+    sudo make comments-install
+
+
     mv /usr/local/psql-update
     chown postgres:postgres psql-update
 
