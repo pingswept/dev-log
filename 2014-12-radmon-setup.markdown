@@ -33,6 +33,15 @@ Based on http://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS20Debian70src
 
 ### Would now need to enable database to work with PostGIS 2.0, which might be a bit tricky. ###
 
+Probably should do something like this:
+
+    createdb template_postgis
+    createlang plpgsql template_postgis
+    psql -d template_postgis -c "UPDATE pg_database SET datistemplate=true WHERE datname='template_postgis'"
+    psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/postgis.sql
+    psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/spatial_ref_sys.sql
+    psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/postgis_comments.sql
+
     mv /usr/local/psql-update
     chown postgres:postgres psql-update
 
