@@ -9,41 +9,9 @@ Add `#!/usr/bin/python` to `headlessMonitor.py`
 In `emorpho-cpython-linux`, run `python ./setup.py install`
 In `geopy-master`, run `python ./setup.py install`
 
-
-Need to build PostGIS 2.x because Debian 7 (Wheezy) only supports up to 1.5, but Debian 8 (Jessie) has a newer kernel that may not work with the radiation sensor (or at least 3.14.19-ti-r30 didn't work).
-
-Based on http://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS20Debian70src
-
-    apt-get install postgresql-server-dev-9.1 libxml2-dev libproj-dev libjson0-dev libgeos-dev xsltproc docbook-xsl docbook-mathml
-    wget http://download.osgeo.org/postgis/source/postgis-2.0.6.tar.gz
-    tar xfz postgis-2.0.6.tar.gz
-    cd postgis-2.0.6
-    ./configure --without-raster
-
-    make
-    sudo make install
-    sudo ldconfig
-    sudo make comments-install
-
-    sudo ln -sf /usr/share/postgresql-common/pg_wrapper /usr/local/bin/shp2pgsql
-    sudo ln -sf /usr/share/postgresql-common/pg_wrapper /usr/local/bin/pgsql2shp
-    sudo ln -sf /usr/share/postgresql-common/pg_wrapper /usr/local/bin/raster2pgsql
-    # not sure this last one is needed with raster extension disabled in ./configure
-
-### Would now need to enable database to work with PostGIS 2.0, which might be a bit tricky. ###
-
-Probably should do something like this:
-
-    createdb template_postgis
-    createlang plpgsql template_postgis
-    psql -d template_postgis -c "UPDATE pg_database SET datistemplate=true WHERE datname='template_postgis'"
-    psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/postgis.sql
-    psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/spatial_ref_sys.sql
-    psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/postgis_comments.sql
-
 ### Load database schema ###
 
-    mv /usr/local/psql-update
+    mv psql-update /usr/local/psql-update
     chown postgres:postgres psql-update
 
     sudo -u postgres createdb radiation
@@ -64,4 +32,4 @@ Probably should do something like this:
 
 headlessMonitor.py is leaking at ~50 MB/hour. At a sample time of 2 seconds (1800 samples/hour), that's around 28kB per sample.
 
-Getting DB working with PostGIS 2.0 may be tricky. In the meantime, will try just disabling database.
+### Notes on PostGIS 2.0 build (not actually needed) ###
