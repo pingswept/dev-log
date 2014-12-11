@@ -31,6 +31,8 @@ Based on http://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS20Debian70src
     sudo ln -sf /usr/share/postgresql-common/pg_wrapper /usr/local/bin/raster2pgsql
     # not sure this last one is needed with raster extension disabled in ./configure
 
+### Would now need to enable database to work with PostGIS 2.0, which might be a bit tricky. ###
+
     mv /usr/local/psql-update
     chown postgres:postgres psql-update
 
@@ -41,9 +43,6 @@ Based on http://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS20Debian70src
     
     CREATE ROLE radiation PASSWORD 'password-goes-here' login;
 
-Seems like PostGIS was built and installed successfully, but `ERROR:  type "geometry" does not exist`
-
-# Should try dropping and recreating DB #
 
 ### Open files ###
 
@@ -53,3 +52,5 @@ Seems like PostGIS was built and installed successfully, but `ERROR:  type "geom
 ### Memory leak ###
 
 headlessMonitor.py is leaking at ~50 MB/hour. At a sample time of 2 seconds (1800 samples/hour), that's around 28kB per sample.
+
+Getting DB working with PostGIS 2.0 may be tricky. In the meantime, will try just disabling database.
