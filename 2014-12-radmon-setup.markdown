@@ -22,6 +22,12 @@ In `geopy-master`, run `python ./setup.py install`
     
     CREATE ROLE radiation PASSWORD 'password-goes-here' login;
 
+### Some difficulty with faked GPS data going into db ###
+
+    psycopg2.ProgrammingError: column "location" is of type geometry but expression is of type numeric
+    LINE 1: ...ps, histogram, altitude, sensor, version) VALUES (2.0, 3.0, ...
+                                                                 ^
+    HINT:  You will need to rewrite or cast the expression.
 
 ### Open files ###
 
