@@ -9,7 +9,6 @@ Add `#!/usr/bin/python` to `headlessMonitor.py`
 In `emorpho-cpython-linux`, run `python ./setup.py install`
 In `geopy-master`, run `python ./setup.py install`
 
-### Load database schema ###
 
 Need to build PostGIS 2.x because Debian 7 (Wheezy) only supports up to 1.5, but Debian 8 (Jessie) has a newer kernel that may not work with the radiation sensor (or at least 3.14.19-ti-r30 didn't work).
 
@@ -42,12 +41,15 @@ Probably should do something like this:
     psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/spatial_ref_sys.sql
     psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/postgis_comments.sql
 
+### Load database schema ###
+
     mv /usr/local/psql-update
     chown postgres:postgres psql-update
 
     sudo -u postgres createdb radiation
     sudo -u postgres psql radiation
-    CREATE EXTENSION postgis;
+    sudo -u postgres psql -d radiation -f /usr/share/postgresql/9.1/contrib/postgis-1.5/postgis.sql
+    sudo -u postgres psql -d radiation -f /usr/share/postgresql/9.1/contrib/postgis-1.5/spatial_ref_sys.sql
     \i /usr/local/psql-update
     
     CREATE ROLE radiation PASSWORD 'password-goes-here' login;
