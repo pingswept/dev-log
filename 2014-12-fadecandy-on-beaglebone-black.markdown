@@ -33,5 +33,7 @@
     Checking connectivity... done.
     Submodule path 'server/rapidjson': checked out '0c69df5ac098640018d9232ae71ed1036c692187'
     
-    root@rascal-lights:~/fadecandy/server#make
+    root@rascal-lights:~/fadecandy/server# make
     <lots of compilation spew omitted>
+
+    root@rascal-lights:~/fadecandy/server#sudo mv fcserver /usr/local/bin
