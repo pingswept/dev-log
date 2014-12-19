@@ -37,3 +37,29 @@
     <lots of compilation spew omitted>
 
     root@rascal-lights:~/fadecandy/server#sudo mv fcserver /usr/local/bin
+
+Config file `/etc/fcserver.json`
+
+    {
+    	"listen": [null, 7890],
+    	"verbose": true,
+    
+    	"color": {
+    		"gamma": 2.5,
+    		"whitepoint": [0.7, 0.7, 0.7]
+    	},
+    
+    	"devices": [
+    		{
+    			"type": "fadecandy",
+    			"serial": "KGAUESRHTFYHWPUV",
+    			"map": [
+    				[ 0,    0,   0, 150 ]
+    			]
+    		}
+    	]
+    }
+
+Starting server
+
+    fcserver /etc/fcserver.json > /var/log/fcserver.log
