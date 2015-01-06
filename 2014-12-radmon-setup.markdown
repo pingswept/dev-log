@@ -39,6 +39,8 @@ Get Node.js remnants off port 80 with these commands from http://stackoverflow.c
     systemctl disable bonescript-autorun.service
     systemctl disable cloud9.socket
 
+    sudo apt get install libpq-dev lsof postgis postgresql-9.1-postgis postgresql python-matplotlib python-mpltoolkits.basemap python-psycopg2 python-scipy supervisor
+
 ### Adding radmon-specific stuff ###
 Add `#!/usr/bin/python` to `headlessMonitor.py`
 
