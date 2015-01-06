@@ -41,7 +41,7 @@ Get Node.js remnants off port 80 with these commands from http://stackoverflow.c
 
     sudo apt get install libpq-dev lsof postgis postgresql-9.1-postgis postgresql python-matplotlib python-mpltoolkits.basemap python-psycopg2 python-scipy supervisor
 
-sudo apt-get install linux-image-3.14.26-ti-r39
+    sudo apt-get install linux-image-3.14.26-ti-r39
 
 ### Adding radmon-specific stuff ###
 Add `#!/usr/bin/python` to `headlessMonitor.py`
