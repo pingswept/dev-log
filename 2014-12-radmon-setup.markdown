@@ -45,8 +45,6 @@ Update repo lists and install stuff we'll need.
 
     sudo apt-get install gpsd-clients libpq-dev lsof postgis postgresql python-matplotlib python-mpltoolkits.basemap python-psycopg2 python-scipy supervisor
 
-    sudo apt-get install linux-image-3.14.26-ti-r39
-
 ### Adding radmon-specific stuff ###
 Add `#!/usr/bin/python` to `headlessMonitor.py`
 
