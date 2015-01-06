@@ -27,7 +27,7 @@ Edit /etc/hostname to set the hostname however you like.
 
 Remove stuff
 
-    apt-get remove apache2 apache2-mpm-worker apache2-utils apache2.2-bin apache2.2-common nodejs
+    apt-get remove nodejs xserver-xorg-core xserver-common
 
 Get Node.js remnants off port 80 with these commands from http://stackoverflow.com/questions/16554756/how-do-i-release-port-80-on-a-beaglebone-so-i-can-use-it
 
@@ -39,7 +39,7 @@ Get Node.js remnants off port 80 with these commands from http://stackoverflow.c
     systemctl disable bonescript-autorun.service
     systemctl disable cloud9.socket
 
-    sudo apt get install libpq-dev lsof postgis postgresql-9.1-postgis postgresql python-matplotlib python-mpltoolkits.basemap python-psycopg2 python-scipy supervisor
+    sudo apt get install gpsd-clients libpq-dev lsof postgis postgresql-9.1-postgis postgresql python-matplotlib python-mpltoolkits.basemap python-psycopg2 python-scipy supervisor
 
     sudo apt-get install linux-image-3.14.26-ti-r39
 
