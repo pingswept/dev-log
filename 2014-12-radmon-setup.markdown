@@ -1,3 +1,45 @@
+### Base system ###
+
+Download https://rcn-ee.net/rootfs/bb.org/testing/2014-12-19/lxqt/BBB-eMMC-flasher-debian-jessie-lxqt-armhf-2014-12-19-2gb.img.xz
+
+Unzip with Unarchiver (on OS X)
+
+Next bit from https://help.ubuntu.com/community/Installation/FromImgFiles
+
+`diskutil list` then insert SD card, then `diskutil list` to figure out SD card device name
+
+Assuming card is disk1:
+
+    diskutil unmountDisk /dev/disk1
+    sudo dd if=/path/to/downloaded.img of=/dev/rdisk1 bs=1m
+    diskutil eject /dev/disk1
+
+`dd` takes ~5 min.
+
+On first boot, SD card will copy itself to eMMC. Takes 5-10 min.
+
+Change passwd for debian, root accounts.
+
+    passwd
+    passwd debian
+
+Edit /etc/hostname to set the hostname however you like.
+
+Remove stuff
+
+    apt-get remove apache2 apache2-mpm-worker apache2-utils apache2.2-bin apache2.2-common nodejs
+
+Get Node.js remnants off port 80 with these commands from http://stackoverflow.com/questions/16554756/how-do-i-release-port-80-on-a-beaglebone-so-i-can-use-it
+
+    systemctl disable cloud9.service
+    systemctl disable gateone.service
+    systemctl disable gdm.service     # this disables the Gnome desktop which is maybe irrelevant here, but saves a ton of memory
+    systemctl disable bonescript.service
+    systemctl disable bonescript.socket
+    systemctl disable bonescript-autorun.service
+    systemctl disable cloud9.socket
+
+### Adding radmon-specific stuff ###
 Add `#!/usr/bin/python` to `headlessMonitor.py`
 
 `chmod a+x headlessMonitor.py`
