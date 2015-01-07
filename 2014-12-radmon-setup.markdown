@@ -43,7 +43,7 @@ Update repo lists and install stuff we'll need.
 
     sudo apt-get update
 
-    sudo apt-get install gpsd-clients libpq-dev lsof postgis postgresql python-matplotlib python-mpltoolkits.basemap python-psycopg2 python-scipy supervisor
+    sudo apt-get install htop gpsd-clients libpq-dev lsof postgis postgresql python-matplotlib python-mpltoolkits.basemap python-psycopg2 python-scipy supervisor
 
 ### Run headless monitor under Supervisor ###
 
@@ -51,7 +51,6 @@ Copy to `/etc/supervisor/conf.d/radmon.conf`
 
     [program:radmon]
     command=/root/headlessMonitor.py
-    startsecs=100
     redirect_stderr=true
     stdout_logfile=/var/log/radmon.log
     stdout_logfile_maxbytes=10MB
