@@ -36,3 +36,9 @@ Deleted old .mailpile folder
     filter_tags = {'1': '-0', '0': '+1 +0'}
     filter_terms = {'1': '@read', '0': '*'}
     Succeeded: Perform initial setup
+
+Looking at web interface just yields a couple of divs:
+
+    <div class="result"><div class="html_search"> <span class="command">search</span> <span class="result">[{'count': 0, 'start': 1, 'end': 0, 'messages': [], 'total': 0}]</span> <span class="elapsed">0.001</span> </div></div> <p class="ll_40">search(tag:1, {})</p> <p class="ll_40">Searching for 1:tag</p> <p class="ll_40">Found 0 results</p> <p class="ll_20">Elapsed: 0.001s (Found 0 results)</p> <p class="ll_5"></p>
+
+Ah, actually need to build Mailpile: `sudo python setup.py install`
