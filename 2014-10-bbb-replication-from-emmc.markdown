@@ -60,6 +60,25 @@ Wait 7 minutes or so. When the LED stops blinking, pull the power plug and then 
     -rwxrwxrwx@ 1 brandon  staff   236B Sep 26  2013 uEnv.txt
     -rwxrwxrwx@ 1 brandon  staff    11M Sep 26  2013 uImage
 
+### Copying onto new board ###
+
+Edit `autorun.sh` to be this:
+
+    #!/bin/sh
+    echo timer > /sys/class/leds/beaglebone\:green\:usr0/trigger 
+    dd if=/mnt/BBB-eMMC-29698.img of=/dev/mmcblk1 bs=16M
+    UUID=$(/sbin/blkid -c /dev/null -s UUID -o value /dev/mmcblk1p2)
+    mkdir -p /mnt
+    mount /dev/mmcblk1p2 /mnt
+    sed -i "s/^uuid=.*\$/uuid=$UUID/" /mnt/boot/uEnv.txt
+    umount /mnt 
+    sync
+    echo default-on > /sys/class/leds/beaglebone\:green\:usr0/trigger
+
+Be sure to update the image filename to be correct. Also, make sure the file is a .img, not .img.gz. Otherwise, you have to gunzip first.
+
+If LED1 just comes on after a couple of seconds and then stays on forever, the problem is likely a bad filename, (so the copying fails and we jump to the end of the script).
+
 ### Notes about BBB kernels ###
 
  * "armv7" is for mainline omap3+ devices (BeagleBoard/PandaBoard)
