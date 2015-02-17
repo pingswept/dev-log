@@ -79,6 +79,24 @@ Be sure to update the image filename to be correct. Also, make sure the file is 
 
 If LED1 just comes on after a couple of seconds and then stays on forever, the problem is likely a bad filename, (so the copying fails and we jump to the end of the script).
 
+Ran into problem:
+
+    Running /dev/mmcblk0p1/autorun.sh...
+    dd: writing '/dev/mmcblk1': No space left on device
+    17+0 records in
+    15+1 records out
+    [   21.711487] EXT3-fs (mmcblk1p2): error: couldn't mount because of unsupported optional features (240)
+    [   21.722737] EXT2-fs (mmcblk1p2): error: couldn't mount because of unsupported optional features (244)
+    sed: bad option in substitution expression
+    
+    Welcome to Buildroot
+    beaglebone login: root
+    # df -h
+    Filesystem                Size      Used Available Use% Mounted on
+    devtmpfs                245.7M    245.7M         0 100% /dev
+    tmpfs                   249.3M         0    249.3M   0% /dev/shm
+    tmpfs                   249.3M     44.0K    249.3M   0% /tmp
+
 ### Notes about BBB kernels ###
 
  * "armv7" is for mainline omap3+ devices (BeagleBoard/PandaBoard)
