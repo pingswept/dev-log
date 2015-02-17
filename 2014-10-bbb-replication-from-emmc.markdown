@@ -66,7 +66,7 @@ Edit `autorun.sh` to be this:
 
     #!/bin/sh
     echo timer > /sys/class/leds/beaglebone\:green\:usr0/trigger 
-    dd if=/mnt/BBB-eMMC-29698.img of=/dev/mmcblk1 bs=16M
+    dd if=/mnt/BeagleBoneBlack-eMMC-image-29698.img of=/dev/mmcblk1 bs=16M
     UUID=$(/sbin/blkid -c /dev/null -s UUID -o value /dev/mmcblk1p2)
     mkdir -p /mnt
     mount /dev/mmcblk1p2 /mnt
