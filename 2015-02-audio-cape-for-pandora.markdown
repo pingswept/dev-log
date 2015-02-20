@@ -27,6 +27,9 @@ Then install `asound.state`
 
 Then `aplay` works.
 
+    wget http://www.thesoundarchive.com/starwars/forcestrong.wav
+    aplay forcestrong.wav
+
 Then install pianobar. The version in the Wheezy repos has TLS problems, and the recommended fix is to build from source.
 
     git clone https://github.com/PromyLOPh/pianobar.git
