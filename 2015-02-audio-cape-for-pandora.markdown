@@ -50,3 +50,7 @@ Then `make` fails with:
     src/player.c:40:36: fatal error: libavfilter/buffersink.h: No such file or directory
 
 Unfortunately, the more recent versions of pianobar don't work with libav 0.8, so this is a dead end on Wheezy. See https://github.com/PromyLOPh/pianobar/issues/444#issuecomment-41953117
+
+On the BBB Jessie 2015-02-15 image, pianobar installs via apt and seems to run well, except that the audio shield may not work because maybe capemgr doesn't exist any more.
+
+Next: trying to get the audio cape working as with Wheezy.
