@@ -11,6 +11,7 @@ Compile the device tree file and move it to /lib/firmware:
     root@beaglebone:~# mv BB-BONE-AUDI-02-00A0.dtbo /lib/firmware
 
 Uncomment in `/boot/uboot/uEnv.txt`:
+
     optargs=capemgr.disable_partno=BB-BONELT-HDMI,BB-BONELT-HDMIN
 
 Reboot
