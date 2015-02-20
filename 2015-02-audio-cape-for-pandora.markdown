@@ -38,4 +38,15 @@ Install a bunch of prereqs. `Gmake` is GNU make, which is already installed.
     apt-get install gnutls-bin
     apt-get install libjson0
     apt-get install libavfilter-dev
-    
+    apt-get install libao-dev
+
+Then `make` fails with:
+
+    root@rascal-pink:~/pianobar# make clean
+    CLEAN
+    root@rascal-pink:~/pianobar# make
+        CC  src/main.c
+        CC  src/player.c
+    src/player.c:40:36: fatal error: libavfilter/buffersink.h: No such file or directory
+
+Unfortunately, the more recent versions of pianobar don't work with libav 0.8, so this is a dead end on Wheezy. See https://github.com/PromyLOPh/pianobar/issues/444#issuecomment-41953117
