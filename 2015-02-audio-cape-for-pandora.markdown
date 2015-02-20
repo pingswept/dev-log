@@ -16,6 +16,7 @@ Uncomment in `/boot/uboot/uEnv.txt`:
 Reboot
 
 Load cape.
+
     echo BB-BONE-AUDI-02 > /sys/devices/bone_capemgr*/slots
 
 Then install `asound.state`
@@ -28,3 +29,13 @@ Then `aplay` works.
 Then install pianobar. The version in the Wheezy repos has TLS problems, and the recommended fix is to build from source.
 
     git clone https://github.com/PromyLOPh/pianobar.git
+
+Install a bunch of prereqs. `Gmake` is GNU make, which is already installed.
+
+    apt-get install libgnutls-dev
+    apt-get install libgnutls26
+    apt-get install libgcrypt11-dev ligcrypt11
+    apt-get install gnutls-bin
+    apt-get install libjson0
+    apt-get install libavfilter-dev
+    
