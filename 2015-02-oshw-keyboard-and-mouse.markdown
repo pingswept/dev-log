@@ -10,8 +10,12 @@ Teensy works as a USB keyboard controller: http://pjrc.com/store/teensy31.html
 
 Info about scanning matrix of keys, diodes, ghosting, and masking: http://www.dribin.org/dave/keyboard/one_html/
 
+USB keyboard info: https://en.wikipedia.org/wiki/USB_human_interface_device_class
+
 An open source hardware split keyboard: http://www.key64.org/
 
 Similar or related project with BOM: http://www.ergodox.org/Hardware.aspx, uses MCP23018 16-bit SPI I/O expander
+
+Geekhack keyboard zealotry forum: https://geekhack.org/index.php
 
 Mouse: Dave Mellis built an OSHW mouse, but the sensor is no longer available: http://web.media.mit.edu/~mellis/mouse/
