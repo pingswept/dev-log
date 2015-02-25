@@ -63,3 +63,11 @@ Config file `/etc/fcserver.json`
 Starting server
 
     fcserver /etc/fcserver.json > /var/log/fcserver.log
+
+Same build procedure worked on Novena, but with a few permissions errors because I wasn't root.
+
+### Reading pixels out of flame.jpg ###
+
+    sudo apt-get install libjpeg-dev
+    sudo apt-get install python-dev
+    sudo pip install pillow
