@@ -11,6 +11,23 @@ This fixes the missing dependency: `apt-get -f install`
 
     wget http://www.freebasic-portal.de/dlfiles/539/FB_prussdrv-0.0.tar.bz2
     tar xjf FB_prussdrv-0.0.tar.bz2
+    mkdir /usr/include/freebasic/BBB
+    cd FB_prussdrv-0.0.tar.bz2
+    cp include/* /usr/include/freebasic/BBB/ # copy over the .bi files
+
+Maybe want to copy over `pasm` as well, but the version installed is newer (0.86) than the version in FB_prussdrv-0.0.tar.bz2 (0.84), so I'll skip that.
+
+### Install libpruio ###
+
+    wget http://www.freebasic-portal.de/dlfiles/592/libpruio-0.2.tar.bz2
+    tar xjf libpruio-0.2.tar.bz2
+    cd libpruio-0.2/src
+    cp c_wrapper/libpruio.so /usr/lib
+    ldconfig
+    cp c_wrapper/pruio*.h* /usr/include 
+    cp config/libpruio-0A00.dtbo /lib/firmware 
+    cp pruio/pruio*.bi /usr/include/freebasic/BBB 
+    cp pruio/pruio.hp /usr/include/freebasic/BBB
 
 Useful links:
 
