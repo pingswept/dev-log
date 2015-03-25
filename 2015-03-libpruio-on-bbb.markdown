@@ -29,6 +29,14 @@ Maybe want to copy over `pasm` as well, but the version installed is newer (0.86
     cp pruio/pruio*.bi /usr/include/freebasic/BBB 
     cp pruio/pruio.hp /usr/include/freebasic/BBB
 
+RCN says that the best way to get libpruio working on new Debian is to donwgrade the kernel to 3.8.x.
+
+Downgraded to 3.8.13-bone70
+
+    apt-get update
+    apt-get install linux-image-3.8.13-bone70
+    reboot
+
 Useful links:
 
 * http://users.freebasic-portal.de/tjf/Projekte/libpruio/doc/html/_cha_preparation.html
