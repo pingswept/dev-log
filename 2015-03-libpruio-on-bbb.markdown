@@ -33,3 +33,11 @@ Useful links:
 
 * http://users.freebasic-portal.de/tjf/Projekte/libpruio/doc/html/_cha_preparation.html
 * http://hackaday.com/2015/02/16/library-upgrade-to-pru-gives-fast-io-on-beaglebone/ (see comments too)
+* Summary of Device Tree syntax: http://www.devicetree.org/Device_Tree_Usage
+
+### Different types of Device Tree files ###
+
+* `.dts`: main source file for board-level info
+* `.dtsi`: source file, include file, like C header, for platform-level info that is used on multiple boards
+* `.dtb`: binary file output from `dtc`, the Device Tree compiler
+* `.dtbo`: overlay binary file, fragment of hardware info that is added to main `.dtb`
