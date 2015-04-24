@@ -72,11 +72,51 @@ Put in `/var/spool/mlmmj/XXXXXXXX/control/prefix`:
 
     [listname]
 
-Mails rejected with `Have to invoke either as root or as the user owninglistdir`
+Mails rejected with `Have to invoke either as root or as the user owninglistdir` This is because, by default, Postfix runs mlmmj-receive as user 65534, aka user `nobody`, so it can't access `/var/spool/mlmmj`.
 
-Fix ownership of list directory. Postfix runs mlmmj-receive as user 65534, aka user `nobody`, so it can't access `/var/spool/mlmmj` until permissions are changed.
+The fix, from http://mlmmj.org/docs/readme-postfix/:
 
-    chown -R 65534:65534 /var/spool/mlmmj/
+    useradd mlmmj --shell /usr/false --home-dir /var/spool/mlmmj --system
+    chown -R mlmmj:mlmmj /var/spool/mlmmj
+
+Add to `/etc/postfix/master.cf`
+
+    # mlmmj mailing lists
+    mlmmj   unix  -       n       n       -       -       pipe
+      flags=ORhu user=mlmmj argv=/usr/local/bin/mlmmj-receive -F -L /var/spool/mlmmj/$nexthop
+
+Add to `/etc/postfix/main.cf`
+
+    ## MLMMJ STUFF ##
+    
+    # Only deliver one message to Mlmmj at a time
+    mlmmj_destination_recipient_limit = 1
+    
+    # A map to forward mail to a dummy domain
+    virtual_alias_maps = hash:/var/spool/mlmmj/virtual
+    
+    # Allow virtual alias maps to specify only the user part of the address
+    # and have the +extension part preserved when forwarding, so that
+    # list-name+subscribe, list-name+confsub012345678, etc. will all work
+    propagate_unmatched_extensions = virtual
+    
+    # A map to forward mail for the dummy domain to the Mlmmj transport
+    transport_maps = hash:/var/spool/mlmmj/transport
+
+Put in `/var/spool/mlmmj/virtual`, but substitute list name and domain:
+
+    list-name@domain.tld    domain.tld--list-name@localhost.mlmmj
+
+Put in `/var/spool/mlmmj/transport`, but substitute list name and domain:
+
+    domain.tld--list-name@localhost.mlmmj   mlmmj:list-dir
+
+Then:
+
+    chown -R mlmmj:mlmmj /var/spool/mlmmj/ # again!
+    postmap /var/spool/mlmmj/virtual
+    postmap /var/spool/mlmmj/transport
+    postfix reload
 
 ### DNS setup ###
 
