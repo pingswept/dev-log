@@ -50,3 +50,8 @@ Make a mailing list.
 Add the line `XXXXXXXXXXXX:  "|/usr/local/bin/mlmmj-receive -L /var/spool/mlmmj/XXXXXXXXXXX/"` to `/etc/aliases`
 
 Run `newaliases` to reload the aliases file.
+
+Add mlmmj to crontab with `crontab -e` (slightly changed from original to run every 2 minutes instead of every 30 minutes, since this will be a very low traffic list):
+
+    0 */30 * * * "/usr/local/bin/mlmmj-maintd -F -L /var/spool/mlmmj/XXXXXXXXXXX/"
+
