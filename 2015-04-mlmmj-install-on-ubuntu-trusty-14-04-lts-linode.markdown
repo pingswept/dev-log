@@ -43,3 +43,7 @@ Make a mailing list.
     1) The mailinglist directory have to be owned by the user running the 
     mailserver (i.e. starting the binaries to work the list)
     2) Run newaliases
+
+Add the line `XXXXXXXXXXXX:  "|/usr/local/bin/mlmmj-receive -L /var/spool/mlmmj/XXXXXXXXXXX/"` to `/etc/aliases`
+
+Run `newaliases` to reload the aliases file.
