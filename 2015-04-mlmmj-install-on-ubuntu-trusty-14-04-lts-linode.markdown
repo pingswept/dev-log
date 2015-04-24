@@ -123,3 +123,16 @@ Then:
 Make A record pointing mail.XXXXXXXXX.org at IP of Linode.
 
 Make MX record that contains `10 mail.XXXXXXXXXX.org`
+
+### Adding web interface ###
+
+    apt-get install mhonarc
+    wget https://git.cryptomilk.org/projects/mlmmj-webarchiver.git/snapshot/mlmmj-webarchiver-1.0.0.tar.gz
+    tar xzvf mlmmj-webarchiver-1.0.0.tar.gz
+    cd mlmmj-webarchiver-1.0.0
+    cp mlmmj-webarchiver.sh /usr/bin/mlmmj-webarchiver.sh
+    cp -r mlmmj-webarchiver /etc
+
+Change `/etc/mlmmj-webarchiver/mlmmj-webarchiver.conf` to folder that Nginx will look at.
+
+    WEBARCHIVE_OUT="/var/www/XXXXXXXX"
