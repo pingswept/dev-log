@@ -55,3 +55,8 @@ Add mlmmj to crontab with `crontab -e` (slightly changed from original to run ev
 
     */2 * * * * /usr/local/bin/mlmmj-maintd -F -L /var/spool/mlmmj/XXXXXXXXXXX/
 
+### DNS setup ###
+
+Make A record pointing mail.XXXXXXXXX.org at IP of Linode.
+
+Make MX record that contains `10 mail.XXXXXXXXXX.org`
