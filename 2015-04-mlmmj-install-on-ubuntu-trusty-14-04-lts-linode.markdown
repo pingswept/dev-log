@@ -1,5 +1,8 @@
 ### Installing mlmmj on Ubuntu 14.04 LTS Trusty on Linode ###
 
+    apt-get update
+    apt-get install build-essential
+
     wget http://mlmmj.org/releases/mlmmj-1.2.19b1.tar.gz
     tar xzvf mlmmj-1.2.19b1.tar.gz
     cd mlmmj-1.2.19b1
