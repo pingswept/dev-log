@@ -147,3 +147,9 @@ Create output directory.
     apt-get install nginx php5-cli php5-cgi spawn-fcgi psmisc
 
 More to do: https://www.linode.com/docs/websites/nginx/nginx-and-phpfastcgi-on-ubuntu-12-04-lts-precise-pangolin/
+
+Eventually, create cron job from README:
+
+    create /etc/cron.d/mlmmj-webarchiver with the following content:
+        MAILTO=root
+        */10 * * * * root /usr/bin/mlmmj-webarchiver.sh 2>/dev/null
