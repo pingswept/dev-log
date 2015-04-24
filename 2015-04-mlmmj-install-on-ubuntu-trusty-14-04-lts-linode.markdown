@@ -51,7 +51,7 @@ Add the line `XXXXXXXXXXXX:  "|/usr/local/bin/mlmmj-receive -L /var/spool/mlmmj/
 
 Run `newaliases` to reload the aliases file.
 
-Add mlmmj to crontab with `crontab -e` (slightly changed from original to run every 2 minutes instead of every 30 minutes, since this will be a very low traffic list):
+Add mlmmj to crontab with `crontab -e` (slightly changed from original to run every 2 minutes instead of every 2 hours, since this will be a very low traffic list):
 
-    0 */30 * * * "/usr/local/bin/mlmmj-maintd -F -L /var/spool/mlmmj/XXXXXXXXXXX/"
+    */2 * * * * "/usr/local/bin/mlmmj-maintd -F -L /var/spool/mlmmj/XXXXXXXXXXX/"
 
