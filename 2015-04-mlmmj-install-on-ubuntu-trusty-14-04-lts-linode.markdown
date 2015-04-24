@@ -9,3 +9,11 @@ As root:
     ./configure
     make
     make install
+
+Install mailserver. Prompted for domain name at this point.
+
+    apt-get install postfix
+
+During configuration, chose "internet site."
+
+`recipient_delimiter = +` mentioned in mlmmj docs is already in `/etc/postfix/main.cf`.
