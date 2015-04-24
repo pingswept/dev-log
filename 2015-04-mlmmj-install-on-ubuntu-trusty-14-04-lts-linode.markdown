@@ -72,6 +72,12 @@ Put in `/var/spool/mlmmj/XXXXXXXX/control/prefix`:
 
     [listname]
 
+Mails rejected with `Have to invoke either as root or as the user owninglistdir`
+
+Fix ownership of list directory. Postfix runs mlmmj-receive as user 65534, aka user `nobody`, so it can't access `/var/spool/mlmmj` until permissions are changed.
+
+    chown -R 65534:65534 /var/spool/mlmmj/
+
 ### DNS setup ###
 
 Make A record pointing mail.XXXXXXXXX.org at IP of Linode.
