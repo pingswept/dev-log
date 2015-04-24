@@ -136,3 +136,14 @@ Make MX record that contains `10 mail.XXXXXXXXXX.org`
 Change `/etc/mlmmj-webarchiver/mlmmj-webarchiver.conf` to folder that Nginx will look at.
 
     WEBARCHIVE_OUT="/var/www/XXXXXXXX"
+
+Create output directory.
+
+    mkdir -p /var/www/XXXXXXXXX
+    chown -R www-data:www-data /var/www
+
+### Install Nginx. Install PHP. ###
+
+    apt-get install nginx php5-cli php5-cgi spawn-fcgi psmisc
+
+More to do: https://www.linode.com/docs/websites/nginx/nginx-and-phpfastcgi-on-ubuntu-12-04-lts-precise-pangolin/
