@@ -55,6 +55,23 @@ Add mlmmj to crontab with `crontab -e` (slightly changed from original to run ev
 
     */2 * * * * /usr/local/bin/mlmmj-maintd -F -L /var/spool/mlmmj/XXXXXXXXXXX/
 
+Subscribe someone.
+
+    /usr/local/bin/mlmmj-sub -L /var/spool/mlmmj/XXXXXXXXXXX/ -a brandon@my-email.com
+
+List the current subscribers.
+
+    /usr/local/bin/mlmmj-list -L /var/spool/mlmmj/pysolar-discuss/
+
+Put in `/var/spool/mlmmj/XXXXXXXX/control/footer`:
+
+    -- 
+        To unsubscribe send a blank message to XXXXXXXX+unsubscribe@XXXXXXXX.org
+
+Put in `/var/spool/mlmmj/XXXXXXXX/control/prefix`:
+
+    [listname]
+
 ### DNS setup ###
 
 Make A record pointing mail.XXXXXXXXX.org at IP of Linode.
