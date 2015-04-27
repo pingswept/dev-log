@@ -142,6 +142,11 @@ Create output directory.
     mkdir -p /var/www/XXXXXXXXX
     chown -R www-data:www-data /var/www
 
+Create webarchive marker
+
+    touch /var/spool/mlmmj/XXXXXXXX/control/webarchive
+    chown mlmmj:mlmmj /var/spool/mlmmj/XXXXXXXX/control/webarchive
+
 ### Install Nginx. Install PHP. ###
 
 Based on: https://www.linode.com/docs/websites/nginx/nginx-and-phpfastcgi-on-ubuntu-12-04-lts-precise-pangolin/
