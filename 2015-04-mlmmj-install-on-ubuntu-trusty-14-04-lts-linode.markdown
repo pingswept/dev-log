@@ -126,6 +126,10 @@ Make MX record that contains `10 mail.XXXXXXXXXX.org`
 
 ### Adding web interface ###
 
+Create a DNS A-record for web interface host, like lists.XXXXXXXX.org.
+
+Install stuff.
+
     apt-get install mhonarc
     wget https://git.cryptomilk.org/projects/mlmmj-webarchiver.git/snapshot/mlmmj-webarchiver-1.0.0.tar.gz
     tar xzvf mlmmj-webarchiver-1.0.0.tar.gz
@@ -164,7 +168,7 @@ Add Nginx config file at `/etc/nginx/sites-available/XXXXXXXXXX`
         root /var/www/XXXXXXXXXX;
     
         location / {
-            index  index.html index.htm;
+            index  index.php index.html index.htm;
         }
     
         location ~ \.php$ {
