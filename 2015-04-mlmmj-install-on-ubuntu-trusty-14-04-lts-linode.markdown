@@ -146,6 +146,8 @@ Create webarchive marker
 
     touch /var/spool/mlmmj/XXXXXXXX/control/webarchive
     chown mlmmj:mlmmj /var/spool/mlmmj/XXXXXXXX/control/webarchive
+    
+Customize contact email in 2 places in `/etc/mlmmj-webarchiver/mhonarc/layout.mrc`. Grep for `cynapses` to find them.
 
 ### Install Nginx. Install PHP. ###
 
@@ -177,7 +179,7 @@ Enable site
 
     ln -s /etc/nginx/sites-available/XXXXXXXXX /etc/nginx/sites-enabled/XXXXXXXXX
 
-Eventually, create cron job from README:
+Create cron job from README:
 
     create /etc/cron.d/mlmmj-webarchiver with the following content:
         MAILTO=root
