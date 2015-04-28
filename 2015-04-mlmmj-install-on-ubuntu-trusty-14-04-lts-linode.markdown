@@ -151,7 +151,7 @@ Create webarchive marker
 
 Based on: https://www.linode.com/docs/websites/nginx/nginx-and-phpfastcgi-on-ubuntu-12-04-lts-precise-pangolin/
 
-    apt-get install nginx php5-cli php5-cgi spawn-fcgi psmisc
+    apt-get install nginx php5-cli php5-cgi php5-fpm spawn-fcgi psmisc
 
 Add Nginx config file at `/etc/nginx/sites-available/XXXXXXXXXX`
 
@@ -167,28 +167,11 @@ Add Nginx config file at `/etc/nginx/sites-available/XXXXXXXXXX`
     
         location ~ \.php$ {
             include /etc/nginx/fastcgi_params;
-            fastcgi_pass unix:/var/run/php-fastcgi/php-fastcgi.socket;
+            fastcgi_pass unix:/var/run/php5-fpm.sock;
             fastcgi_index index.php;
             fastcgi_param SCRIPT_FILENAME /var/www/XXXXXXXXX$fastcgi_script_name;
         }
     }
-
-Create `/usr/bin/php-fastcgi`
-
-    #!/bin/bash
-    
-    FASTCGI_USER=www-data
-    FASTCGI_GROUP=www-data
-    SOCKET=/var/run/php-fastcgi/php-fastcgi.socket
-    PIDFILE=/var/run/php-fastcgi/php-fastcgi.pid
-    CHILDREN=6
-    PHP5=/usr/bin/php5-cgi
-    
-    /usr/bin/spawn-fcgi -s $SOCKET -P $PIDFILE -C $CHILDREN -u $FASTCGI_USER -g $FASTCGI_GROUP -f $PHP5
-
-Set as executable:
-
-    chmod +x /usr/bin/php-fastcgi
 
 Enable site
 
