@@ -6,7 +6,7 @@
 ### General Ubuntu fixups ###
 
     sudo apt-get update
-    sudo apt-get install build-essential curl git openssh-server sqlite3 vim zsh
+    sudo apt-get install build-essential curl git ipython-notebook openssh-server python-scipy sqlite3 vim zsh
     sudo -s
     chsh -s /bin/zsh bstafford # or ubuntu, default Ubuntu user on EC2
 
