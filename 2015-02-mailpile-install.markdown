@@ -42,3 +42,8 @@ Looking at web interface just yields a couple of divs:
     <div class="result"><div class="html_search"> <span class="command">search</span> <span class="result">[{'count': 0, 'start': 1, 'end': 0, 'messages': [], 'total': 0}]</span> <span class="elapsed">0.001</span> </div></div> <p class="ll_40">search(tag:1, {})</p> <p class="ll_40">Searching for 1:tag</p> <p class="ll_40">Found 0 results</p> <p class="ll_20">Elapsed: 0.001s (Found 0 results)</p> <p class="ll_5"></p>
 
 Ah, actually need to build Mailpile: `sudo python setup.py install`
+
+### Migrate to new installation on a new machine ###
+
+* Copy `~/.mailpile` to new data location, `~/.local/share/Mailpile/default` using `tar czvf mailpile-backup-2015-05-16.tgz .mailpile` and then `scp` and then `tar xzvf`
+* Copy `~/.gnupg` the same way.
