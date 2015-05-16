@@ -47,3 +47,22 @@ Ah, actually need to build Mailpile: `sudo python setup.py install`
 
 * Copy `~/.mailpile` to new data location, `~/.local/share/Mailpile/default` using `tar czvf mailpile-backup-2015-05-16.tgz .mailpile` and then `scp` and then `tar xzvf`
 * Copy `~/.gnupg` the same way.
+* 
+### Systemd service file ###
+
+This doesn't actually work. It starts Mailpile in interactive mode. Need some daemon flag, or something like that.
+
+    [Unit]
+    Description=Mailpile server
+    After=syslog.target
+    
+    [Service]
+    ExecStart=/home/*******/Mailpile/Mailpile-0.4.2/mp
+    Restart=always
+    KillSignal=SIGQUIT
+    Type=notify
+    NotifyAccess=main
+    
+    [Install]
+    WantedBy=multi-user.target
+
