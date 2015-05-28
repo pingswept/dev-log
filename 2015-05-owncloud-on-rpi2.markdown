@@ -31,3 +31,9 @@ Change to static IP by editing `/etc/network/interfaces`
 Also, add DNS to `/etc/resolvconf.conf`: `8.8.4.4`
 
 Based on https://debiantalk.wordpress.com/2015/02/17/how-to-install-owncloud-8-community/
+
+    echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_7.0/ /' >> /etc/apt/sources.list.d/owncloud.list
+    wget http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/Release.key
+    apt-key add - < Release.key
+    apt-get update
+    apt-get install owncloud
