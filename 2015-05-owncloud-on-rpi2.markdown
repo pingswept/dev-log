@@ -30,6 +30,8 @@ Change to static IP by editing `/etc/network/interfaces`
 
 Also, add DNS to `/etc/resolvconf.conf`: `8.8.4.4`
 
+Generate `en-us-UTF8` locale using `raspi-config`.
+
 Based on https://debiantalk.wordpress.com/2015/02/17/how-to-install-owncloud-8-community/
 
     echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_7.0/ /' >> /etc/apt/sources.list.d/owncloud.list
