@@ -39,3 +39,21 @@ Based on https://debiantalk.wordpress.com/2015/02/17/how-to-install-owncloud-8-c
     apt-key add - < Release.key
     apt-get update
     apt-get install owncloud
+
+For HTTPS redirect, add to `/var/www/index.html`:
+
+    <html>
+      <head>
+        <meta http-equiv="refresh" content="0; URL=https://mydomain.org/owncloud/">
+      </head>
+    </html>
+
+Set up SSL.
+
+    mkdir /etc/apache2/ssl
+    openssl req -new -sha256 -x509 -nodes -days 365 -out /etc/apache2/ssl/your.domain.pem -keyout /etc/apache2/ssl/your.domain.key
+    a2enmod ssl
+    a2ensite default-ssl
+    service apache2 reload
+
+Set ServerName in 
