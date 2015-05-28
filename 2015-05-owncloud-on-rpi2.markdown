@@ -2,7 +2,7 @@
 
 There is no owncloud-client Debian package for armhf, which is the architecture of Novena, RPi 1 and 2, and BBB.
 
-    sudo apt-get install libneon27-dev qtkeychain-dev libsqlite3-dev
+    sudo apt-get install libneon27-dev qtkeychain-dev libsqlite3-dev libqt4-dev libqt4-sql-sqlite
     cd repos
     git clone git://github.com/owncloud/client.git owncloud-client
     mkdir owncloud-client-build
