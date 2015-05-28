@@ -10,6 +10,11 @@ There is no owncloud-client Debian package for armhf, which is the architecture 
     cmake -DCMAKE_BUILD_TYPE="Debug" ../owncloud-client
     make
     sudo make install
+    
+Appears to build correctly, but then:
+
+    owncloud
+    owncloud: symbol lookup error: /usr/lib/arm-linux-gnueabihf/libowncloudsync.so.0: undefined symbol: csync_set_config_dir
 
 ### Installing server ###
 
