@@ -16,6 +16,21 @@ Appears to build correctly, but then:
     owncloud
     owncloud: symbol lookup error: /usr/lib/arm-linux-gnueabihf/libowncloudsync.so.0: undefined symbol: csync_set_config_dir
 
+I think what's going on is that I inadvertently installed two incompatible versions of libowncloudsync.so.0. One was built in the build process above, but I had previously installed it via `apt-get`.
+
+Here they are:
+
+    ls -l /usr/lib/arm-linux-gnueabihf | grep own
+    lrwxrwxrwx  1 root root       24 Oct 24  2014 libowncloudsync.so.0 -> libowncloudsync.so.1.6.4
+    -rw-r--r--  1 root root   734564 Oct 24  2014 libowncloudsync.so.1.6.4
+    drwxr-xr-x  2 root root     4096 May 28 17:32 owncloud
+    ls -l /usr/local/lib/ | grep own             
+    lrwxrwxrwx 1 root staff      20 May 28 17:30 libowncloudsync.so -> libowncloudsync.so.0
+    lrwxrwxrwx 1 root staff      24 May 28 17:30 libowncloudsync.so.0 -> libowncloudsync.so.2.0.0
+    -rw-r--r-- 1 root staff 7703996 May 28 17:22 libowncloudsync.so.2.0.0
+    drwxr-sr-x 2 root staff    4096 May 28 17:30 owncloud
+
+
 ### Installing server ###
 
 First, install Raspbian Wheezy image on RPi2.
