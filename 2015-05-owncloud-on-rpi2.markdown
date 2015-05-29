@@ -2,7 +2,7 @@
 
 There is no owncloud-client Debian package for armhf, which is the architecture of Novena, RPi 1 and 2, and BBB.
 
-    sudo apt-get install libowncloudsync0 libneon27-dev qtkeychain-dev libsqlite3-dev libqt4-dev libqt4-sql-sqlite
+    sudo apt-get install libneon27-dev qtkeychain-dev libsqlite3-dev libqt4-dev libqt4-sql-sqlite
     cd repos
     git clone git://github.com/owncloud/client.git owncloud-client
     mkdir owncloud-client-build
@@ -16,7 +16,7 @@ Appears to build correctly, but then:
     owncloud
     owncloud: symbol lookup error: /usr/lib/arm-linux-gnueabihf/libowncloudsync.so.0: undefined symbol: csync_set_config_dir
 
-I think what's going on is that I inadvertently installed two incompatible versions of libowncloudsync.so.0. One was built in the build process above, but I had previously installed it via `apt-get`.
+I think what's going on is that I accidentally installed two incompatible versions of libowncloudsync.so.0. One was built in the build process above, but I had previously installed it via `apt-get` when I was trying to figure out what was going on.
 
 Here are the two versions:
 
