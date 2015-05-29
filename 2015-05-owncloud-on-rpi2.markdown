@@ -18,7 +18,7 @@ Appears to build correctly, but then:
 
 I think what's going on is that I inadvertently installed two incompatible versions of libowncloudsync.so.0. One was built in the build process above, but I had previously installed it via `apt-get`.
 
-Here they are:
+Here are the two versions:
 
     ls -l /usr/lib/arm-linux-gnueabihf | grep own
     lrwxrwxrwx  1 root root       24 Oct 24  2014 libowncloudsync.so.0 -> libowncloudsync.so.1.6.4
@@ -30,6 +30,7 @@ Here they are:
     -rw-r--r-- 1 root staff 7703996 May 28 17:22 libowncloudsync.so.2.0.0
     drwxr-sr-x 2 root staff    4096 May 28 17:30 owncloud
 
+After `apt-get remove libowncloudsync0`, `/usr/local/bin/owncloud` seems to run properly.
 
 ### Installing server ###
 
@@ -39,7 +40,7 @@ First, install Raspbian Wheezy image on RPi2.
 
 Unfortunately, DHCP server at Asylum is borked, so it doesn't dispense an IP properly to the RPi 2 ("Wrong server-ID")
 
-Connect to RPi with 3.3 V FTDI cable to GND, TX, RX, following pinout: http://pi.gadgetoid.com/pinout
+Connect to RPi 2 with 3.3 V FTDI cable to GND, TX, RX, following pinout: http://pi.gadgetoid.com/pinout
 
 Then `screen /dev/ttyUSB0 115200`
 
