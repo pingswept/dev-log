@@ -7,3 +7,5 @@ Found CUPS 2.0.2 running at http://localhost:631/printers/
 Printer is found on the network.
 
 `QL-720NW	QL-720NW		Brother QL-720NW CUPS v1.4	Idle`
+
+Connection: `dnssd://Brother%20QL-720NW._ipp._tcp.local/?uuid=e3248000-80ce-11db-8000-00807756c4e6`
