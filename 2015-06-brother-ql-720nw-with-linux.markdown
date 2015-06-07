@@ -17,3 +17,5 @@ Connection: `dnssd://Brother%20QL-720NW._ipp._tcp.local/?uuid=e3248000-80ce-11db
     ii  printer-driver-ptouch                               1.3-8ubuntu1                               i386         printer driver Brother P-touch label printers
     ii  ql720nwcupswrapper                                  1.0.2-0                                    i386         Brother CUPS PTouch Printer Definitions
     ii  ql720nwlpr                                          1.0.2-0                                    i386         Brother lpr Ptouch Printer Definitions
+
+After reboot, TEST PAGE WORKED!
