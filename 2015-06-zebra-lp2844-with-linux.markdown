@@ -13,3 +13,9 @@ Combine the two commands
 
 Then print to LP2844 with these settings:
 
+
+    Page setup > Scale: 90%
+    Page setup > Paper size: 4.00x6.00"
+    Page setup > Orientation: Portrait
+    Page handling > Page Scaling: none
+    Page handling > Auto rotate and center not checked
