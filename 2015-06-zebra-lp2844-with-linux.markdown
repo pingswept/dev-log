@@ -19,3 +19,4 @@ Then print to LP2844 with these settings:
     Page setup > Orientation: Portrait
     Page handling > Page Scaling: none
     Page handling > Auto rotate and center not checked
+    Image quality > Resolution: 203dpi
