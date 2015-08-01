@@ -25,3 +25,16 @@ Start server for testing
     sudo python cgi-bin/server.py 0.0.0.0
 
 Running as root because permissions on `/var/supysonic/supysonic.log` are set wrong. Should probably be running as `www-data`.
+
+### Add users ###
+
+sudo ./bin/supysonic-cli
+supysonic> user list
+Name		Admin	Email
+----		-----	-----
+
+supysonic> user add brandon -a -p the-password-goes-here -e brandon@example.com
+supysonic> user list
+Name		Admin	Email
+----		-----	-----
+brandon         *	brandon@example.com
