@@ -17,3 +17,11 @@ Download zip file from https://github.com/spl0k/supysonic
 
     sqlite3 supysonic.db < schema/sqlite.sql
     sudo mv supysonic.db /var/supysonic
+
+### Running server ###
+
+Start server for testing
+
+    sudo python cgi-bin/server.py 0.0.0.0
+
+Running as root because permissions on `/var/supysonic/supysonic.log` are set wrong. Should probably be running as `www-data`.
