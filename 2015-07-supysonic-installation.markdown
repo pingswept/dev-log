@@ -57,3 +57,34 @@ Running as root because permissions on `/var/supysonic/supysonic.log` are set wr
     Added: 190 artists, 387 albums, 4819 tracks
     Deleted: 0 artists, 0 albums, 0 tracks
     supysonic> exit
+
+### Running with uWSGI ###
+
+When running in development mode, Supysonic is single-threaded, so you can't browse folders while music is streaming. To get multiple threads, you need a WSGI server like uWSGI or Gunicorn.
+
+To install uWSGI on Debian
+
+    sudo apt-get install uwsgi uwsgi-plugin-python
+
+Start it up to test
+
+    sudo uwsgi --http-socket :5000 --processes 8 --plugin python --wsgi-file cgi-bin/supysonic.wsgi
+
+Then put it in `/etc/uwsgi/apps-available/supysonic.ini`
+
+Enable with `sudo ln -s /etc/uwsgi/apps-available/supysonic.ini supysonic.ini`
+
+    sudo chown -R www-data:www-data supysonic
+
+Test .ini file: `uwsgi --ini /etc/uwsgi/apps-enabled/supysonic.ini`
+
+`ini` file
+
+    [uwsgi]
+    http-socket = :5000
+    processes = 8
+    plugin = python
+    wsgi-file = /home/brandon/supysonic-master-1282a5ab12/cgi-bin/supysonic.wsgi
+    immediate-uid = www-data
+    gid = www-data
+
