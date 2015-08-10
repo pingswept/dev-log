@@ -1,6 +1,11 @@
 First, install Raspbian Wheezy image on RPi2.
 
     dd bs=4M if=2015-05-05-raspbian-wheezy.img of=/dev/sdc
+    
+On OS X (note lower-case m in block size)
+
+    sudo diskutil unmount /dev/disk1s1
+    sudo dd bs=4m if=2015-05-05-raspbian-wheezy.img of=/dev/rdisk1
 
 Unfortunately, DHCP server at Asylum is borked, so it doesn't dispense an IP properly to the RPi 2 ("Wrong server-ID")
 
