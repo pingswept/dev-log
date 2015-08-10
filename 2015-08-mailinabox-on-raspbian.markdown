@@ -18,3 +18,7 @@ Upgrade to Jessie
     sudo apt-get update
     sudo apt-get upgrade
     sudo apt-get dist-upgrade
+
+404 error for http://raspberrypi.collabora.com/dists/jessie/rpi/binary-armhf/Packages, but that's probably just because Collabora hasn't released packages for Jessie yet.
+
+During upgrade, answer Y to all questions.
