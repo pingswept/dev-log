@@ -9,6 +9,8 @@ On OS X (note lower-case m in block size)
 
 Expand filesystem, set user password, generate `en-us-UTF8` locale, and set hostname using `raspi-config`.
 
+Remove `/home/pi/python_games`.
+
 Upgrade to Jessie
 
     sudo apt-get update
