@@ -24,3 +24,5 @@ Upgrade to Jessie
 404 error for http://raspberrypi.collabora.com/dists/jessie/rpi/binary-armhf/Packages, but that's probably just because Collabora hasn't released packages for Jessie yet.
 
 During upgrade, answer Y to all questions.
+
+OK, this might work, but I just realized that there is now an Ubuntu 14.04 release for the RPi2, which will surely work much better, so forget this approach.
