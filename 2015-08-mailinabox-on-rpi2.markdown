@@ -16,3 +16,5 @@ Bootstrap Mail-in-a-box
     curl -s https://mailinabox.email/bootstrap.sh | sudo bash
 
 Type in email address, hostname, and set country code.
+
+    E: Unable to locate package dovecot-lucene
