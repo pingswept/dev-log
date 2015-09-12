@@ -18,3 +18,5 @@ Bootstrap Mail-in-a-box
 Type in email address, hostname, and set country code.
 
     E: Unable to locate package dovecot-lucene
+
+Hmmm. Need `dovecot-lucene` for armhf. Try `wget http://http.us.debian.org/debian/pool/main/d/dovecot/dovecot-lucene_2.2.13-12~deb8u1_armhf.deb`
