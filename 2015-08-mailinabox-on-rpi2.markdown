@@ -20,3 +20,10 @@ Type in email address, hostname, and set country code.
     E: Unable to locate package dovecot-lucene
 
 Hmmm. Need `dovecot-lucene` for armhf. Try `wget http://http.us.debian.org/debian/pool/main/d/dovecot/dovecot-lucene_2.2.13-12~deb8u1_armhf.deb`
+
+    sudo apt-get install dovecot-core
+
+(Also trying in parallel on BBB.)
+Disk image from https://rcn-ee.com/rootfs/2015-09-11/elinux/ubuntu-14.04.3-console-armhf-2015-09-11.tar.xz
+
+    sudo ./setup_sdcard.sh --mmc /dev/sdc --dtb beaglebone
