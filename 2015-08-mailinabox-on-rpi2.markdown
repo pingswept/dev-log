@@ -27,3 +27,15 @@ Hmmm. Need `dovecot-lucene` for armhf. Try `wget http://http.us.debian.org/debia
 Disk image from https://rcn-ee.com/rootfs/2015-09-11/elinux/ubuntu-14.04.3-console-armhf-2015-09-11.tar.xz
 
     sudo ./setup_sdcard.sh --mmc /dev/sdc --dtb beaglebone
+
+### Fresh attempt ###
+
+    sudo apt-get install git vim curl
+    git clone https://github.com/mail-in-a-box/mailinabox.git
+    cd mailinabox
+    vim setup/mail-dovecot.sh
+
+Remove `dovecot-lucene` from `apt_install` command here: https://github.com/mail-in-a-box/mailinabox/blob/master/setup/mail-dovecot.sh#L29
+
+    sudo ./setup/start.sh
+
