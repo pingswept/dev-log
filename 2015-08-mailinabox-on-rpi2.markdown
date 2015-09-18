@@ -47,3 +47,14 @@ On second attempt, had to comment out https://github.com/mail-in-a-box/mailinabo
     ls -l /dev/root 
     lrwxrwxrwx 1 root root 14 Jan  1 01:26 /dev/root -> /dev/mmcblk0p2
 
+### Resize file system ###
+
+From https://ubuntu-mate.org/raspberry-pi/
+
+    sudo fdisk /dev/mmcblk0
+
+Delete the second partition (d, 2), then re-create it using the defaults (n, p, 2, enter, enter), then write and exit (w). Reboot the system, then:
+
+    sudo resize2fs /dev/mmcblk0p2
+
+
