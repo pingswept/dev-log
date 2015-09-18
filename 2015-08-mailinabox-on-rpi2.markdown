@@ -5,7 +5,16 @@ Download Ubuntu 14.04 image from http://www.finnie.org/software/raspberrypi/2015
     unzip 2015-04-06-ubuntu-trusty.zip
     sudo dd bs=4m if=2015-04-06-ubuntu-trusty.img of=/dev/rdisk1
 
-Change password for user `ubuntu`
+Boot the RPi2 with an HDMI monitor and keyboard attached.
+
+Install an SSH server.
+
+    sudo apt-get install openssh-server
+    sudo reboot
+
+Change password for user `ubuntu` from default, which is `ubuntu`
+
+    passwd
 
 ### Resize file system ###
 
