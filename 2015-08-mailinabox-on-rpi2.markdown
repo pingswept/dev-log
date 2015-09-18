@@ -1,3 +1,9 @@
+# Mail-in-a-box on a Raspberry Pi 2 #
+
+This is not supported by anyone in any way. It's probably not even a good idea. You should probably give up now.
+
+### Install Ubuntu 14.04 ###
+
 Download Ubuntu 14.04 image from http://www.finnie.org/software/raspberrypi/2015-04-06-ubuntu-trusty.zip
 
 (Based on https://wiki.ubuntu.com/ARM/RaspberryPi)
