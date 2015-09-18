@@ -7,46 +7,6 @@ Download Ubuntu 14.04 image from http://www.finnie.org/software/raspberrypi/2015
 
 Change password for user `ubuntu`
 
-Install `curl`:
-
-    sudo apt-get install curl
-
-Bootstrap Mail-in-a-box
-
-    curl -s https://mailinabox.email/bootstrap.sh | sudo bash
-
-Type in email address, hostname, and set country code.
-
-    E: Unable to locate package dovecot-lucene
-
-Hmmm. Need `dovecot-lucene` for armhf. Try `wget http://http.us.debian.org/debian/pool/main/d/dovecot/dovecot-lucene_2.2.13-12~deb8u1_armhf.deb`
-
-    sudo apt-get install dovecot-core
-
-(Also trying in parallel on BBB.)
-Disk image from https://rcn-ee.com/rootfs/2015-09-11/elinux/ubuntu-14.04.3-console-armhf-2015-09-11.tar.xz
-
-    sudo ./setup_sdcard.sh --mmc /dev/sdc --dtb beaglebone
-
-### Fresh attempt ###
-
-    sudo apt-get install git vim curl
-    git clone https://github.com/mail-in-a-box/mailinabox.git
-    cd mailinabox
-    vim setup/mail-dovecot.sh
-
-Remove `dovecot-lucene` from `apt_install` command here: https://github.com/mail-in-a-box/mailinabox/blob/master/setup/mail-dovecot.sh#L29
-
-Also edit `/etc/dovecot/conf.d/10-mail.conf` to remove reference to `fts-lucene`
-
-    sudo ./setup/start.sh
-
-On second attempt, had to comment out https://github.com/mail-in-a-box/mailinabox/blob/a8074ae3e452bbc482d8f8910452378e5f9f0005/setup/system.sh#L27
-
-    sudo ln -s /dev/mmcblk0p2 /dev/root
-    ls -l /dev/root 
-    lrwxrwxrwx 1 root root 14 Jan  1 01:26 /dev/root -> /dev/mmcblk0p2
-
 ### Resize file system ###
 
 From https://ubuntu-mate.org/raspberry-pi/
@@ -57,4 +17,26 @@ Delete the second partition (d, 2), then re-create it using the defaults (n, p, 
 
     sudo resize2fs /dev/mmcblk0p2
 
+### Get Mail-in-a-box and slightly modify it ###
 
+Install `curl`, `git`, and `vim`:
+
+    sudo apt-get install curl git vim
+
+Clone Mail-in-a-box repository
+
+    git clone https://github.com/mail-in-a-box/mailinabox.git
+    cd mailinabox
+    vim setup/mail-dovecot.sh
+
+Remove `dovecot-lucene` from `apt_install` command here: https://github.com/mail-in-a-box/mailinabox/blob/master/setup/mail-dovecot.sh#L29
+
+Also edit `/etc/dovecot/conf.d/10-mail.conf` to remove reference to `fts-lucene`
+
+For some reason, add-apt-repository fails on the second run, but we don't need it anyway, so comment out https://github.com/mail-in-a-box/mailinabox/blob/a8074ae3e452bbc482d8f8910452378e5f9f0005/setup/system.sh#L27
+
+### Run the install ###
+
+    sudo ./setup/start.sh
+
+Type in email address, hostname, and set country code.
