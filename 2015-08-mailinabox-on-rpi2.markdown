@@ -43,3 +43,7 @@ Also edit `/etc/dovecot/conf.d/10-mail.conf` to remove reference to `fts-lucene`
 
 On second attempt, had to comment out https://github.com/mail-in-a-box/mailinabox/blob/a8074ae3e452bbc482d8f8910452378e5f9f0005/setup/system.sh#L27
 
+    sudo ln -s /dev/mmcblk0p2 /dev/root
+    ls -l /dev/root 
+    lrwxrwxrwx 1 root root 14 Jan  1 01:26 /dev/root -> /dev/mmcblk0p2
+
