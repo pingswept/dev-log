@@ -50,3 +50,5 @@ Then
 Set browser or system proxy to public IP of EC2 instance, port 3128 for HTTP and HTTPS.
 
 Add inbound firewall rule for EC2 instance allowing connections to port 3128 from browser machine's IP.
+
+For firewall rule, IP has to be a CIDR subnet, like 206.224.12.0/24
