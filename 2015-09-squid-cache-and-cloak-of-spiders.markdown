@@ -10,7 +10,7 @@ Start an Ubuntu t1.micro instance on EC2; SSH into console.
 
 Add to `/etc/squid3/squid.conf`
 
-    acl name-of-location src 12.34.56.78 # put in location name and public IP address
+    acl name-of-location src 12.34.56.78 # put in location name and browser machine's public IP address
     http_access allow name-of-location
     forwarded_for off
     request_header_access Allow allow all
@@ -43,7 +43,10 @@ Add to `/etc/squid3/squid.conf`
     request_header_access Cookie allow all
     request_header_access All deny all
 
-
 Then
 
     sudo service squid3 restart
+
+Set browser or system proxy to public IP of EC2 instance, port 3128 for HTTP and HTTPS.
+
+Add inbound firewall rule for EC2 instance allowing connections to port 3128 from browser machine's IP.
