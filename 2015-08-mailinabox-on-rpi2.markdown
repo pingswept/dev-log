@@ -44,11 +44,17 @@ Clone Mail-in-a-box repository
     cd mailinabox
     vim setup/mail-dovecot.sh
 
-Remove `dovecot-lucene` from `apt_install` command here: https://github.com/mail-in-a-box/mailinabox/blob/master/setup/mail-dovecot.sh#L29
+Remove `dovecot-lucene` from `apt_install` command here:  
+https://github.com/mail-in-a-box/mailinabox/blob/master/setup/mail-dovecot.sh#L29
 
-Also edit `/etc/dovecot/conf.d/10-mail.conf` to remove reference to `fts-lucene`
+Also remove reference to `fts-lucene` from `tools/editconf.py` command here:  
+https://github.com/mail-in-a-box/mailinabox/blob/master/setup/mail-dovecot.sh#L102
 
-For some reason, add-apt-repository fails on the second run, but we don't need it anyway, so comment out https://github.com/mail-in-a-box/mailinabox/blob/a8074ae3e452bbc482d8f8910452378e5f9f0005/setup/system.sh#L27
+...and again, here:  
+https://github.com/mail-in-a-box/mailinabox/blob/master/setup/mail-dovecot.sh#L106
+
+For some reason, add-apt-repository fails on the second run, but we don't need it anyway, so comment out  
+https://github.com/mail-in-a-box/mailinabox/blob/a8074ae3e452bbc482d8f8910452378e5f9f0005/setup/system.sh#L27
 
 ### Run the install ###
 
