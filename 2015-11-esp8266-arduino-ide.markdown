@@ -10,4 +10,12 @@ After install, set `Tools > Board` to ESP 12E Module and `Tools > Port` to `/dev
 
 Set `Tools > Programmer` to `esptool`. (Hmmm. That doesn't appear in the menu.)
 
-Need FTDI adapter to talk to ESP8266.
+Need 3.3 V FTDI adapter to talk to ESP8266.
+
+Connect adapter to ESP8266 with TX -> RX, RX -> TX, and GND -> GND.
+
+Power ESP8266 with 3.3 V.
+
+Connect `CH_PD` to VCC.
+
+Connect `GPIO_0` to ground to start bootloader mode. 
