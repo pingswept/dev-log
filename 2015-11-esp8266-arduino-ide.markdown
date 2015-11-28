@@ -8,6 +8,6 @@ Tools > Boards > Board Manager
 
 Select `esp8266` and click `Install`.
 
-After install, set `Tools > Board` to ESP 12E Module and `Tools > Port` to `/dev/######-usbserial`
+After install, set `Tools > Board` to ESP 12E Module and `Tools > Port` to `/dev/tty.usbserial-######`
 
 Need FTDI adapter to talk to ESP8266.
