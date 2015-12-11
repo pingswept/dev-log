@@ -39,6 +39,9 @@ Upgrade to Jessie? Run the build script?
 
 ### Install Fadecandy ###
 
+    cd /root
+    mkdir repos
+    cd repos
     git clone git://github.com/scanlime/fadecandy
     cd fadecandy/server
     make submodules
@@ -57,6 +60,7 @@ Create `fadecandy.conf` in `/etc/supervisor/conf.d`
 
 ### Install Skunk's flames ###
 
+    cd /root/repos
     git clone https://github.com/rascalmicro/flaming-skunk.git
     
 Move `sternoslomo.conf` to `/etc/supervisor/conf.d/sternoslomo.conf` to start `flames.py` at boot.
