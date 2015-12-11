@@ -57,7 +57,7 @@ Create `fadecandy.conf` in `/etc/supervisor/conf.d`
 
 ### Install Skunk's flames ###
 
-    git clone git@github.com:rascalmicro/flaming-skunk.git
+    git clone https://github.com/rascalmicro/flaming-skunk.git
     
 Move `sternoslomo.conf` to `/etc/supervisor/conf.d/sternoslomo.conf` to start `flames.py` at boot.
     
