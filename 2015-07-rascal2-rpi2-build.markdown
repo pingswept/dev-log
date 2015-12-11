@@ -34,3 +34,31 @@ Or uncomment relevant locale in `/etc/locale.gen` and run `locale-gen`
 ### Python 3.4 ###
 
 Flask works with Python 3, but only 3.3+, while Raspbian Jessie only has 3.2. So, we need to build Python 3.4. Wait, maybe I just haven't upgraded to Jessie yet. Accch.
+
+Upgrade to Jessie? Run the build script?
+
+### Install Fadecandy ###
+
+    git clone git://github.com/scanlime/fadecandy
+    cd fadecandy/server
+    make submodules
+    make
+    sudo mv fcserver /usr/local/bin
+
+Create `fadecandy.conf` in `/etc/supervisor/conf.d`
+
+    [program:fadecandy]
+    command = fcserver /etc/fcserver.json
+    user = root
+    autostart = true
+    autorestart = true
+    stdout_logfile = /var/log/supervisor/fadecandy.log
+    stderr_logfile = /var/log/supervisor/fadecandy_err.log
+
+### Install Skunk's flames ###
+
+    git clone git@github.com:rascalmicro/flaming-skunk.git
+    
+Move `sternoslomo.conf` to `/etc/supervisor/conf.d/sternoslomo.conf` to start `flames.py` at boot.
+    
+Put `fcserver.json` at `/etc/fcserver.json` and update the Fadecandy serial in the file to the correct one, which you can get from `dmesg`.
