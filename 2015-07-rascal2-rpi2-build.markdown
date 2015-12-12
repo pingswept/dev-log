@@ -66,3 +66,14 @@ Create `fadecandy.conf` in `/etc/supervisor/conf.d`
 Move `sternoslomo.conf` to `/etc/supervisor/conf.d/sternoslomo.conf` to start `flames.py` at boot.
     
 Put `fcserver.json` at `/etc/fcserver.json` and update the Fadecandy serial in the file to the correct one, which you can get from `dmesg`.
+
+### Talk to flames.py via UDP ###
+
+Add to https://github.com/rascalmicro/demos/blob/master/server.py#L143 something like:
+
+    from socket import *
+    s = socket(AF_INET, SOCK_DGRAM)
+    msg = "0.5, fire"
+    s.sendto(msg, ("127.0.0.1",10000))
+
+
