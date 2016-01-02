@@ -1,0 +1,5 @@
+### Installing Lektor 1.1 ###
+
+    sudo apt-get install libssl-dev libffi-dev
+    sudo -s
+    curl -sf https://www.getlektor.com/install.sh | sh
