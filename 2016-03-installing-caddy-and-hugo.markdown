@@ -2,7 +2,7 @@ Expand filesystem, change default password:
 
     sudo raspi-config
 
-    sudo apt-get install git
+    sudo apt-get install git vim
 
 Default version of `go`, which is 1.3.3., won't build Caddy, so we have to install a version of Go from backports.
 
