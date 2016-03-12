@@ -21,3 +21,4 @@ Add to `~/.bashrc`
 
     source ~/.bashrc
     go get github.com/mholt/caddy
+    caddy
