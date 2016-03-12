@@ -2,6 +2,10 @@
     sudo apt-get install python3-pip
     sudo pip3 install mkdocs
 
-Set locale to `en-us-utf8` with `raspi-config`.
+Set locale to `en_US.UTF-8` with `raspi-config`.
 
     mkdocs new docs
+
+Add to `mkdocs.yml`:
+
+    theme: 'material'
