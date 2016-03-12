@@ -9,3 +9,7 @@ Set locale to `en_US.UTF-8` with `raspi-config`.
 Add to `mkdocs.yml`:
 
     theme: 'material'
+
+Run development server.
+
+    sudo mkdocs serve -a 0.0.0.0:80
