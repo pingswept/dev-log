@@ -15,6 +15,7 @@ Boot the RPi2 with an HDMI monitor and keyboard attached.
 
 Install an SSH server.
 
+    sudo apt-get update
     sudo apt-get install openssh-server
     sudo reboot
 
