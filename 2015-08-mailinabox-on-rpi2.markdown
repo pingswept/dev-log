@@ -59,6 +59,9 @@ https://github.com/mail-in-a-box/mailinabox/blob/a8074ae3e452bbc482d8f8910452378
 
 ### Run the install ###
 
+Set `ARM=1` to disable x86_64 architecture check in `preflight.sh`.
+
+    ARM=1
     sudo ./setup/start.sh
 
 Type in email address, hostname, and set country code.
