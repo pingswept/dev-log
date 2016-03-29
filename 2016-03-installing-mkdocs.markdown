@@ -1,6 +1,7 @@
 
     sudo apt-get install python3-pip
     sudo pip3 install mkdocs
+    sudo pip3 install mkdocs-cinder # or some other theme if you want
 
 Set locale to `en_US.UTF-8` with `raspi-config`.
 
@@ -8,7 +9,7 @@ Set locale to `en_US.UTF-8` with `raspi-config`.
 
 Add to `mkdocs.yml`:
 
-    theme: 'material'
+    theme: 'cinder'
 
 Run development server.
 
