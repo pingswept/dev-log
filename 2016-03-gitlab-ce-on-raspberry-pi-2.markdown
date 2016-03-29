@@ -19,3 +19,5 @@ Create whatever users are needed, then disable new user creation:
 
     Gitlab > Admin area > settings > Features > remove the check mark next to "Sign-up enabled"
 
+For reference, the git binary is here: `/opt/gitlab/embedded/bin/git`
+
