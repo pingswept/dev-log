@@ -10,3 +10,12 @@ Run `sudo raspi-config` to expand filesystem, set hostname and change default pa
     sudo gitlab-ctl reconfigure
 
 Should have installed Postfix-- needed for password resets and such. Acch. Might start over.
+
+Installed Postfix.
+
+Change admin password.
+
+Create whatever users are needed, then disable new user creation:
+
+    Gitlab > Admin area > settings > Features > remove the check mark next to "Sign-up enabled"
+
