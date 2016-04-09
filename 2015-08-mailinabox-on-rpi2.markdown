@@ -65,3 +65,17 @@ Set `ARM=1` to disable x86_64 architecture check in `preflight.sh`.
     sudo ./setup/start.sh
 
 Type in email address, hostname, and set country code.
+
+### Error about NeedToInstallFile .well-known/acme ###
+
+In trying to provision SSL certificates, ran into an error in which a file needed to be installed in a certain location for a Let's Encrypt security check. The actual problem was just that my firewall was blocking the SSL port, 443. After I forwarded port 443 to the server, the check worked.
+
+### Free memory dropping below 20% ###
+
+This error was caused by irqbalance leaking memory. You can restart irqbalance, which frees all of the leaked memory, with:
+
+    /sbin/service irqbalance restart
+
+A short term fix would be to restart irqbalance on a daily basis via cron as described here: http://www.pclinuxos.com/forum/index.php?topic=100977.0
+
+In the long term, presumably some responsible individual will fix irqbalance. As of 2016-04-09, Mail-in-a-box uses irqbalance 1.0.6-2ubuntu0.14.04.4. It appears that the bug was reported and fixed in 2014 here: https://github.com/Irqbalance/irqbalance/issues/5
