@@ -74,8 +74,8 @@ In trying to provision SSL certificates, ran into an error in which a file neede
 
 This error was caused by irqbalance leaking memory. You can restart irqbalance, which frees all of the leaked memory, with:
 
-    /sbin/service irqbalance restart
+    /usr/sbin/service irqbalance restart
 
-A short term fix would be to restart irqbalance on a daily basis via cron as described here: http://www.pclinuxos.com/forum/index.php?topic=100977.0
+A short term fix would be to restart irqbalance on a daily basis via cron as described here: http://www.pclinuxos.com/forum/index.php?topic=100977.0 but note that the the path to `service` is `/usr/sbin/service` not just `/sbin/service`.
 
 In the long term, presumably some responsible individual will fix irqbalance. As of 2016-04-09, Mail-in-a-box uses irqbalance 1.0.6-2ubuntu0.14.04.4. It appears that the bug was reported and fixed in 2014 here: https://github.com/Irqbalance/irqbalance/issues/5
