@@ -11,3 +11,9 @@ Unmount the disk, if needed.
 Copy over the disk image.
 
     sudo dd if=2016-05-27-raspbian-jessie-lite.img of=/dev/rdiskN bs=1m
+
+Plug in ethernet and power up board via microUSB cable.
+
+    ssh pi@raspberrypi.local
+
+Use `raspi-config` to expand filesystem, set password, and change hostname.
