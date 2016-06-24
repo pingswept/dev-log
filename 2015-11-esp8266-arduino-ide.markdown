@@ -22,13 +22,15 @@ Connect `CH_PD` to 3.3 V.
 
 Connect `GPIO_0` to ground to start bootloader mode.
 
-After uploading, code will start executing. To reenter bootloader mode, cycle power on ESP8266. Then ready to upload again.
+After uploading, code will start executing.
 
-If you try to upload when not in bootloader mode, the Arduino IDE will report:
+If you try to upload again, i.e. when not in bootloader mode, the Arduino IDE will report:
 
     warning: espcomm_sync failed
     error: espcomm_open failed
     error: espcomm_upload_mem failed
+
+To reenter bootloader mode, cycle power on ESP8266. Then you're ready to upload again.
 
 ### Blink example ###
 
