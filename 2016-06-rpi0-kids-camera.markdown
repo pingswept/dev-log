@@ -14,3 +14,7 @@ Kernel is Linux 4.1.14+, but it looks like I need kernel 4.4 (as used by Raspbia
 Or maybe I can get load the kernel modules manually, but they aren't built into the kernel until 4.4?
 
 Well, at least I have a console. I'll stick with that until I discover that I need internet connectivity, or Adafruit upgrades their PiTFT kernel to 4.4 or newer in a few weeks/months or whatever.
+
+Enable camera with `sudo raspi-config` and reboot.
+
+Should be able to take pictures with `raspistill` and display with `fbi`.
