@@ -5,3 +5,4 @@ Download Jessie Lite with PiTFT kernel from Adafruit: https://adafruit-download.
     df -h
     unmount /dev/disk2s1
     sudo dd bs=1m if=/Users/brandon/Downloads/2016-03-25-22-lite.img of=/dev/rdisk2
+    sudo diskutil eject /dev/rdisk2
