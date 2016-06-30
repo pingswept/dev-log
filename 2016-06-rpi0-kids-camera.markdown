@@ -15,6 +15,12 @@ Or maybe I can get load the kernel modules manually, but they aren't built into 
 
 Well, at least I have a console. I'll stick with that until I discover that I need internet connectivity, or Adafruit upgrades their PiTFT kernel to 4.4 or newer in a few weeks/months or whatever.
 
-Enable camera with `sudo raspi-config` and reboot.
+Enable camera with `sudo raspi-config` and reboot. (Oh, also expand filesystem.)
 
 Should be able to take pictures with `raspistill` and display with `fbi`.
+
+Camera isn't getting enabled properly.
+
+    mma1: mma1_vc_component_create: failed ENOMEM
+
+Hmmm. Something weird with camera.
