@@ -6,5 +6,6 @@ Use `sudo raspi-config` to expand filesystem, set password, set locale, and set 
 After reboot, log back in.
 
     sudo apt-get update
+    sudo apt-get upgrade
     sudo apt-get install git
     git clone https://github.com/NewAmericanPublicArt/records.git
