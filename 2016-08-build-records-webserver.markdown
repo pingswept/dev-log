@@ -7,5 +7,7 @@ After reboot, log back in.
 
     sudo apt-get update
     sudo apt-get upgrade
-    sudo apt-get install git
+    sudo apt-get install git python3-pip
+    sudo pip3 install mkdocs
+    sudo pip3 install mkdocs-cinder
     git clone https://github.com/NewAmericanPublicArt/records.git
