@@ -13,3 +13,12 @@ Ah, wait, that deb package is for AMD64, not x86.
 Then restart terminal.
 
     nvm install 4
+    npm install -g npm
+    cd repos
+    git clone https://github.com/atom/atom
+    git fetch -p
+    git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
+    ./script/build
+    
+    sudo script/grunt install
+    
