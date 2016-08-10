@@ -49,3 +49,4 @@ Compare:
     sudo PATH="$PATH:/usr/local/bin" which node
     /home/brandon/.nvm/versions/node/v4.4.7/bin/node
 
+See also https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md#usrbinenv-node-no-such-file-or-directory
