@@ -55,3 +55,9 @@ See also https://github.com/atom/atom/blob/master/docs/build-instructions/linux.
 
     apm-beta install particle-dev-complete
     Installing particle-dev-complete to /home/brandon/.atom/packages
+
+Then start Atom, which attempts to complete the installation.
+
+Atom throws error like what's reported here: https://github.com/spark/particle-dev/issues/151
+
+    npm install -g node-gyp
