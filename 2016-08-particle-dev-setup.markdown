@@ -20,5 +20,19 @@ Then restart terminal.
     git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
     ./script/build
     
+Result of build
+
+    Done, without errors.
+
+    Execution Time (2016-08-09 21:14:21 UTC)
+    download-electron                4m 4.4s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 46%
+    download-electron-chromedriver     10.7s  ▇ 2%
+    build                           2m 40.6s  ▇▇▇▇▇▇▇▇▇▇ 30%
+    coffee:glob_to_multiple             8.9s  ▇ 2%
+    prebuild-less:src                  40.3s  ▇▇▇ 8%
+    generate-asar                        58s  ▇▇▇▇ 11%
+    Total 8m 53.7s
+
+    
     sudo script/grunt install
     
