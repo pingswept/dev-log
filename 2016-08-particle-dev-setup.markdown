@@ -34,5 +34,18 @@ Result of build
     Total 8m 53.7s
 
     
-    sudo script/grunt install
+    sudo PATH="$PATH:/usr/local/bin" script/grunt install
     
+Need PATH amendment or can't find node with sudo: `/usr/bin/env: ‘node’: No such file or directory`
+
+Compare:
+
+    which node
+    /home/brandon/.nvm/versions/node/v4.4.7/bin/node
+
+    sudo which node
+    (no results, meaning node not found)
+
+    sudo PATH="$PATH:/usr/local/bin" which node
+    /home/brandon/.nvm/versions/node/v4.4.7/bin/node
+
