@@ -7,7 +7,8 @@ After reboot, log back in.
 
     sudo apt-get update
     sudo apt-get upgrade
-    sudo apt-get install git python3-pip
+    sudo apt-get install git nginx python3-pip vim
     sudo pip3 install mkdocs
     sudo pip3 install mkdocs-cinder
     git clone https://github.com/NewAmericanPublicArt/records.git
+    
