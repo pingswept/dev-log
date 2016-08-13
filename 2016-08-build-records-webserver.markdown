@@ -40,3 +40,12 @@ Add `build-napa-docs.sh` as a cronjob.
 Add the line:
 
     * * * * * root /home/pi/records/build-napa-docs.sh
+
+Check that `cron` is actually executing it properly:
+
+    tail -f /var/log/syslog
+
+Should see something like:
+
+    Aug 13 19:33:01 chandler-www CRON[31032]: (root) CMD (root /home/pi/records/build-napa-docs.sh)
+    Aug 13 19:33:01 chandler-www CRON[31028]: (CRON) info (No MTA installed, discarding output)
