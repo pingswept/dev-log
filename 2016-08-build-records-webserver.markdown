@@ -11,4 +11,21 @@ After reboot, log back in.
     sudo pip3 install mkdocs
     sudo pip3 install mkdocs-cinder
     git clone https://github.com/NewAmericanPublicArt/records.git
+
+As root:
+
+    cd /etc/nginx/sites-enabled
+    ln -s /etc/nginx/sites-available/records.newamericanpublicart.com records.newamericanpublicart.com
+    rm default
+
+Make `/etc/nginx/sites-available/records.newamericanpublicart.com`
+
+    server {
+        location / {
+            root /var/www/records.newamericanpublicart.com;
+        }
+    }
+
+    
+
     
