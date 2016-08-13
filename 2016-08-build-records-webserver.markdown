@@ -30,4 +30,13 @@ Create directory for data
 
     cd /var/www    
     mkdir records.newamericanpublicart.com
-    
+
+All the data directories and the files contained within should be owned and writable only by `root`, but world-readable. This means file permissions of 755 for directories and 644 for files.
+
+Add `build-napa-docs.sh` as a cronjob.
+
+    crontab -e
+
+Add the line:
+
+    * * * * * root /home/pi/records/build-napa-docs.sh
