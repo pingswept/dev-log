@@ -26,6 +26,8 @@ Make `/etc/nginx/sites-available/records.newamericanpublicart.com`
         }
     }
 
-    
+Create directory for data
 
+    cd /var/www    
+    mkdir records.newamericanpublicart.com
     
