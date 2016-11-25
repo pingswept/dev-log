@@ -28,3 +28,10 @@
 
 
     sudo vim /var/snap/nextcloud/173/nextcloud/config/config.php
+    
+Add
+
+    array (
+        0 => 'ubuntu-standard.local',
+        1 => 'snowden.pingswept.org',
+    ),
