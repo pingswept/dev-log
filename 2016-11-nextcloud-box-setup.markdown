@@ -1,4 +1,4 @@
-    sudo passwd
+    sudo passwd ubuntu
 
     ubuntu@ubuntu-standard:~$ sudo /snap/bin/nextcloud.enable-https
     In order for Let's Encrypt to verify that you actually own the domain for
