@@ -81,3 +81,27 @@ A short term fix would be to restart irqbalance on a daily basis via cron as des
 In the long term, presumably some responsible individual will fix irqbalance. As of 2016-04-09, Mail-in-a-box uses irqbalance 1.0.6-2ubuntu0.14.04.4. It appears that the bug was reported and fixed in 2014 here: https://github.com/Irqbalance/irqbalance/issues/5
 
 Might also try recompiling a fixed version from source, if you care: http://www.circuidipity.com/raspberry-pi-ram-irqbalance.html
+
+### Mail filters with Sieve ###
+
+I set up a mail filter manually in `/home/user-data/mail/sieve/rascalmicro.com/brandon.sieve` that contains:
+
+    require ["fileinto"];
+    # rule:[napa]
+    if header :contains "to" "info@newamericanpublicart.com"
+    {
+            fileinto "NAPA";
+    }
+
+It seemed to have no effect, but the problem may have been that Sieve was blocked by the firewall (may have been trying to access via external IP, even though it could also access same service at localhost).
+
+Also tried setting up a rule through Roundcube.
+
+Looks like manually created rule was rewritten by Roundcube, and a `brandon.svbin` file was created.
+
+    root@mail:/etc/dovecot/conf.d# doveconf -f service=lda mail_plugins
+    doveconf: Warning: service auth { client_limit=1000 } is lower than required under max. load (5000)
+    doveconf: Warning: service anvil { client_limit=1000 } is lower than required under max. load (4003)
+    mail_plugins =
+
+It seems like maybe Sieve isn't enabled, although dovecot is listening on port 4190, the Sieve port, according to `netstat -ltnp`.
