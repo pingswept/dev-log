@@ -27,3 +27,4 @@ The 2.5 MHz limit is using a BSS138-based level shifter from Adafruit that claim
     pip3 install flask
     pip3 install webcolors
     pip3 install parsley
+    pip3 install Pillow
