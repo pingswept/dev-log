@@ -2,7 +2,7 @@ I have a few different SSL certificates that use Let's Encrypt. These are the de
 
 ### Mail server ###
 
-* Make sure that port 80 is port-forwarded to mail server.
+* Make sure that port 80 is port-forwarded to mail server (192.168.1.111).
 * SSH into mail server
 * Run `sudo /home/ubuntu/mailinabox/management/ssl_certificates.py`
 
@@ -13,3 +13,10 @@ If there is an error like this:
 then make a file called: `/home/user-data/www/default/.well-known/acme-challenge/3CB2Cj0UnMJO9WPiAtvn6XIh-liVyyUsLzZBcc` that contains `3CB2Cj0UnMJO9WPiAtvn6XIh-liVyyUsLzZBcc.du8hQnFzPsGOph3aMdyrq2rzTrv4vno-iY6o`
 
 Then run `ssl_certificates.py` again.
+
+### Nextcloud server ###
+
+* Make sure that port 80 is port-forwarded to Nextcloud server (192.168.1.182).
+* SSH into Nextcloud server.
+* Run `sudo /snap/bin/nextcloud.enable-https lets-encrypt`
+* Enter `snowden.pingswept.org` as the domain name.
