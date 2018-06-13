@@ -6,3 +6,9 @@ SSH into the Linode as `root`.
 
     apt-get update
     apt-get install nginx nodejs mysql-server
+    adduser bstafford
+    usermod -aG sudo bstafford
+
+Log in as normal user `bstafford`.
+
+
