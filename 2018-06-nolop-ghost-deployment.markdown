@@ -13,4 +13,6 @@ SSH into the Linode as `root`.
 
 Log in as normal user `bstafford`.
 
+    sudo npm i -g ghost-cli
+
 
