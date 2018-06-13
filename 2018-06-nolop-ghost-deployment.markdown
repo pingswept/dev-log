@@ -5,9 +5,11 @@ Default disk and swap choices (25344 MB ext4 and 256 MB swap, respectively)
 SSH into the Linode as `root`.
 
     apt-get update
-    apt-get install nginx nodejs mysql-server
+    apt-get install nginx nodejs npm mysql-server
     adduser bstafford
     usermod -aG sudo bstafford
+    apt-get update
+    apt-get upgrade
 
 Log in as normal user `bstafford`.
 
