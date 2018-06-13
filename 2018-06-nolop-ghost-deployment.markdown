@@ -14,9 +14,7 @@ SSH into the Linode as `root`.
 Log in as normal user `bstafford`.
 
     sudo npm i -g ghost-cli
-    sudo mkdir -p /var/www/ghost
-    sudo chown bstafford:bstafford /var/www/ghost
-    sudo chmod 775 /var/www/ghost
+    sudo mkdir -p /var/www/ghost && sudo chown bstafford:bstafford /var/www/ghost && sudo chmod 775 /var/www/ghost
     cd /var/www/ghost
     ghost install --db sqlite3
 
