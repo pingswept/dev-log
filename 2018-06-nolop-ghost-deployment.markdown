@@ -6,7 +6,7 @@ SSH into the Linode as `root`.
 
     apt-get update
     apt-get upgrade
-    apt-get install nginx nodejs npm mysql-server
+    apt-get install nginx nodejs npm
     adduser bstafford
     usermod -aG sudo bstafford
     
@@ -18,6 +18,6 @@ Log in as normal user `bstafford`.
     sudo chown bstafford:bstafford /var/www/ghost
     sudo chmod 775 /var/www/ghost
     cd /var/www/ghost
-    ghost install
+    ghost install --db sqlite3
 
 
