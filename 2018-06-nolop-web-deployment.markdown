@@ -1,3 +1,5 @@
+### Ghost for main web pages ###
+
 Create a 1 GB Linode running Ubuntu 18.04 LTS.
 
 Default disk and swap choices (25344 MB ext4 and 256 MB swap, respectively)
@@ -87,4 +89,25 @@ Log of the `ghost install` command
     Ghost uses direct mail by default
     To set up an alternative email method read our docs at https://docs.ghost.org/docs/mail-config
 
+### Django for tracking tool usage ###
 
+Switch to Python 3 so we can use Django 2.x
+
+    update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+
+Install Pip 3 and make it look like Pip
+
+    root@li905-38:/var/www# apt install python3-pip -y
+    root@li905-38:/var/www# ln -s /usr/bin/pip3 /usr/bin/pip
+    root@li905-38:/var/www# which pip
+    /usr/bin/pip
+    root@li905-38:/var/www# pip --version
+    pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.6)
+
+Install latest stable Django
+
+    pip install Django==2.0.6
+
+Start a Django project in `/var/www`
+
+    django-admin startproject noloptools
