@@ -108,7 +108,9 @@ Install latest stable Django
 
     pip install Django==2.0.6
 
-Start a Django project in `/var/www`
+Log out from `root` account and log in as `bstafford`
+
+Start a Django project in `/home/bstafford`
 
     django-admin startproject noloptools
 
@@ -122,5 +124,3 @@ Start init database and start test server
     python manage.py migrate
     python manage.py createsuperuser
     python manage.py runserver 45.56.103.38:8000
-
-
