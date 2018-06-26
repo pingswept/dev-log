@@ -123,4 +123,4 @@ Start init database and start test server
     cd /var/www/noloptools/
     python manage.py migrate
     python manage.py createsuperuser
-    python manage.py runserver 45.56.103.38:8000
+    python manage.py runserver 0:8000
