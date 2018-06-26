@@ -111,3 +111,16 @@ Install latest stable Django
 Start a Django project in `/var/www`
 
     django-admin startproject noloptools
+
+Add IP address to `noloptools/noloptools/settings.py`
+
+    ALLOWED_HOSTS = ['45.56.103.38']
+
+Start init database and start test server
+
+    cd /var/www/noloptools/
+    python manage.py migrate
+    python manage.py createsuperuser
+    python manage.py runserver 45.56.103.38:8000
+
+
