@@ -64,3 +64,16 @@ If you see:
     IOError: [Errno 2] No such file or directory
 
 that probably means you forgot to enable the I2C bus with `raspi-config`.
+
+### Install `supervisor` ###
+
+`sudo apt-get install supervisor`
+
+Add to `/etc/supervisor/conf.d/ventilate.conf`:
+
+    [program:ventilate]
+    directory=/home/pi
+    command=python ventilate.py
+
+Add contents of https://gist.github.com/pingswept/6238c24461965ef0ccd98426e975309b to `/home/pi/ventilate.py`
+
