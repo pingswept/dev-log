@@ -77,3 +77,7 @@ Add to `/etc/supervisor/conf.d/ventilate.conf`:
 
 Add contents of https://gist.github.com/pingswept/6238c24461965ef0ccd98426e975309b to `/home/pi/ventilate.py`
 
+### Connect to Adafruit IO ###
+
+    sudo apt-get install python-pip
+    sudo pip install adafruit-io
