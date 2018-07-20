@@ -89,6 +89,23 @@ Log of the `ghost install` command
     Ghost uses direct mail by default
     To set up an alternative email method read our docs at https://docs.ghost.org/docs/mail-config
 
+### Editing theme slightly ###
+
+Download default casper theme from admin dashboard, change name to casper-nolop, reupload, and activate.
+
+Log into server and become `ghost` user via `sudo -s -u ghost`.
+
+Edit theme files and copy changes manually to Github repo (https://github.com/tufts-nolop/nolop-org-theme).
+
+After editing files, restart Ghost to see changes take effect.
+
+    systemctl restart ghost_nolop-org
+    ==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+    Authentication is required to restart 'ghost_nolop-org.service'.
+    Authenticating as: Brandon Stafford,,, (bstafford)
+    Password:
+    ==== AUTHENTICATION COMPLETE ===
+
 ### Django for tracking tool usage ###
 
 Switch to Python 3 so we can use Django 2.x
