@@ -106,6 +106,8 @@ After editing files, restart Ghost to see changes take effect.
     Password:
     ==== AUTHENTICATION COMPLETE ===
 
+This works for editing .hbs files, but if there's a more complicated process involving Node and Gulp if the CSS or JS files need to be changed.
+
 ### Django for tracking tool usage ###
 
 Switch to Python 3 so we can use Django 2.x
