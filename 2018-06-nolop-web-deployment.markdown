@@ -48,6 +48,16 @@ Enable the site and restart Apache.
     sudo a2ensite wordpress
     sudo service apache2 reload
 
+Create install file at `/etc/wordpress/config-54.91.215.77.conf` containing:
+
+    <?php
+    define('DB_NAME', 'wordpress');
+    define('DB_USER', 'wordpress');
+    define('DB_PASSWORD', 'yourpasswordhere');
+    define('DB_HOST', 'localhost');
+    define('WP_CONTENT_DIR', '/usr/share/wordpress/wp-content');
+    ?>
+
 Create a file called `wordpress.sql` with this in it:
 
     CREATE DATABASE wordpress;
@@ -60,6 +70,8 @@ Create a file called `wordpress.sql` with this in it:
 Run those commands.
 
     cat wordpress.sql | sudo mysql --defaults-extra-file=/etc/mysql/debian.cnf
+
+Visit the install page with a web browser at http://public-ip/blog/wp-admin/install.php
 
 ### Ghost for main web pages ###
 
