@@ -22,9 +22,44 @@ Update and upgrade
     sudo apt-get update
     sudo apt-get upgrade
 
-Install Wordpress
+Install Wordpress and MySQL
 
     sudo apt install wordpress
+    sudo apt install mysql-server
+
+Create `/etc/apache2/sites-available/wordpress.conf` containing:
+
+    Alias /blog /usr/share/wordpress
+    <Directory /usr/share/wordpress>
+        Options FollowSymLinks
+        AllowOverride Limit Options FileInfo
+        DirectoryIndex index.php
+        Order allow,deny
+        Allow from all
+    </Directory>
+    <Directory /usr/share/wordpress/wp-content>
+        Options FollowSymLinks
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+Enable the site and restart Apache.
+
+    sudo a2ensite wordpress
+    sudo service apache2 reload
+
+Create a file called `wordpress.sql` with this in it:
+
+    CREATE DATABASE wordpress;
+    GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER
+    ON wordpress.*
+    TO wordpress@localhost
+    IDENTIFIED BY 'yourpasswordhere';
+    FLUSH PRIVILEGES;
+
+Run those commands.
+
+    cat wordpress.sql | sudo mysql --defaults-extra-file=/etc/mysql/debian.cnf
 
 ### Ghost for main web pages ###
 
