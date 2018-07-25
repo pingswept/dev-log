@@ -56,6 +56,7 @@ Create install file at `/etc/wordpress/config-54.91.215.77.php` containing:
     define('DB_PASSWORD', 'yourpasswordhere');
     define('DB_HOST', 'localhost');
     define('WP_CONTENT_DIR', '/usr/share/wordpress/wp-content');
+    define('FS_METHOD', 'direct');
     ?>
 
 Create a file called `wordpress.sql` with this in it:
@@ -77,6 +78,8 @@ To install plugins, need to change file permissions (or do some weird FTP stuff)
 
     cd /usr/share/wordpress
     sudo chown -R www-data wp-content/
+
+Make sure that `define('FS_METHOD', 'direct');` is in `/etc/wordpress/config-54.91.215.77.php`
 
 ### Ghost for main web pages ###
 
