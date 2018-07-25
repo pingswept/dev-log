@@ -73,6 +73,11 @@ Run those commands.
 
 Visit the install page with a web browser at http://public-ip/blog/wp-admin/install.php
 
+To install plugins, need to change file permissions (or do some weird FTP stuff)
+
+    cd /usr/share/wordpress
+    sudo chown -R www-data wp-content/
+
 ### Ghost for main web pages ###
 
 Create a 1 GB Linode running Ubuntu 18.04 LTS.
