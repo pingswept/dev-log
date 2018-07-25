@@ -48,7 +48,7 @@ Enable the site and restart Apache.
     sudo a2ensite wordpress
     sudo service apache2 reload
 
-Create install file at `/etc/wordpress/config-54.91.215.77.conf` containing:
+Create install file at `/etc/wordpress/config-54.91.215.77.php` containing:
 
     <?php
     define('DB_NAME', 'wordpress');
