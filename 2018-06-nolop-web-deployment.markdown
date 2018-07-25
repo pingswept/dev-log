@@ -1,3 +1,31 @@
+### Wordpress test ###
+
+Start a t2-micro instance of Ubuntu 16.04 on Amazon EC2: `ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20180627 (ami-759bc50a)`
+
+Add a security group to allow login via SSH.
+
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    Permissions 0777 for 'name-of-file.pem' are too open.
+    It is required that your private key files are NOT accessible by others.
+    This private key will be ignored.
+
+Copy `.pem` key file to home directory and modify permissions to 400 with `chmod 400 name-of-file.pem`
+
+(For some reason, I couldn't change the `.pem` permissions in its original location-- maybe because of restrictive directory permissions or something?)
+
+    ssh -i name-of-file.pem ubuntu@54.91.215.77
+
+Update and upgrade
+
+    sudo apt-get update
+    sudo apt-get upgrade
+
+Install Wordpress
+
+    sudo apt install wordpress
+
 ### Ghost for main web pages ###
 
 Create a 1 GB Linode running Ubuntu 18.04 LTS.
