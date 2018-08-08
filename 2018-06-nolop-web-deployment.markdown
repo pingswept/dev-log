@@ -137,7 +137,10 @@ Then
     sudo mv ./wordpress/* .
     sudo rmdir wordpress
     sudo rm latest.tar.gz
+    sudo cp ./wp-config-sample.php ./wp-config.php
     chown -R apache:apache /var/www/html/*
+
+Open up `wp-config.php` and add database credentials.
 
 Create database for Wordpress.
 
@@ -178,9 +181,7 @@ Add Wordpress as a hostname? Make `/etc/hosts` look like this (add the `wordpres
     ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
                 CHANGEME.uit.tufts.edu    template
 
-Add database name, database username, and database password to `/etc/wordpress/wp-config.php`.
-
-Visit http://nolopwp-dev-01.uit.tufts.edu/wp-admin/
+Visit http://nolopwp-dev-01.uit.tufts.edu/wp-admin/install.php
 
 ### Wordpress test on Ubuntu ###
 
