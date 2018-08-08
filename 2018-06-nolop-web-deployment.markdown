@@ -158,6 +158,12 @@ Add a virtual host for Wordpress to Apache
 
     sudo systemctl restart httpd.service
 
+Add Wordpress as a hostname? Make `/etc/hosts` look like this (add the `wordpress` at the end of line 1):
+
+    127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4 wordpress
+    ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+                CHANGEME.uit.tufts.edu    template
+
 ### Wordpress test on Ubuntu ###
 
 Start a t2-micro instance of Ubuntu 16.04 on Amazon EC2: `ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20180627 (ami-759bc50a)`
