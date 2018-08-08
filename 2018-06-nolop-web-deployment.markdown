@@ -115,7 +115,34 @@ Install Wordpress
     ===================================================================================================================================================
     Package                                Arch                    Version                         Repository                                    Size ===================================================================================================================================================Installing:
      wordpress                              noarch                  4.9.6-1.el7                     epel                                         7.0 M Installing for dependencies:
-     libc-client                            x86_64                  2007f-16.el7                    epel                                         562 k  php-IDNA_Convert                       noarch                  0.8.0-2.el7                     epel                                          36 k  php-PHPMailer                          noarch                  5.2.26-1.el7                    epel                                         135 k  php-fedora-autoloader                  noarch                  1.0.0-1.el7                     epel                                         9.6 k  php-getid3                             noarch                  1:1.9.15-1.el7                  epel                                         433 k  php-imap                               x86_64                  5.4.16-7.el7                    epel                                          38 k  php-intl                               x86_64                  5.4.16-45.el7                   rhel-7-server-optional-rpms                   97 k  php-process                            x86_64                  5.4.16-45.el7                   rhel-7-server-rpms                            56 k  php-simplepie                          noarch                  1.3.1-4.el7                     epel                                         463 k
+     libc-client                            x86_64                  2007f-16.el7                    epel                                         562 k 
+     php-IDNA_Convert                       noarch                  0.8.0-2.el7                     epel                                          36 k 
+     php-PHPMailer                          noarch                  5.2.26-1.el7                    epel                                         135 k 
+     php-fedora-autoloader                  noarch                  1.0.0-1.el7                     epel                                         9.6 k 
+     php-getid3                             noarch                  1:1.9.15-1.el7                  epel                                         433 k 
+     php-imap                               x86_64                  5.4.16-7.el7                    epel                                          38 k 
+     php-intl                               x86_64                  5.4.16-45.el7                   rhel-7-server-optional-rpms                   97 k 
+     php-process                            x86_64                  5.4.16-45.el7                   rhel-7-server-rpms                            56 k 
+     php-simplepie                          noarch                  1.3.1-4.el7                     epel                                         463 k
+
+Create database for Wordpress.
+
+    [bstaff01@nolopwp-dev-01 ~]$ mysql -u root -p
+    Enter password:
+    MariaDB [(none)]> CREATE USER wordpress@localhost IDENTIFIED BY "secret-password-goes-here";
+    Query OK, 0 rows affected (0.00 sec)
+
+    MariaDB [(none)]> CREATE DATABASE wordpress;
+    Query OK, 1 row affected (0.00 sec)
+
+    MariaDB [(none)]> GRANT ALL ON wordpress.* TO wordpress@localhost;
+    Query OK, 0 rows affected (0.00 sec)
+
+    MariaDB [(none)]> FLUSH PRIVILEGES;
+    Query OK, 0 rows affected (0.00 sec)
+
+    MariaDB [(none)]> exit;
+    Bye
 
 ### Wordpress test on Ubuntu ###
 
