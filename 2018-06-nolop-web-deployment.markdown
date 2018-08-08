@@ -144,6 +144,20 @@ Create database for Wordpress.
     MariaDB [(none)]> exit;
     Bye
 
+Add a virtual host for Wordpress to Apache
+
+    sudo vim /etc/httpd/conf/httpd.conf
+
+    <VirtualHost *:80>
+    ServerAdmin my.email@address.com
+    DocumentRoot /var/www/html/wordpress
+    ServerName wordpress
+    ErrorLog /var/log/httpd/wordpress-error-log
+    CustomLog /var/log/httpd/wordpress-acces-log common
+    </VirtualHost>
+
+    sudo systemctl restart httpd.service
+
 ### Wordpress test on Ubuntu ###
 
 Start a t2-micro instance of Ubuntu 16.04 on Amazon EC2: `ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20180627 (ami-759bc50a)`
