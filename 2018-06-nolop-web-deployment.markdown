@@ -1,4 +1,51 @@
-### Wordpress test ###
+### Wordpress dev server on Tufts Redhat VM ###
+
+Get Tufts to set up a VM running Redhat 7.5 and SSH in.
+
+    Red Hat Enterprise Linux Server release 7.5 (Maipo)
+    TAG   : ESAI                            installed 23 December 2015
+    GROUP : prod                            patched  2 August 2018
+
+    sudo yum update
+    sudo yum install httpd mariadb mariadb-server php php-common php-mysql php-gd php-xml php-mbstring php-mcrypt
+    
+    =========================================================================================================================
+    Package                           Arch            Version                     Repository                            Size
+    =========================================================================================================================
+    Installing:
+     httpd                            x86_64          2.4.6-80.el7_5.1            rhel-7-server-rpms                   1.2 M
+     mariadb                          x86_64          1:5.5.56-2.el7              rhel-7-server-rpms                   9.1 M
+     mariadb-server                   x86_64          1:5.5.56-2.el7              rhel-7-server-rpms                    11 M
+     php                              x86_64          5.4.16-45.el7               rhel-7-server-rpms                   1.4 M
+     php-common                       x86_64          5.4.16-45.el7               rhel-7-server-rpms                   565 k
+     php-gd                           x86_64          5.4.16-45.el7               rhel-7-server-rpms                   128 k
+     php-mbstring                     x86_64          5.4.16-45.el7               rhel-7-server-optional-rpms          505 k
+     php-mcrypt                       x86_64          5.4.16-7.el7                epel                                  20 k
+     php-mysql                        x86_64          5.4.16-45.el7               rhel-7-server-rpms                   101 k
+     php-xml                          x86_64          5.4.16-45.el7               rhel-7-server-rpms                   126 k
+    Installing for dependencies:
+     httpd-tools                      x86_64          2.4.6-80.el7_5.1            rhel-7-server-rpms                    89 k
+     libX11                           x86_64          1.6.5-1.el7                 rhel-7-server-rpms                   606 k
+     libX11-common                    noarch          1.6.5-1.el7                 rhel-7-server-rpms                   164 k
+     libXau                           x86_64          1.0.8-2.1.el7               rhel-7-server-rpms                    29 k
+     libXpm                           x86_64          3.5.12-1.el7                rhel-7-server-rpms                    56 k
+     libmcrypt                        x86_64          2.5.8-13.el7                epel                                  99 k
+     libpng                           x86_64          2:1.5.13-7.el7_2            rhel-7-server-rpms                   213 k
+     libxcb                           x86_64          1.12-1.el7                  rhel-7-server-rpms                   211 k
+     libzip                           x86_64          0.10.1-8.el7                rhel-7-server-rpms                    49 k
+     mailcap                          noarch          2.1.41-2.el7                rhel-7-server-rpms                    31 k
+     perl-Compress-Raw-Bzip2          x86_64          2.061-3.el7                 rhel-7-server-rpms                    32 k
+     perl-Compress-Raw-Zlib           x86_64          1:2.061-4.el7               rhel-7-server-rpms                    57 k
+     perl-DBD-MySQL                   x86_64          4.023-6.el7                 rhel-7-server-rpms                   140 k
+     perl-DBI                         x86_64          1.627-4.el7                 rhel-7-server-rpms                   802 k
+     perl-IO-Compress                 noarch          2.061-2.el7                 rhel-7-server-rpms                   260 k
+     perl-Net-Daemon                  noarch          0.48-5.el7                  rhel-7-server-rpms                    51 k
+     perl-PlRPC                       noarch          0.2020-14.el7               rhel-7-server-rpms                    36 k
+     php-cli                          x86_64          5.4.16-45.el7               rhel-7-server-rpms                   2.7 M
+     php-pdo                          x86_64          5.4.16-45.el7               rhel-7-server-rpms                    99 k
+     t1lib                            x86_64          5.1.2-14.el7                rhel-7-server-rpms                   166 k
+
+### Wordpress test on Ubuntu ###
 
 Start a t2-micro instance of Ubuntu 16.04 on Amazon EC2: `ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20180627 (ami-759bc50a)`
 
