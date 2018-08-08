@@ -166,6 +166,8 @@ Add Wordpress as a hostname? Make `/etc/hosts` look like this (add the `wordpres
 
 Add database name, database username, and database password to `/etc/wordpress/wp-config.php`.
 
+Visit http://nolopwp-dev-01.uit.tufts.edu/wordpress/wp-admin/
+
 ### Wordpress test on Ubuntu ###
 
 Start a t2-micro instance of Ubuntu 16.04 on Amazon EC2: `ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20180627 (ami-759bc50a)`
