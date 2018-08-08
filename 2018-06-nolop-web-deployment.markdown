@@ -125,6 +125,20 @@ Install Wordpress
      php-process                            x86_64                  5.4.16-45.el7                   rhel-7-server-rpms                            56 k 
      php-simplepie                          noarch                  1.3.1-4.el7                     epel                                         463 k
 
+But then realize the Yum package is living in `/usr/share/wordpress` and this is crazy.
+
+So `yum remove wordpress`
+
+Then
+
+    cd /var/www/html
+    sudo wget http://wordpress.org/latest.tar.gz
+    sudo tar xzvf latest.tar.gz
+    sudo mv ./wordpress/* .
+    sudo rmdir wordpress
+    sudo rm latest.tar.gz
+    chown -R apache:apache /var/www/html/*
+
 Create database for Wordpress.
 
     [bstaff01@nolopwp-dev-01 ~]$ mysql -u root -p
@@ -150,10 +164,10 @@ Add a virtual host for Wordpress to Apache
 
     <VirtualHost *:80>
     ServerAdmin my.email@address.com
-    DocumentRoot /var/www/html/wordpress
+    DocumentRoot /var/www/html
     ServerName wordpress
     ErrorLog /var/log/httpd/wordpress-error-log
-    CustomLog /var/log/httpd/wordpress-acces-log common
+    CustomLog /var/log/httpd/wordpress-access-log common
     </VirtualHost>
 
     sudo systemctl restart httpd.service
@@ -166,7 +180,7 @@ Add Wordpress as a hostname? Make `/etc/hosts` look like this (add the `wordpres
 
 Add database name, database username, and database password to `/etc/wordpress/wp-config.php`.
 
-Visit http://nolopwp-dev-01.uit.tufts.edu/wordpress/wp-admin/
+Visit http://nolopwp-dev-01.uit.tufts.edu/wp-admin/
 
 ### Wordpress test on Ubuntu ###
 
