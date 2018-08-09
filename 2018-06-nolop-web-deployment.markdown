@@ -110,7 +110,7 @@ Set up a MariaDB database.
 
     Thanks for using MariaDB!
 
-Install Wordpress
+Install Wordpress (but actually don't install via RPM-- download tarball instead)
 
     ===================================================================================================================================================
     Package                                Arch                    Version                         Repository                                    Size ===================================================================================================================================================Installing:
@@ -182,6 +182,25 @@ Add Wordpress as a hostname? Make `/etc/hosts` look like this (add the `wordpres
                 CHANGEME.uit.tufts.edu    template
 
 Visit http://nolopwp-dev-01.uit.tufts.edu/wp-admin/install.php
+
+Fill in the usual Wordpress install stuff.
+
+Add 12 plugins used in Bray.
+
+Install Shibboleth plugin.
+
+### Shibboleth stuff ###
+
+Add Shibboleth Yum repository. (Snippet below generated for RHEL 7 by https://shibboleth.net/downloads/service-provider/RPMS/)
+
+    [shibboleth]
+    name=Shibboleth (CentOS_7)
+    # Please report any problems to https://issues.shibboleth.net
+    type=rpm-md
+    mirrorlist=https://shibboleth.net/cgi-bin/mirrorlist.cgi/CentOS_7
+    gpgcheck=1
+    gpgkey=https://download.opensuse.org/repositories/security:/shibboleth/CentOS_7/repodata/repomd.xml.key
+    enabled=1
 
 ### Wordpress test on Ubuntu ###
 
