@@ -210,6 +210,28 @@ Install the shibboleth package. This will also install the Apache shibboleth mod
 
     sudo yum install shibboleth.x86_64
 
+Restart Apache so it finds the new module.
+
+    sudo systemctl restart httpd.service
+
+Start the Shibboleth service provider daemon, `shibd`
+
+    sudo systemctl start shibd
+
+Check that it worked.
+
+    sudo systemctl status shibd
+    ● shibd.service - Shibboleth Service Provider Daemon
+       Loaded: loaded (/usr/lib/systemd/system/shibd.service; disabled; vendor preset: disabled)
+       Active: active (running) since Thu 2018-08-09 15:48:55 EDT; 12s ago
+         Docs: https://wiki.shibboleth.net/confluence/display/SP3/Home
+     Main PID: 32803 (shibd)
+       CGroup: /system.slice/shibd.service
+               └─32803 /usr/sbin/shibd -f -F
+
+    Aug 09 15:48:55 nolopwp-dev-01.uit.tufts.edu systemd[1]: Starting Shibboleth Service Provider Daemon...
+    Aug 09 15:48:55 nolopwp-dev-01.uit.tufts.edu systemd[1]: Started Shibboleth Service Provider Daemon.
+
 ### Wordpress test on Ubuntu ###
 
 Start a t2-micro instance of Ubuntu 16.04 on Amazon EC2: `ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20180627 (ami-759bc50a)`
