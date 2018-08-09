@@ -187,9 +187,9 @@ Fill in the usual Wordpress install stuff.
 
 Add 12 plugins used in Bray.
 
-Install Shibboleth plugin.
-
 ### Shibboleth stuff ###
+
+Install Shibboleth plugin from the Wordpress plugin directory.
 
 Add Shibboleth Yum repository. (Snippet below generated for RHEL 7 by https://shibboleth.net/downloads/service-provider/RPMS/)
 
@@ -201,6 +201,10 @@ Add Shibboleth Yum repository. (Snippet below generated for RHEL 7 by https://sh
     gpgcheck=1
     gpgkey=https://download.opensuse.org/repositories/security:/shibboleth/CentOS_7/repodata/repomd.xml.key
     enabled=1
+
+Update Yum.
+
+    `sudo yum update`
 
 ### Wordpress test on Ubuntu ###
 
