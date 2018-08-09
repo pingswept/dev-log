@@ -204,7 +204,11 @@ Add Shibboleth Yum repository. (Snippet below generated for RHEL 7 by https://sh
 
 Update Yum.
 
-    `sudo yum update`
+    sudo yum update
+
+Install the shibboleth package. This will also install the Apache shibboleth module, `mod_shib_24.so`, in '/usr/lib64/shibboleth`.
+
+    sudo yum install shibboleth.x86_64
 
 ### Wordpress test on Ubuntu ###
 
