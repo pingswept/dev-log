@@ -232,6 +232,12 @@ Check that it worked.
     Aug 09 15:48:55 nolopwp-dev-01.uit.tufts.edu systemd[1]: Starting Shibboleth Service Provider Daemon...
     Aug 09 15:48:55 nolopwp-dev-01.uit.tufts.edu systemd[1]: Started Shibboleth Service Provider Daemon.
 
+Realize that you need SSL installed.
+
+    sudo yum install mod_ssl
+
+Try to get an SSL cert with Let's Encrypt, and then realize you can't because your IP is not public.
+
 ### Wordpress test on Ubuntu ###
 
 Start a t2-micro instance of Ubuntu 16.04 on Amazon EC2: `ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20180627 (ami-759bc50a)`
