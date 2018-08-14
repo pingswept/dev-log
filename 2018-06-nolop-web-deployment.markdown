@@ -112,19 +112,6 @@ Set up a MariaDB database.
 
 Install Wordpress (but actually don't install via RPM-- download tarball instead)
 
-    ===================================================================================================================================================
-    Package                                Arch                    Version                         Repository                                    Size ===================================================================================================================================================Installing:
-     wordpress                              noarch                  4.9.6-1.el7                     epel                                         7.0 M Installing for dependencies:
-     libc-client                            x86_64                  2007f-16.el7                    epel                                         562 k 
-     php-IDNA_Convert                       noarch                  0.8.0-2.el7                     epel                                          36 k 
-     php-PHPMailer                          noarch                  5.2.26-1.el7                    epel                                         135 k 
-     php-fedora-autoloader                  noarch                  1.0.0-1.el7                     epel                                         9.6 k 
-     php-getid3                             noarch                  1:1.9.15-1.el7                  epel                                         433 k 
-     php-imap                               x86_64                  5.4.16-7.el7                    epel                                          38 k 
-     php-intl                               x86_64                  5.4.16-45.el7                   rhel-7-server-optional-rpms                   97 k 
-     php-process                            x86_64                  5.4.16-45.el7                   rhel-7-server-rpms                            56 k 
-     php-simplepie                          noarch                  1.3.1-4.el7                     epel                                         463 k
-
 But then realize the Yum package is living in `/usr/share/wordpress` and this is crazy.
 
 So `yum remove wordpress`
@@ -186,6 +173,10 @@ Visit http://nolopwp-dev-01.uit.tufts.edu/wp-admin/install.php
 Fill in the usual Wordpress install stuff.
 
 Add 12 plugins used in Bray.
+
+Install Ulitmate Member plugin.
+
+Install Ultimate Member User Tags plugin by buying a license key, and then downloading a zip file from http://ultimatemember.com. The go to the Wordpress admin page plugins > Add New > Upload plugin.
 
 ### Shibboleth stuff ###
 
