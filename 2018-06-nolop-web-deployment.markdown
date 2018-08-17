@@ -204,7 +204,7 @@ Update Yum.
 
     sudo yum update
 
-Install the shibboleth package. This will also install the Apache shibboleth module, `mod_shib_24.so`, in '/usr/lib64/shibboleth`.
+Install the shibboleth package. This will also install the Apache shibboleth module, `mod_shib_24.so`, in `/usr/lib64/shibboleth`.
 
     sudo yum install shibboleth.x86_64
 
@@ -230,13 +230,15 @@ Check that it worked.
     Aug 09 15:48:55 nolopwp-dev-01.uit.tufts.edu systemd[1]: Starting Shibboleth Service Provider Daemon...
     Aug 09 15:48:55 nolopwp-dev-01.uit.tufts.edu systemd[1]: Started Shibboleth Service Provider Daemon.
 
-Realize that you need SSL installed. Get Marvin Nachatelo of Tufts IT to set you up with SSL with a *.it.tufts.edu certificate that is somehow taken care of by a loadbalancer in front of the server.
+Realize that you need SSL installed. Get Marvin Nachatelo of Tufts IT to set you up with SSL with a `*.it.tufts.edu` certificate that is somehow taken care of by a loadbalancer in front of the server.
 
 In the Apache conf file, /etc/httpd/conf/httpd.conf, direct Shibboleth.sso paths to the Shibboleth Apache module.
 
     <Location /Shibboleth.sso>
       SetHandler shib
     </Location>
+
+Generate `/etc/shibboleth/sp-key.pem` and `/etc/shibboleth/sp-cert.pem` using `/etc/shibboleth/keygen.sh`.
 
 Modify entityID's in /etc/shibboleth/shibboleth2.xml
 
