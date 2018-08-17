@@ -118,11 +118,10 @@ So `yum remove wordpress`
 
 Then
 
-    cd /var/www/html
+    cd /var/www
     sudo wget http://wordpress.org/latest.tar.gz
     sudo tar xzvf latest.tar.gz
-    sudo mv ./wordpress/* .
-    sudo rmdir wordpress
+    sudo mv wordpress html
     sudo rm latest.tar.gz
     sudo cp ./wp-config-sample.php ./wp-config.php
     chown -R apache:apache /var/www/html/*
@@ -171,6 +170,12 @@ Add Wordpress as a hostname? Make `/etc/hosts` look like this (add the `wordpres
 Visit http://nolopwp-dev-01.uit.tufts.edu/wp-admin/install.php
 
 Fill in the usual Wordpress install stuff.
+
+    Database name: wordpress
+    Username: wordpress
+    Password: 38k..........
+    Database host: localhost
+    Table prefix: wp_
 
 Add 12 plugins used in Bray.
 
