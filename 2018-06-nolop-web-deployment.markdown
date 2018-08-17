@@ -187,6 +187,8 @@ Install Ultimate Member User Tags plugin by buying a license key, and then downl
 
 Install Shibboleth plugin from the Wordpress plugin directory.
 
+In Settings > Shibboleth > Authorization, set the default role to Administrator.
+
 Add Shibboleth Yum repository. (Snippet below generated for RHEL 7 by https://shibboleth.net/downloads/service-provider/RPMS/)
 
     [shibboleth]
