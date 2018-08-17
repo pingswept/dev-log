@@ -238,6 +238,19 @@ In the Apache conf file, /etc/httpd/conf/httpd.conf, direct Shibboleth.sso paths
       SetHandler shib
     </Location>
 
+Modify entityID's in /etc/shibboleth/shibboleth2.xml
+
+    <ApplicationDefaults entityID="https://nolopwp-dev.it.tufts.edu/shibboleth"
+        REMOTE_USER="eppn subject-id pairwise-id persistent-id"
+        cipherSuites="DEFAULT:!EXP:!LOW:!aNULL:!eNULL:!DES:!IDEA:!SEED:!RC4:!3DES:!kRSA:!SSLv2:!SSLv3:!TLSv1:!TLSv1.1">
+
+and:
+
+    <SSO entityID="https://shib-idp-stage.uit.tufts.edu/idp/shibboleth"
+                 discoveryProtocol="SAMLDS" discoveryURL="https://ds.example.org/DS/WAYF">
+              SAML2
+            </SSO>
+
 ### Wordpress test on Ubuntu ###
 
 Start a t2-micro instance of Ubuntu 16.04 on Amazon EC2: `ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20180627 (ami-759bc50a)`
