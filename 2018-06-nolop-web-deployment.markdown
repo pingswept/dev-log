@@ -179,7 +179,7 @@ Fill in the usual Wordpress install stuff.
 
 Add 12 plugins used in Bray.
 
-Install Ulitmate Member plugin.
+Install Ultimate Member plugin.
 
 Install Ultimate Member User Tags plugin by buying a license key, and then downloading a zip file from http://ultimatemember.com. The go to the Wordpress admin page plugins > Add New > Upload plugin.
 
@@ -230,11 +230,13 @@ Check that it worked.
     Aug 09 15:48:55 nolopwp-dev-01.uit.tufts.edu systemd[1]: Starting Shibboleth Service Provider Daemon...
     Aug 09 15:48:55 nolopwp-dev-01.uit.tufts.edu systemd[1]: Started Shibboleth Service Provider Daemon.
 
-Realize that you need SSL installed.
+Realize that you need SSL installed. Get Marvin Nachatelo of Tufts IT to set you up with SSL with a *.it.tufts.edu certificate that is somehow taken care of by a loadbalancer in front of the server.
 
-    sudo yum install mod_ssl
+In the Apache conf file, /etc/httpd/conf/httpd.conf, direct Shibboleth.sso paths to the Shibboleth Apache module.
 
-Try to get an SSL cert with Let's Encrypt, and then realize you can't because your IP is not public.
+    <Location /Shibboleth.sso>
+      SetHandler shib
+    </Location>
 
 ### Wordpress test on Ubuntu ###
 
