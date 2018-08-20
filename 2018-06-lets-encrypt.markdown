@@ -3,7 +3,7 @@ I have a few different SSL certificates that use Let's Encrypt. These are the de
 ### Mail server ###
 
 * Make sure that port 80 is port-forwarded to mail server (192.168.1.111). (Usually, it is forwarded to the Nextcloud server at 192.168.1.182.)
-* SSH into mail server
+* SSH into mail server: `ssh ubuntu@192.168.1.111`
 * Run `sudo /home/ubuntu/mailinabox/management/ssl_certificates.py`
 
 If there is an error like this: 
