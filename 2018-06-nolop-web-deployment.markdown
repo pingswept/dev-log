@@ -128,6 +128,17 @@ Then
 
 Open up `wp-config.php` and add database credentials.
 
+Also add to `wp-config.php` (because of SSL reverse proxy; see https://codex.wordpress.org/Administration_Over_SSL#Using_a_Reverse_Proxy):
+
+    define( 'WP_HOME', 'https://nolopwp-dev.it.tufts.edu' );
+    define( 'WP_SITEURL', 'https://nolopwp-dev.it.tufts.edu' );
+    define('FORCE_SSL_ADMIN', true);
+    // in some setups HTTP_X_FORWARDED_PROTO might contain
+    // a comma-separated list e.g. http,https
+    // so check for https existence
+    if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
+           $_SERVER['HTTPS']='on';
+
 Create database for Wordpress.
 
     [bstaff01@nolopwp-dev-01 ~]$ mysql -u root -p
