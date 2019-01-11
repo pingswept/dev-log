@@ -10,6 +10,10 @@ Then
 
 Open up `wp-config.php` and add database credentials.
 
+Install DB server
+
+    sudo apt install mariadb-server
+
 Create database for Wordpress.
 
     [bstaff01@nolopwp-dev-01 ~]$ mysql -u root -p
