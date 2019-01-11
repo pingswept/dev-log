@@ -7,4 +7,4 @@ When setting up an Exchange account with Outlook at Tufts, use this format:
 
 The `BSTAFF01` part should be your Tufts username, AKA your UTLN.
 
-May nobody else eveer need to traverse the hell I have just traversed.
+May nobody else ever need to traverse the hell I have just traversed.
