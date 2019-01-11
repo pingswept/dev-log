@@ -32,3 +32,45 @@ Create database for Wordpress.
 
     MariaDB [(none)]> exit;
     Bye
+
+Install PHP-FPM and PHP-MySQL
+
+    apt-get install php-fpm php-mysql
+    systemctl restart nginx
+    systemctl restart php7.2-fpm
+    chown -R www-data:www-data html/
+
+Put in `/etc/nginx/sites-available/default`
+(SSL not working yet)
+
+    server {
+            listen 80 default_server;
+            listen [::]:80 default_server;
+
+            # SSL configuration
+            #
+            listen 443 ssl default_server;
+            listen [::]:443 ssl default_server;
+
+            root /var/www/html;
+
+            # Add index.php to the list if you are using PHP
+            index index.php index.html index.htm index.nginx-debian.html;
+
+            server_name _;
+
+            location / {
+                    # First attempt to serve request as file, then
+                    # as directory, then fall back to displaying a 404.
+                    try_files $uri $uri/ =404;
+            }
+
+            # pass PHP scripts to FastCGI server
+            #
+            location ~ \.php$ {
+                    include snippets/fastcgi-php.conf;
+
+                    # With php-fpm (or other unix sockets):
+                    fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+            }
+}
