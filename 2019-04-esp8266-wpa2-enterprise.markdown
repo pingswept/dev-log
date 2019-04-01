@@ -1,5 +1,7 @@
 ### Connecting an ESP8266 to the Tufts_Secure wifi network at Tufts University ###
 
+(It might be easier to just make a wifi hotspot with your phone, and then connect both the ESP8266 and your laptop to that.)
+
 Basic info as of April 2019
 
     SSID:	Tufts_Secure
@@ -17,3 +19,4 @@ Basic info as of April 2019
     Description:	Marvell AVASTAR Wireless-AC Network Controller
     Driver version:	15.68.9125.57
     Physical address (MAC):	98-5F-D3-C6-5F-A7
+
