@@ -17,6 +17,14 @@
         // Make sure you set the speed in the serial monitor's menu to "115200 baud".
     }
 
+### Register the MAC address with the Tufts_Wireless access points ###
+
+Go to http://hostreg.net.tufts.edu/, log in with your UTLN and password, and add a device with the MAC address you got out of your ESP8266.
+
+### Wait 5 minutes. ###
+
+It takes a few minutes for the list of MACs allowed on the network to update across all the access points.
+
 ### Test connection to Tuft_Wireless ###
 
     /*
