@@ -70,3 +70,6 @@ Best guess of code:
         ip = String(buff);
         Serial.println(ip);
     }
+
+Mostly based on https://github.com/jtuttas/ESP8266-WPA2-Enterprise/blob/master/ino/webserver/webserver.ino
+Also relevant to your interests: https://github.com/espressif/ESP8266_NONOS_SDK/blob/release/v3.0.0/examples/wpa2_enterprise/user/user_main.c
