@@ -21,9 +21,9 @@
 
 Go to http://hostreg.net.tufts.edu/, log in with your UTLN and password, and add a device with the MAC address you got out of your ESP8266.
 
-### Wait 5 minutes. ###
+### Wait more than 5 minutes, but less than 1 year. ###
 
-It takes a few minutes for the list of MACs allowed on the network to update across all the access points.
+It takes a few minutes for the list of MACs allowed on the network to update across all the access points. After 1 year, your device will get erased from the list, and you'll need to reregister it.
 
 ### Test connection to Tuft_Wireless ###
 
