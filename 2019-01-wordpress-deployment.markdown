@@ -38,8 +38,7 @@ Create database for Wordpress.
 Configure PHP-FPM and PHP-MySQL
 
     systemctl restart nginx
-    systemctl restart php7.2-fpm
-    chown -R www-data:www-data html/
+    systemctl restart php7.2-fp
 
 Put in `/etc/nginx/sites-available/default`
 (SSL not working yet)
