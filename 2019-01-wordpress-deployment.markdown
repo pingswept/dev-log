@@ -1,18 +1,20 @@
+As root, install web server, DB, and connection between them
+
+    apt-get update
+    apt-get install nginx mariadb-server php-fpm php-mysql
+
 Then
 
     cd /var/www
-    sudo wget http://wordpress.org/latest.tar.gz
-    sudo tar xzvf latest.tar.gz
-    sudo mv wordpress html
-    sudo rm latest.tar.gz
-    sudo cp ./wp-config-sample.php ./wp-config.php
-    chown -R bstafford:bstafford /var/www/html/*
+    wget http://wordpress.org/latest.tar.gz
+    tar xzvf latest.tar.gz
+    mv wordpress html
+    rm latest.tar.gz
+    cd html
+    cp ./wp-config-sample.php ./wp-config.php
+    chown -R www-data:www-data /var/www/html
 
 Open up `wp-config.php` and add database credentials.
-
-Install DB server
-
-    sudo apt install mariadb-server
 
 Create database for Wordpress.
 
@@ -33,9 +35,8 @@ Create database for Wordpress.
     MariaDB [(none)]> exit;
     Bye
 
-Install PHP-FPM and PHP-MySQL
+Configure PHP-FPM and PHP-MySQL
 
-    apt-get install php-fpm php-mysql
     systemctl restart nginx
     systemctl restart php7.2-fpm
     chown -R www-data:www-data html/
