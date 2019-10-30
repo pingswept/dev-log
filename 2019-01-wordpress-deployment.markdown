@@ -38,39 +38,15 @@ Create database for Wordpress.
 Configure PHP-FPM and PHP-MySQL
 
     systemctl restart nginx
-    systemctl restart php7.2-fp
+    systemctl restart php7.2-fpm
 
-Put in `/etc/nginx/sites-available/default`
-(SSL not working yet)
+Create file `nginx-wordpress.conf` in `/etc/nginx/sites-available` containing
+https://raw.githubusercontent.com/tufts-nolop/nolop-software-infrastructure/master/nginx-wordpress.conf
 
-    server {
-            listen 80 default_server;
-            listen [::]:80 default_server;
+    cd /etc/nginx/sites-enabled
+    rm default
+    ln -s /etc/nginx/sites-available/nginx-wordpress.conf default
+    root@li905-38:/etc/nginx/sites-enabled# ls -l
+    total 0
+    lrwxrwxrwx 1 root root 47 Oct 30 14:50 default -> /etc/nginx/sites-available/nginx-wordpress.conf
 
-            # SSL configuration
-            #
-            listen 443 ssl default_server;
-            listen [::]:443 ssl default_server;
-
-            root /var/www/html;
-
-            # Add index.php to the list if you are using PHP
-            index index.php index.html index.htm index.nginx-debian.html;
-
-            server_name _;
-
-            location / {
-                    # First attempt to serve request as file, then
-                    # as directory, then fall back to displaying a 404.
-                    try_files $uri $uri/ =404;
-            }
-
-            # pass PHP scripts to FastCGI server
-            #
-            location ~ \.php$ {
-                    include snippets/fastcgi-php.conf;
-
-                    # With php-fpm (or other unix sockets):
-                    fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
-            }
-}
