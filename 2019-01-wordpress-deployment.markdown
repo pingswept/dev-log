@@ -66,3 +66,15 @@ Re-enable the SSL cert lines. (Might be easier some other way.)
 
 It appears from `systemctl list-timers` that the Certbot renewal service is installed automatically. Test with `certbot renew --dry-run`
 
+Raise upload limits
+
+Add to both server blocks in `nginx-wordpress.conf`:
+
+    client_max_body_size 100M;
+
+Also fix `/etc/php/7.2/fpm/php.ini` by changing:
+
+    upload_max_filesize = 64M
+    post_max_size = 64M
+
+Restart Nginx and PHP.
