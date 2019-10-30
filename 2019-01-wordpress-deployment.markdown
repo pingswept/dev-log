@@ -50,3 +50,13 @@ https://raw.githubusercontent.com/tufts-nolop/nolop-software-infrastructure/mast
     total 0
     lrwxrwxrwx 1 root root 47 Oct 30 14:50 default -> /etc/nginx/sites-available/nginx-wordpress.conf
 
+Set up SSL certificates
+
+    apt-get install software-properties-common
+    add-apt-repository universe
+    add-apt-repository ppa:certbot/certbot
+    apt-get update
+    apt-get install certbot python-certbot-nginx
+    
+    certbot certonly --nginx
+
