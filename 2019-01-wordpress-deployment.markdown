@@ -57,6 +57,12 @@ Set up SSL certificates
     add-apt-repository ppa:certbot/certbot
     apt-get update
     apt-get install certbot python-certbot-nginx
-    
+
+Comment out the SSL cert lines at the end of `nginx.conf` and run
+
     certbot certonly --nginx
+
+Re-enable the SSL cert lines. (Might be easier some other way.)
+
+It appears from `systemctl list-timers` that the Certbot renewal service is installed automatically. Test with `certbot renew --dry-run`
 
