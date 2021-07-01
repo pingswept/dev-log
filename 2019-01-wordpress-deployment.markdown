@@ -1,3 +1,5 @@
+(See updated version for Nolop at https://github.com/tufts-nolop/nolop-software-infrastructure/blob/master/nolop-org-deployment.md )
+
 As root, install web server, DB, and connection between them
 
     apt-get update
