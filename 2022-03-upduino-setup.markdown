@@ -13,7 +13,9 @@ git clone git@github.com:tinyvision-ai-inc/UPduino-v3.0.git
 
 To account for recent regression in Yosys mentioned here: https://github.com/im-tomu/fomu-workshop/pull/600
 needed to change build command in Makefile for `rgb_blink.json` to:
-    `yosys -q -p "read_verilog rgb_blink.v; synth_ice40 -json rgb_blink.json" rgb_blink.v`
+
+`    yosys -q -p "read_verilog rgb_blink.v; synth_ice40 -json rgb_blink.json" rgb_blink.v`
+
 (Added `read_verilog rgb_blink.v; `)
 
 Then `make` seems to work.
