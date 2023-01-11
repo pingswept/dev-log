@@ -30,3 +30,4 @@ environment=HOME="/home/pingswept",USER="pingswept"
 command=jupyter lab
 user=pingswept
 ```
+Connect at http://nb.pingswept.org:9999
