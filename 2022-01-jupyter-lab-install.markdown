@@ -3,6 +3,8 @@ sudo -s
 pip install jupyter
 pip install jupyterlab
 pip install jupyterlab-git
+pip install pandas
+pip install scipy
 apt install supervisor
 ```
 
