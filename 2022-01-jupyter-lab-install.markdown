@@ -5,6 +5,7 @@ pip install jupyterlab
 pip install jupyterlab-git
 pip install pandas
 pip install scipy
+pip install tabulate # for df.to_markdown() in pandas
 apt install supervisor
 ```
 
