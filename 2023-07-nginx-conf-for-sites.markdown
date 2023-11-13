@@ -32,6 +32,8 @@ server {
         location / {
                 try_files $uri $uri/ =404;
         }
+
+        listen 80;
 }
 
 server {
