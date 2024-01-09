@@ -25,3 +25,7 @@ Install the latest version.
 Test that Docker is installed correctly.
 
 `sudo docker run hello-world`
+
+Download `docker-compose.yml` from the Tubearchivist repo.
+
+` wget https://github.com/tubearchivist/tubearchivist/blob/master/docker-compose.yml`
