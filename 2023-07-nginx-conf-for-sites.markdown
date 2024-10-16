@@ -33,7 +33,7 @@ server {
                 try_files $uri $uri/ =404;
         }
 
-        listen 80;
+	listen 80;
 }
 
 server {
@@ -203,5 +203,7 @@ server {
     ssl_certificate_key /etc/letsencrypt/live/hwtmkstff.com/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
 }
 ```
