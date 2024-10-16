@@ -62,19 +62,6 @@ server {
 
 server {
 
-        root /var/www/hwtmkstff.com;
-        index index.html index.htm;
-
-        server_name hwtmkstff.com www.hwtmkstff.com;
-
-        location / {
-                try_files $uri $uri/ =404;
-        }
-        listen 80;
-}
-
-server {
-
         root /var/www/rascalmicro.com;
         index index.html index.htm;
 
