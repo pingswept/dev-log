@@ -9,13 +9,11 @@ server {
         location / {
                 try_files $uri $uri/ =404;
         }
-
-
-    listen 80; # managed by Certbot
+        listen 80;
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/hwtmkstff.com/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/hwtmkstff.com/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/pingswept.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/pingswept.org/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
@@ -32,8 +30,14 @@ server {
         location / {
                 try_files $uri $uri/ =404;
         }
-
 	listen 80;
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/pingswept.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/pingswept.org/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
 }
 
 server {
@@ -46,12 +50,11 @@ server {
         location / {
                 try_files $uri $uri/ =404;
         }
-
-    listen 80; # managed by Certbot
+        listen 80;
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/hwtmkstff.com/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/hwtmkstff.com/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/pingswept.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/pingswept.org/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
@@ -67,17 +70,7 @@ server {
         location / {
                 try_files $uri $uri/ =404;
         }
-
-
-    listen 80; # managed by Certbot
-
-    listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/hwtmkstff.com/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/hwtmkstff.com/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-
-
+        listen 80;
 }
 
 server {
@@ -194,13 +187,11 @@ server {
         location /blog/feed/atom/index.xml {
             return 301 /rss/;
         }
-
-
-    listen 80; # managed by Certbot
+        listen 80;
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/hwtmkstff.com/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/hwtmkstff.com/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/pingswept.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/pingswept.org/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
